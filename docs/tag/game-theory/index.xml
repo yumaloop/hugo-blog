@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Game Theory | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/game-theory/</link>
+      <atom:link href="https://yumaloop.github.io/tag/game-theory/index.xml" rel="self" type="application/rss+xml" />
+    <description>Game Theory</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Game Theory</title>
+      <link>https://yumaloop.github.io/tag/game-theory/</link>
+    </image>
+    
+    <item>
+      <title>Counterfactual Regret Minimization</title>
+      <link>https://yumaloop.github.io/post/2020-02-10-counterfactual-regret-minimization/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-02-10-counterfactual-regret-minimization/</guid>
+      <description>&lt;p&gt;In this post, I introduce you the Counterfactual Regret Minimization (CFR Algorithm). It is mainly used for the algorithm to figure out the optimal strategy of a extensive-form game with incomplete information such as Poker and Mahjong.&lt;/p&gt;
+&lt;h3 id=&#34;extensive-form-game&#34;&gt;Extensive-form Game&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Set, variables
+&lt;ul&gt;
+&lt;li&gt;$N: $ set of players
+&lt;ul&gt;
+&lt;li&gt;$i \in N$: player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$A :$ set of actions
+&lt;ul&gt;
+&lt;li&gt;$a \in A: $ action&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$H: $set of sequences
+&lt;ul&gt;
+&lt;li&gt;$h \in H: $ sequences (= possible history of actions, $h = (a_1, \dots, a_t$)&lt;/li&gt;
+&lt;li&gt;$Z \subseteq H: $ set of terminal histories. $Z = {z \in H \vert \forall h \in H, z \notin h }$&lt;/li&gt;
+&lt;li&gt;$z \in Z$: sea&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Function, relations
+&lt;ul&gt;
+&lt;li&gt;$u_i: Z \to \mathbb{R}: $ utility function of player $i$&lt;/li&gt;
+&lt;li&gt;$\sigma_i: A \to [0,1]$ a strategy of player $i$, probability distribution on action set $A$.&lt;/li&gt;
+&lt;li&gt;$\sigma~: A^N \to [0,1]$ a strategy profile, $\sigma := (\sigma_1, \dots, \sigma_N)$&lt;/li&gt;
+&lt;li&gt;$\pi^{\sigma}&lt;em&gt;i: H \to [0,1]: $ probability of history $h$ under a strategy $$\sigma&lt;/em&gt;$ of player $i$&lt;/li&gt;
+&lt;li&gt;$\pi^{\sigma}: H^N \to [0,1]: $ probability of history $h$ under a strategy profile $\sigma$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then, you can also interplate $u_i$ as the function mapping a storategy profile $\sigma$ to its utility.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+u_i(\sigma)
+&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\&lt;br&gt;
+&amp;amp;= \sum_{h \in Z} u_i(h) \prod_{i \in N} \pi^{\sigma}_i(h)
+\end{align}
+$$
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nash-equilibrium&#34;&gt;Nash equilibrium&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; $(\text{Nash equilibrium})$&lt;/p&gt;
+&lt;p&gt;In $N$-player extensive game, a strategy profile $\acute{\sigma} := (\acute{\sigma_1}, \dots, \acute{\sigma_N})$ is the Nash equilibrium if and only if the followings holds.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N})
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N})
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
+&amp;amp;~ \vdots \\&lt;br&gt;
+u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N})
+&amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition: $\text{(}\varepsilon\text{-Nash equilibrium)}$&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In $N$-player extensive game, a strategy profile $\acute{\sigma} := (\acute{\sigma_1}, \dots, \acute{\sigma_N})$ is the $\varepsilon$-Nash equilibrium if and only if the followings holds when $\forall \varepsilon \geq 0$ is given.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
+&amp;amp;~ \vdots \\&lt;br&gt;
+u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
+&amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;regret-matching&#34;&gt;Regret matching&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Average overall regret of player $i$ at time $T$：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+R_i^T
+:= \underset{\sigma_i^*}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^*, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Average strategy for player $i$ from time $1$ to $T$：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{align}
+\overline{\sigma}_i^t(I)(a)
+&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\&lt;br&gt;
+&amp;amp;= \frac{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h) \cdot \sigma^t(h)(a)}{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h)}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;If the average overall regret holds $R_i^T \leq \varepsilon$, the average strategy $\overline{\sigma}_i^t(I)(a) $ is $2 \varepsilon$-Nash equilibrium for player $i$ in time $t$. So that, in order to derive Nash equilibrium, we should minimize the average overall regret $R_i^T$ or its upper bound $\varepsilon$ according to $R_i^T \to 0 ~~ (\varepsilon \to 0)$.&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;cfr-algorithm&#34;&gt;CFR Algorithm&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Counterfactual utility：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{align}
+u_i(\sigma, I) = \frac{\sum_{h \in H, h&#39; \in Z} \pi_{-i}^{\sigma}(h)\pi^{\sigma}(h,h&#39;)u_i(h) }{\pi_{-i}^{\sigma}(I)}
+\end{align}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;immediate counteractual regret of action $a$ in Information set $I$:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{aligned}
+R_{i,imm}^{T}(I, a)
+:=
+\frac{1}{T} \sum_{t=1}^{T}
+\pi_{-i}^{\sigma^t}(I)
+\left(
+u_i(\sigma^t_{I \to a}, I) - u_i(\sigma^t, I)
+\right)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Immediate counterfactual regret of Information set $I$：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{aligned}
+R_{i,imm}^{T}(I)
+&amp;amp;:= \underset{a \in A(I)}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T}
+\pi_{-i}^{\sigma^t}(I)
+\left(
+u_i(\sigma^t_{I \to a}, I) - u_i(\sigma^t, I)
+\right)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;The following inequality holds for &lt;strong&gt;the average overall regret&lt;/strong&gt; $R_i^T $ and &lt;strong&gt;the immediate counterfactual regret&lt;/strong&gt;  $R_{i,imm}^{T}(I)$:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+R_i^T
+\leq \sum_{I \in \mathcal{I}_i} &amp;amp;R_{i,imm}^{T,+}(I) \\&lt;br&gt;
+where ~~~
+&amp;amp;R_{i,imm}^{T, +}(I)
+:= max(R_{i,imm}^{T}(I), 0)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;So that, we obtain the sufficient condition of $R_{i,imm}^{T}(I)$  for the average strategy $\overline{\sigma}_i^t(I)(a)$ to become a Nash equilibrium strategy as below.&lt;/p&gt;
+&lt;p&gt;$$
+\sum_{I \in \mathcal{I}_i} R_{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
+$$&lt;/p&gt;
+&lt;p&gt;Now all we need is to minimize the immediate counterfactual regret  $R_{i,imm}^{T}(I)$.&lt;/p&gt;
+&lt;p&gt;In addition, as can be seen from the above formula, the computational complexity of the CFR algorithm depends on the number of information sets $I$. Also, to avoid the complete search of game tree (searching all information sets $I$), subsequent algorithms such as CFR + propose an abstraction of the game state.&lt;/p&gt;
+&lt;h3 id=&#34;python-code-to-run-cfr-algorithm-for-kuhn-poker&#34;&gt;Python code to run CFR algorithm for Kuhn Poker&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+
+# Number of actions a player can take at a decision node.
+_N_ACTIONS = 2
+_N_CARDS = 3
+
+def main():
+    &amp;quot;&amp;quot;&amp;quot;
+    Run iterations of counterfactual regret minimization algorithm.
+    &amp;quot;&amp;quot;&amp;quot;
+    i_map = {}  # map of information sets
+    n_iterations = 10000
+    expected_game_value = 0
+
+    for _ in range(n_iterations):
+        expected_game_value += cfr(i_map)
+        for _, v in i_map.items():
+            v.next_strategy()
+
+    expected_game_value /= n_iterations
+    display_results(expected_game_value, i_map)
+
+
+def cfr(i_map, history=&amp;quot;&amp;quot;, card_1=-1, card_2=-1, pr_1=1, pr_2=1, pr_c=1):
+    &amp;quot;&amp;quot;&amp;quot;
+    Counterfactual regret minimization algorithm.
+    Parameters
+    ----------
+    i_map: dict
+        Dictionary of all information sets.
+    history : [{&#39;r&#39;, &#39;c&#39;, &#39;b&#39;}], str
+        A string representation of the game tree path we have taken.
+        Each character of the string represents a single action:
+        &#39;r&#39;: random chance action
+        &#39;c&#39;: check action
+        &#39;b&#39;: bet action
+    card_1 : (0, 2), int
+        player A&#39;s card
+    card_2 : (0, 2), int
+        player B&#39;s card
+    pr_1 : (0, 1.0), float
+        The probability that player A reaches `history`.
+    pr_2 : (0, 1.0), float
+        The probability that player B reaches `history`.
+    pr_c: (0, 1.0), float
+        The probability contribution of chance events to reach `history`.
+    &amp;quot;&amp;quot;&amp;quot;
+    if is_chance_node(history):
+        return chance_util(i_map)
+    if is_terminal(history):
+        return terminal_util(history, card_1, card_2)
+
+    n = len(history)
+    is_player_1 = n % 2 == 0
+    info_set = get_info_set(i_map, card_1 if is_player_1 else card_2, history)
+
+    strategy = info_set.strategy
+    if is_player_1:
+        info_set.reach_pr += pr_1
+    else:
+        info_set.reach_pr += pr_2
+
+    # Counterfactual utility per action.
+    action_utils = np.zeros(_N_ACTIONS)
+
+    for i, action in enumerate([&amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;]):
+        next_history = history + action
+        if is_player_1:
+            action_utils[i] = -1 * cfr(i_map, next_history, card_1, card_2, pr_1 * strategy[i], pr_2, pr_c)
+        else:
+            action_utils[i] = -1 * cfr(i_map, next_history, card_1, card_2, pr_1, pr_2 * strategy[i], pr_c)
+
+    # Utility of information set.
+    util = sum(action_utils * strategy)
+    regrets = action_utils - util
+    if is_player_1:
+        info_set.regret_sum += pr_2 * pr_c * regrets
+    else:
+        info_set.regret_sum += pr_1 * pr_c * regrets
+
+    return util
+
+def is_chance_node(history):
+    &amp;quot;&amp;quot;&amp;quot;
+    Determine if we are at a chance node based on tree history.
+    &amp;quot;&amp;quot;&amp;quot;
+    return history == &amp;quot;&amp;quot;
+
+def chance_util(i_map):
+    expected_value = 0
+    n_possibilities = 6
+    for i in range(_N_CARDS):
+        for j in range(_N_CARDS):
+            if i != j:
+                expected_value += cfr(i_map, &amp;quot;rr&amp;quot;, i, j, 1, 1, 1/n_possibilities)
+    return expected_value/n_possibilities
+
+
+def is_terminal(history):
+    possibilities = { &amp;quot;rrcc&amp;quot;: True, &amp;quot;rrcbc&amp;quot;: True,
+                     &amp;quot;rrcbb&amp;quot;: True, &amp;quot;rrbc&amp;quot;: True, &amp;quot;rrbb&amp;quot;: True}
+    return history in possibilities
+
+def terminal_util(history, card_1, card_2):
+    n = len(history)
+    card_player = card_1 if n % 2 == 0 else card_2
+    card_opponent = card_2 if n % 2 == 0 else card_1
+
+    if history == &amp;quot;rrcbc&amp;quot; or history == &amp;quot;rrbc&amp;quot;:
+        # Last player folded. The current player wins.
+        return 1
+    elif history == &amp;quot;rrcc&amp;quot;:
+        # Showdown with no bets
+        return 1 if card_player &amp;gt; card_opponent else -1
+
+    # Showdown with 1 bet
+    assert(history == &amp;quot;rrcbb&amp;quot; or history == &amp;quot;rrbb&amp;quot;)
+    return 2 if card_player &amp;gt; card_opponent else -2
+
+def card_str(card):
+    if card == 0:
+        return &amp;quot;J&amp;quot;
+    elif card == 1:
+        return &amp;quot;Q&amp;quot;
+    elif card == 2:
+        return &amp;quot;K&amp;quot;
+
+def get_info_set(i_map, card, history):
+    &amp;quot;&amp;quot;&amp;quot;
+    Retrieve information set from dictionary.
+    &amp;quot;&amp;quot;&amp;quot;
+    key = card_str(card) + &amp;quot; &amp;quot; + history
+    info_set = None
+
+    if key not in i_map:
+        info_set = InformationSet(key)
+        i_map[key] = info_set
+        return info_set
+
+    return i_map[key]
+
+class InformationSet():
+    def __init__(self, key):
+        self.key = key
+        self.regret_sum = np.zeros(_N_ACTIONS)
+        self.strategy_sum = np.zeros(_N_ACTIONS)
+        self.strategy = np.repeat(1/_N_ACTIONS, _N_ACTIONS)
+        self.reach_pr = 0
+        self.reach_pr_sum = 0
+        
+    def next_strategy(self):
+        self.strategy_sum += self.reach_pr * self.strategy
+        self.strategy = self.calc_strategy()
+        self.reach_pr_sum += self.reach_pr
+        self.reach_pr = 0
+
+    def calc_strategy(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        Calculate current strategy from the sum of regret.
+        &amp;quot;&amp;quot;&amp;quot;
+        strategy = self.make_positive(self.regret_sum)
+        total = sum(strategy)
+        if total &amp;gt; 0:
+            strategy = strategy / total
+        else:
+            n = _N_ACTIONS
+            strategy = np.repeat(1/n, n)
+
+        return strategy
+
+    def get_average_strategy(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        Calculate average strategy over all iterations. This is the
+        Nash equilibrium strategy.
+        &amp;quot;&amp;quot;&amp;quot;
+        strategy = self.strategy_sum / self.reach_pr_sum
+
+        # Purify to remove actions that are likely a mistake
+        strategy = np.where(strategy &amp;lt; 0.001, 0, strategy)
+
+        # Re-normalize
+        total = sum(strategy)
+        strategy /= total
+
+        return strategy
+
+    def make_positive(self, x):
+        return np.where(x &amp;gt; 0, x, 0)
+
+    def __str__(self):
+        strategies = [&#39;{:03.2f}&#39;.format(x)
+                      for x in self.get_average_strategy()]
+        return &#39;{} {}&#39;.format(self.key.ljust(6), strategies)
+
+def display_results(ev, i_map):
+    print(&#39;player 1 expected value: {}&#39;.format(ev))
+    print(&#39;player 2 expected value: {}&#39;.format(-1 * ev))
+
+    print()
+    print(&#39;player 1 strategies:&#39;)
+    sorted_items = sorted(i_map.items(), key=lambda x: x[0])
+    for _, v in filter(lambda x: len(x[0]) % 2 == 0, sorted_items):
+        print(v)
+    print()
+    print(&#39;player 2 strategies:&#39;)
+    for _, v in filter(lambda x: len(x[0]) % 2 == 1, sorted_items):
+        print(v)
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    main()
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

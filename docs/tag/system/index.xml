@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>System | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/system/</link>
+      <atom:link href="https://yumaloop.github.io/tag/system/index.xml" rel="self" type="application/rss+xml" />
+    <description>System</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Thu, 11 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>System</title>
+      <link>https://yumaloop.github.io/tag/system/</link>
+    </image>
+    
+    <item>
+      <title>Recursion of the Capital</title>
+      <link>https://yumaloop.github.io/post/2020-06-11-recurrent-structure-in-capita/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-06-11-recurrent-structure-in-capita/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/1013781606/The-glare-of-empty-square-by-Sara-Biljana-Gaon&#39; alt=&#39;The glare of empty square by Sara Biljana Gaon on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/1013781606/m%3D900/v2?sig=8fbfac0615a131ce9fe97ebac12eca86ca0e9b9eec82ba6b4fa68ce6da3cfc07&#39; alt=&#39;The glare of empty square by Sara Biljana Gaon on 500px.com&#39; style=&#34;width: 40vw; min-width: 330px;&#34; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;Self-discriptive system within time change.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The simplest example of self-discriptive systems is the exponential increase. This is because the simplest &amp;ldquo;change&amp;rdquo; of a variable $x$ is a first derivative of its time $dx/dt$, and the simplest form of the function &amp;ldquo;$f(x)$&amp;rdquo; determined by a variable $x$ is a linear one $Cx$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Case1: Growth is &lt;strong&gt;constant&lt;/strong&gt; with the current state (state is &lt;strong&gt;invariant&lt;/strong&gt; over time)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\frac{dx}{dt} = C
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Case2: Growth is &lt;strong&gt;linear&lt;/strong&gt; with the current state (state changes &lt;strong&gt;exponentially&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\frac{dx}{dt} = Cx
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Case3: Growth is &lt;strong&gt;complex but relative&lt;/strong&gt; to the current state (generalization)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\frac{dx}{dt} = f(x)
+$$&lt;/p&gt;
+&lt;h1 id=&#34;actual-situations&#34;&gt;Actual situations&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;1. Money/Capital creates new money/capital&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is the principle of capital markets and investment. Or what is called Capital Gain. Source of motivation on the lender side.&lt;/p&gt;
+&lt;p&gt;これは資本市場と投資の原理．いわゆるキャピタルゲイン．貸し手の動機の源泉．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;2. Trust/Credit creates new trust/credit&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The most obvious example is banking. Actually, there is a word of credit creation. Lending is gradually increased based on credit. This is the principle of the borrower.&lt;/p&gt;
+&lt;p&gt;わかりやすい例は銀行業． 実際，信用創造という言葉があるくらい．信用をもとに，少しずつ貸出を増やす．これは借り手の原理．&lt;/p&gt;
+&lt;p&gt;The modern financial system is supported by the principle that capital and credit increase/decrease exponentially. This principle creates a dynamic phenomenon (spiral) that motivates lenders and borrowers and that &amp;ldquo;lending and borrowing exponentially increases/decreases.&amp;rdquo; This is inflation and deflation.&lt;/p&gt;
+&lt;p&gt;現代金融システムは，「資本と信用が指数増加/減少する」という原理によって支えられる．この原理は，貸し手と借り手に動機を与え「指数増加/減少する貸金と借金」という現象（スパイラル）を生む．これがインフレとデフレ．&lt;/p&gt;
+&lt;p&gt;A vested interest (a large corporation or a large political party) can be established as a vested interest by reproducing credit and achievement in the future by accumulating past credit and achievement.&lt;/p&gt;
+&lt;p&gt;既得権益（大企業や大政党）は，過去の信用と実績の積み重ねにより，将来の信用と実績を再生産することで，既得権益として成立する．&lt;/p&gt;
+&lt;p&gt;To make matters difficult, &amp;ldquo;trust&amp;rdquo; and &amp;ldquo;achievement&amp;rdquo; are complementary. &amp;ldquo;Trust&amp;rdquo; provides an opportunity to unlock new achievements. The new “achievement” repairs and strengthens trust. In other words, vested interests are invincible unless environmental changes occur.&lt;/p&gt;
+&lt;p&gt;厄介なことに「信頼」と「実績」は相補関係にある．「信頼」は新たな実績解除への機会を提供する．新たな「実績」は信頼を補修・強化する．つまり，既得権益は環境変化が起きない限り無敵．&lt;/p&gt;
+&lt;p&gt;The first step for new powers (ventures and youth) to scale up is to win trust or to make some achievements.
+In addition, it is even better as it causes environmental changes and innovation.&lt;/p&gt;
+&lt;p&gt;新興勢力（ベンチャーや若者）がスケールアップするための第一歩は「信頼」を勝ち取るか，「実績」で黙らせるか．
+加えて，環境変化やイノベーションを起こすとなお良い．&lt;/p&gt;
+&lt;p&gt;As a result,
+The risk-loving youths first try to walk the cycle from the trust to the achievement, but
+The risk-averse youths first try to walk the cycle from the achievement to the trust.&lt;/p&gt;
+&lt;p&gt;結果として，
+リスク選好的な若者は，信頼から実績へというサイクルを歩もうとし，
+リスク回避的な若者は，実績から信頼へというサイクルを歩もうとする．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;4. Follower/Fan creates new follower/fan&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In order for super popular corporate brands, entertainers, celebrities, and influencers to be born, their fans/followers need to create new fans/followers.&lt;/p&gt;
+&lt;p&gt;超人気な企業ブランドや芸能人，セレブ，インフルエンサーが生まれるためには，彼らのファン/フォロワーが新たなファン/フォロワーを生む必要がある．&lt;/p&gt;
+&lt;p&gt;Nowadays, this mechanism has been strengthened in the entertainment industry where globalization by the Internet has been achieved, and in platforms where search and recommendation algorithms that strongly fit past trends are dominant.&lt;/p&gt;
+&lt;p&gt;近年，インターネットによるグローバル化が達成されたエンタメ産業や，過去の傾向に強くfitする検索や推薦のアルゴリズムが支配的なプラットホームにおいて，このメカニズムは強化されている．&lt;/p&gt;
+&lt;p&gt;The more followers/fans there are, the more followers/fans there are.
+The services with more registrants/subscribers tend to have more registrants/subscribers.&lt;/p&gt;
+&lt;p&gt;フォロワー/ファンが多い人ほど，フォロワー/ファンが増えやすい．
+登録者/購読者の多いサービスほど，登録者/購読者が増えやすい．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;3. Popularity/Evaluation creates new popularity/evaluation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For products that sell well, the &amp;ldquo;selling&amp;rdquo; state itself becomes valuable.&lt;/p&gt;
+&lt;p&gt;売れているものは，売れているということ自体が価値になる．&lt;/p&gt;
+&lt;p&gt;This phenomenon is often explained by René Girard&amp;rsquo;s triangular desire from the perspective of consumer sentiment, and by the network externality from the perspective of industrial organization theory.&lt;/p&gt;
+&lt;p&gt;この現象は，消費者心理の観点からはルネ・ジラールの欲望の三角形，産業組織論の観点からはネットワーク外部性でよく説明される．&lt;/p&gt;
+&lt;p&gt;Additionally, this schema is often misused for stealth marketing, hype, information products, affiliates, etc.&lt;/p&gt;
+&lt;p&gt;また，このスキーマは，しばしばステマ，偽客(サクラ)，誇大広告，情報商材，アフィリエイトなどで悪用される．&lt;/p&gt;
+&lt;br&gt;
+&lt;!--
+
+### 自己組織化 
+
+ファンがアイドルに理想像を提示し求める．
+アイドルはファンの期待に応えるため，理想像に近づく．
+
+--&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time-steady States on Systems</title>
+      <link>https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/</link>
+      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/</guid>
+      <description>&lt;h3 id=&#34;システムと定常状態&#34;&gt;システムと定常状態&lt;/h3&gt;
+&lt;p&gt;多くの動的モデル（Dynamic Model-System）は，定常状態（time-steady state）に至ることを目的として設計される．ここで，定常状態とは，「ある変数$X$に作用する，何らかの時変量（parameter $\theta_t$）や関数$L_t(x; \theta)$）が一定値に収束すること」と定義しておく．&lt;/p&gt;
+&lt;p&gt;そして，着目している動的モデルが定常状態に至るプロセスは，システム同定（System identification）と呼ばれ，定常状態を示した概念として，均衡（equilibrium）や平衡（balance）と呼ばれる用語が使われる．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8c%96%e5%ad%a6%e5%8f%8d%e5%bf%9c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;化学反応&lt;/a&gt;においては、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8f%af%e9%80%86%e5%8f%8d%e5%bf%9c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;可逆反応&lt;/a&gt;の生成物の変化量と出発物質の変化量が合致した状態を指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8c%96%e5%ad%a6%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;化学平衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8a%9b%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力学&lt;/a&gt;においては、物体に加わっている全ての&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8a%9b_%28%e7%89%a9%e7%90%86%e5%ad%a6%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力&lt;/a&gt;の合力と&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8a%9b%e3%81%ae%e3%83%a2%e3%83%bc%e3%83%a1%e3%83%b3%e3%83%88&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力のモーメント&lt;/a&gt;の和がともに 0 である状態を平衡と呼ぶ。&lt;a href=&#34;https://ja.wikipedia.org/w/index.php?title=%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1&amp;amp;action=edit&amp;amp;redlink=1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力学的平衡&lt;/a&gt;（&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e8%8b%b1%e8%aa%9e&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;英語&lt;/a&gt;: &lt;a href=&#34;https://en.wikipedia.org/wiki/Mechanical_equilibrium&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mechanical equilibrium&lt;/a&gt;）を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;熱力学&lt;/a&gt;においては通常、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;熱平衡&lt;/a&gt;、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力学的平衡&lt;/a&gt;、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8c%96%e5%ad%a6%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;化学平衡&lt;/a&gt;の三つを合わせて、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;熱力学的平衡&lt;/a&gt;とよぶ。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%b5%b1%e8%a8%88%e5%8a%9b%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;統計力学&lt;/a&gt;においては、系のエネルギー分布が、ボルツマン分布に従うことである。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;熱力学的平衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%89%a9%e7%90%86%e5%8c%96%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;物理化学&lt;/a&gt;においては、複数の物質相から構成される系において、相間の物質の出入りが合い等しい状態を指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%9b%b8%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;相平衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e9%9b%bb%e6%b0%97%e5%b7%a5%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;電気工学&lt;/a&gt;においては、信号源と負荷の間のインピーダンスが合致していることを指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e3%82%a4%e3%83%b3%e3%83%94%e3%83%bc%e3%83%80%e3%83%b3%e3%82%b9%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;インピーダンス平衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e9%9b%bb%e6%b0%97%e5%9b%9e%e8%b7%af&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;電気回路&lt;/a&gt;においては、信号回路の双方が接地点に接続されていないことを指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%b9%b3%e8%a1%a1%e6%8e%a5%e7%b6%9a&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;平衡接続&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e6%83%85%e5%a0%b1%e5%b7%a5%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;情報工学&lt;/a&gt;においては、データ&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e6%9c%a8%e6%a7%8b%e9%80%a0_%28%e3%83%87%e3%83%bc%e3%82%bf%e6%a7%8b%e9%80%a0%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;木構造&lt;/a&gt;の任意の節においてその配下の節点の数が等しい状態を指す。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%94%9f%e6%85%8b%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;生態学&lt;/a&gt;においては、生物群集間の分布と個体数の変化が無い状態を指す。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%94%9f%e7%90%86%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;生理学&lt;/a&gt;においては、水平であることを認知することを指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%b9%b3%e8%a1%a1%e6%84%9f%e8%a6%9a&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;平衡感覚&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%b5%8c%e6%b8%88%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;経済学&lt;/a&gt;においては、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e9%9c%80%e8%a6%81%e3%81%a8%e4%be%9b%e7%b5%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;需要と供給&lt;/a&gt;が釣り合って&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e4%be%a1%e6%a0%bc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;価格&lt;/a&gt;が不動になることなどを指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%9d%87%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;均衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;連立(微分)方程式で記述できるため．&lt;/p&gt;
+&lt;h3 id=&#34;なぜ線形モデルが有用なのか&#34;&gt;なぜ線形モデルが有用なのか？&lt;/h3&gt;
+&lt;p&gt;答えはシンプルで，Taylor展開&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\frac{d x_1}{d t} &amp;amp;= f_1(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
+\frac{d x_2}{d t} &amp;amp;= f_2(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
+&amp;amp;\vdots \\&lt;br&gt;
+\frac{d x_n}{d t} &amp;amp;= f_n(x_1, \dots, x_n; \theta_1)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;このモデルが，定常状態にいる場合，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+f_1 = f_2 = \cdots = f_n = 0
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;が成り立つから，$n$個の変数${\bf x} = (x_1, x_2, \dots, x_n)$に対して，$n$個の方程式が得られる．この解がシステムの定常化となる．これを${\bf x}^* = (x_1^*, x_2^*, \dots, x_n^*)$とおくと，$f_1, f_2, \dots, f_n$に対して，点${\bf x}^*$の近傍でTaylor展開が可能になる．&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\frac{d x_1}{d t}
+= f_1(x_1, \dots, x_n; \theta_1)
+=&amp;amp; a_{11}(x_1 - x_1^*) + a_{12} {(x_2 - x_2^*)} + \cdots a_{1n} {(x_n - x_n^*)} + \\&lt;br&gt;
+&amp;amp; a_{111}{(x_1 - x_1^*)}^2 + a_{112}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{11n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
+&amp;amp; ~~ \vdots \\&lt;br&gt;
+&amp;amp; a_{11\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+\frac{d x_2}{d t}
+= f_2(x_1, \dots, x_n; \theta_1)
+=&amp;amp; a_{21}(x_1 - x_1^*) + a_{22} {(x_2 - x_2^*)} + \cdots a_{2n} {(x_n - x_n^*)} + \\&lt;br&gt;
+&amp;amp; a_{211}{(x_1 - x_1^*)}^2 + a_{212}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{21n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
+&amp;amp; ~~ \vdots \\&lt;br&gt;
+&amp;amp; a_{21\cdots1}{(x_1 - x_1^*)}^n + \cdots \\ \\&lt;br&gt;
+&amp;amp; ~~ \vdots \\ \\&lt;br&gt;
+\frac{d x_n}{d t}
+= f_n(x_1, \dots, x_n; \theta_1)
+=&amp;amp; a_{n1}(x_1 - x_1^*) + a_{n2} {(x_2 - x_2^*)} + \cdots a_{nn} {(x_n - x_n^*)} + \\&lt;br&gt;
+&amp;amp; a_{n11}{(x_1 - x_1^*)}^2 + a_{n12}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{n1n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
+&amp;amp; ~~ \vdots \\&lt;br&gt;
+&amp;amp; a_{n1\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;つまり，任意の微分可能関数$f_1, f_2, \dots, f_n$によって表現されたダイナミクスをもつ動的モデルは，（定常解の近傍では）任意のn次多項式によって近似できる．これにより，線形システムの妥当性が保証される．一般解は，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+x_1
+=&amp;amp; ~ x_1^*  + C_{11}e^{\lambda_1 t} + C_{12}e^{\lambda_2 t} + \cdots C_{1n}e^{\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{111}e^{2\lambda_1 t} + C_{112}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{11\cdots1}e^{n\lambda_1 t} + C_{11\cdots2}e^{n\lambda_2 t} + \cdots + C_{11\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+x_2
+=&amp;amp; ~ x_2^*  + C_{21}e^{\lambda_1 t} + C_{22}e^{\lambda_2 t} + \cdots C_{2n}e^{\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{211}e^{2\lambda_1 t} + C_{212}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{21\cdots1}e^{n\lambda_1 t} + C_{21\cdots2}e^{n\lambda_2 t} + \cdots + C_{21\cdots n}e^{n\lambda_n t} \\ \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ ~~ \vdots
+\ \&lt;br&gt;
+x_n
+=&amp;amp; ~ x_n^*  + C_{n1}e^{\lambda_1 t} + C_{n2}e^{\lambda_2 t} + \cdots C_{nn}e^{\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{n11}e^{2\lambda_1 t} + C_{n12}e^{2\lambda_2 t} + \cdots + C_{n1n}e^{2\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{n1\cdots1}e^{n\lambda_1 t} + C_{n1\cdots2}e^{n\lambda_2 t} + \cdots + C_{n1\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;となる．&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;モデルとは何か&#34;&gt;モデルとは何か？&lt;/h3&gt;
+&lt;p&gt;つまり，多くの分野において数理モデルとか計量モデルとか呼ばれるものは，以下の手続きを必要とする．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定常状態に至ることを目的とする&lt;strong&gt;動的モデル&lt;/strong&gt;を定義する&lt;/li&gt;
+&lt;li&gt;モデルの状態変化を&lt;strong&gt;最適化問題(過程&lt;/strong&gt;)として定式化する．&lt;/li&gt;
+&lt;li&gt;定常状態への収束が保証された&lt;strong&gt;最適化アルゴリズム&lt;/strong&gt;を考える&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;移動平均&#34;&gt;移動平均&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;カルマンフィルタ&lt;/li&gt;
+&lt;li&gt;Adamに置けるモメンタム&lt;/li&gt;
+&lt;li&gt;強化学習の報酬&lt;/li&gt;
+&lt;li&gt;ゲーム理論におけるFicticious Play&lt;/li&gt;
+&lt;li&gt;株価におけるテクニカル分析移動平均（ARMA）&lt;/li&gt;
+&lt;li&gt;(金融工学)バリュエーションにおけるDCF法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;移動平均とは何か？&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+m_t &amp;amp;= \gamma \cdot m_t − 1+η \cdot \frac{\partial L(w_t)}{\partial w} \\&lt;br&gt;
+w_{t+1} &amp;amp;= w_t - m_t
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+m_t = g_t + \gamma \cdot g_{t-1} + \gamma^2 \cdot g_{t-2} \cdots + \gamma^t \cdot g_{0}
+$$&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>State Space Model &amp; Particle Filter</title>
+      <link>https://yumaloop.github.io/post/2020-03-18-particle_filter/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-03-18-particle_filter/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/80813059/Flow-of-Time-by-Jimin--Jacob&#39; alt=&#39;Flow of Time... by Jimin  Jacob on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/80813059/m%3D900/v2?sig=9c99293070333accc348ef432437c6c0eeb6b87f5d14199485cae5d51d92e3db&#39; alt=&#39;Flow of Time... by Jimin  Jacob on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;State Space Model (SSM)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;State Space Model(SSM) is widely used in the field requiring the sequential estimation or online learning.
+This model is effective if you consider a system having two different variables; one completely represents the actual state but cannot be observed and the other partially represents the actual state but can be observed. Here, I call the former $x$ (state variable) and the latter $y$ (observation variable).&lt;/p&gt;
+&lt;p&gt;In SSM, we intruduce the following equations $F, H$ (or $f, h$) and identify them by observed data sample $[y_1, \dots, y_t]$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Equation of each state $x_t$ :&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+x_{t+1} &amp;amp;= F(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+x_{t+1} &amp;amp;\sim f(\cdot\vert x_t) ~~ (\text{Stochastic process})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Equation of each observation $y_t$ :&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+y_t &amp;amp;= H(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+y_t &amp;amp;\sim h(\cdot \vert x_t) ~~ (\text{Stochastic process})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Perticle filter&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;For each $i$ in $[1 \dots M]$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;(Prediction)&lt;/p&gt;
+&lt;p&gt;Derive prediction distribution $f(x_t \vert \cdot)$ depends on particles $\hat{x}_{t-1}$.&lt;/p&gt;
+&lt;p&gt;Sample $x^{i}_{t \vert t-1} ~~~ (i = 1, \dots, M)$ following $f(x_t \vert \cdot)$.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+x^{i}_{t \vert t-1} \sim f(x_t \vert \hat{x}_{t-1})
+\end{align}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Likelihood)&lt;/p&gt;
+&lt;p&gt;Derive the likelihood of $x^i_{t \vert t-1}$ from given sample data $y_t$ based on $h(\cdot)$&lt;/p&gt;
+&lt;p&gt;$$
+w^i_t \sim h(y_t \vert x^i_{t \vert t-1})
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Resampling)&lt;/p&gt;
+&lt;p&gt;Resampe $\hat{x}^i_{t \vert t-1}$ based on the likelihood $w^i_t ~~~ (i=1,\dots,M)$ .&lt;/p&gt;
+&lt;p&gt;Derive the filter distribution $p(x_t \vert y_{1:t})$ for any $x_t$:
+$$
+\begin{aligned}
+p(x_t \vert y_{1:t})
+&amp;amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\&lt;br&gt;
+&amp;amp;\approx \sum_{i=1}^{M} \frac{}{\sum_{i=1}^{M} } \delta(x_t - \hat{x}^i_{t \vert t-1})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Capitalist&#39;s Game</title>
+      <link>https://yumaloop.github.io/post/2020-04-05-adaptation-strategies-for-capitalism/</link>
+      <pubDate>Fri, 21 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-04-05-adaptation-strategies-for-capitalism/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/111743009/Frankfurt-Facades-by-Ingo-Juergens&#39; alt=&#39;Frankfurt Facades by Ingo Juergens on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/111743009/m%3D900/v2?sig=01f0547db1460ab77c620ba8181bf7d5ac38c2816f1aa262a9f543309c896823&#39; alt=&#39;Frankfurt Facades by Ingo Juergens on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;1-資本主義の原理&#34;&gt;1. 資本主義の原理&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;資本主義 - Capitalism&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;資本主義とは何か？を考える際には，資本主義ではないものは何か？を考え，その差分をまとめ直せば良い．資本主義の対義語は，共産主義（社会主義）になる．これらを排他的に比較すれば，その定義（政治的概念である&amp;quot;自由&amp;quot;や&amp;quot;民主主義&amp;quot;については除外する）は，次のようにまとめられると思う．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;資本主義：個人が資本を所有できる&lt;/li&gt;
+&lt;li&gt;共産主義：個人が資本を所有できない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;非常にシンプルな定義だが，僕は気に入っているし，この定義を使って文意解釈に苦難したことはない．要するに，何らかの文脈で「資本主義」というワードが使われた場合，そこでは私的財産の所有を認めるか・認めないかが言及されているのだ．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Note:&lt;/p&gt;
+&lt;p&gt;原理としての「資本主義/共産主義」2元論は非常にシンプルだが，実際の人類史では，これらを現実社会へ制度・システムとして導入し，この原理を駆動させるために，様々な法的・政治的なしくみが提案されている．しかし，再現性がない現象(=史実)については黙るのが科学のルールなので，ここでは立ち入らないこととする．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;資本 - Capital&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;資本とは，富を生産するための構成要素を指す抽象概念である．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;資本：生産要素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;資本は，広義では生産要素を指す用語であり，以降で扱うヒト・モノ・カネは全て資本とみなすこともできる．しかし，実際には，その社会的役割や歴史的意味に注意して，これらを分けて扱うことが多い．これは経済学が，自然科学ではなく社会科学たる所以である．すなわち，経済学が扱う範疇である「人間社会」の制度・システムには，法や政治が設計理念として深く関わっており，実際的・実用的な分析を行う際には，これらは分離不可能であるということである．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Note:&lt;/p&gt;
+&lt;p&gt;資本によって，我々が生産しているもの(=富)とは何か？という疑問が残る．結論から言うと，僕はまだ理解できていない（詳しい方に教えて欲しい）．以下に現時点での一応の解釈をまとめておく&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;アダム・スミスの時代に，当時の理論家は（抽象的な概念としての）「富」を理解するために思考を重ねた．その結果，国家における「富」を説明する際に，観測可能なもののうち，もっとも妥当な指標は，資本(=生産要素)だった．そのため「国家の富∝国家の生産力」と仮定し，その国の資本に注目した．&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;なお，「観測できない事実」については問題の範疇外とするか，あるいは妥当な仮定をおいて探求を進めるのが経験科学の作法なので，ここでは立ち入らないこととする．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;取引と市場 - Trading &amp;amp; markets&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我々が，経済学的視点で社会をみるとき，それはすなわち，我々が「取引」に着目することを意味する．「取引」とは「資本(=生産要素)の所有権の交換」であり，取引の傾向を分析することで，経済のミクロな状態を推定することができる．さらに，取引の集合に対して「市場」という概念を与え，取引の統計的傾向を分析することで，経済のマクロな状態を推定することができる．&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;2-資本主義社会に対する個人の適合戦略&#34;&gt;2. 資本主義社会に対する個人の適合戦略&lt;/h1&gt;
+&lt;p&gt;ここからは，資本主義の原理を踏まえた上で，われわれ個人が取るべき戦略について考えてみようと思う．ここでいう「戦略」とは，「行動選択」と同義である．なお，実際の社会で考慮すべき個別具体的な条件は考えず，あくまで資本主義の&amp;quot;原理&amp;quot;を表現するためのモデルとして，ゲームを導入していることに注意してほしい．&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;資本主義ゲーム - The capitalist&amp;rsquo;s game&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;個人にとって重要な問題は，ミクロな社会状況に対して，科学的な視点をもち，合理的に意思決定・行動選択を行うことである．ここでは，資本主義の原理を踏まえた以下のようなゲームを考えて，個人の適合戦略を考えてみる．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;社会：ゲーム世界&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;個人：プレイヤー&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;資本：プレイヤーの所有アイテム&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;資本主義経済：ゲームルール&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;取引：資本の所有権の交換&lt;/li&gt;
+&lt;li&gt;市場：取引の集合&lt;/li&gt;
+&lt;li&gt;価値：市場から統計的に推定される各資本の評価値&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;このゲームにおける各プレイヤーの目標は，&lt;strong&gt;「市場価値」が常に最大となるように所有する資本を選択し続けること&lt;/strong&gt;となる．ここで，「市場価値」とは，ゲーム参加者によって行われる取引（資本の所有権の交換）データ全体から，リアルタイムで統計的に推定された，各資本の評価値である．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Note:&lt;/p&gt;
+&lt;p&gt;資本価値の定義に「評価値」という表現を使ったが，これは一体何なのか？各資本の評価値は，取引が行われる市場によって異なるが，その算定メカニズムは「需要」と「供給」という抽象概念で説明される．例として，株式市場では，企業の所有権（株式）に対して評価値（株価）を与えているが，これは需要（買い注文）と供給（売り注文）によって算定される．&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;代表的な資本: ヒト・モノ・カネ&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;資本の分類については，法的分類や会計学的分類など種々である．ここでは，資本をヒト・モノ・カネに分けて，その具体例を考えてみる．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;＊代表的な資本（=私的財産）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ヒト（個人）：法的制約を根拠とした価値を持つ．&lt;/p&gt;
+&lt;p&gt;​	cf) 経済取引における行動主体　cf) 法人&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノ（消費財，生産財）：物理的制約を根拠とした価値をもつ．&lt;/p&gt;
+&lt;p&gt;​	cf) サービスも含む　ex）金・石油・土地　&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;カネ（現金，有価証券）：モノ・ヒトとの交換可能性により価値を持つ．&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;＊代表的な市場（=価値を測る評価関数）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ヒト：労働市場/雇用市場&lt;/li&gt;
+&lt;li&gt;モノ：財市場　　　　 　&lt;/li&gt;
+&lt;li&gt;カネ：資本市場/金融市場&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;＊変換規則&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ヒト→カネ（労働）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;カネ→モノ（消費）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノ→ヒト（教育）：ここでいうモノ/サービスとは，知識やスキルを指す&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノ→カネ（売却）：ほとんどのモノは，評価されない（中古品市場）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→適切な行動選択&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;＊市場に根ざした保有資本のポジショニング&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ヒト（就職，転職，副業）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノ（せどり，車や家，遺産相続）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;カネ（ポートフォリオ設計）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→適切な現状分析&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;＊生産力(=価値)は，経過時間に対して成長/減衰する&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ヒトの価値：UP/DOWN（知識と技術，管理，人間関係の質/量）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノの価値：UP/DOWN（骨董品や古酒，経年劣化）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;カネの価値：UP/DOWN（物価と金利，経済成長と株価）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→適切な未来予測&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;＊なぜ，金融市場に着目するべきか？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;カネは，法的・物理的制約の影響がもっとも小さい．
+&lt;ul&gt;
+&lt;li&gt;ヒトは法的制約を受ける：Ex.)労働時間の上限，勤務地の選択&lt;/li&gt;
+&lt;li&gt;モノは物理的制約を受ける：Ex.)石油埋蔵量の上限，人口上限&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→カネの市場価値は，定常状態に収束しないため，もっとも変化が激しい．&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>StatML | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/category/statml/</link>
+      <atom:link href="https://yumaloop.github.io/category/statml/index.xml" rel="self" type="application/rss+xml" />
+    <description>StatML</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Fri, 24 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>StatML</title>
+      <link>https://yumaloop.github.io/category/statml/</link>
+    </image>
+    
+    <item>
+      <title>Time-steady States on Systems</title>
+      <link>https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/</link>
+      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/</guid>
+      <description>&lt;h3 id=&#34;システムと定常状態&#34;&gt;システムと定常状態&lt;/h3&gt;
+&lt;p&gt;多くの動的モデル（Dynamic Model-System）は，定常状態（time-steady state）に至ることを目的として設計される．ここで，定常状態とは，「ある変数$X$に作用する，何らかの時変量（parameter $\theta_t$）や関数$L_t(x; \theta)$）が一定値に収束すること」と定義しておく．&lt;/p&gt;
+&lt;p&gt;そして，着目している動的モデルが定常状態に至るプロセスは，システム同定（System identification）と呼ばれ，定常状態を示した概念として，均衡（equilibrium）や平衡（balance）と呼ばれる用語が使われる．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8c%96%e5%ad%a6%e5%8f%8d%e5%bf%9c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;化学反応&lt;/a&gt;においては、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8f%af%e9%80%86%e5%8f%8d%e5%bf%9c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;可逆反応&lt;/a&gt;の生成物の変化量と出発物質の変化量が合致した状態を指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8c%96%e5%ad%a6%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;化学平衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8a%9b%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力学&lt;/a&gt;においては、物体に加わっている全ての&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8a%9b_%28%e7%89%a9%e7%90%86%e5%ad%a6%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力&lt;/a&gt;の合力と&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8a%9b%e3%81%ae%e3%83%a2%e3%83%bc%e3%83%a1%e3%83%b3%e3%83%88&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力のモーメント&lt;/a&gt;の和がともに 0 である状態を平衡と呼ぶ。&lt;a href=&#34;https://ja.wikipedia.org/w/index.php?title=%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1&amp;amp;action=edit&amp;amp;redlink=1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力学的平衡&lt;/a&gt;（&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e8%8b%b1%e8%aa%9e&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;英語&lt;/a&gt;: &lt;a href=&#34;https://en.wikipedia.org/wiki/Mechanical_equilibrium&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mechanical equilibrium&lt;/a&gt;）を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;熱力学&lt;/a&gt;においては通常、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;熱平衡&lt;/a&gt;、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;力学的平衡&lt;/a&gt;、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%8c%96%e5%ad%a6%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;化学平衡&lt;/a&gt;の三つを合わせて、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;熱力学的平衡&lt;/a&gt;とよぶ。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%b5%b1%e8%a8%88%e5%8a%9b%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;統計力学&lt;/a&gt;においては、系のエネルギー分布が、ボルツマン分布に従うことである。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;熱力学的平衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%89%a9%e7%90%86%e5%8c%96%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;物理化学&lt;/a&gt;においては、複数の物質相から構成される系において、相間の物質の出入りが合い等しい状態を指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%9b%b8%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;相平衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e9%9b%bb%e6%b0%97%e5%b7%a5%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;電気工学&lt;/a&gt;においては、信号源と負荷の間のインピーダンスが合致していることを指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e3%82%a4%e3%83%b3%e3%83%94%e3%83%bc%e3%83%80%e3%83%b3%e3%82%b9%e5%b9%b3%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;インピーダンス平衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e9%9b%bb%e6%b0%97%e5%9b%9e%e8%b7%af&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;電気回路&lt;/a&gt;においては、信号回路の双方が接地点に接続されていないことを指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%b9%b3%e8%a1%a1%e6%8e%a5%e7%b6%9a&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;平衡接続&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e6%83%85%e5%a0%b1%e5%b7%a5%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;情報工学&lt;/a&gt;においては、データ&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e6%9c%a8%e6%a7%8b%e9%80%a0_%28%e3%83%87%e3%83%bc%e3%82%bf%e6%a7%8b%e9%80%a0%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;木構造&lt;/a&gt;の任意の節においてその配下の節点の数が等しい状態を指す。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%94%9f%e6%85%8b%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;生態学&lt;/a&gt;においては、生物群集間の分布と個体数の変化が無い状態を指す。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%94%9f%e7%90%86%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;生理学&lt;/a&gt;においては、水平であることを認知することを指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%b9%b3%e8%a1%a1%e6%84%9f%e8%a6%9a&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;平衡感覚&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e7%b5%8c%e6%b8%88%e5%ad%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;経済学&lt;/a&gt;においては、&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e9%9c%80%e8%a6%81%e3%81%a8%e4%be%9b%e7%b5%a6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;需要と供給&lt;/a&gt;が釣り合って&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e4%be%a1%e6%a0%bc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;価格&lt;/a&gt;が不動になることなどを指す。&lt;a href=&#34;https://ja.wikipedia.org/wiki/%e5%9d%87%e8%a1%a1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;均衡&lt;/a&gt;を参照。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;連立(微分)方程式で記述できるため．&lt;/p&gt;
+&lt;h3 id=&#34;なぜ線形モデルが有用なのか&#34;&gt;なぜ線形モデルが有用なのか？&lt;/h3&gt;
+&lt;p&gt;答えはシンプルで，Taylor展開&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\frac{d x_1}{d t} &amp;amp;= f_1(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
+\frac{d x_2}{d t} &amp;amp;= f_2(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
+&amp;amp;\vdots \\&lt;br&gt;
+\frac{d x_n}{d t} &amp;amp;= f_n(x_1, \dots, x_n; \theta_1)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;このモデルが，定常状態にいる場合，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+f_1 = f_2 = \cdots = f_n = 0
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;が成り立つから，$n$個の変数${\bf x} = (x_1, x_2, \dots, x_n)$に対して，$n$個の方程式が得られる．この解がシステムの定常化となる．これを${\bf x}^* = (x_1^*, x_2^*, \dots, x_n^*)$とおくと，$f_1, f_2, \dots, f_n$に対して，点${\bf x}^*$の近傍でTaylor展開が可能になる．&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\frac{d x_1}{d t}
+= f_1(x_1, \dots, x_n; \theta_1)
+=&amp;amp; a_{11}(x_1 - x_1^*) + a_{12} {(x_2 - x_2^*)} + \cdots a_{1n} {(x_n - x_n^*)} + \\&lt;br&gt;
+&amp;amp; a_{111}{(x_1 - x_1^*)}^2 + a_{112}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{11n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
+&amp;amp; ~~ \vdots \\&lt;br&gt;
+&amp;amp; a_{11\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+\frac{d x_2}{d t}
+= f_2(x_1, \dots, x_n; \theta_1)
+=&amp;amp; a_{21}(x_1 - x_1^*) + a_{22} {(x_2 - x_2^*)} + \cdots a_{2n} {(x_n - x_n^*)} + \\&lt;br&gt;
+&amp;amp; a_{211}{(x_1 - x_1^*)}^2 + a_{212}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{21n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
+&amp;amp; ~~ \vdots \\&lt;br&gt;
+&amp;amp; a_{21\cdots1}{(x_1 - x_1^*)}^n + \cdots \\ \\&lt;br&gt;
+&amp;amp; ~~ \vdots \\ \\&lt;br&gt;
+\frac{d x_n}{d t}
+= f_n(x_1, \dots, x_n; \theta_1)
+=&amp;amp; a_{n1}(x_1 - x_1^*) + a_{n2} {(x_2 - x_2^*)} + \cdots a_{nn} {(x_n - x_n^*)} + \\&lt;br&gt;
+&amp;amp; a_{n11}{(x_1 - x_1^*)}^2 + a_{n12}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{n1n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
+&amp;amp; ~~ \vdots \\&lt;br&gt;
+&amp;amp; a_{n1\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;つまり，任意の微分可能関数$f_1, f_2, \dots, f_n$によって表現されたダイナミクスをもつ動的モデルは，（定常解の近傍では）任意のn次多項式によって近似できる．これにより，線形システムの妥当性が保証される．一般解は，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+x_1
+=&amp;amp; ~ x_1^*  + C_{11}e^{\lambda_1 t} + C_{12}e^{\lambda_2 t} + \cdots C_{1n}e^{\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{111}e^{2\lambda_1 t} + C_{112}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{11\cdots1}e^{n\lambda_1 t} + C_{11\cdots2}e^{n\lambda_2 t} + \cdots + C_{11\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+x_2
+=&amp;amp; ~ x_2^*  + C_{21}e^{\lambda_1 t} + C_{22}e^{\lambda_2 t} + \cdots C_{2n}e^{\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{211}e^{2\lambda_1 t} + C_{212}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{21\cdots1}e^{n\lambda_1 t} + C_{21\cdots2}e^{n\lambda_2 t} + \cdots + C_{21\cdots n}e^{n\lambda_n t} \\ \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ ~~ \vdots
+\ \&lt;br&gt;
+x_n
+=&amp;amp; ~ x_n^*  + C_{n1}e^{\lambda_1 t} + C_{n2}e^{\lambda_2 t} + \cdots C_{nn}e^{\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{n11}e^{2\lambda_1 t} + C_{n12}e^{2\lambda_2 t} + \cdots + C_{n1n}e^{2\lambda_n t} + \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
+&amp;amp; ~~~~~~~~~~ C_{n1\cdots1}e^{n\lambda_1 t} + C_{n1\cdots2}e^{n\lambda_2 t} + \cdots + C_{n1\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;となる．&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;モデルとは何か&#34;&gt;モデルとは何か？&lt;/h3&gt;
+&lt;p&gt;つまり，多くの分野において数理モデルとか計量モデルとか呼ばれるものは，以下の手続きを必要とする．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定常状態に至ることを目的とする&lt;strong&gt;動的モデル&lt;/strong&gt;を定義する&lt;/li&gt;
+&lt;li&gt;モデルの状態変化を&lt;strong&gt;最適化問題(過程&lt;/strong&gt;)として定式化する．&lt;/li&gt;
+&lt;li&gt;定常状態への収束が保証された&lt;strong&gt;最適化アルゴリズム&lt;/strong&gt;を考える&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;移動平均&#34;&gt;移動平均&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;カルマンフィルタ&lt;/li&gt;
+&lt;li&gt;Adamに置けるモメンタム&lt;/li&gt;
+&lt;li&gt;強化学習の報酬&lt;/li&gt;
+&lt;li&gt;ゲーム理論におけるFicticious Play&lt;/li&gt;
+&lt;li&gt;株価におけるテクニカル分析移動平均（ARMA）&lt;/li&gt;
+&lt;li&gt;(金融工学)バリュエーションにおけるDCF法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;移動平均とは何か？&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+m_t &amp;amp;= \gamma \cdot m_t − 1+η \cdot \frac{\partial L(w_t)}{\partial w} \\&lt;br&gt;
+w_{t+1} &amp;amp;= w_t - m_t
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+m_t = g_t + \gamma \cdot g_{t-1} + \gamma^2 \cdot g_{t-2} \cdots + \gamma^t \cdot g_{0}
+$$&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>State Space Model &amp; Particle Filter</title>
+      <link>https://yumaloop.github.io/post/2020-03-18-particle_filter/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-03-18-particle_filter/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/80813059/Flow-of-Time-by-Jimin--Jacob&#39; alt=&#39;Flow of Time... by Jimin  Jacob on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/80813059/m%3D900/v2?sig=9c99293070333accc348ef432437c6c0eeb6b87f5d14199485cae5d51d92e3db&#39; alt=&#39;Flow of Time... by Jimin  Jacob on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;State Space Model (SSM)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;State Space Model(SSM) is widely used in the field requiring the sequential estimation or online learning.
+This model is effective if you consider a system having two different variables; one completely represents the actual state but cannot be observed and the other partially represents the actual state but can be observed. Here, I call the former $x$ (state variable) and the latter $y$ (observation variable).&lt;/p&gt;
+&lt;p&gt;In SSM, we intruduce the following equations $F, H$ (or $f, h$) and identify them by observed data sample $[y_1, \dots, y_t]$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Equation of each state $x_t$ :&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+x_{t+1} &amp;amp;= F(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+x_{t+1} &amp;amp;\sim f(\cdot\vert x_t) ~~ (\text{Stochastic process})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Equation of each observation $y_t$ :&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+y_t &amp;amp;= H(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+y_t &amp;amp;\sim h(\cdot \vert x_t) ~~ (\text{Stochastic process})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Perticle filter&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;For each $i$ in $[1 \dots M]$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;(Prediction)&lt;/p&gt;
+&lt;p&gt;Derive prediction distribution $f(x_t \vert \cdot)$ depends on particles $\hat{x}_{t-1}$.&lt;/p&gt;
+&lt;p&gt;Sample $x^{i}_{t \vert t-1} ~~~ (i = 1, \dots, M)$ following $f(x_t \vert \cdot)$.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+x^{i}_{t \vert t-1} \sim f(x_t \vert \hat{x}_{t-1})
+\end{align}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Likelihood)&lt;/p&gt;
+&lt;p&gt;Derive the likelihood of $x^i_{t \vert t-1}$ from given sample data $y_t$ based on $h(\cdot)$&lt;/p&gt;
+&lt;p&gt;$$
+w^i_t \sim h(y_t \vert x^i_{t \vert t-1})
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Resampling)&lt;/p&gt;
+&lt;p&gt;Resampe $\hat{x}^i_{t \vert t-1}$ based on the likelihood $w^i_t ~~~ (i=1,\dots,M)$ .&lt;/p&gt;
+&lt;p&gt;Derive the filter distribution $p(x_t \vert y_{1:t})$ for any $x_t$:
+$$
+\begin{aligned}
+p(x_t \vert y_{1:t})
+&amp;amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\&lt;br&gt;
+&amp;amp;\approx \sum_{i=1}^{M} \frac{}{\sum_{i=1}^{M} } \delta(x_t - \hat{x}^i_{t \vert t-1})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Free energy and Bayes inference</title>
+      <link>https://yumaloop.github.io/post/2020-03-10-free_energy_on_bayes_inference/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-03-10-free_energy_on_bayes_inference/</guid>
+      <description>&lt;h3 id=&#34;平均場近似と自由エネルギー&#34;&gt;平均場近似と自由エネルギー&lt;/h3&gt;
+&lt;p&gt;ある変数$X$のとりうるすべての状態(実現値)$x$に対して，何らかのエネルギー関数$\phi(x)$が与えられたとする．このとき，変数$X$のGibbs分布（Boltzmann分布）:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+p(x)
+&amp;amp;= \frac{\exp (- \beta \phi(x))}{\int_X \exp (- \beta \phi(x))}
+= \frac{\exp (- \beta \phi(x))}{Z^{\phi}(\beta)}
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;を考える．このとき，Gibbs分布$p(x)$と任意の近似分布$q(x)$とのKL-divergence:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+D_{KL}(q \vert\vert p) := \int_{X} q(x) \log \frac{q(x)}{p(x)}
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;は以下のように分解できる．&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+D_{KL}(q \vert\vert p)
+&amp;amp;= \beta \int_X q(x)\phi(x) - \left\{ - \int_X q(x)\log q(x) \right\} + \log \int_X \exp(-\beta \phi(x)) \\&lt;br&gt;
+&amp;amp;= \beta~ \mathbb{E}_{x \sim q}[\phi(x)] - H_q(X) + \log Z^{\phi}(\beta) \\&lt;br&gt;
+&amp;amp;= \beta~ (\text{Internal energy}) - (\text{Entropy}) + (\text{Const.}) \\&lt;br&gt;
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;いま，近似分布$q(x)$に対する汎関数として，自由エネルギー:&lt;/p&gt;
+&lt;p&gt;$$
+F^{\phi}(q) := \mathbb{E}_{x \sim q}[\phi(x)] - \frac{1}{\beta}H_q(X) ~~~ (\text{Free energy})
+$$&lt;/p&gt;
+&lt;p&gt;を定義すれば，&lt;/p&gt;
+&lt;p&gt;$$
+D_{KL}(q \vert\vert p)  = \beta~ F^{\phi}(q) + \log Z^{\phi}(\beta)
+$$&lt;/p&gt;
+&lt;p&gt;となるから，$q(x)$による$p(x)$の近似問題は次式で表現できる．&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\underset{q}{\rm min} ~ D_{KL}(p \vert\vert q) &amp;amp;=
+\underset{q}{\rm min} ~ F^{\phi}(q)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;また．自由エネルギー$F^{\phi}(q)$の最小値は，&lt;/p&gt;
+&lt;p&gt;$$
+{F^{\phi}}^{*}(q) = - \frac{1}{\beta} \log \int_X \exp (-\beta \phi(x)) = - \frac{1}{\beta} \log Z^{\phi}(\beta)
+$$&lt;/p&gt;
+&lt;p&gt;となる．すなわち，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+{F^{\phi}}(q)
+= - \frac{1}{\beta} \log Z^{\phi}(\beta)
+~~ \Leftrightarrow ~~
+D_{KL}(p \vert\vert q) = 0
+~~ \Leftrightarrow ~~
+p(\cdot) \equiv	 q(\cdot)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;となる．&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;熱力学統計力学との関係&#34;&gt;熱力学(統計力学)との関係&lt;/h3&gt;
+&lt;p&gt;温度$T$，内部エネルギー$U$，エントロピー$S$に対して，Helmholtzの自由エネルギー$F$は以下のように定義される．&lt;/p&gt;
+&lt;p&gt;$$
+F = U - TS
+$$&lt;/p&gt;
+&lt;p&gt;$F^{\phi}(q)$の定義式で，$F = F^{\phi}(q)$，$U = \mathbb{E}_{x \sim q}[\phi(x)]$，$S = H_q(X)$とおけば，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\beta F &amp;amp;= \beta U - S \\&lt;br&gt;
+F &amp;amp;= U - \frac{1}{\beta} S
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;となるから，汎関数$F^{\phi}(q)$は，熱力学におけるHelmholtzの自由エネルギー$F$と類似した形式を持っていることがわかる．なお，Bayes理論において定数$\beta$は「逆温度」と呼ばれるが，これは温度$T$に由来する．&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;bayes脳やfepとの関係&#34;&gt;Bayes脳やFEPとの関係&lt;/h3&gt;
+&lt;p&gt;神経科学の分野でK.Fristonによって提唱された自由エネルギー原理(Free energy principle, FEP)は，上にある汎関数$F^{\phi}(q)$を変分推論を組み合わせたものである（と解釈できる）．ここでは，ELBOとの関係にのみ触れておく．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;ELBOの定義式:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+(\text{Evidence})
+&amp;amp;= \log p(y) \\&lt;br&gt;
+&amp;amp;\geq \mathbb{E}_{\theta \sim q}\left[ \log p(y, \theta) \right] - \mathbb{E}_{\theta \sim q} \left[ \log q(\theta) \right] \\&lt;br&gt;
+&amp;amp;= \mathcal{L}_{ELBO}(q) \\&lt;br&gt;
+&amp;amp;= (\text{Evidence Lower Bound})
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;と&lt;a href=&#34;[https://www.fil.ion.ucl.ac.uk/~karl/The%20free-energy%20principle%20-%20a%20rough%20guide%20to%20the%20brain.pdf](https://www.fil.ion.ucl.ac.uk/~karl/The free-energy principle - a rough guide to the brain.pdf)&#34;&gt;FristonのCell論文(2009)&lt;/a&gt;にある自由エネルギーの定義式&lt;/p&gt;
+&lt;p&gt;$$
+F(y) = - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)]
+$$&lt;/p&gt;
+&lt;p&gt;を比べると，以下の関係が得られる．&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+(\text{Surprise})
+&amp;amp;= - \log p(y) \\&lt;br&gt;
+&amp;amp;\leq - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)] \\&lt;br&gt;
+&amp;amp;= -\mathcal{L}_{ELBO}(q) \\&lt;br&gt;
+&amp;amp;= F(y) \\&lt;br&gt;
+&amp;amp;= (\text{Free energy})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;つまり，Fristonの自由エネルギー$F(y)$は「脳の外部環境$Y$に対する観測データ${\{y_t\}}_{t=1}^{n}$の対数尤度下限(ELBO)に$-1$をかけたもの」である．なお，Bayes推論では,対数尤度$\log p(y)$をエビデンス(Evidence)といい，情報理論では負の対数尤度$-\log p(y)$をサプライズ(Surprise)という．&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.fil.ion.ucl.ac.uk/~karl/The%20free-energy%20principle%20-%20a%20rough%20guide%20to%20the%20brain.pdf&#34;&gt;FristonのCell論文(2009)&lt;/a&gt;にあるエージェントの行動$\alpha$や脳の内部状態$\mu$の更新式:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\alpha^{*} &amp;amp;= \underset{\alpha}{\rm argmin} ~ F(y) \\&lt;br&gt;
+\mu^{*} &amp;amp;= \underset{\mu}{\rm argmin} ~ F(y)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;における$F(y)$の最小化は，「脳の外部環境$Y$に対する観測データ${\{y_t\}}_{t=1}^{n}$の対数尤度(Evidence)」を最大化する過程を表している．ELBOとFEPの関係をまとめると以下の表のようになる．&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;原理&lt;/th&gt;
+&lt;th&gt;Jensenの不等式&lt;/th&gt;
+&lt;th&gt;Bayes推論&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ELBO&lt;/td&gt;
+&lt;td&gt;Evidence: $ \log p(y)$ の最大化&lt;/td&gt;
+&lt;td&gt;$\text{Evidence} \geq \mathcal{L}_{ELBO}$&lt;/td&gt;
+&lt;td&gt;下限$\mathcal{L}_{ELBO}$を最大化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;FEP&lt;/td&gt;
+&lt;td&gt;Surprise: $- \log p(y)$ の最小化&lt;/td&gt;
+&lt;td&gt;$\text{Surprise} \leq F$&lt;/td&gt;
+&lt;td&gt;上限$F$を最小化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;執筆時の個人的な理解としては，FEPにおける各変数$\theta, \mu, y, \alpha$の更新規則は，「観測データを用いた最尤推定」そのものだと思っている．論文で提唱されている自由エネルギー$F(y)$最小化は，Variational BayesにおけるELBO最大化と同じであるから，むしろ4つの変数間のループ構造（グラフ表現）の方が重要なのだろう．&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.fil.ion.ucl.ac.uk/~karl/The%20free-energy%20principle%20A%20unified%20brain%20theory.pdf&#34;&gt;FristonのNature論文(2010)&lt;/a&gt;では，自由エネルギー$F(y)$の定義がより複雑化しており，よく理解していない．&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Deriving ELBO</title>
+      <link>https://yumaloop.github.io/post/2020-02-24-deriving-elbo/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-02-24-deriving-elbo/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/1020528836/Untitled-by-Vladimir-Maric&#39; alt=&#39;Untitled by Vladimir Maric on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/1020528836/m%3D900/v2?sig=9c4001aaf8730c97353ae102428c6bc64818166778d359c4979d17eb42cf809d&#39; alt=&#39;Untitled by Vladimir Maric on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;Evidence Lower Bound (ELBO) is widely used in variational inference. Recently, according to the massive success of DeepLearning and related models, variational inference (and its technic) gains exposure in the filed of representation learning. For instance, stochastic generative models such as VAE and GAN are famous for their variational aspects.&lt;/p&gt;
+&lt;h2 id=&#34;elbo&#34;&gt;ELBO&lt;/h2&gt;
+&lt;p&gt;Evidence Lower Bound (ELBO) is a lower bound of Log likelihood of $X$ (Evidence) in the model. The below inequality holds based on Cauchy-Schwartz inequality because of the convexity of log function.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+(\text{Evidence})
+&amp;amp;= \log p(x) \\&lt;br&gt;
+&amp;amp;= \log \int_{Z} p(x,z) \\&lt;br&gt;
+&amp;amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\&lt;br&gt;
+&amp;amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\&lt;br&gt;
+&amp;amp;= \log \mathbb{E}_{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
+&amp;amp;\geq \mathbb{E}_{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= ELBO(q) ~~~ (\text{Evidence Lower Bound, ELBO})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;So that, we can obtain the optimization formula below.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\underset{\theta}{\rm max} ~ \log p_{\theta}(x)
+&amp;amp;= \underset{q}{\rm max} ~ ELBO(q)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;kl-divergence-and-elbo&#34;&gt;KL-divergence and ELBO&lt;/h2&gt;
+&lt;p&gt;$$
+\begin{aligned}
+D_{KL}( q(z) \vert\vert p(z \vert x) )
+&amp;amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\&lt;br&gt;
+&amp;amp;= - H_q(Z) - \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right]
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;ELBO is considered as the difference between Log likelihood  $\log p(x)$ and KL-divergence $D_{KL}( q(z) \vert\vert p(z \vert x) )$ as below.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+ELBO
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\&lt;br&gt;
+&amp;amp;= \log p(x) - D_{KL}( q(z) \vert\vert p(z \vert x) )
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;So that, we can obtain the below relation.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\underset{\theta}{\rm max} ~ \log p_{\theta}(x)
+&amp;amp;= \underset{q}{\rm max} ~ ELBO(q) \\&lt;br&gt;
+&amp;amp;= \underset{q}{\rm min} ~ D_{KL}( q(z) \vert\vert p(z|x) )
+\end{align}
+$$
+\&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Counterfactual Regret Minimization</title>
+      <link>https://yumaloop.github.io/post/2020-02-10-counterfactual-regret-minimization/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-02-10-counterfactual-regret-minimization/</guid>
+      <description>&lt;p&gt;In this post, I introduce you the Counterfactual Regret Minimization (CFR Algorithm). It is mainly used for the algorithm to figure out the optimal strategy of a extensive-form game with incomplete information such as Poker and Mahjong.&lt;/p&gt;
+&lt;h3 id=&#34;extensive-form-game&#34;&gt;Extensive-form Game&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Set, variables
+&lt;ul&gt;
+&lt;li&gt;$N: $ set of players
+&lt;ul&gt;
+&lt;li&gt;$i \in N$: player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$A :$ set of actions
+&lt;ul&gt;
+&lt;li&gt;$a \in A: $ action&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$H: $set of sequences
+&lt;ul&gt;
+&lt;li&gt;$h \in H: $ sequences (= possible history of actions, $h = (a_1, \dots, a_t$)&lt;/li&gt;
+&lt;li&gt;$Z \subseteq H: $ set of terminal histories. $Z = {z \in H \vert \forall h \in H, z \notin h }$&lt;/li&gt;
+&lt;li&gt;$z \in Z$: sea&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Function, relations
+&lt;ul&gt;
+&lt;li&gt;$u_i: Z \to \mathbb{R}: $ utility function of player $i$&lt;/li&gt;
+&lt;li&gt;$\sigma_i: A \to [0,1]$ a strategy of player $i$, probability distribution on action set $A$.&lt;/li&gt;
+&lt;li&gt;$\sigma~: A^N \to [0,1]$ a strategy profile, $\sigma := (\sigma_1, \dots, \sigma_N)$&lt;/li&gt;
+&lt;li&gt;$\pi^{\sigma}&lt;em&gt;i: H \to [0,1]: $ probability of history $h$ under a strategy $$\sigma&lt;/em&gt;$ of player $i$&lt;/li&gt;
+&lt;li&gt;$\pi^{\sigma}: H^N \to [0,1]: $ probability of history $h$ under a strategy profile $\sigma$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then, you can also interplate $u_i$ as the function mapping a storategy profile $\sigma$ to its utility.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+u_i(\sigma)
+&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\&lt;br&gt;
+&amp;amp;= \sum_{h \in Z} u_i(h) \prod_{i \in N} \pi^{\sigma}_i(h)
+\end{align}
+$$
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nash-equilibrium&#34;&gt;Nash equilibrium&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; $(\text{Nash equilibrium})$&lt;/p&gt;
+&lt;p&gt;In $N$-player extensive game, a strategy profile $\acute{\sigma} := (\acute{\sigma_1}, \dots, \acute{\sigma_N})$ is the Nash equilibrium if and only if the followings holds.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N})
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N})
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
+&amp;amp;~ \vdots \\&lt;br&gt;
+u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N})
+&amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition: $\text{(}\varepsilon\text{-Nash equilibrium)}$&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In $N$-player extensive game, a strategy profile $\acute{\sigma} := (\acute{\sigma_1}, \dots, \acute{\sigma_N})$ is the $\varepsilon$-Nash equilibrium if and only if the followings holds when $\forall \varepsilon \geq 0$ is given.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
+&amp;amp;~ \vdots \\&lt;br&gt;
+u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
+&amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;regret-matching&#34;&gt;Regret matching&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Average overall regret of player $i$ at time $T$：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+R_i^T
+:= \underset{\sigma_i^*}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^*, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Average strategy for player $i$ from time $1$ to $T$：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{align}
+\overline{\sigma}_i^t(I)(a)
+&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\&lt;br&gt;
+&amp;amp;= \frac{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h) \cdot \sigma^t(h)(a)}{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h)}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;If the average overall regret holds $R_i^T \leq \varepsilon$, the average strategy $\overline{\sigma}_i^t(I)(a) $ is $2 \varepsilon$-Nash equilibrium for player $i$ in time $t$. So that, in order to derive Nash equilibrium, we should minimize the average overall regret $R_i^T$ or its upper bound $\varepsilon$ according to $R_i^T \to 0 ~~ (\varepsilon \to 0)$.&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;cfr-algorithm&#34;&gt;CFR Algorithm&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Counterfactual utility：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{align}
+u_i(\sigma, I) = \frac{\sum_{h \in H, h&#39; \in Z} \pi_{-i}^{\sigma}(h)\pi^{\sigma}(h,h&#39;)u_i(h) }{\pi_{-i}^{\sigma}(I)}
+\end{align}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;immediate counteractual regret of action $a$ in Information set $I$:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{aligned}
+R_{i,imm}^{T}(I, a)
+:=
+\frac{1}{T} \sum_{t=1}^{T}
+\pi_{-i}^{\sigma^t}(I)
+\left(
+u_i(\sigma^t_{I \to a}, I) - u_i(\sigma^t, I)
+\right)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Immediate counterfactual regret of Information set $I$：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{aligned}
+R_{i,imm}^{T}(I)
+&amp;amp;:= \underset{a \in A(I)}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T}
+\pi_{-i}^{\sigma^t}(I)
+\left(
+u_i(\sigma^t_{I \to a}, I) - u_i(\sigma^t, I)
+\right)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;The following inequality holds for &lt;strong&gt;the average overall regret&lt;/strong&gt; $R_i^T $ and &lt;strong&gt;the immediate counterfactual regret&lt;/strong&gt;  $R_{i,imm}^{T}(I)$:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+R_i^T
+\leq \sum_{I \in \mathcal{I}_i} &amp;amp;R_{i,imm}^{T,+}(I) \\&lt;br&gt;
+where ~~~
+&amp;amp;R_{i,imm}^{T, +}(I)
+:= max(R_{i,imm}^{T}(I), 0)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;So that, we obtain the sufficient condition of $R_{i,imm}^{T}(I)$  for the average strategy $\overline{\sigma}_i^t(I)(a)$ to become a Nash equilibrium strategy as below.&lt;/p&gt;
+&lt;p&gt;$$
+\sum_{I \in \mathcal{I}_i} R_{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
+$$&lt;/p&gt;
+&lt;p&gt;Now all we need is to minimize the immediate counterfactual regret  $R_{i,imm}^{T}(I)$.&lt;/p&gt;
+&lt;p&gt;In addition, as can be seen from the above formula, the computational complexity of the CFR algorithm depends on the number of information sets $I$. Also, to avoid the complete search of game tree (searching all information sets $I$), subsequent algorithms such as CFR + propose an abstraction of the game state.&lt;/p&gt;
+&lt;h3 id=&#34;python-code-to-run-cfr-algorithm-for-kuhn-poker&#34;&gt;Python code to run CFR algorithm for Kuhn Poker&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+
+# Number of actions a player can take at a decision node.
+_N_ACTIONS = 2
+_N_CARDS = 3
+
+def main():
+    &amp;quot;&amp;quot;&amp;quot;
+    Run iterations of counterfactual regret minimization algorithm.
+    &amp;quot;&amp;quot;&amp;quot;
+    i_map = {}  # map of information sets
+    n_iterations = 10000
+    expected_game_value = 0
+
+    for _ in range(n_iterations):
+        expected_game_value += cfr(i_map)
+        for _, v in i_map.items():
+            v.next_strategy()
+
+    expected_game_value /= n_iterations
+    display_results(expected_game_value, i_map)
+
+
+def cfr(i_map, history=&amp;quot;&amp;quot;, card_1=-1, card_2=-1, pr_1=1, pr_2=1, pr_c=1):
+    &amp;quot;&amp;quot;&amp;quot;
+    Counterfactual regret minimization algorithm.
+    Parameters
+    ----------
+    i_map: dict
+        Dictionary of all information sets.
+    history : [{&#39;r&#39;, &#39;c&#39;, &#39;b&#39;}], str
+        A string representation of the game tree path we have taken.
+        Each character of the string represents a single action:
+        &#39;r&#39;: random chance action
+        &#39;c&#39;: check action
+        &#39;b&#39;: bet action
+    card_1 : (0, 2), int
+        player A&#39;s card
+    card_2 : (0, 2), int
+        player B&#39;s card
+    pr_1 : (0, 1.0), float
+        The probability that player A reaches `history`.
+    pr_2 : (0, 1.0), float
+        The probability that player B reaches `history`.
+    pr_c: (0, 1.0), float
+        The probability contribution of chance events to reach `history`.
+    &amp;quot;&amp;quot;&amp;quot;
+    if is_chance_node(history):
+        return chance_util(i_map)
+    if is_terminal(history):
+        return terminal_util(history, card_1, card_2)
+
+    n = len(history)
+    is_player_1 = n % 2 == 0
+    info_set = get_info_set(i_map, card_1 if is_player_1 else card_2, history)
+
+    strategy = info_set.strategy
+    if is_player_1:
+        info_set.reach_pr += pr_1
+    else:
+        info_set.reach_pr += pr_2
+
+    # Counterfactual utility per action.
+    action_utils = np.zeros(_N_ACTIONS)
+
+    for i, action in enumerate([&amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;]):
+        next_history = history + action
+        if is_player_1:
+            action_utils[i] = -1 * cfr(i_map, next_history, card_1, card_2, pr_1 * strategy[i], pr_2, pr_c)
+        else:
+            action_utils[i] = -1 * cfr(i_map, next_history, card_1, card_2, pr_1, pr_2 * strategy[i], pr_c)
+
+    # Utility of information set.
+    util = sum(action_utils * strategy)
+    regrets = action_utils - util
+    if is_player_1:
+        info_set.regret_sum += pr_2 * pr_c * regrets
+    else:
+        info_set.regret_sum += pr_1 * pr_c * regrets
+
+    return util
+
+def is_chance_node(history):
+    &amp;quot;&amp;quot;&amp;quot;
+    Determine if we are at a chance node based on tree history.
+    &amp;quot;&amp;quot;&amp;quot;
+    return history == &amp;quot;&amp;quot;
+
+def chance_util(i_map):
+    expected_value = 0
+    n_possibilities = 6
+    for i in range(_N_CARDS):
+        for j in range(_N_CARDS):
+            if i != j:
+                expected_value += cfr(i_map, &amp;quot;rr&amp;quot;, i, j, 1, 1, 1/n_possibilities)
+    return expected_value/n_possibilities
+
+
+def is_terminal(history):
+    possibilities = { &amp;quot;rrcc&amp;quot;: True, &amp;quot;rrcbc&amp;quot;: True,
+                     &amp;quot;rrcbb&amp;quot;: True, &amp;quot;rrbc&amp;quot;: True, &amp;quot;rrbb&amp;quot;: True}
+    return history in possibilities
+
+def terminal_util(history, card_1, card_2):
+    n = len(history)
+    card_player = card_1 if n % 2 == 0 else card_2
+    card_opponent = card_2 if n % 2 == 0 else card_1
+
+    if history == &amp;quot;rrcbc&amp;quot; or history == &amp;quot;rrbc&amp;quot;:
+        # Last player folded. The current player wins.
+        return 1
+    elif history == &amp;quot;rrcc&amp;quot;:
+        # Showdown with no bets
+        return 1 if card_player &amp;gt; card_opponent else -1
+
+    # Showdown with 1 bet
+    assert(history == &amp;quot;rrcbb&amp;quot; or history == &amp;quot;rrbb&amp;quot;)
+    return 2 if card_player &amp;gt; card_opponent else -2
+
+def card_str(card):
+    if card == 0:
+        return &amp;quot;J&amp;quot;
+    elif card == 1:
+        return &amp;quot;Q&amp;quot;
+    elif card == 2:
+        return &amp;quot;K&amp;quot;
+
+def get_info_set(i_map, card, history):
+    &amp;quot;&amp;quot;&amp;quot;
+    Retrieve information set from dictionary.
+    &amp;quot;&amp;quot;&amp;quot;
+    key = card_str(card) + &amp;quot; &amp;quot; + history
+    info_set = None
+
+    if key not in i_map:
+        info_set = InformationSet(key)
+        i_map[key] = info_set
+        return info_set
+
+    return i_map[key]
+
+class InformationSet():
+    def __init__(self, key):
+        self.key = key
+        self.regret_sum = np.zeros(_N_ACTIONS)
+        self.strategy_sum = np.zeros(_N_ACTIONS)
+        self.strategy = np.repeat(1/_N_ACTIONS, _N_ACTIONS)
+        self.reach_pr = 0
+        self.reach_pr_sum = 0
+        
+    def next_strategy(self):
+        self.strategy_sum += self.reach_pr * self.strategy
+        self.strategy = self.calc_strategy()
+        self.reach_pr_sum += self.reach_pr
+        self.reach_pr = 0
+
+    def calc_strategy(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        Calculate current strategy from the sum of regret.
+        &amp;quot;&amp;quot;&amp;quot;
+        strategy = self.make_positive(self.regret_sum)
+        total = sum(strategy)
+        if total &amp;gt; 0:
+            strategy = strategy / total
+        else:
+            n = _N_ACTIONS
+            strategy = np.repeat(1/n, n)
+
+        return strategy
+
+    def get_average_strategy(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        Calculate average strategy over all iterations. This is the
+        Nash equilibrium strategy.
+        &amp;quot;&amp;quot;&amp;quot;
+        strategy = self.strategy_sum / self.reach_pr_sum
+
+        # Purify to remove actions that are likely a mistake
+        strategy = np.where(strategy &amp;lt; 0.001, 0, strategy)
+
+        # Re-normalize
+        total = sum(strategy)
+        strategy /= total
+
+        return strategy
+
+    def make_positive(self, x):
+        return np.where(x &amp;gt; 0, x, 0)
+
+    def __str__(self):
+        strategies = [&#39;{:03.2f}&#39;.format(x)
+                      for x in self.get_average_strategy()]
+        return &#39;{} {}&#39;.format(self.key.ljust(6), strategies)
+
+def display_results(ev, i_map):
+    print(&#39;player 1 expected value: {}&#39;.format(ev))
+    print(&#39;player 2 expected value: {}&#39;.format(-1 * ev))
+
+    print()
+    print(&#39;player 1 strategies:&#39;)
+    sorted_items = sorted(i_map.items(), key=lambda x: x[0])
+    for _, v in filter(lambda x: len(x[0]) % 2 == 0, sorted_items):
+        print(v)
+    print()
+    print(&#39;player 2 strategies:&#39;)
+    for _, v in filter(lambda x: len(x[0]) % 2 == 1, sorted_items):
+        print(v)
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    main()
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>EM Algorithm</title>
+      <link>https://yumaloop.github.io/post/2019-09-25-em-algorithm/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2019-09-25-em-algorithm/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/1002517180/The-algorithm-by-Luca-Rovatti&#39; alt=&#39;The algorithm... by Luca Rovatti on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/1002517180/m%3D900/v2?sig=038077982809b60781286b9e0d94cd3b5dd1dba4a97d80d27302a7829d340618&#39; alt=&#39;The algorithm... by Luca Rovatti on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;​	EM algorithm is &lt;strong&gt;an algorithm for deriving the maximum likelihood estimator (MLE)&lt;/strong&gt;, which is generally applied to statistical methods for incomplete data. Originally, the concept of &lt;strong&gt;“incomplete data and complete data”&lt;/strong&gt; was established to handle missing data, but by extending the definition, it can be applied to cut data, censored data, mixed distribution models, Robust distribution models, and latent data. It can also be applied to variable models, and Bayesian modeling.&lt;/p&gt;
+&lt;p&gt;​	Also, a number of statistical approach for clustering and unsupervised learning (eg, k-means, Gaussian mixture models) can be &lt;strong&gt;generalized&lt;/strong&gt; as EM algorithms when focusing on the computational process. In addition, researches on analyzing the EM algorithm from the viewpoint of &lt;strong&gt;information geometry&lt;/strong&gt; has been active, and applying EM algorithm to the stochastic model including an exponential family can be summarized in the form of &lt;strong&gt;e-projection / m-projection&lt;/strong&gt;.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;1-statistical-inference&#34;&gt;1. Statistical inference&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Objectives: To find out the probability distribution $q(x)$ that a certain variable $x \in X$ follows.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Namely, when considering a stochastic model $p(x \vert \theta)$ determined by the parameter $\theta \in \Theta$ and detecting the optimal parameter $\theta^{*} \in \Theta$ from dataset $ \mathcal{D} := {\{x_i\}}_{i=1}^{n}$, the follwing Approximation holds.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+x \sim q(x) \approx p(x|\theta)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;This is called a statistical inference (or statistical estimation).&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;2-maximum-likelihood-estimation&#34;&gt;2. Maximum likelihood estimation&lt;/h2&gt;
+&lt;p&gt;The most basic algorithm for statistical inference is maximum likelihood estimation (MLE). A log likelihood function of the stochastic model $p(x \vert \theta)$ is defined as&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\ell(\theta | x) := \log p(x | \theta)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;and an empirical objective function of $\theta$:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+J(\theta) := \frac{1}{n} \sum_{i=1}^{n} \ell(\theta | x_i)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;that depends on dataset $ \mathcal{D} := {{x_i}}_{i=1}^{n}$ can be obtained, MLE of parameter $\theta$ is derived as follows.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\hat{\theta}_{MLE} = \underset{\theta \in \Theta}{\rm argmax} ~ J(\theta)
+\end{align}
+$$&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;3-em-algorithm&#34;&gt;3. EM algorithm&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s define the following data categories.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Complete data $Y \in \mathcal{Y}$ : &lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;not observable&lt;/strong&gt; but completely follows the true distribution $p(y)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Imcomplete data $X \in \mathcal{X}$ : &lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;observable but &lt;strong&gt;not completely follows&lt;/strong&gt; the true distribution $p(x)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In general, the relationship complete data $y$ and incomplete data $x$ is a one-to-many relationship. but here, as a convenient assumption, I introduce a latent variable $z \in Z$ to express this constraint, that is assume $y = [x, z]$ holds. Considering the stochastic model for the complete data $x$,&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+p(y | \theta) = p(x,z | \theta)
+\end{align}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Complete data $\{X,Z\} \in \mathcal{X \times Z}$ : &lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;not observable&lt;/strong&gt; but completely follows the true distribution $p(x,z)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Imcomplete data $X \in \mathcal{X}$ : &lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;observable but &lt;strong&gt;not completely follows&lt;/strong&gt; the true distribution $p(x)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;data sample $x_i$ cannot be observed and its likelihood $p(x_i \vert \theta)$ cannot be calculated. However, for pair data sample $\{x_i, z_i\}$ can be observed and its likelihood $p(x_i, z_i \vert \theta)$ can be calculated.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+p(x_i | \theta)
+&amp;amp;= \int_{Z} p(x_i, z_i | \theta) ~ dz \&lt;br&gt;
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;By using this formula, the estimated value of $\hat{\theta}_{MLE}$ can be obtained by approximating $p(x,z \vert \theta)$, the likelihood function of complete data $\{x, z\}$. The procedure to derive the estimated value of $\hat{\theta}_{MLE}$ is called EM algorithm because it is an iterative method that repeats E-step and M-step alternately.&lt;/p&gt;
+&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;EM algorithm&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Initialize $\theta$ with $\theta^{0}$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For each step $t$:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;E Step&lt;/strong&gt;: Update the expectation value $Q$.&lt;/p&gt;
+&lt;p&gt;$$ \begin{aligned} Q(\theta | \theta^{(t)}) &amp;amp;= \mathbb{E}_{z \sim p(z \vert x, \theta^{(t)})} \left[ \log p(x, z \vert \theta)  \right] \\ &amp;amp;\simeq \sum_{i=1}^{n} p(z_i \vert x_i, \theta^{(t)}) \log p(x_i, z_i \vert \theta) \\ &amp;amp;= \sum_{i=1}^{n} p(z_i \vert x_i, \theta^{(t)}) \log p(z_i \vert x_i, \theta) + Const. \end{aligned}$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;M Step&lt;/strong&gt;: Derive the optimal parameter ${\theta}^{(t+1)}$ that maximize $Q$ value.&lt;/p&gt;
+&lt;p&gt;$$\begin{aligned} {\theta}^{(t+1)} &amp;amp;= \underset{\theta \in \Theta}{\rm argmax} ~ Q(\theta \vert {\theta}^{(t)}) \end{aligned}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Consider the convergence value $\theta^{(\infty)}$ as the algorithm output $\hat{\theta}_{EM}$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;p&gt;As a result, the estimated value of $\hat{\theta}_{MLE}$ is derived as $\hat{\theta}_{EM}$ and the following holds.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\hat{\theta}_{MLE} \approx \hat{\theta}_{EM}, ~~~
+p(x|\hat{\theta}_{MLE} ) \approx p(x|\hat{\theta}_{EM} )
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;Also, the summarized formula of calculations in E step and M step is as follows.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;For each step $t$:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EM Step&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;$$\begin{align} \theta^{(t+1)} &amp;amp;= \underset{\theta \in \Theta}{\rm argmax} ~ \mathbb{E}_{z \sim p(z \vert x, \theta^{(t)})} \left[ \log p(x, z \vert \theta)  \right] \\ &amp;amp;= \underset{\theta \in \Theta}{\rm argmax} ~ \sum_{i=1}^{n} p(z_i \vert x_i, \theta^{(t)}) \log p(x_i, z_i \vert \theta) \end{align} $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://users.isr.ist.utl.pt/~wurmd/Livros/school/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf&#34;&gt;PRML Chapter 9: Mixture models and EM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ebsa.ism.ac.jp/ebooks/sites/default/files/ebook/1881/pdf/vol3_ch9.pdf&#34;&gt;9章 EMアルゴリズム - 「21 世紀の統計科学」第 III 巻 日本統計学会, 2008&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://staff.aist.go.jp/s.akaho/papers/josho-main.pdf&#34;&gt;解説 EMアルゴリズムの幾何学 - 赤穂昭太郎, 電子技術総合研究所&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ism.ac.jp/~shiro/papers/books/embook2000.pdf&#34;&gt;EMアルゴリズムと神経回路網, 2000, 統計数理研究所&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kullback-Leibler Divergence</title>
+      <link>https://yumaloop.github.io/post/2018-04-19-kl-divergence/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2018-04-19-kl-divergence/</guid>
+      <description>&lt;p&gt;KL-divergence frequently appears in many fields such as statistics and information theory. It is defined as the &lt;strong&gt;expected value&lt;/strong&gt; of &lt;strong&gt;logarithmic&lt;/strong&gt; transformation of &lt;strong&gt;likelihood ratio&lt;/strong&gt;. Note that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;expected value: weighted integration with probability density.&lt;/li&gt;
+&lt;li&gt;logarithmic transformation: conversion multiplication to linear combination that is suitable for convex optimization and function analysis.&lt;/li&gt;
+&lt;li&gt;likelihood ratio: a measure of likelihood comparison&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;1-what-is-kl-divergence&#34;&gt;1. What is KL-divergence?&lt;/h2&gt;
+&lt;h4 id=&#34;11-definition&#34;&gt;1.1 Definition&lt;/h4&gt;
+&lt;p&gt;　For any probability distributions $P$ and $Q$, &lt;strong&gt;KL-divergence&lt;/strong&gt; (Kullback-Leibler divergence)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; is defined as follows, using their probability density function $p(x)$ and $q(x)$.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;amp;:= \int q(x) \log \frac{q(x)}{p(x)} ~dx
+\end{align}&lt;/p&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;12-basic-properties&#34;&gt;1.2 Basic properties&lt;/h4&gt;
+&lt;p&gt;　KL-divergence has the following properties.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（&lt;strong&gt;non-negative&lt;/strong&gt;）It has a non-negative range.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+0 \leq D_{KL}( Q \mid\mid P ) &amp;amp;\leq \infty
+\end{align}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（&lt;em&gt;&lt;strong&gt;completeness&lt;/strong&gt;&lt;/em&gt;）When it equals to $0$, $P$ and $Q$ are equivalent.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;amp;= 0 ~~ \Leftrightarrow ~~ P = Q
+\end{align}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（&lt;strong&gt;assymmetry&lt;/strong&gt;）It is not symmetric about $P$ and $Q$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;amp;\neq D_{KL}( P \mid\mid Q )
+\end{align}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（&lt;strong&gt;absolute continuity&lt;/strong&gt;）Unless it diverges, $Q$ is absolutely continuous with respect to $P$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;amp;\lt \infty ~~ \Rightarrow ~~ P \gg Q
+\end{align}&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;​	For example, calculating KL-divergence&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; between two Gaussian distributions gives the following results: It can be seen that the more the shapes between two distributions do not match, the more  KL-divergence increases.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_norm.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;13-is-kl-divergence-a-metrics&#34;&gt;1.3 Is KL-divergence a metrics?&lt;/h4&gt;
+&lt;p&gt;​	KL-divergence is so important measurement when considering probability and information that it is called by various names depending on the field and context.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;KL-divergence&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;KL-metrics&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;KL-information&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Information divergence&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Information gain&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Relative entropy&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Since KL-divergence is always non-negative, it might be interpreted as the metrics in the space where the probability distributions $P$ and $Q$ exist. However, KL-divergence is &lt;strong&gt;not&lt;/strong&gt; strictly a metric because it only satisfies &amp;ldquo;non-negativity&amp;rdquo; and &amp;ldquo;completeness&amp;rdquo; among the following &lt;strong&gt;axioms of metrics&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Axioms of metrics $d(~)$:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;non-negativity                     $d(x, ~ y) \geq 0$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;completeness                      $d(x, ~ y) = 0 ~~ \Leftrightarrow ~~ x = y$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;symmetry                             $d(x, ~ y) = d(y, ~ x)$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The triangle inequality       $d(x, ~ y) + d(y, ~ z) \geq d(x, ~ z)$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Note that $d()$ is called the &lt;em&gt;distance function&lt;/em&gt; or simply &lt;em&gt;distance&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For example, Euclidean distance, squared distance, Mahalanobis distance, and Hamming distance satisfy these conditions, and can be clearly considered as metrics. On the other hand, KL-divergence is a divergence, not metrics. In mathematics, &lt;strong&gt;&amp;ldquo;divergence&amp;rdquo;&lt;/strong&gt; is an extended concept of &amp;ldquo;metrics&amp;rdquo; that satisfies only &lt;strong&gt;non-negativity&lt;/strong&gt; and &lt;strong&gt;completeness&lt;/strong&gt; among axioms of metrics. By introducing &amp;ldquo;divergence&amp;rdquo;, you can reduce the constraints of axioms of metrics and  have a high level of abstraction.&lt;/p&gt;
+&lt;p&gt;The word &amp;ldquo;divergence&amp;rdquo; is generally interpreted as the process or state of diverging; for example, in physics it appears as a vector operator &lt;strong&gt;div&lt;/strong&gt;. There is no Japanese words that corresponds to the meaning of divergence, but it seems that &amp;ldquo;相違度&amp;rdquo;, &amp;ldquo;分離度&amp;rdquo;, &amp;ldquo;逸脱度&amp;rdquo;, &amp;ldquo;乖離度&amp;rdquo; etc. might be used.&lt;/p&gt;
+&lt;p&gt;As an example, let&amp;rsquo;s measure the KL-divergence between two Gaussian distributions $ N (0, 1) $ (blue) and $ N (1, 2) $ (red). In the figure, the left shows &lt;strong&gt;KL-divergence from red one as seen from blue one&lt;/strong&gt;, and the right shows &lt;strong&gt;KL-divergence from blue one as seen from red one&lt;/strong&gt;. Their value are surely different.&lt;/p&gt;
+&lt;p&gt;Note that given two Gaussian distribution $p_1,p_2$ as&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+p_1(x) &amp;amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\&lt;br&gt;
+p_2(x) &amp;amp;= \mathcal{N}(\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2 \pi \sigma_2^2}} \exp \left\{ - \frac{ {(x - \mu_2)}^2}{2 \sigma_2^2} \right\}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;the following holds.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+{D}_{KL}(p_1 \mid\mid p_2)
+&amp;amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\&lt;br&gt;
+&amp;amp;= \log \frac{\sigma_2}{\sigma_1} + \frac{\sigma_1^2 + {( \mu_1 - \mu_2 )}^2}{2 \sigma_2^2} - \frac{1}{2}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/comparison_of_dkl_norm.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Incidentally, in addition to the KL-divergence, the following is known as a measure of the proximity (or closeness) between two probability distributions.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The metrics to measure closeness between $q(x)$ and $p(x)$&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$ {\chi}^2(q ; p) := \sum_{i=1}^{k} \frac{ { { p_i - q_i } }^{2} }{p_i}$        ($\chi^2$-statistics)&lt;/li&gt;
+&lt;li&gt;$ L_1(q ; p) := \int \vert q(x) - p(x) \vert ~ dx$        ($L_1$-norm)&lt;/li&gt;
+&lt;li&gt;$ L_2(q ; p) := \int { { q(x) - p(x) } }^{2} ~ dx$        ($L_2$-norm)&lt;/li&gt;
+&lt;li&gt;$ I_K(q ; p) := \int { \{ \sqrt{ q(x) } - \sqrt{ p(x) } \} }^{2} ~ dx $        (Herringer distance)&lt;/li&gt;
+&lt;li&gt;$ \mathbb{D}(q ; p) := \int f \left( {\large \frac{q(x)}{p(x)} } \right) q(x) ~ dx$        ($f$-divergence)&lt;/li&gt;
+&lt;li&gt;$ I_{\lambda}(q ; p) := \int \left\{ { \left( {\large \frac{q(x)}{p(x)} } \right) }^{\lambda} - 1 \right\} q(x) ~ dx$        (Generalized information)&lt;/li&gt;
+&lt;li&gt;$ {D}_{KL}(q ; p) := \int \log \left( {\large \frac{q(x)}{p(x)} } \right) q(x) ~ dx$        (KL-divergence)&lt;/li&gt;
+&lt;li&gt;$ JSD(q \mid\mid p) := \frac{1}{2} {D}_{KL}(q \mid\mid \frac{q+p}{2}) + \frac{1}{2} {D}_{KL}(p \mid\mid \frac{q+p}{2})$        (JS-divergence)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;2-relatinoship-to-other-measurements&#34;&gt;2. Relatinoship to other measurements&lt;/h2&gt;
+&lt;h4 id=&#34;21-kl-divergence-vs-mutual-information&#34;&gt;2.1 KL-divergence vs Mutual information&lt;/h4&gt;
+&lt;p&gt;　In information theory, entropy $H(X)$, join entropy $H(X,Y)$, conditional entropy $H(X \vert Y)$, mutual information $MI(X,Y)$ are defined as follows by using probability density $Pr()$&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+H(X)    &amp;amp;:= - \int Pr(x) \log Pr(x) ~dx \\&lt;br&gt;
+H(X,Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\&lt;br&gt;
+H(X|Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\&lt;br&gt;
+MI(X,Y) &amp;amp;:= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy
+\end{align}&lt;/p&gt;
+&lt;p&gt;For any two random variable $X$ and $Y$, mutual information $MI(X, Y)$ specifies the mutual (symmetric) dependence between them.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_mutual_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;\begin{align}
+MI(X,Y) &amp;amp;= H(X) - H(X|Y)  \\&lt;br&gt;
+&amp;amp;= H(Y) - H(Y|X) \\&lt;br&gt;
+&amp;amp;= H(X) + H(Y) - H(X,Y)
+\end{align}&lt;/p&gt;
+&lt;p&gt;Here, the following relationship holds between KL-divergence and mutual information.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+MI(X, Y)
+&amp;amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \bigl[ D_{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
+\end{align}&lt;/p&gt;
+&lt;p&gt;So that, mutual information $MI (X, Y)$ is interpreted as the degree of difference (average degree of deviation) between the joint distribution $Pr (x, y)$ when the $X$ and $Y$ are &lt;strong&gt;not independent&lt;/strong&gt; and the joint distribution $Pr (x) Pr (y)$ when $X$ and $Y$ are &lt;strong&gt;independent&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;（cf.）Formula transformation of mutual information:&lt;/p&gt;
+&lt;p&gt;\begin{align}
+MI(X,Y)
+&amp;amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
+&amp;amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
+&amp;amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\&lt;br&gt;
+&amp;amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
+\end{align}&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;22-kl-divergence-vs-log-likelihood-ratio&#34;&gt;2.2 KL-divergence vs Log likelihood ratio&lt;/h3&gt;
+&lt;p&gt;In the field of Bayes inference and statistical modeling, you often face the problem of estimating the &lt;strong&gt;true distribution&lt;/strong&gt; $q(x)$ by $p_{\hat{\theta}}(x)$ (that is the combination of stochastic model $p_{\theta}(x)$ and estimated parameter $\hat{\theta}$ ) . Therefore, KL-divergence is used when you want to measure the difference between two distributions, or when you want to incorporate the estimation error into the loss function or risk function in order to solve  the optimization problem for the parameter $\theta$.&lt;/p&gt;
+&lt;p&gt;Also, KL-divergence is related to the log likelihood ratio so much that it has a deep connection to the model selection method &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; such as likelihood ratio test, Bayes factor, and AIC (Akaike&amp;rsquo;s information criterion).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;KL-divergence of estimated distribution $p_{\theta}(x)$ for the true distribution $q(x)$ : $D_{KL}(q \mid\mid p_{\theta})$ is considerd as the expected value of the log likelihood ratio $q(x)/p_{\theta}(x)$ for tue true distribution $q(x)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+\left( \text{Log likelihood ratio} \right)
+&amp;amp;= \log \frac{q(x)}{p_{\theta}(x)} \\&lt;br&gt;
+D_{KL}( q \mid\mid p_{\theta} )
+&amp;amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{q(x)}{p_{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
+\end{align}&lt;/p&gt;
+&lt;p&gt;When using KL-divergence as the evaluation/loss value in model selection/comparison, it is equivalent that minimizing KL-divergence: $D_{KL}( q \mid\mid p )$ and maximizing the log likelihood: $\log p(x)$ as follows.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( q \mid\mid p_{\theta} )
+&amp;amp;= \mathbb{E}_{X} \bigl[ \log q(x) \bigr] - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \\&lt;br&gt;
+&amp;amp;\propto - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
+\end{align}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;For any parametric stochastic model $f(x \vert \theta)$ (such as a linear regression model) which represents the estimated distribution as&lt;/p&gt;
+&lt;p&gt;\begin{align}
+p_{\theta}(x) = f(x|\theta)
+\end{align}&lt;/p&gt;
+&lt;p&gt;, if a certain loss function $L(\theta)$ is given, the optimal parameter $\theta^*$ exists as it satisfy the following.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+q(x) &amp;amp;= f(x|\theta^*)
+\end{align}&lt;/p&gt;
+&lt;p&gt;Then, for any estimated parameter $\hat{\theta}$ ,the estimated loss of the model $f(x \vert \hat{\theta})$ is represented by KL-divergence. (Note that $\ell( \cdot \vert x)$ means the log likelihood function.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+\left( \text{Log likelihood ratio} \right)
+&amp;amp;=  \log \frac{f(x|\theta^{*})}{f(x|\hat{\theta})}
+\end{align}&lt;/p&gt;
+&lt;p&gt;\begin{align}
+\hat{\theta}
+&amp;amp;:= \underset{\theta \in \Theta}{\rm argmin} ~ L(\theta) \tag{7}
+\\&lt;br&gt;
+D_{KL}( q \mid\mid p_{\hat{\theta}} )
+&amp;amp;= D_{KL}( p_{\theta^{*}} \mid\mid p_{\hat{\theta}} ) \\&lt;br&gt;
+&amp;amp;= D_{KL}( f_{\theta^{*}} \mid\mid f_{\hat{\theta}} ) \\&lt;br&gt;
+&amp;amp;= \int f(x|\theta^{*}) \log \frac{f(x|\theta^{*})}{ f(x|\hat{\theta})} dx \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
+\end{align}&lt;/p&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;23-kl-divergence-vs-fisher-information&#34;&gt;2.3 KL-divergence vs Fisher information&lt;/h4&gt;
+&lt;p&gt;Given a certain stochastic model $f(\cdot \vert \theta)$, &lt;strong&gt;Fisher information&lt;/strong&gt; $I(\theta)$ for the parameter $\theta$ is defined as follows.  (Note that $ \ell( \cdot \vert x) $ means the log likelihood function.)&lt;/p&gt;
+&lt;p&gt;\begin{align}
+I(\theta)
+&amp;amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \log f(x|\theta) \right\} }^{2} \right]
+\end{align}&lt;/p&gt;
+&lt;p&gt;Also, between KL-divergence and Fisher information, the following holds.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+\lim_{h \to 0} \frac{1}{h^{2}} D_{KL} \bigl( f(x|\theta) \mid\mid f(x|\theta+h) \bigr)
+&amp;amp;= \frac{1}{2} I(\theta)&lt;br&gt;
+\end{align}&lt;/p&gt;
+&lt;p&gt;(cf.) The following equation holds by using Taylor expansion of $\ell( \cdot \vert x)$.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;\begin{align}
+\ell(\theta + h) - \ell(\theta)
+&amp;amp;= {\ell}^{&#39;}(\theta)h + \frac{1}{2} {\ell}^{&#39;&#39;}(\theta) h^{2} + O(h^{3})
+\end{align}&lt;/p&gt;
+&lt;p&gt;This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is **directly proportional to** Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures **the local information** that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_fisher_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;3-references&#34;&gt;3. References&lt;/h2&gt;
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=yumaloop0f-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS1=1&amp;detail=1&amp;asins=4254127820&amp;linkId=1456f8ade37cd01c91d31448ce7b50f2&amp;bc1=ffffff&amp;lt1=_top&amp;fc1=333333&amp;lc1=0066c0&amp;bg1=ffffff&amp;f=ifr&#34;&gt;
+&lt;/iframe&gt;
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=yumaloop0f-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS1=1&amp;detail=1&amp;asins=4785314117&amp;linkId=a437161b2bfff7107300d73243499d9d&amp;bc1=FFFFFF&amp;lt1=_top&amp;fc1=333333&amp;lc1=0066C0&amp;bg1=FFFFFF&amp;f=ifr&#34;&gt;
+&lt;/iframe&gt;
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=yumaloop0f-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS1=1&amp;detail=1&amp;asins=0471241954&amp;linkId=477c693b4215ab3b8aa2cdee1450fef7&amp;bc1=ffffff&amp;lt1=_top&amp;fc1=333333&amp;lc1=0066c0&amp;bg1=ffffff&amp;f=ifr&#34;&gt;
+&lt;/iframe&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Also, f-divergence is defined as its generalized class. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;I used scipy.stats.entropy(). &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. &lt;a href=&#34;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&#34;&gt;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Article on gneralized information criterion(GIC): &lt;a href=&#34;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&#34;&gt;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

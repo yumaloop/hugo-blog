@@ -1,0 +1,1493 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Nelson Bighetti">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In this note, I describe how to install NVIDIA GPU and set up CUDA/cuDNN on Ubuntu 16.04LTS machine that has been clean booted. Also, I write down some linux commands used in debugging, since knowing your machine in detail would lead to resolving some errors related to the machine environment.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#1565c0">
+  
+
+  
+  
+  
+  <script src="https://yumaloop.github.io/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://yumaloop.github.io/css/wowchemy.3848b427d7eb1e57a64b3ba29764068e.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+  <link rel="manifest" href="https://yumaloop.github.io/index.webmanifest">
+  
+
+  <link rel="icon" type="image/png" href="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Yuma Uchiumi">
+  <meta property="og:url" content="https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/">
+  <meta property="og:title" content="Setting up a GPU machine for Machine Learning | Yuma Uchiumi">
+  <meta property="og:description" content="In this note, I describe how to install NVIDIA GPU and set up CUDA/cuDNN on Ubuntu 16.04LTS machine that has been clean booted. Also, I write down some linux commands used in debugging, since knowing your machine in detail would lead to resolving some errors related to the machine environment."><meta property="og:image" content="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-01-16T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-01-16T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/"
+  },
+  "headline": "Setting up a GPU machine for Machine Learning",
+  
+  "datePublished": "2020-01-16T00:00:00Z",
+  "dateModified": "2020-01-16T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Nelson Bighetti"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yuma Uchiumi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "In this note, I describe how to install NVIDIA GPU and set up CUDA/cuDNN on Ubuntu 16.04LTS machine that has been clean booted. Also, I write down some linux commands used in debugging, since knowing your machine in detail would lead to resolving some errors related to the machine environment."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Setting up a GPU machine for Machine Learning | Yuma Uchiumi</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="https://yumaloop.github.io/js/wowchemy-init.min.7264cf0eba3b66951b36da7d2cecf9c5.js"></script>
+
+  
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="https://yumaloop.github.io/">Yuma Uchiumi</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="https://yumaloop.github.io/">Yuma Uchiumi</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="https://yumaloop.github.io/"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="https://yumaloop.github.io/about/"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="https://yumaloop.github.io/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Setting up a GPU machine for Machine Learning</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 16, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="https://yumaloop.github.io/category/random/">Random</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <div class='pixels-photo'>
+<a href='https://500px.com/photo/1020504822/PicosDeEuropa-by-Kapan-Tay' alt='Picos_De_Europa by Kapan Tay on 500px.com'>
+  <img src='https://drscdn.500px.org/photo/1020504822/m%3D900/v2?sig=e8cd1e4a2a70e4a800399c2bfba893fceb8d54699dcaf0ed8a62e1e9979c3f02' alt='Picos_De_Europa by Kapan Tay on 500px.com' />
+</a>
+</div>
+<script type='text/javascript' src='https://500px.com/embed.js'></script>
+<p>In this note, I describe how to install NVIDIA GPU and set up CUDA/cuDNN on Ubuntu 16.04LTS machine that has been clean booted. Also, I write down some linux commands used in debugging, since knowing your machine in detail would lead to resolving some errors related to the machine environment. This article could be updated from time to time.</p>
+<blockquote>
+<p>Example: My Ubuntu GPU machine (2020/01/10)</p>
+<ul>
+<li>OS :
+<ul>
+<li><a href="http://releases.ubuntu.com/16.04/" target="_blank" rel="noopener">Ubuntu 16.04.6 LTS</a> (GNU/Linux 4.4.0-145-generic x86_64)</li>
+</ul>
+</li>
+<li>RAM(16GB) :
+<ul>
+<li>Memory: <a href="https://www.newegg.com/kingston-8gb-288-pin-ddr4-sdram/p/N82E16820242069" target="_blank" rel="noopener">Kingston 8GB 288-Pin DDR4 SDRAM DDR4 2133 (PC4 17000)</a> x2</li>
+</ul>
+</li>
+<li>ROM(250GB):
+<ul>
+<li>SSD: <a href="https://www.samsung.com/us/computing/memory-storage/solid-state-drives/mz-750250bw-mz-750250bw/" target="_blank" rel="noopener">Samsung SSD 750 EVO 250GB</a> (/dev/sda)</li>
+<li>HDD: <a href="https://www.disctech.com/Seagate-Barracuda-2000GB-SATA-Hard-Drive-ST2000DM001" target="_blank" rel="noopener">Seagate Barracuda ST2000DM001 Desktop SATA</a> (/dev/sdb)</li>
+</ul>
+</li>
+<li>CPU(x8) :
+<ul>
+<li><a href="https://ark.intel.com/content/www/us/en/ark/products/88196/intel-core-i7-6700-processor-8m-cache-up-to-4-00-ghz.html" target="_blank" rel="noopener">Intel Core i7-6700 CPU @ 3.40GHz</a></li>
+</ul>
+</li>
+<li>GPU(x1) :
+<ul>
+<li>NVIDIA <a href="https://www.nvidia.com/en-us/geforce/products/10series/geforce-gtx-1080/" target="_blank" rel="noopener">Geforce GTX 1080</a>
+<ul>
+<li>NVIDIA CUDA : 10.0.130 (/usr/local/cuda-10.0/)</li>
+<li>NVIDIA cuDNN : 7.4.2.24 (/usr/lib/x86_64-linux-gnu/libcudnn.so.7.4.2)
+<ul>
+<li>Python3 : 3.6.9 (/usr/bin/python3.6)</li>
+<li>Python2 : 2.7.12 (/usr/bin/python)</li>
+<li>tensorflow 1.13.1 ($HOME/.local/lib/python3.6/site-packages)</li>
+<li>tensorflow-gpu 1.13.1 ($HOME/.local/lib/python3.6/site-packages)</li>
+<li>keras 2.2.4 ($HOME/.local/lib/python3.6/site-packages)</li>
+<li>pytorch 1.2.0 ($HOME/.local/lib/python3.6/site-packages)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<br>
+<blockquote>
+<p>Table of contents</p>
+<ul>
+<li><a href="#OS">Operating System</a>
+<ul>
+<li><a href="#linux_os">Checking Linux OS</a></li>
+<li><a href="#linux_dist">Checking Linux distribution</a></li>
+<li><a href="#linux_kernel">Checking Linux kernel</a></li>
+</ul>
+</li>
+<li><a href="#ROM">Storage (ROM)</a>
+<ul>
+<li><a href="#rom_devices">Checking ROM devices</a></li>
+<li><a href="#rom_file">Checking the number of files</a></li>
+<li><a href="#rom_diskspace">Checking disk space</a></li>
+</ul>
+</li>
+<li><a href="#ram">Memory (RAM)</a>
+<ul>
+<li><a href="#ram_devices">Checking RAM devices</a></li>
+<li><a href="#ram_memspace">Checking memory space</a></li>
+</ul>
+</li>
+<li><a href="#cpu">CPU</a>
+<ul>
+<li><a href="#cpu_devices">Checking CPU devices</a></li>
+</ul>
+</li>
+<li><a href="#gpu">GPU</a>
+<ul>
+<li><a href="#gpu_devices">Checking GPU devices</a></li>
+<li><a href="#nvidia-cudacudnn">NVIDIA driver &amp; CUDA/cuDNN</a>
+<ul>
+<li><a href="#nvidia_nvidiadriver">Installing NVIDIA driver</a></li>
+<li><a href="#nvidia_cuda">Installing NVIDIA CUDA</a></li>
+<li><a href="#nvidia_cuDNN">Installing NVIDIA cuDNN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#------">I/O</a>
+<ul>
+<li><a href="#x11------------dm----">Checking X11 display manager (DM)</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<br>
+<br>
+<h2 id="operating-system">Operating System</h2>
+<h5 id="checking-linux-os">Checking Linux OS</h5>
+<p><code>uname</code> command shows 1.OS Name, 2.Hostname, 3.Release, 4.Version, 5,Hardware Architecture, 6,CPU type, 7.Platform, 8.OS Name, respectively,</p>
+<pre><code class="language-bash">$ uname -a
+Linux XXXX 4.4.0-145-generic #171-Ubuntu SMP Tue Mar 26 12:43:40 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+</code></pre>
+<h5 id="checking-linux-distribution">Checking Linux distribution</h5>
+<p><code>/etc/issue</code> contains information about Linux distribution.</p>
+<pre><code class="language-bash">$ cat /etc/issue
+Ubuntu 16.04.6 LTS \n \l
+</code></pre>
+<p><code>/etc/lsb-release</code> contains the same information.</p>
+<pre><code class="language-bash">$ cat /etc/lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04 DISTRIB_CODENAME=xenial 
+DISTRIB_DESCRIPTION=&quot;Ubuntu 16.04.6 LTS&quot;
+</code></pre>
+<p><code>/etc/os-release</code> contains the same information.</p>
+<pre><code class="language-bash">$ cat /etc/os-release
+NAME=“Ubuntu”
+VERSION=“16.04.6 LTS (Xenial Xerus)” ID=ubuntu ID_LIKE=debian PRETTY_NAME=“Ubuntu 16.04.6 LTS” VERSION_ID=“16.04&quot; HOME_URL=“http://www.ubuntu.com/” SUPPORT_URL=“http://help.ubuntu.com/” BUG_REPORT_URL=“http://bugs.launchpad.net/ubuntu/” VERSION_CODENAME=xenial UBUNTU_CODENAME=xenial
+</code></pre>
+<h5 id="checking-linux-kernel">Checking Linux kernel</h5>
+<p><code>/proc/version</code> contains information about Linux kernel.</p>
+<pre><code class="language-bash">$ cat /proc/version
+Linux version 4.4.0-159-generic (buildd@lgw01-amd64-042) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ) #187-Ubuntu SMP Thu Aug 1 16:28:06 UTC 2019
+</code></pre>
+<h2 id="storage-rom">Storage (ROM)</h2>
+<p>Storage device (HDD, SSD) and file systems.</p>
+<h5 id="checking-rom-devices">Checking ROM devices</h5>
+<p><code>df</code> commad shows information about ROM (HDD) devices</p>
+<pre><code class="language-bash">$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7.8G     0  7.8G   0% /dev
+tmpfs           1.6G   46M  1.6G   3% /run
+/dev/sda1       214G  165G   39G  81% /
+tmpfs           7.9G  208K  7.9G   1% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           7.9G     0  7.9G   0% /sys/fs/cgroup
+/dev/loop3      384K  384K     0 100% /snap/patchelf/93
+/dev/loop1      384K  384K     0 100% /snap/patchelf/87
+none            7.9G  2.5M  7.9G   1% /tmp/guest-qyuodw
+tmpfs           1.6G   64K  1.6G   1% /run/user/998
+/dev/loop4       90M   90M     0 100% /snap/core/8213
+/dev/loop0       90M   90M     0 100% /snap/core/8268
+tmpfs           1.6G     0  1.6G   0% /run/user/1001
+</code></pre>
+<h5 id="checking-the-number-of-files">Checking the number of files</h5>
+<p><code>wc</code> command shows the number of files under the current dir.</p>
+<pre><code class="language-bash">$ du -hsc *
+689M	Research
+4.0K	build
+106M	dataset
+4.0K	docker
+9.3M	gym
+50M	kaggle
+2.6M	latent.gif
+2.0G	opencv
+122G	workspace
+4.0K	ダウンロード
+4.0K	テンプレート
+4.0K	デスクトップ
+4.0K	ドキュメント
+4.0K	ビデオ
+4.0K	ピクチャ
+4.0K	ミュージック
+4.0K	公開
+125G	合計
+</code></pre>
+<h5 id="ファイルのディスク使用量を確認したい">ファイルのディスク使用量を確認したい</h5>
+<p>df -hコマンドを使う</p>
+<p>カレントディレクトリ直下にあるファイルおよびディレクトリのディスク使用量とその合計を表示する</p>
+<pre><code class="language-bash">$ du -hsc *
+689M	Research
+4.0K	build
+106M	dataset
+4.0K	docker
+9.3M	gym
+50M	kaggle
+2.6M	latent.gif
+2.0G	opencv
+122G	workspace
+4.0K	ダウンロード
+4.0K	テンプレート
+4.0K	デスクトップ
+4.0K	ドキュメント
+4.0K	ビデオ
+4.0K	ピクチャ
+4.0K	ミュージック
+4.0K	公開
+</code></pre>
+<h2 id="メモリram">メモリ（RAM）</h2>
+<h5 id="メモリデバイスを確認したい">メモリデバイスを確認したい</h5>
+<p>/proc/meminfoをみる</p>
+<p>メモリの詳細情報が表示される</p>
+<pre><code class="language-bash">$ cat /proc/meminfo
+MemTotal: 16377200 kB
+MemFree: 3077848 kB
+MemAvailable: 15767804 kB
+Buffers: 363052 kB
+Cached: 12274992 kB
+SwapCached: 66936 kB
+Active: 8048088 kB
+Inactive: 4689560 kB
+Active(anon): 25860 kB
+Inactive(anon): 86584 kB
+...
+HugePages_Total: 0
+HugePages_Free: 0
+HugePages_Rsvd: 0
+HugePages_Surp: 0
+Hugepagesize: 2048 kB
+DirectMap4k: 1907316 kB
+DirectMap2M: 14815232 kB
+DirectMap1G: 0 kB
+</code></pre>
+<h5 id="メモリの空き容量を確認したい">メモリの空き容量を確認したい</h5>
+<p>freeコマンドを使う</p>
+<pre><code class="language-bash">$ free
+              total        used        free      shared  buff/cache   available
+Mem:       16377148     2470228      314496       17140    13592424    13460232
+Swap:      16720892      431568    16289324
+</code></pre>
+<p>vmstatコマンドを使う</p>
+<pre><code class="language-bash">$ vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 1  0 431584 267696 944212 12638044    0    2   389    15    0    0  6  2 91  0  0
+</code></pre>
+<p>topコマンドを使う</p>
+<pre><code class="language-bash">$ top
+top - 15:55:05 up 64 days, 23:12,  5 users,  load average: 1.00, 1.04, 1.07
+Tasks: 232 total, 2 running, 230 sleeping, 0 stopped, 0 zombie
+%Cpu(s): 9.1 us, 3.5 sy, 0.0 ni, 86.9 id, 0.5 wa, 0.0 hi, 0.0 si, 0.0 st
+KiB Mem : 16377148 total,   271964 free,  2527528 used, 13577656 buff/cache
+KiB Swap: 16720892 total, 16289228 free,   431664 used. 13403420 avail Mem 
+
+...
+</code></pre>
+<h2 id="cpu">CPU</h2>
+<h5 id="cpuデバイスを確認したい">CPUデバイスを確認したい</h5>
+<p>/proc/cpuinfoをみる</p>
+<p>CPUのコアごとに詳細情報が表示される</p>
+<pre><code>
+$ cat /proc/cpuinfo
+processor : 0
+vendor_id : GenuineIntel
+cpu family : 6
+model : 94
+model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
+stepping : 3
+microcode : 0xc6
+cpu MHz : 800.062
+cache size : 8192 KB
+physical id : 0
+siblings : 8
+...
+processor : 1
+vendor_id : GenuineIntel
+cpu family : 6
+model : 94
+model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
+...
+</code></pre>
+<h2 id="gpu">GPU</h2>
+<h5 id="gpuデバイスの確認">GPUデバイスの確認</h5>
+<p>lswsコマンドを使う</p>
+<pre><code class="language-bash">$ sudo lshw -C display 
+  *-display               
+       詳細: VGA compatible controller
+       製品: GP104 [GeForce GTX 1080]
+       ベンダー: NVIDIA Corporation
+       物理ID: 0
+       バス情報: pci@0000:01:00.0
+       バージョン: a1
+       幅: 64 bits
+       クロック: 33MHz
+       性能: pm msi pciexpress vga_controller bus_master cap_list rom
+       設定: driver=nvidia latency=0
+       リソース: irq:317 メモリー:de000000-deffffff メモリー:c0000000-cfffffff メモリー:d0000000-d1ffffff IOポート:e000(サイズ=128) メモリー:df000000-df07ffff
+</code></pre>
+<p>lspciコマンドを使う</p>
+<p>Linuxに搭載されているPCIバスの情報を表示する．</p>
+<pre><code class="language-bash">$ lspci | grep -i nvidia
+01:00.0 VGA compatible controller: NVIDIA Corporation GP104 [GeForce GTX 1080] (rev a1)
+01:00.1 Audio device: NVIDIA Corporation GP104 High Definition Audio Controller (rev a1)
+</code></pre>
+<h2 id="nvidiaドライバとcudacudnnの導入">NVIDIAドライバとCUDA/cuDNNの導入</h2>
+<h5 id="nvidiaドライバのインストール">NVIDIAドライバのインストール</h5>
+<p>1.下記リンクから，自分のGPUにあうドライバを検索してダウンロードする．</p>
+<p><a href="https://www.nvidia.co.jp/Download/index.aspx?lang=jp">https://www.nvidia.co.jp/Download/index.aspx?lang=jp</a></p>
+<p><img src="https://lh4.googleusercontent.com/m4MAKmekqihk5pqTUHLojPX6uzAZoaGoj2d9EazHOSlVxNuradgm_lF-7piupC_j1dBf-PffJ2e1SaDxf215GddSYx_XdaUAyUkucebB5SSyN9ZrGUl7qeqFe0aUxnnBqQxYYeK7" alt="img"></p>
+<p>たとえば，GPU「<a href="http://d.hatena.ne.jp/keyword/NVIDIA" target="_blank" rel="noopener">NVIDIA</a> <a href="http://d.hatena.ne.jp/keyword/GeForce" target="_blank" rel="noopener">GeForce</a> 1080」に対応したドライバは以下のようになる．</p>
+<p><img src="https://lh3.googleusercontent.com/e951y4mwYumub525KR2Um_Cqbb6NxYIpnyThgMyIcClu7nvwHUzF5hGK5l3_4k0lPxf9T9uF33u-0t0cTJeovZFNsjXJkBBzCM1B61i4Kk8_xIBSsTWT0oUexsNDx5_QRFrIDIIj" alt="img">．</p>
+<ol start="2">
+<li>新しく<a href="http://d.hatena.ne.jp/keyword/GPU" target="_blank" rel="noopener">GPU</a>ドライバ（<a href="http://d.hatena.ne.jp/keyword/NVIDIA" target="_blank" rel="noopener">NVIDIA</a>ドライバ）をインストールする前に，既にインストールされている<a href="http://d.hatena.ne.jp/keyword/GPU" target="_blank" rel="noopener">GPU</a>ドライバを確認する．</li>
+</ol>
+<p>aptにNVIDIAドライバを提供しているxorg-edgersレポジトリを追加する．</p>
+<p>aptでNVIDIAドライバ「nvidia-396」をインストールして，マシンを再起動．</p>
+<h2 id="cudaのインストール">CUDAのインストール</h2>
+<p>（注意）CUDA・cuDNN・tensorFlow-gpuのバージョンを合わせる必要がある．</p>
+<ol>
+<li>
+<p>CUDAの公式ドキュメントをよく読む．</p>
+<p>CUDA Toolkit Documentation <a href="https://docs.nvidia.com/cuda/index.html">https://docs.nvidia.com/cuda/index.html</a></p>
+</li>
+<li>
+<p>下記リンクから，NVIDIAドライバに対応するCUDAのバージョンを確認する</p>
+<p>CUDA Toolkit Documentation &gt; Release Notes &gt; 1. CUDA Toolkit Major Components &gt; CUDA Driver <a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html</a></p>
+</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/s8gpeKo-VZlCtUROQc6YG1L3ZQ9aJlggnswp_mAAxRFua_Sh0ILtYsa-K4uUYWrjbfgz21EIVJwSrt-StpbGhvpPrxUytW-Xjy146HAo7pmo-SyPT6cP5-YPSFWRHHASmR9xyFon" alt="img"></p>
+<ol start="3">
+<li>
+<p>下記リンクから，tensorflow-<a href="http://d.hatena.ne.jp/keyword/gpu" target="_blank" rel="noopener">gpu</a>に対応するcuDNN/CUDAのバージョンを確認する</p>
+<p>TensorFlow (Linux) - テスト済みのビルド設定</p>
+<p><a href="https://www.tensorflow.org/install/source#linux">https://www.tensorflow.org/install/source#linux</a></p>
+</li>
+</ol>
+<p><img src="https://lh6.googleusercontent.com/LrKW-yUDWLZi5-iq1oz0BB_3dpt3hin3yLEyo8V1QtJzV958tWDaYr5RDwJsOniMxotiNqZsCcYa4-kqs3SdSLd7xzD9ABON4b2MT9kIHPbbnL3lP9GcgZpFRTWjVThXPuQMQNUP" alt="img"></p>
+<p>CUDA・cuDNN・tensorFlow-gpuのバージョン確認を終えた．</p>
+<p>今回は，以下で環境構築をする．</p>
+<blockquote>
+<ul>
+<li><a href="http://d.hatena.ne.jp/keyword/Python" target="_blank" rel="noopener">Python</a> 3.6.9</li>
+<li>tensorflow-<a href="http://d.hatena.ne.jp/keyword/gpu" target="_blank" rel="noopener">gpu</a> 1.13.1</li>
+<li>CUDA 10.0</li>
+<li>cuDNN 7.4</li>
+</ul>
+</blockquote>
+<ol start="4">
+<li>
+<p>下記リンクから，自分の環境にあった「CUDA Toolkitパッケージ」を確認し，マシンへダウンロードする．</p>
+<p>CUDA Toolkit Archive <a href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
+</li>
+</ol>
+<p><img src="https://lh6.googleusercontent.com/6Wg51qcEzuCZ326X81F_48j0pU20MC4qKa0CU847Vw612vZQNUP302zFYWCJ9CA5uKABt6UU7UTLj8M6Kr9ndYKNzT-amTFv3hiWGDakR5gpjFlA3lppzcU-dORL0ojBI6qs-Pv5" alt="img"></p>
+<p>今回は，CUDA10.0で，マシンの環境として，以下を選択．</p>
+<blockquote>
+<ul>
+<li>Operating System: Linux</li>
+<li>Architecture: x86_64</li>
+<li>Distribution: Ubuntu</li>
+<li>Version: 16.04</li>
+<li>Installer Type: deb [network]</li>
+</ul>
+</blockquote>
+<p><img src="https://lh6.googleusercontent.com/qkrUa2T8IaJ7IflSrZ6XCyDvHqmoP868EnpDlqOoSoYiMcse_8xteV7gEUsmAS_2GCr7GWUI_rClrw7E6i3RuKUKghWm-L5fT8vST6r9CnCHBtxwIS5LvB18ZfMY1Aet173jSWzC" alt="img"></p>
+<p>（注意）https://developer.nvidia.com/cuda-downloadsは，最新バージョンのダウンロードリンクなので，ここから安易にCUDAをダウンロードしてはいけない．特に，tensorflow-<a href="http://d.hatena.ne.jp/keyword/gpu" target="_blank" rel="noopener">gpu</a>は，最新のCUDA Toolkitに対応していないので注意する．CUDAとTensorflow-<a href="http://d.hatena.ne.jp/keyword/gpu" target="_blank" rel="noopener">gpu</a>のバージョンがあっていないと，たとえばImportError: libcublas.so.10.0が発生する．</p>
+<p>対応するCUDA Toolkit（CUDA 10.0）の.<a href="http://d.hatena.ne.jp/keyword/deb" target="_blank" rel="noopener">deb</a>ファイル(network)は「cuda-repo-ubuntu1604_10.0.130-1_<a href="http://d.hatena.ne.jp/keyword/amd64" target="_blank" rel="noopener">amd64</a>.<a href="http://d.hatena.ne.jp/keyword/deb" target="_blank" rel="noopener">deb</a>」となる． この.<a href="http://d.hatena.ne.jp/keyword/deb" target="_blank" rel="noopener">deb</a>ファイルをwgetコマンドを使って，マシンへダウンロードする．</p>
+<ol start="5">
+<li>ダウンロードしたCUDA Toolkitパッケージ(.deb)を，マシンへインストールする</li>
+</ol>
+<p>dpkgコマンドでCUDA Toolkitパッケージ(.deb)をcudaパッケージとして保存します．さらに，aptコマンドでcudaパッケージをインストールします． 注意：公式に書かれているsudo apt-get install cudaを実行すると自動的に最新版のCUDAがインストールされる．</p>
+<p>これでCUDA Toolkit（CUDA 10.0）のインストールは完了．</p>
+<p>次に，<a href="http://d.hatena.ne.jp/keyword/%B4%C4%B6%AD%CA%D1%BF%F4" target="_blank" rel="noopener">環境変数</a>（PATH）を設定する．</p>
+<h5 id="cudnnのインストール">cuDNNのインストール</h5>
+<h5 id="pathチェック">PATHチェック</h5>
+<h2 id="ディスプレイ">ディスプレイ</h2>
+<h5 id="x11ディスプレイマネージャdmを確認">X11ディスプレイマネージャ(DM)を確認</h5>
+<p>/etc/X11/default-display-managerをみる</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="https://yumaloop.github.io/tag/env/">Env</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/&amp;text=Setting%20up%20a%20GPU%20machine%20for%20Machine%20Learning" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/&amp;t=Setting%20up%20a%20GPU%20machine%20for%20Machine%20Learning" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Setting%20up%20a%20GPU%20machine%20for%20Machine%20Learning&amp;body=https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/&amp;title=Setting%20up%20a%20GPU%20machine%20for%20Machine%20Learning" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Setting%20up%20a%20GPU%20machine%20for%20Machine%20Learning%20https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/&amp;title=Setting%20up%20a%20GPU%20machine%20for%20Machine%20Learning" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://yumaloop.github.io/"><img class="avatar mr-3 avatar-circle" src="https://yumaloop.github.io/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q75_lanczos_center.jpg" alt="Nelson Bighetti"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://yumaloop.github.io/">Nelson Bighetti</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://yumaloop.github.io/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/gcushen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-06-10-tencent-acg/">Tencent&#39;s Strategy for the ACG and the Impact on Japan</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2019-11-25-whitesides_outline_method/">Whiteside&#39;s Outline Method</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2019-06-21-keiojp-auto-login/">Automatically Login to keio.jp using Selenium on Python</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'event' : "Events",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="https://yumaloop.github.io/js/wowchemy.min.aeecf26c1eff6b9588dbafc1a9f3953c.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

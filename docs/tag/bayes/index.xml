@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bayes | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/bayes/</link>
+      <atom:link href="https://yumaloop.github.io/tag/bayes/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bayes</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Wed, 18 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Bayes</title>
+      <link>https://yumaloop.github.io/tag/bayes/</link>
+    </image>
+    
+    <item>
+      <title>State Space Model &amp; Particle Filter</title>
+      <link>https://yumaloop.github.io/post/2020-03-18-particle_filter/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-03-18-particle_filter/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/80813059/Flow-of-Time-by-Jimin--Jacob&#39; alt=&#39;Flow of Time... by Jimin  Jacob on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/80813059/m%3D900/v2?sig=9c99293070333accc348ef432437c6c0eeb6b87f5d14199485cae5d51d92e3db&#39; alt=&#39;Flow of Time... by Jimin  Jacob on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;State Space Model (SSM)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;State Space Model(SSM) is widely used in the field requiring the sequential estimation or online learning.
+This model is effective if you consider a system having two different variables; one completely represents the actual state but cannot be observed and the other partially represents the actual state but can be observed. Here, I call the former $x$ (state variable) and the latter $y$ (observation variable).&lt;/p&gt;
+&lt;p&gt;In SSM, we intruduce the following equations $F, H$ (or $f, h$) and identify them by observed data sample $[y_1, \dots, y_t]$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Equation of each state $x_t$ :&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+x_{t+1} &amp;amp;= F(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+x_{t+1} &amp;amp;\sim f(\cdot\vert x_t) ~~ (\text{Stochastic process})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Equation of each observation $y_t$ :&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+y_t &amp;amp;= H(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+y_t &amp;amp;\sim h(\cdot \vert x_t) ~~ (\text{Stochastic process})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Perticle filter&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;For each $i$ in $[1 \dots M]$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;(Prediction)&lt;/p&gt;
+&lt;p&gt;Derive prediction distribution $f(x_t \vert \cdot)$ depends on particles $\hat{x}_{t-1}$.&lt;/p&gt;
+&lt;p&gt;Sample $x^{i}_{t \vert t-1} ~~~ (i = 1, \dots, M)$ following $f(x_t \vert \cdot)$.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+x^{i}_{t \vert t-1} \sim f(x_t \vert \hat{x}_{t-1})
+\end{align}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Likelihood)&lt;/p&gt;
+&lt;p&gt;Derive the likelihood of $x^i_{t \vert t-1}$ from given sample data $y_t$ based on $h(\cdot)$&lt;/p&gt;
+&lt;p&gt;$$
+w^i_t \sim h(y_t \vert x^i_{t \vert t-1})
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Resampling)&lt;/p&gt;
+&lt;p&gt;Resampe $\hat{x}^i_{t \vert t-1}$ based on the likelihood $w^i_t ~~~ (i=1,\dots,M)$ .&lt;/p&gt;
+&lt;p&gt;Derive the filter distribution $p(x_t \vert y_{1:t})$ for any $x_t$:
+$$
+\begin{aligned}
+p(x_t \vert y_{1:t})
+&amp;amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\&lt;br&gt;
+&amp;amp;\approx \sum_{i=1}^{M} \frac{}{\sum_{i=1}^{M} } \delta(x_t - \hat{x}^i_{t \vert t-1})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Free energy and Bayes inference</title>
+      <link>https://yumaloop.github.io/post/2020-03-10-free_energy_on_bayes_inference/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-03-10-free_energy_on_bayes_inference/</guid>
+      <description>&lt;h3 id=&#34;平均場近似と自由エネルギー&#34;&gt;平均場近似と自由エネルギー&lt;/h3&gt;
+&lt;p&gt;ある変数$X$のとりうるすべての状態(実現値)$x$に対して，何らかのエネルギー関数$\phi(x)$が与えられたとする．このとき，変数$X$のGibbs分布（Boltzmann分布）:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+p(x)
+&amp;amp;= \frac{\exp (- \beta \phi(x))}{\int_X \exp (- \beta \phi(x))}
+= \frac{\exp (- \beta \phi(x))}{Z^{\phi}(\beta)}
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;を考える．このとき，Gibbs分布$p(x)$と任意の近似分布$q(x)$とのKL-divergence:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+D_{KL}(q \vert\vert p) := \int_{X} q(x) \log \frac{q(x)}{p(x)}
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;は以下のように分解できる．&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+D_{KL}(q \vert\vert p)
+&amp;amp;= \beta \int_X q(x)\phi(x) - \left\{ - \int_X q(x)\log q(x) \right\} + \log \int_X \exp(-\beta \phi(x)) \\&lt;br&gt;
+&amp;amp;= \beta~ \mathbb{E}_{x \sim q}[\phi(x)] - H_q(X) + \log Z^{\phi}(\beta) \\&lt;br&gt;
+&amp;amp;= \beta~ (\text{Internal energy}) - (\text{Entropy}) + (\text{Const.}) \\&lt;br&gt;
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;いま，近似分布$q(x)$に対する汎関数として，自由エネルギー:&lt;/p&gt;
+&lt;p&gt;$$
+F^{\phi}(q) := \mathbb{E}_{x \sim q}[\phi(x)] - \frac{1}{\beta}H_q(X) ~~~ (\text{Free energy})
+$$&lt;/p&gt;
+&lt;p&gt;を定義すれば，&lt;/p&gt;
+&lt;p&gt;$$
+D_{KL}(q \vert\vert p)  = \beta~ F^{\phi}(q) + \log Z^{\phi}(\beta)
+$$&lt;/p&gt;
+&lt;p&gt;となるから，$q(x)$による$p(x)$の近似問題は次式で表現できる．&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\underset{q}{\rm min} ~ D_{KL}(p \vert\vert q) &amp;amp;=
+\underset{q}{\rm min} ~ F^{\phi}(q)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;また．自由エネルギー$F^{\phi}(q)$の最小値は，&lt;/p&gt;
+&lt;p&gt;$$
+{F^{\phi}}^{*}(q) = - \frac{1}{\beta} \log \int_X \exp (-\beta \phi(x)) = - \frac{1}{\beta} \log Z^{\phi}(\beta)
+$$&lt;/p&gt;
+&lt;p&gt;となる．すなわち，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+{F^{\phi}}(q)
+= - \frac{1}{\beta} \log Z^{\phi}(\beta)
+~~ \Leftrightarrow ~~
+D_{KL}(p \vert\vert q) = 0
+~~ \Leftrightarrow ~~
+p(\cdot) \equiv	 q(\cdot)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;となる．&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;熱力学統計力学との関係&#34;&gt;熱力学(統計力学)との関係&lt;/h3&gt;
+&lt;p&gt;温度$T$，内部エネルギー$U$，エントロピー$S$に対して，Helmholtzの自由エネルギー$F$は以下のように定義される．&lt;/p&gt;
+&lt;p&gt;$$
+F = U - TS
+$$&lt;/p&gt;
+&lt;p&gt;$F^{\phi}(q)$の定義式で，$F = F^{\phi}(q)$，$U = \mathbb{E}_{x \sim q}[\phi(x)]$，$S = H_q(X)$とおけば，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\beta F &amp;amp;= \beta U - S \\&lt;br&gt;
+F &amp;amp;= U - \frac{1}{\beta} S
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;となるから，汎関数$F^{\phi}(q)$は，熱力学におけるHelmholtzの自由エネルギー$F$と類似した形式を持っていることがわかる．なお，Bayes理論において定数$\beta$は「逆温度」と呼ばれるが，これは温度$T$に由来する．&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;bayes脳やfepとの関係&#34;&gt;Bayes脳やFEPとの関係&lt;/h3&gt;
+&lt;p&gt;神経科学の分野でK.Fristonによって提唱された自由エネルギー原理(Free energy principle, FEP)は，上にある汎関数$F^{\phi}(q)$を変分推論を組み合わせたものである（と解釈できる）．ここでは，ELBOとの関係にのみ触れておく．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;ELBOの定義式:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+(\text{Evidence})
+&amp;amp;= \log p(y) \\&lt;br&gt;
+&amp;amp;\geq \mathbb{E}_{\theta \sim q}\left[ \log p(y, \theta) \right] - \mathbb{E}_{\theta \sim q} \left[ \log q(\theta) \right] \\&lt;br&gt;
+&amp;amp;= \mathcal{L}_{ELBO}(q) \\&lt;br&gt;
+&amp;amp;= (\text{Evidence Lower Bound})
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;と&lt;a href=&#34;[https://www.fil.ion.ucl.ac.uk/~karl/The%20free-energy%20principle%20-%20a%20rough%20guide%20to%20the%20brain.pdf](https://www.fil.ion.ucl.ac.uk/~karl/The free-energy principle - a rough guide to the brain.pdf)&#34;&gt;FristonのCell論文(2009)&lt;/a&gt;にある自由エネルギーの定義式&lt;/p&gt;
+&lt;p&gt;$$
+F(y) = - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)]
+$$&lt;/p&gt;
+&lt;p&gt;を比べると，以下の関係が得られる．&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+(\text{Surprise})
+&amp;amp;= - \log p(y) \\&lt;br&gt;
+&amp;amp;\leq - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)] \\&lt;br&gt;
+&amp;amp;= -\mathcal{L}_{ELBO}(q) \\&lt;br&gt;
+&amp;amp;= F(y) \\&lt;br&gt;
+&amp;amp;= (\text{Free energy})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;つまり，Fristonの自由エネルギー$F(y)$は「脳の外部環境$Y$に対する観測データ${\{y_t\}}_{t=1}^{n}$の対数尤度下限(ELBO)に$-1$をかけたもの」である．なお，Bayes推論では,対数尤度$\log p(y)$をエビデンス(Evidence)といい，情報理論では負の対数尤度$-\log p(y)$をサプライズ(Surprise)という．&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.fil.ion.ucl.ac.uk/~karl/The%20free-energy%20principle%20-%20a%20rough%20guide%20to%20the%20brain.pdf&#34;&gt;FristonのCell論文(2009)&lt;/a&gt;にあるエージェントの行動$\alpha$や脳の内部状態$\mu$の更新式:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\alpha^{*} &amp;amp;= \underset{\alpha}{\rm argmin} ~ F(y) \\&lt;br&gt;
+\mu^{*} &amp;amp;= \underset{\mu}{\rm argmin} ~ F(y)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;における$F(y)$の最小化は，「脳の外部環境$Y$に対する観測データ${\{y_t\}}_{t=1}^{n}$の対数尤度(Evidence)」を最大化する過程を表している．ELBOとFEPの関係をまとめると以下の表のようになる．&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;原理&lt;/th&gt;
+&lt;th&gt;Jensenの不等式&lt;/th&gt;
+&lt;th&gt;Bayes推論&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ELBO&lt;/td&gt;
+&lt;td&gt;Evidence: $ \log p(y)$ の最大化&lt;/td&gt;
+&lt;td&gt;$\text{Evidence} \geq \mathcal{L}_{ELBO}$&lt;/td&gt;
+&lt;td&gt;下限$\mathcal{L}_{ELBO}$を最大化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;FEP&lt;/td&gt;
+&lt;td&gt;Surprise: $- \log p(y)$ の最小化&lt;/td&gt;
+&lt;td&gt;$\text{Surprise} \leq F$&lt;/td&gt;
+&lt;td&gt;上限$F$を最小化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;執筆時の個人的な理解としては，FEPにおける各変数$\theta, \mu, y, \alpha$の更新規則は，「観測データを用いた最尤推定」そのものだと思っている．論文で提唱されている自由エネルギー$F(y)$最小化は，Variational BayesにおけるELBO最大化と同じであるから，むしろ4つの変数間のループ構造（グラフ表現）の方が重要なのだろう．&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.fil.ion.ucl.ac.uk/~karl/The%20free-energy%20principle%20A%20unified%20brain%20theory.pdf&#34;&gt;FristonのNature論文(2010)&lt;/a&gt;では，自由エネルギー$F(y)$の定義がより複雑化しており，よく理解していない．&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Deriving ELBO</title>
+      <link>https://yumaloop.github.io/post/2020-02-24-deriving-elbo/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-02-24-deriving-elbo/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/1020528836/Untitled-by-Vladimir-Maric&#39; alt=&#39;Untitled by Vladimir Maric on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/1020528836/m%3D900/v2?sig=9c4001aaf8730c97353ae102428c6bc64818166778d359c4979d17eb42cf809d&#39; alt=&#39;Untitled by Vladimir Maric on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;Evidence Lower Bound (ELBO) is widely used in variational inference. Recently, according to the massive success of DeepLearning and related models, variational inference (and its technic) gains exposure in the filed of representation learning. For instance, stochastic generative models such as VAE and GAN are famous for their variational aspects.&lt;/p&gt;
+&lt;h2 id=&#34;elbo&#34;&gt;ELBO&lt;/h2&gt;
+&lt;p&gt;Evidence Lower Bound (ELBO) is a lower bound of Log likelihood of $X$ (Evidence) in the model. The below inequality holds based on Cauchy-Schwartz inequality because of the convexity of log function.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+(\text{Evidence})
+&amp;amp;= \log p(x) \\&lt;br&gt;
+&amp;amp;= \log \int_{Z} p(x,z) \\&lt;br&gt;
+&amp;amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\&lt;br&gt;
+&amp;amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\&lt;br&gt;
+&amp;amp;= \log \mathbb{E}_{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
+&amp;amp;\geq \mathbb{E}_{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= ELBO(q) ~~~ (\text{Evidence Lower Bound, ELBO})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;So that, we can obtain the optimization formula below.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\underset{\theta}{\rm max} ~ \log p_{\theta}(x)
+&amp;amp;= \underset{q}{\rm max} ~ ELBO(q)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;kl-divergence-and-elbo&#34;&gt;KL-divergence and ELBO&lt;/h2&gt;
+&lt;p&gt;$$
+\begin{aligned}
+D_{KL}( q(z) \vert\vert p(z \vert x) )
+&amp;amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\&lt;br&gt;
+&amp;amp;= - H_q(Z) - \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right]
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;ELBO is considered as the difference between Log likelihood  $\log p(x)$ and KL-divergence $D_{KL}( q(z) \vert\vert p(z \vert x) )$ as below.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+ELBO
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\&lt;br&gt;
+&amp;amp;= \log p(x) - D_{KL}( q(z) \vert\vert p(z \vert x) )
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;So that, we can obtain the below relation.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\underset{\theta}{\rm max} ~ \log p_{\theta}(x)
+&amp;amp;= \underset{q}{\rm max} ~ ELBO(q) \\&lt;br&gt;
+&amp;amp;= \underset{q}{\rm min} ~ D_{KL}( q(z) \vert\vert p(z|x) )
+\end{align}
+$$
+\&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>EM Algorithm</title>
+      <link>https://yumaloop.github.io/post/2019-09-25-em-algorithm/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2019-09-25-em-algorithm/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/1002517180/The-algorithm-by-Luca-Rovatti&#39; alt=&#39;The algorithm... by Luca Rovatti on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/1002517180/m%3D900/v2?sig=038077982809b60781286b9e0d94cd3b5dd1dba4a97d80d27302a7829d340618&#39; alt=&#39;The algorithm... by Luca Rovatti on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;​	EM algorithm is &lt;strong&gt;an algorithm for deriving the maximum likelihood estimator (MLE)&lt;/strong&gt;, which is generally applied to statistical methods for incomplete data. Originally, the concept of &lt;strong&gt;“incomplete data and complete data”&lt;/strong&gt; was established to handle missing data, but by extending the definition, it can be applied to cut data, censored data, mixed distribution models, Robust distribution models, and latent data. It can also be applied to variable models, and Bayesian modeling.&lt;/p&gt;
+&lt;p&gt;​	Also, a number of statistical approach for clustering and unsupervised learning (eg, k-means, Gaussian mixture models) can be &lt;strong&gt;generalized&lt;/strong&gt; as EM algorithms when focusing on the computational process. In addition, researches on analyzing the EM algorithm from the viewpoint of &lt;strong&gt;information geometry&lt;/strong&gt; has been active, and applying EM algorithm to the stochastic model including an exponential family can be summarized in the form of &lt;strong&gt;e-projection / m-projection&lt;/strong&gt;.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;1-statistical-inference&#34;&gt;1. Statistical inference&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Objectives: To find out the probability distribution $q(x)$ that a certain variable $x \in X$ follows.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Namely, when considering a stochastic model $p(x \vert \theta)$ determined by the parameter $\theta \in \Theta$ and detecting the optimal parameter $\theta^{*} \in \Theta$ from dataset $ \mathcal{D} := {\{x_i\}}_{i=1}^{n}$, the follwing Approximation holds.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+x \sim q(x) \approx p(x|\theta)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;This is called a statistical inference (or statistical estimation).&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;2-maximum-likelihood-estimation&#34;&gt;2. Maximum likelihood estimation&lt;/h2&gt;
+&lt;p&gt;The most basic algorithm for statistical inference is maximum likelihood estimation (MLE). A log likelihood function of the stochastic model $p(x \vert \theta)$ is defined as&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\ell(\theta | x) := \log p(x | \theta)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;and an empirical objective function of $\theta$:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+J(\theta) := \frac{1}{n} \sum_{i=1}^{n} \ell(\theta | x_i)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;that depends on dataset $ \mathcal{D} := {{x_i}}_{i=1}^{n}$ can be obtained, MLE of parameter $\theta$ is derived as follows.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\hat{\theta}_{MLE} = \underset{\theta \in \Theta}{\rm argmax} ~ J(\theta)
+\end{align}
+$$&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;3-em-algorithm&#34;&gt;3. EM algorithm&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s define the following data categories.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Complete data $Y \in \mathcal{Y}$ : &lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;not observable&lt;/strong&gt; but completely follows the true distribution $p(y)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Imcomplete data $X \in \mathcal{X}$ : &lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;observable but &lt;strong&gt;not completely follows&lt;/strong&gt; the true distribution $p(x)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In general, the relationship complete data $y$ and incomplete data $x$ is a one-to-many relationship. but here, as a convenient assumption, I introduce a latent variable $z \in Z$ to express this constraint, that is assume $y = [x, z]$ holds. Considering the stochastic model for the complete data $x$,&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+p(y | \theta) = p(x,z | \theta)
+\end{align}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Complete data $\{X,Z\} \in \mathcal{X \times Z}$ : &lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;not observable&lt;/strong&gt; but completely follows the true distribution $p(x,z)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Imcomplete data $X \in \mathcal{X}$ : &lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;observable but &lt;strong&gt;not completely follows&lt;/strong&gt; the true distribution $p(x)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;data sample $x_i$ cannot be observed and its likelihood $p(x_i \vert \theta)$ cannot be calculated. However, for pair data sample $\{x_i, z_i\}$ can be observed and its likelihood $p(x_i, z_i \vert \theta)$ can be calculated.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+p(x_i | \theta)
+&amp;amp;= \int_{Z} p(x_i, z_i | \theta) ~ dz \&lt;br&gt;
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;By using this formula, the estimated value of $\hat{\theta}_{MLE}$ can be obtained by approximating $p(x,z \vert \theta)$, the likelihood function of complete data $\{x, z\}$. The procedure to derive the estimated value of $\hat{\theta}_{MLE}$ is called EM algorithm because it is an iterative method that repeats E-step and M-step alternately.&lt;/p&gt;
+&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;EM algorithm&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Initialize $\theta$ with $\theta^{0}$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For each step $t$:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;E Step&lt;/strong&gt;: Update the expectation value $Q$.&lt;/p&gt;
+&lt;p&gt;$$ \begin{aligned} Q(\theta | \theta^{(t)}) &amp;amp;= \mathbb{E}_{z \sim p(z \vert x, \theta^{(t)})} \left[ \log p(x, z \vert \theta)  \right] \\ &amp;amp;\simeq \sum_{i=1}^{n} p(z_i \vert x_i, \theta^{(t)}) \log p(x_i, z_i \vert \theta) \\ &amp;amp;= \sum_{i=1}^{n} p(z_i \vert x_i, \theta^{(t)}) \log p(z_i \vert x_i, \theta) + Const. \end{aligned}$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;M Step&lt;/strong&gt;: Derive the optimal parameter ${\theta}^{(t+1)}$ that maximize $Q$ value.&lt;/p&gt;
+&lt;p&gt;$$\begin{aligned} {\theta}^{(t+1)} &amp;amp;= \underset{\theta \in \Theta}{\rm argmax} ~ Q(\theta \vert {\theta}^{(t)}) \end{aligned}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Consider the convergence value $\theta^{(\infty)}$ as the algorithm output $\hat{\theta}_{EM}$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;p&gt;As a result, the estimated value of $\hat{\theta}_{MLE}$ is derived as $\hat{\theta}_{EM}$ and the following holds.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\hat{\theta}_{MLE} \approx \hat{\theta}_{EM}, ~~~
+p(x|\hat{\theta}_{MLE} ) \approx p(x|\hat{\theta}_{EM} )
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;Also, the summarized formula of calculations in E step and M step is as follows.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;For each step $t$:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EM Step&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;$$\begin{align} \theta^{(t+1)} &amp;amp;= \underset{\theta \in \Theta}{\rm argmax} ~ \mathbb{E}_{z \sim p(z \vert x, \theta^{(t)})} \left[ \log p(x, z \vert \theta)  \right] \\ &amp;amp;= \underset{\theta \in \Theta}{\rm argmax} ~ \sum_{i=1}^{n} p(z_i \vert x_i, \theta^{(t)}) \log p(x_i, z_i \vert \theta) \end{align} $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://users.isr.ist.utl.pt/~wurmd/Livros/school/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf&#34;&gt;PRML Chapter 9: Mixture models and EM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ebsa.ism.ac.jp/ebooks/sites/default/files/ebook/1881/pdf/vol3_ch9.pdf&#34;&gt;9章 EMアルゴリズム - 「21 世紀の統計科学」第 III 巻 日本統計学会, 2008&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://staff.aist.go.jp/s.akaho/papers/josho-main.pdf&#34;&gt;解説 EMアルゴリズムの幾何学 - 赤穂昭太郎, 電子技術総合研究所&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ism.ac.jp/~shiro/papers/books/embook2000.pdf&#34;&gt;EMアルゴリズムと神経回路網, 2000, 統計数理研究所&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kullback-Leibler Divergence</title>
+      <link>https://yumaloop.github.io/post/2018-04-19-kl-divergence/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2018-04-19-kl-divergence/</guid>
+      <description>&lt;p&gt;KL-divergence frequently appears in many fields such as statistics and information theory. It is defined as the &lt;strong&gt;expected value&lt;/strong&gt; of &lt;strong&gt;logarithmic&lt;/strong&gt; transformation of &lt;strong&gt;likelihood ratio&lt;/strong&gt;. Note that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;expected value: weighted integration with probability density.&lt;/li&gt;
+&lt;li&gt;logarithmic transformation: conversion multiplication to linear combination that is suitable for convex optimization and function analysis.&lt;/li&gt;
+&lt;li&gt;likelihood ratio: a measure of likelihood comparison&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;1-what-is-kl-divergence&#34;&gt;1. What is KL-divergence?&lt;/h2&gt;
+&lt;h4 id=&#34;11-definition&#34;&gt;1.1 Definition&lt;/h4&gt;
+&lt;p&gt;　For any probability distributions $P$ and $Q$, &lt;strong&gt;KL-divergence&lt;/strong&gt; (Kullback-Leibler divergence)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; is defined as follows, using their probability density function $p(x)$ and $q(x)$.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;amp;:= \int q(x) \log \frac{q(x)}{p(x)} ~dx
+\end{align}&lt;/p&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;12-basic-properties&#34;&gt;1.2 Basic properties&lt;/h4&gt;
+&lt;p&gt;　KL-divergence has the following properties.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（&lt;strong&gt;non-negative&lt;/strong&gt;）It has a non-negative range.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+0 \leq D_{KL}( Q \mid\mid P ) &amp;amp;\leq \infty
+\end{align}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（&lt;em&gt;&lt;strong&gt;completeness&lt;/strong&gt;&lt;/em&gt;）When it equals to $0$, $P$ and $Q$ are equivalent.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;amp;= 0 ~~ \Leftrightarrow ~~ P = Q
+\end{align}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（&lt;strong&gt;assymmetry&lt;/strong&gt;）It is not symmetric about $P$ and $Q$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;amp;\neq D_{KL}( P \mid\mid Q )
+\end{align}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（&lt;strong&gt;absolute continuity&lt;/strong&gt;）Unless it diverges, $Q$ is absolutely continuous with respect to $P$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;amp;\lt \infty ~~ \Rightarrow ~~ P \gg Q
+\end{align}&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;​	For example, calculating KL-divergence&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; between two Gaussian distributions gives the following results: It can be seen that the more the shapes between two distributions do not match, the more  KL-divergence increases.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_norm.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;13-is-kl-divergence-a-metrics&#34;&gt;1.3 Is KL-divergence a metrics?&lt;/h4&gt;
+&lt;p&gt;​	KL-divergence is so important measurement when considering probability and information that it is called by various names depending on the field and context.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;KL-divergence&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;KL-metrics&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;KL-information&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Information divergence&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Information gain&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Relative entropy&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Since KL-divergence is always non-negative, it might be interpreted as the metrics in the space where the probability distributions $P$ and $Q$ exist. However, KL-divergence is &lt;strong&gt;not&lt;/strong&gt; strictly a metric because it only satisfies &amp;ldquo;non-negativity&amp;rdquo; and &amp;ldquo;completeness&amp;rdquo; among the following &lt;strong&gt;axioms of metrics&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Axioms of metrics $d(~)$:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;non-negativity                     $d(x, ~ y) \geq 0$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;completeness                      $d(x, ~ y) = 0 ~~ \Leftrightarrow ~~ x = y$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;symmetry                             $d(x, ~ y) = d(y, ~ x)$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The triangle inequality       $d(x, ~ y) + d(y, ~ z) \geq d(x, ~ z)$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Note that $d()$ is called the &lt;em&gt;distance function&lt;/em&gt; or simply &lt;em&gt;distance&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For example, Euclidean distance, squared distance, Mahalanobis distance, and Hamming distance satisfy these conditions, and can be clearly considered as metrics. On the other hand, KL-divergence is a divergence, not metrics. In mathematics, &lt;strong&gt;&amp;ldquo;divergence&amp;rdquo;&lt;/strong&gt; is an extended concept of &amp;ldquo;metrics&amp;rdquo; that satisfies only &lt;strong&gt;non-negativity&lt;/strong&gt; and &lt;strong&gt;completeness&lt;/strong&gt; among axioms of metrics. By introducing &amp;ldquo;divergence&amp;rdquo;, you can reduce the constraints of axioms of metrics and  have a high level of abstraction.&lt;/p&gt;
+&lt;p&gt;The word &amp;ldquo;divergence&amp;rdquo; is generally interpreted as the process or state of diverging; for example, in physics it appears as a vector operator &lt;strong&gt;div&lt;/strong&gt;. There is no Japanese words that corresponds to the meaning of divergence, but it seems that &amp;ldquo;相違度&amp;rdquo;, &amp;ldquo;分離度&amp;rdquo;, &amp;ldquo;逸脱度&amp;rdquo;, &amp;ldquo;乖離度&amp;rdquo; etc. might be used.&lt;/p&gt;
+&lt;p&gt;As an example, let&amp;rsquo;s measure the KL-divergence between two Gaussian distributions $ N (0, 1) $ (blue) and $ N (1, 2) $ (red). In the figure, the left shows &lt;strong&gt;KL-divergence from red one as seen from blue one&lt;/strong&gt;, and the right shows &lt;strong&gt;KL-divergence from blue one as seen from red one&lt;/strong&gt;. Their value are surely different.&lt;/p&gt;
+&lt;p&gt;Note that given two Gaussian distribution $p_1,p_2$ as&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+p_1(x) &amp;amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\&lt;br&gt;
+p_2(x) &amp;amp;= \mathcal{N}(\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2 \pi \sigma_2^2}} \exp \left\{ - \frac{ {(x - \mu_2)}^2}{2 \sigma_2^2} \right\}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;the following holds.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+{D}_{KL}(p_1 \mid\mid p_2)
+&amp;amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\&lt;br&gt;
+&amp;amp;= \log \frac{\sigma_2}{\sigma_1} + \frac{\sigma_1^2 + {( \mu_1 - \mu_2 )}^2}{2 \sigma_2^2} - \frac{1}{2}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/comparison_of_dkl_norm.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Incidentally, in addition to the KL-divergence, the following is known as a measure of the proximity (or closeness) between two probability distributions.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The metrics to measure closeness between $q(x)$ and $p(x)$&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$ {\chi}^2(q ; p) := \sum_{i=1}^{k} \frac{ { { p_i - q_i } }^{2} }{p_i}$        ($\chi^2$-statistics)&lt;/li&gt;
+&lt;li&gt;$ L_1(q ; p) := \int \vert q(x) - p(x) \vert ~ dx$        ($L_1$-norm)&lt;/li&gt;
+&lt;li&gt;$ L_2(q ; p) := \int { { q(x) - p(x) } }^{2} ~ dx$        ($L_2$-norm)&lt;/li&gt;
+&lt;li&gt;$ I_K(q ; p) := \int { \{ \sqrt{ q(x) } - \sqrt{ p(x) } \} }^{2} ~ dx $        (Herringer distance)&lt;/li&gt;
+&lt;li&gt;$ \mathbb{D}(q ; p) := \int f \left( {\large \frac{q(x)}{p(x)} } \right) q(x) ~ dx$        ($f$-divergence)&lt;/li&gt;
+&lt;li&gt;$ I_{\lambda}(q ; p) := \int \left\{ { \left( {\large \frac{q(x)}{p(x)} } \right) }^{\lambda} - 1 \right\} q(x) ~ dx$        (Generalized information)&lt;/li&gt;
+&lt;li&gt;$ {D}_{KL}(q ; p) := \int \log \left( {\large \frac{q(x)}{p(x)} } \right) q(x) ~ dx$        (KL-divergence)&lt;/li&gt;
+&lt;li&gt;$ JSD(q \mid\mid p) := \frac{1}{2} {D}_{KL}(q \mid\mid \frac{q+p}{2}) + \frac{1}{2} {D}_{KL}(p \mid\mid \frac{q+p}{2})$        (JS-divergence)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;2-relatinoship-to-other-measurements&#34;&gt;2. Relatinoship to other measurements&lt;/h2&gt;
+&lt;h4 id=&#34;21-kl-divergence-vs-mutual-information&#34;&gt;2.1 KL-divergence vs Mutual information&lt;/h4&gt;
+&lt;p&gt;　In information theory, entropy $H(X)$, join entropy $H(X,Y)$, conditional entropy $H(X \vert Y)$, mutual information $MI(X,Y)$ are defined as follows by using probability density $Pr()$&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+H(X)    &amp;amp;:= - \int Pr(x) \log Pr(x) ~dx \\&lt;br&gt;
+H(X,Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\&lt;br&gt;
+H(X|Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\&lt;br&gt;
+MI(X,Y) &amp;amp;:= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy
+\end{align}&lt;/p&gt;
+&lt;p&gt;For any two random variable $X$ and $Y$, mutual information $MI(X, Y)$ specifies the mutual (symmetric) dependence between them.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_mutual_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;\begin{align}
+MI(X,Y) &amp;amp;= H(X) - H(X|Y)  \\&lt;br&gt;
+&amp;amp;= H(Y) - H(Y|X) \\&lt;br&gt;
+&amp;amp;= H(X) + H(Y) - H(X,Y)
+\end{align}&lt;/p&gt;
+&lt;p&gt;Here, the following relationship holds between KL-divergence and mutual information.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+MI(X, Y)
+&amp;amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \bigl[ D_{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
+\end{align}&lt;/p&gt;
+&lt;p&gt;So that, mutual information $MI (X, Y)$ is interpreted as the degree of difference (average degree of deviation) between the joint distribution $Pr (x, y)$ when the $X$ and $Y$ are &lt;strong&gt;not independent&lt;/strong&gt; and the joint distribution $Pr (x) Pr (y)$ when $X$ and $Y$ are &lt;strong&gt;independent&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;（cf.）Formula transformation of mutual information:&lt;/p&gt;
+&lt;p&gt;\begin{align}
+MI(X,Y)
+&amp;amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
+&amp;amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
+&amp;amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\&lt;br&gt;
+&amp;amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
+\end{align}&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;22-kl-divergence-vs-log-likelihood-ratio&#34;&gt;2.2 KL-divergence vs Log likelihood ratio&lt;/h3&gt;
+&lt;p&gt;In the field of Bayes inference and statistical modeling, you often face the problem of estimating the &lt;strong&gt;true distribution&lt;/strong&gt; $q(x)$ by $p_{\hat{\theta}}(x)$ (that is the combination of stochastic model $p_{\theta}(x)$ and estimated parameter $\hat{\theta}$ ) . Therefore, KL-divergence is used when you want to measure the difference between two distributions, or when you want to incorporate the estimation error into the loss function or risk function in order to solve  the optimization problem for the parameter $\theta$.&lt;/p&gt;
+&lt;p&gt;Also, KL-divergence is related to the log likelihood ratio so much that it has a deep connection to the model selection method &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; such as likelihood ratio test, Bayes factor, and AIC (Akaike&amp;rsquo;s information criterion).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;KL-divergence of estimated distribution $p_{\theta}(x)$ for the true distribution $q(x)$ : $D_{KL}(q \mid\mid p_{\theta})$ is considerd as the expected value of the log likelihood ratio $q(x)/p_{\theta}(x)$ for tue true distribution $q(x)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+\left( \text{Log likelihood ratio} \right)
+&amp;amp;= \log \frac{q(x)}{p_{\theta}(x)} \\&lt;br&gt;
+D_{KL}( q \mid\mid p_{\theta} )
+&amp;amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{q(x)}{p_{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
+\end{align}&lt;/p&gt;
+&lt;p&gt;When using KL-divergence as the evaluation/loss value in model selection/comparison, it is equivalent that minimizing KL-divergence: $D_{KL}( q \mid\mid p )$ and maximizing the log likelihood: $\log p(x)$ as follows.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+D_{KL}( q \mid\mid p_{\theta} )
+&amp;amp;= \mathbb{E}_{X} \bigl[ \log q(x) \bigr] - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \\&lt;br&gt;
+&amp;amp;\propto - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
+\end{align}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;For any parametric stochastic model $f(x \vert \theta)$ (such as a linear regression model) which represents the estimated distribution as&lt;/p&gt;
+&lt;p&gt;\begin{align}
+p_{\theta}(x) = f(x|\theta)
+\end{align}&lt;/p&gt;
+&lt;p&gt;, if a certain loss function $L(\theta)$ is given, the optimal parameter $\theta^*$ exists as it satisfy the following.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+q(x) &amp;amp;= f(x|\theta^*)
+\end{align}&lt;/p&gt;
+&lt;p&gt;Then, for any estimated parameter $\hat{\theta}$ ,the estimated loss of the model $f(x \vert \hat{\theta})$ is represented by KL-divergence. (Note that $\ell( \cdot \vert x)$ means the log likelihood function.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{align}
+\left( \text{Log likelihood ratio} \right)
+&amp;amp;=  \log \frac{f(x|\theta^{*})}{f(x|\hat{\theta})}
+\end{align}&lt;/p&gt;
+&lt;p&gt;\begin{align}
+\hat{\theta}
+&amp;amp;:= \underset{\theta \in \Theta}{\rm argmin} ~ L(\theta) \tag{7}
+\\&lt;br&gt;
+D_{KL}( q \mid\mid p_{\hat{\theta}} )
+&amp;amp;= D_{KL}( p_{\theta^{*}} \mid\mid p_{\hat{\theta}} ) \\&lt;br&gt;
+&amp;amp;= D_{KL}( f_{\theta^{*}} \mid\mid f_{\hat{\theta}} ) \\&lt;br&gt;
+&amp;amp;= \int f(x|\theta^{*}) \log \frac{f(x|\theta^{*})}{ f(x|\hat{\theta})} dx \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
+\end{align}&lt;/p&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;23-kl-divergence-vs-fisher-information&#34;&gt;2.3 KL-divergence vs Fisher information&lt;/h4&gt;
+&lt;p&gt;Given a certain stochastic model $f(\cdot \vert \theta)$, &lt;strong&gt;Fisher information&lt;/strong&gt; $I(\theta)$ for the parameter $\theta$ is defined as follows.  (Note that $ \ell( \cdot \vert x) $ means the log likelihood function.)&lt;/p&gt;
+&lt;p&gt;\begin{align}
+I(\theta)
+&amp;amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \log f(x|\theta) \right\} }^{2} \right]
+\end{align}&lt;/p&gt;
+&lt;p&gt;Also, between KL-divergence and Fisher information, the following holds.&lt;/p&gt;
+&lt;p&gt;\begin{align}
+\lim_{h \to 0} \frac{1}{h^{2}} D_{KL} \bigl( f(x|\theta) \mid\mid f(x|\theta+h) \bigr)
+&amp;amp;= \frac{1}{2} I(\theta)&lt;br&gt;
+\end{align}&lt;/p&gt;
+&lt;p&gt;(cf.) The following equation holds by using Taylor expansion of $\ell( \cdot \vert x)$.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;\begin{align}
+\ell(\theta + h) - \ell(\theta)
+&amp;amp;= {\ell}^{&#39;}(\theta)h + \frac{1}{2} {\ell}^{&#39;&#39;}(\theta) h^{2} + O(h^{3})
+\end{align}&lt;/p&gt;
+&lt;p&gt;This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is **directly proportional to** Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures **the local information** that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_fisher_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;3-references&#34;&gt;3. References&lt;/h2&gt;
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=yumaloop0f-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS1=1&amp;detail=1&amp;asins=4254127820&amp;linkId=1456f8ade37cd01c91d31448ce7b50f2&amp;bc1=ffffff&amp;lt1=_top&amp;fc1=333333&amp;lc1=0066c0&amp;bg1=ffffff&amp;f=ifr&#34;&gt;
+&lt;/iframe&gt;
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=yumaloop0f-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS1=1&amp;detail=1&amp;asins=4785314117&amp;linkId=a437161b2bfff7107300d73243499d9d&amp;bc1=FFFFFF&amp;lt1=_top&amp;fc1=333333&amp;lc1=0066C0&amp;bg1=FFFFFF&amp;f=ifr&#34;&gt;
+&lt;/iframe&gt;
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=yumaloop0f-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS1=1&amp;detail=1&amp;asins=0471241954&amp;linkId=477c693b4215ab3b8aa2cdee1450fef7&amp;bc1=ffffff&amp;lt1=_top&amp;fc1=333333&amp;lc1=0066c0&amp;bg1=ffffff&amp;f=ifr&#34;&gt;
+&lt;/iframe&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Also, f-divergence is defined as its generalized class. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;I used scipy.stats.entropy(). &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. &lt;a href=&#34;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&#34;&gt;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Article on gneralized information criterion(GIC): &lt;a href=&#34;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&#34;&gt;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

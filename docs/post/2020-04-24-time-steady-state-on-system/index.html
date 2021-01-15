@@ -1,0 +1,1243 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Nelson Bighetti">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="動的システムの定常状態，線形性，移動平均について．">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#1565c0">
+  
+
+  
+  
+  
+  <script src="https://yumaloop.github.io/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://yumaloop.github.io/css/wowchemy.3848b427d7eb1e57a64b3ba29764068e.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+  <link rel="manifest" href="https://yumaloop.github.io/index.webmanifest">
+  
+
+  <link rel="icon" type="image/png" href="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Yuma Uchiumi">
+  <meta property="og:url" content="https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/">
+  <meta property="og:title" content="Time-steady States on Systems | Yuma Uchiumi">
+  <meta property="og:description" content="動的システムの定常状態，線形性，移動平均について．"><meta property="og:image" content="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-04-24T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-04-24T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/"
+  },
+  "headline": "Time-steady States on Systems",
+  
+  "datePublished": "2020-04-24T00:00:00Z",
+  "dateModified": "2020-04-24T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Nelson Bighetti"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yuma Uchiumi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "動的システムの定常状態，線形性，移動平均について．"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Time-steady States on Systems | Yuma Uchiumi</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="https://yumaloop.github.io/js/wowchemy-init.min.7264cf0eba3b66951b36da7d2cecf9c5.js"></script>
+
+  
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="https://yumaloop.github.io/">Yuma Uchiumi</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="https://yumaloop.github.io/">Yuma Uchiumi</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="https://yumaloop.github.io/"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="https://yumaloop.github.io/about/"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="https://yumaloop.github.io/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Time-steady States on Systems</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Apr 24, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="https://yumaloop.github.io/category/statml/">StatML</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h3 id="システムと定常状態">システムと定常状態</h3>
+<p>多くの動的モデル（Dynamic Model-System）は，定常状態（time-steady state）に至ることを目的として設計される．ここで，定常状態とは，「ある変数$X$に作用する，何らかの時変量（parameter $\theta_t$）や関数$L_t(x; \theta)$）が一定値に収束すること」と定義しておく．</p>
+<p>そして，着目している動的モデルが定常状態に至るプロセスは，システム同定（System identification）と呼ばれ，定常状態を示した概念として，均衡（equilibrium）や平衡（balance）と呼ばれる用語が使われる．</p>
+<ol>
+<li><a href="https://ja.wikipedia.org/wiki/%e5%8c%96%e5%ad%a6%e5%8f%8d%e5%bf%9c" target="_blank" rel="noopener">化学反応</a>においては、<a href="https://ja.wikipedia.org/wiki/%e5%8f%af%e9%80%86%e5%8f%8d%e5%bf%9c" target="_blank" rel="noopener">可逆反応</a>の生成物の変化量と出発物質の変化量が合致した状態を指す。<a href="https://ja.wikipedia.org/wiki/%e5%8c%96%e5%ad%a6%e5%b9%b3%e8%a1%a1" target="_blank" rel="noopener">化学平衡</a>を参照。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e5%8a%9b%e5%ad%a6" target="_blank" rel="noopener">力学</a>においては、物体に加わっている全ての<a href="https://ja.wikipedia.org/wiki/%e5%8a%9b_%28%e7%89%a9%e7%90%86%e5%ad%a6%29" target="_blank" rel="noopener">力</a>の合力と<a href="https://ja.wikipedia.org/wiki/%e5%8a%9b%e3%81%ae%e3%83%a2%e3%83%bc%e3%83%a1%e3%83%b3%e3%83%88" target="_blank" rel="noopener">力のモーメント</a>の和がともに 0 である状態を平衡と呼ぶ。<a href="https://ja.wikipedia.org/w/index.php?title=%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">力学的平衡</a>（<a href="https://ja.wikipedia.org/wiki/%e8%8b%b1%e8%aa%9e" target="_blank" rel="noopener">英語</a>: <a href="https://en.wikipedia.org/wiki/Mechanical_equilibrium" target="_blank" rel="noopener">Mechanical equilibrium</a>）を参照。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6" target="_blank" rel="noopener">熱力学</a>においては通常、<a href="https://ja.wikipedia.org/wiki/%e7%86%b1%e5%b9%b3%e8%a1%a1" target="_blank" rel="noopener">熱平衡</a>、<a href="https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1" target="_blank" rel="noopener">力学的平衡</a>、<a href="https://ja.wikipedia.org/wiki/%e5%8c%96%e5%ad%a6%e5%b9%b3%e8%a1%a1" target="_blank" rel="noopener">化学平衡</a>の三つを合わせて、<a href="https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1" target="_blank" rel="noopener">熱力学的平衡</a>とよぶ。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e7%b5%b1%e8%a8%88%e5%8a%9b%e5%ad%a6" target="_blank" rel="noopener">統計力学</a>においては、系のエネルギー分布が、ボルツマン分布に従うことである。<a href="https://ja.wikipedia.org/wiki/%e7%86%b1%e5%8a%9b%e5%ad%a6%e7%9a%84%e5%b9%b3%e8%a1%a1" target="_blank" rel="noopener">熱力学的平衡</a>を参照。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e7%89%a9%e7%90%86%e5%8c%96%e5%ad%a6" target="_blank" rel="noopener">物理化学</a>においては、複数の物質相から構成される系において、相間の物質の出入りが合い等しい状態を指す。<a href="https://ja.wikipedia.org/wiki/%e7%9b%b8%e5%b9%b3%e8%a1%a1" target="_blank" rel="noopener">相平衡</a>を参照。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e9%9b%bb%e6%b0%97%e5%b7%a5%e5%ad%a6" target="_blank" rel="noopener">電気工学</a>においては、信号源と負荷の間のインピーダンスが合致していることを指す。<a href="https://ja.wikipedia.org/wiki/%e3%82%a4%e3%83%b3%e3%83%94%e3%83%bc%e3%83%80%e3%83%b3%e3%82%b9%e5%b9%b3%e8%a1%a1" target="_blank" rel="noopener">インピーダンス平衡</a>を参照。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e9%9b%bb%e6%b0%97%e5%9b%9e%e8%b7%af" target="_blank" rel="noopener">電気回路</a>においては、信号回路の双方が接地点に接続されていないことを指す。<a href="https://ja.wikipedia.org/wiki/%e5%b9%b3%e8%a1%a1%e6%8e%a5%e7%b6%9a" target="_blank" rel="noopener">平衡接続</a>を参照。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e6%83%85%e5%a0%b1%e5%b7%a5%e5%ad%a6" target="_blank" rel="noopener">情報工学</a>においては、データ<a href="https://ja.wikipedia.org/wiki/%e6%9c%a8%e6%a7%8b%e9%80%a0_%28%e3%83%87%e3%83%bc%e3%82%bf%e6%a7%8b%e9%80%a0%29" target="_blank" rel="noopener">木構造</a>の任意の節においてその配下の節点の数が等しい状態を指す。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e7%94%9f%e6%85%8b%e5%ad%a6" target="_blank" rel="noopener">生態学</a>においては、生物群集間の分布と個体数の変化が無い状態を指す。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e7%94%9f%e7%90%86%e5%ad%a6" target="_blank" rel="noopener">生理学</a>においては、水平であることを認知することを指す。<a href="https://ja.wikipedia.org/wiki/%e5%b9%b3%e8%a1%a1%e6%84%9f%e8%a6%9a" target="_blank" rel="noopener">平衡感覚</a>を参照。</li>
+<li><a href="https://ja.wikipedia.org/wiki/%e7%b5%8c%e6%b8%88%e5%ad%a6" target="_blank" rel="noopener">経済学</a>においては、<a href="https://ja.wikipedia.org/wiki/%e9%9c%80%e8%a6%81%e3%81%a8%e4%be%9b%e7%b5%a6" target="_blank" rel="noopener">需要と供給</a>が釣り合って<a href="https://ja.wikipedia.org/wiki/%e4%be%a1%e6%a0%bc" target="_blank" rel="noopener">価格</a>が不動になることなどを指す。<a href="https://ja.wikipedia.org/wiki/%e5%9d%87%e8%a1%a1" target="_blank" rel="noopener">均衡</a>を参照。</li>
+</ol>
+<p>連立(微分)方程式で記述できるため．</p>
+<h3 id="なぜ線形モデルが有用なのか">なぜ線形モデルが有用なのか？</h3>
+<p>答えはシンプルで，Taylor展開</p>
+<p>$$
+\begin{align}
+\frac{d x_1}{d t} &amp;= f_1(x_1, \dots, x_n; \theta_1) \\<br>
+\frac{d x_2}{d t} &amp;= f_2(x_1, \dots, x_n; \theta_1) \\<br>
+&amp;\vdots \\<br>
+\frac{d x_n}{d t} &amp;= f_n(x_1, \dots, x_n; \theta_1)
+\end{align}
+$$</p>
+<p>このモデルが，定常状態にいる場合，</p>
+<p>$$
+\begin{align}
+f_1 = f_2 = \cdots = f_n = 0
+\end{align}
+$$</p>
+<p>が成り立つから，$n$個の変数${\bf x} = (x_1, x_2, \dots, x_n)$に対して，$n$個の方程式が得られる．この解がシステムの定常化となる．これを${\bf x}^* = (x_1^*, x_2^*, \dots, x_n^*)$とおくと，$f_1, f_2, \dots, f_n$に対して，点${\bf x}^*$の近傍でTaylor展開が可能になる．</p>
+<p>$$
+\begin{align}
+\frac{d x_1}{d t}
+= f_1(x_1, \dots, x_n; \theta_1)
+=&amp; a_{11}(x_1 - x_1^*) + a_{12} {(x_2 - x_2^*)} + \cdots a_{1n} {(x_n - x_n^*)} + \\<br>
+&amp; a_{111}{(x_1 - x_1^*)}^2 + a_{112}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{11n}{(x_1 - x_1^*)}^2 + \\<br>
+&amp; ~~ \vdots \\<br>
+&amp; a_{11\cdots1}{(x_1 - x_1^*)}^n + \cdots \\<br>
+\frac{d x_2}{d t}
+= f_2(x_1, \dots, x_n; \theta_1)
+=&amp; a_{21}(x_1 - x_1^*) + a_{22} {(x_2 - x_2^*)} + \cdots a_{2n} {(x_n - x_n^*)} + \\<br>
+&amp; a_{211}{(x_1 - x_1^*)}^2 + a_{212}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{21n}{(x_1 - x_1^*)}^2 + \\<br>
+&amp; ~~ \vdots \\<br>
+&amp; a_{21\cdots1}{(x_1 - x_1^*)}^n + \cdots \\ \\<br>
+&amp; ~~ \vdots \\ \\<br>
+\frac{d x_n}{d t}
+= f_n(x_1, \dots, x_n; \theta_1)
+=&amp; a_{n1}(x_1 - x_1^*) + a_{n2} {(x_2 - x_2^*)} + \cdots a_{nn} {(x_n - x_n^*)} + \\<br>
+&amp; a_{n11}{(x_1 - x_1^*)}^2 + a_{n12}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{n1n}{(x_1 - x_1^*)}^2 + \\<br>
+&amp; ~~ \vdots \\<br>
+&amp; a_{n1\cdots1}{(x_1 - x_1^*)}^n + \cdots \\<br>
+\end{align}
+$$</p>
+<p>つまり，任意の微分可能関数$f_1, f_2, \dots, f_n$によって表現されたダイナミクスをもつ動的モデルは，（定常解の近傍では）任意のn次多項式によって近似できる．これにより，線形システムの妥当性が保証される．一般解は，</p>
+<p>$$
+\begin{align}
+x_1
+=&amp; ~ x_1^*  + C_{11}e^{\lambda_1 t} + C_{12}e^{\lambda_2 t} + \cdots C_{1n}e^{\lambda_n t} + \\<br>
+&amp; ~~~~~~~~~~ C_{111}e^{2\lambda_1 t} + C_{112}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\<br>
+&amp; ~~~~~~~~~~ ~~ \vdots \\<br>
+&amp; ~~~~~~~~~~ C_{11\cdots1}e^{n\lambda_1 t} + C_{11\cdots2}e^{n\lambda_2 t} + \cdots + C_{11\cdots n}e^{n\lambda_n t} \\<br>
+x_2
+=&amp; ~ x_2^*  + C_{21}e^{\lambda_1 t} + C_{22}e^{\lambda_2 t} + \cdots C_{2n}e^{\lambda_n t} + \\<br>
+&amp; ~~~~~~~~~~ C_{211}e^{2\lambda_1 t} + C_{212}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\<br>
+&amp; ~~~~~~~~~~ ~~ \vdots \\<br>
+&amp; ~~~~~~~~~~ C_{21\cdots1}e^{n\lambda_1 t} + C_{21\cdots2}e^{n\lambda_2 t} + \cdots + C_{21\cdots n}e^{n\lambda_n t} \\ \\<br>
+&amp; ~~~~~~~~~~ ~~ \vdots
+\ \<br>
+x_n
+=&amp; ~ x_n^*  + C_{n1}e^{\lambda_1 t} + C_{n2}e^{\lambda_2 t} + \cdots C_{nn}e^{\lambda_n t} + \\<br>
+&amp; ~~~~~~~~~~ C_{n11}e^{2\lambda_1 t} + C_{n12}e^{2\lambda_2 t} + \cdots + C_{n1n}e^{2\lambda_n t} + \\<br>
+&amp; ~~~~~~~~~~ ~~ \vdots \\<br>
+&amp; ~~~~~~~~~~ C_{n1\cdots1}e^{n\lambda_1 t} + C_{n1\cdots2}e^{n\lambda_2 t} + \cdots + C_{n1\cdots n}e^{n\lambda_n t} \\<br>
+\end{align}
+$$</p>
+<p>となる．</p>
+<br>
+<h3 id="モデルとは何か">モデルとは何か？</h3>
+<p>つまり，多くの分野において数理モデルとか計量モデルとか呼ばれるものは，以下の手続きを必要とする．</p>
+<ol>
+<li>定常状態に至ることを目的とする<strong>動的モデル</strong>を定義する</li>
+<li>モデルの状態変化を<strong>最適化問題(過程</strong>)として定式化する．</li>
+<li>定常状態への収束が保証された<strong>最適化アルゴリズム</strong>を考える</li>
+</ol>
+<br>
+<h3 id="移動平均">移動平均</h3>
+<ul>
+<li>カルマンフィルタ</li>
+<li>Adamに置けるモメンタム</li>
+<li>強化学習の報酬</li>
+<li>ゲーム理論におけるFicticious Play</li>
+<li>株価におけるテクニカル分析移動平均（ARMA）</li>
+<li>(金融工学)バリュエーションにおけるDCF法</li>
+</ul>
+<p>移動平均とは何か？</p>
+<p>$$
+\begin{align}
+m_t &amp;= \gamma \cdot m_t − 1+η \cdot \frac{\partial L(w_t)}{\partial w} \\<br>
+w_{t+1} &amp;= w_t - m_t
+\end{align}
+$$</p>
+<p>$$
+m_t = g_t + \gamma \cdot g_{t-1} + \gamma^2 \cdot g_{t-2} \cdots + \gamma^t \cdot g_{0}
+$$</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="https://yumaloop.github.io/tag/tips/">Tips</a>
+  
+  <a class="badge badge-light" href="https://yumaloop.github.io/tag/system/">System</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/&amp;text=Time-steady%20States%20on%20Systems" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/&amp;t=Time-steady%20States%20on%20Systems" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Time-steady%20States%20on%20Systems&amp;body=https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/&amp;title=Time-steady%20States%20on%20Systems" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Time-steady%20States%20on%20Systems%20https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/&amp;title=Time-steady%20States%20on%20Systems" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://yumaloop.github.io/"><img class="avatar mr-3 avatar-circle" src="https://yumaloop.github.io/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q75_lanczos_center.jpg" alt="Nelson Bighetti"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://yumaloop.github.io/">Nelson Bighetti</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://yumaloop.github.io/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/gcushen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-04-05-adaptation-strategies-for-capitalism/">A Capitalist&#39;s Game</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-03-18-particle_filter/">State Space Model &amp; Particle Filter</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-12-20-stackoverflow-developer-survey-2020/">StackOverflow - 2020 Developer Survey</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-11-25-monte-carlo-sim-bsoption-r/">Monte Carlo Simulation of Black-Scholes Option Pricing Model</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-06-30-sw-lockdown-reading-list/">Simon N Wood&#39;s &#34;lockdown reading list&#34;</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'event' : "Events",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="https://yumaloop.github.io/js/wowchemy.min.aeecf26c1eff6b9588dbafc1a9f3953c.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

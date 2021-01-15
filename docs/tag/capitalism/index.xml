@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Capitalism | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/capitalism/</link>
+      <atom:link href="https://yumaloop.github.io/tag/capitalism/index.xml" rel="self" type="application/rss+xml" />
+    <description>Capitalism</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Thu, 11 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Capitalism</title>
+      <link>https://yumaloop.github.io/tag/capitalism/</link>
+    </image>
+    
+    <item>
+      <title>Recursion of the Capital</title>
+      <link>https://yumaloop.github.io/post/2020-06-11-recurrent-structure-in-capita/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-06-11-recurrent-structure-in-capita/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/1013781606/The-glare-of-empty-square-by-Sara-Biljana-Gaon&#39; alt=&#39;The glare of empty square by Sara Biljana Gaon on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/1013781606/m%3D900/v2?sig=8fbfac0615a131ce9fe97ebac12eca86ca0e9b9eec82ba6b4fa68ce6da3cfc07&#39; alt=&#39;The glare of empty square by Sara Biljana Gaon on 500px.com&#39; style=&#34;width: 40vw; min-width: 330px;&#34; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;Self-discriptive system within time change.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The simplest example of self-discriptive systems is the exponential increase. This is because the simplest &amp;ldquo;change&amp;rdquo; of a variable $x$ is a first derivative of its time $dx/dt$, and the simplest form of the function &amp;ldquo;$f(x)$&amp;rdquo; determined by a variable $x$ is a linear one $Cx$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Case1: Growth is &lt;strong&gt;constant&lt;/strong&gt; with the current state (state is &lt;strong&gt;invariant&lt;/strong&gt; over time)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\frac{dx}{dt} = C
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Case2: Growth is &lt;strong&gt;linear&lt;/strong&gt; with the current state (state changes &lt;strong&gt;exponentially&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\frac{dx}{dt} = Cx
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Case3: Growth is &lt;strong&gt;complex but relative&lt;/strong&gt; to the current state (generalization)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\frac{dx}{dt} = f(x)
+$$&lt;/p&gt;
+&lt;h1 id=&#34;actual-situations&#34;&gt;Actual situations&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;1. Money/Capital creates new money/capital&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is the principle of capital markets and investment. Or what is called Capital Gain. Source of motivation on the lender side.&lt;/p&gt;
+&lt;p&gt;これは資本市場と投資の原理．いわゆるキャピタルゲイン．貸し手の動機の源泉．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;2. Trust/Credit creates new trust/credit&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The most obvious example is banking. Actually, there is a word of credit creation. Lending is gradually increased based on credit. This is the principle of the borrower.&lt;/p&gt;
+&lt;p&gt;わかりやすい例は銀行業． 実際，信用創造という言葉があるくらい．信用をもとに，少しずつ貸出を増やす．これは借り手の原理．&lt;/p&gt;
+&lt;p&gt;The modern financial system is supported by the principle that capital and credit increase/decrease exponentially. This principle creates a dynamic phenomenon (spiral) that motivates lenders and borrowers and that &amp;ldquo;lending and borrowing exponentially increases/decreases.&amp;rdquo; This is inflation and deflation.&lt;/p&gt;
+&lt;p&gt;現代金融システムは，「資本と信用が指数増加/減少する」という原理によって支えられる．この原理は，貸し手と借り手に動機を与え「指数増加/減少する貸金と借金」という現象（スパイラル）を生む．これがインフレとデフレ．&lt;/p&gt;
+&lt;p&gt;A vested interest (a large corporation or a large political party) can be established as a vested interest by reproducing credit and achievement in the future by accumulating past credit and achievement.&lt;/p&gt;
+&lt;p&gt;既得権益（大企業や大政党）は，過去の信用と実績の積み重ねにより，将来の信用と実績を再生産することで，既得権益として成立する．&lt;/p&gt;
+&lt;p&gt;To make matters difficult, &amp;ldquo;trust&amp;rdquo; and &amp;ldquo;achievement&amp;rdquo; are complementary. &amp;ldquo;Trust&amp;rdquo; provides an opportunity to unlock new achievements. The new “achievement” repairs and strengthens trust. In other words, vested interests are invincible unless environmental changes occur.&lt;/p&gt;
+&lt;p&gt;厄介なことに「信頼」と「実績」は相補関係にある．「信頼」は新たな実績解除への機会を提供する．新たな「実績」は信頼を補修・強化する．つまり，既得権益は環境変化が起きない限り無敵．&lt;/p&gt;
+&lt;p&gt;The first step for new powers (ventures and youth) to scale up is to win trust or to make some achievements.
+In addition, it is even better as it causes environmental changes and innovation.&lt;/p&gt;
+&lt;p&gt;新興勢力（ベンチャーや若者）がスケールアップするための第一歩は「信頼」を勝ち取るか，「実績」で黙らせるか．
+加えて，環境変化やイノベーションを起こすとなお良い．&lt;/p&gt;
+&lt;p&gt;As a result,
+The risk-loving youths first try to walk the cycle from the trust to the achievement, but
+The risk-averse youths first try to walk the cycle from the achievement to the trust.&lt;/p&gt;
+&lt;p&gt;結果として，
+リスク選好的な若者は，信頼から実績へというサイクルを歩もうとし，
+リスク回避的な若者は，実績から信頼へというサイクルを歩もうとする．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;4. Follower/Fan creates new follower/fan&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In order for super popular corporate brands, entertainers, celebrities, and influencers to be born, their fans/followers need to create new fans/followers.&lt;/p&gt;
+&lt;p&gt;超人気な企業ブランドや芸能人，セレブ，インフルエンサーが生まれるためには，彼らのファン/フォロワーが新たなファン/フォロワーを生む必要がある．&lt;/p&gt;
+&lt;p&gt;Nowadays, this mechanism has been strengthened in the entertainment industry where globalization by the Internet has been achieved, and in platforms where search and recommendation algorithms that strongly fit past trends are dominant.&lt;/p&gt;
+&lt;p&gt;近年，インターネットによるグローバル化が達成されたエンタメ産業や，過去の傾向に強くfitする検索や推薦のアルゴリズムが支配的なプラットホームにおいて，このメカニズムは強化されている．&lt;/p&gt;
+&lt;p&gt;The more followers/fans there are, the more followers/fans there are.
+The services with more registrants/subscribers tend to have more registrants/subscribers.&lt;/p&gt;
+&lt;p&gt;フォロワー/ファンが多い人ほど，フォロワー/ファンが増えやすい．
+登録者/購読者の多いサービスほど，登録者/購読者が増えやすい．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;3. Popularity/Evaluation creates new popularity/evaluation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For products that sell well, the &amp;ldquo;selling&amp;rdquo; state itself becomes valuable.&lt;/p&gt;
+&lt;p&gt;売れているものは，売れているということ自体が価値になる．&lt;/p&gt;
+&lt;p&gt;This phenomenon is often explained by René Girard&amp;rsquo;s triangular desire from the perspective of consumer sentiment, and by the network externality from the perspective of industrial organization theory.&lt;/p&gt;
+&lt;p&gt;この現象は，消費者心理の観点からはルネ・ジラールの欲望の三角形，産業組織論の観点からはネットワーク外部性でよく説明される．&lt;/p&gt;
+&lt;p&gt;Additionally, this schema is often misused for stealth marketing, hype, information products, affiliates, etc.&lt;/p&gt;
+&lt;p&gt;また，このスキーマは，しばしばステマ，偽客(サクラ)，誇大広告，情報商材，アフィリエイトなどで悪用される．&lt;/p&gt;
+&lt;br&gt;
+&lt;!--
+
+### 自己組織化 
+
+ファンがアイドルに理想像を提示し求める．
+アイドルはファンの期待に応えるため，理想像に近づく．
+
+--&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Capitalist&#39;s Game</title>
+      <link>https://yumaloop.github.io/post/2020-04-05-adaptation-strategies-for-capitalism/</link>
+      <pubDate>Fri, 21 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-04-05-adaptation-strategies-for-capitalism/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/111743009/Frankfurt-Facades-by-Ingo-Juergens&#39; alt=&#39;Frankfurt Facades by Ingo Juergens on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/111743009/m%3D900/v2?sig=01f0547db1460ab77c620ba8181bf7d5ac38c2816f1aa262a9f543309c896823&#39; alt=&#39;Frankfurt Facades by Ingo Juergens on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;1-資本主義の原理&#34;&gt;1. 資本主義の原理&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;資本主義 - Capitalism&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;資本主義とは何か？を考える際には，資本主義ではないものは何か？を考え，その差分をまとめ直せば良い．資本主義の対義語は，共産主義（社会主義）になる．これらを排他的に比較すれば，その定義（政治的概念である&amp;quot;自由&amp;quot;や&amp;quot;民主主義&amp;quot;については除外する）は，次のようにまとめられると思う．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;資本主義：個人が資本を所有できる&lt;/li&gt;
+&lt;li&gt;共産主義：個人が資本を所有できない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;非常にシンプルな定義だが，僕は気に入っているし，この定義を使って文意解釈に苦難したことはない．要するに，何らかの文脈で「資本主義」というワードが使われた場合，そこでは私的財産の所有を認めるか・認めないかが言及されているのだ．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Note:&lt;/p&gt;
+&lt;p&gt;原理としての「資本主義/共産主義」2元論は非常にシンプルだが，実際の人類史では，これらを現実社会へ制度・システムとして導入し，この原理を駆動させるために，様々な法的・政治的なしくみが提案されている．しかし，再現性がない現象(=史実)については黙るのが科学のルールなので，ここでは立ち入らないこととする．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;資本 - Capital&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;資本とは，富を生産するための構成要素を指す抽象概念である．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;資本：生産要素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;資本は，広義では生産要素を指す用語であり，以降で扱うヒト・モノ・カネは全て資本とみなすこともできる．しかし，実際には，その社会的役割や歴史的意味に注意して，これらを分けて扱うことが多い．これは経済学が，自然科学ではなく社会科学たる所以である．すなわち，経済学が扱う範疇である「人間社会」の制度・システムには，法や政治が設計理念として深く関わっており，実際的・実用的な分析を行う際には，これらは分離不可能であるということである．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Note:&lt;/p&gt;
+&lt;p&gt;資本によって，我々が生産しているもの(=富)とは何か？という疑問が残る．結論から言うと，僕はまだ理解できていない（詳しい方に教えて欲しい）．以下に現時点での一応の解釈をまとめておく&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;アダム・スミスの時代に，当時の理論家は（抽象的な概念としての）「富」を理解するために思考を重ねた．その結果，国家における「富」を説明する際に，観測可能なもののうち，もっとも妥当な指標は，資本(=生産要素)だった．そのため「国家の富∝国家の生産力」と仮定し，その国の資本に注目した．&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;なお，「観測できない事実」については問題の範疇外とするか，あるいは妥当な仮定をおいて探求を進めるのが経験科学の作法なので，ここでは立ち入らないこととする．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;取引と市場 - Trading &amp;amp; markets&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我々が，経済学的視点で社会をみるとき，それはすなわち，我々が「取引」に着目することを意味する．「取引」とは「資本(=生産要素)の所有権の交換」であり，取引の傾向を分析することで，経済のミクロな状態を推定することができる．さらに，取引の集合に対して「市場」という概念を与え，取引の統計的傾向を分析することで，経済のマクロな状態を推定することができる．&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;2-資本主義社会に対する個人の適合戦略&#34;&gt;2. 資本主義社会に対する個人の適合戦略&lt;/h1&gt;
+&lt;p&gt;ここからは，資本主義の原理を踏まえた上で，われわれ個人が取るべき戦略について考えてみようと思う．ここでいう「戦略」とは，「行動選択」と同義である．なお，実際の社会で考慮すべき個別具体的な条件は考えず，あくまで資本主義の&amp;quot;原理&amp;quot;を表現するためのモデルとして，ゲームを導入していることに注意してほしい．&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;資本主義ゲーム - The capitalist&amp;rsquo;s game&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;個人にとって重要な問題は，ミクロな社会状況に対して，科学的な視点をもち，合理的に意思決定・行動選択を行うことである．ここでは，資本主義の原理を踏まえた以下のようなゲームを考えて，個人の適合戦略を考えてみる．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;社会：ゲーム世界&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;個人：プレイヤー&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;資本：プレイヤーの所有アイテム&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;資本主義経済：ゲームルール&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;取引：資本の所有権の交換&lt;/li&gt;
+&lt;li&gt;市場：取引の集合&lt;/li&gt;
+&lt;li&gt;価値：市場から統計的に推定される各資本の評価値&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;このゲームにおける各プレイヤーの目標は，&lt;strong&gt;「市場価値」が常に最大となるように所有する資本を選択し続けること&lt;/strong&gt;となる．ここで，「市場価値」とは，ゲーム参加者によって行われる取引（資本の所有権の交換）データ全体から，リアルタイムで統計的に推定された，各資本の評価値である．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Note:&lt;/p&gt;
+&lt;p&gt;資本価値の定義に「評価値」という表現を使ったが，これは一体何なのか？各資本の評価値は，取引が行われる市場によって異なるが，その算定メカニズムは「需要」と「供給」という抽象概念で説明される．例として，株式市場では，企業の所有権（株式）に対して評価値（株価）を与えているが，これは需要（買い注文）と供給（売り注文）によって算定される．&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;代表的な資本: ヒト・モノ・カネ&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;資本の分類については，法的分類や会計学的分類など種々である．ここでは，資本をヒト・モノ・カネに分けて，その具体例を考えてみる．&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;＊代表的な資本（=私的財産）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ヒト（個人）：法的制約を根拠とした価値を持つ．&lt;/p&gt;
+&lt;p&gt;​	cf) 経済取引における行動主体　cf) 法人&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノ（消費財，生産財）：物理的制約を根拠とした価値をもつ．&lt;/p&gt;
+&lt;p&gt;​	cf) サービスも含む　ex）金・石油・土地　&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;カネ（現金，有価証券）：モノ・ヒトとの交換可能性により価値を持つ．&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;＊代表的な市場（=価値を測る評価関数）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ヒト：労働市場/雇用市場&lt;/li&gt;
+&lt;li&gt;モノ：財市場　　　　 　&lt;/li&gt;
+&lt;li&gt;カネ：資本市場/金融市場&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;＊変換規則&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ヒト→カネ（労働）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;カネ→モノ（消費）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノ→ヒト（教育）：ここでいうモノ/サービスとは，知識やスキルを指す&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノ→カネ（売却）：ほとんどのモノは，評価されない（中古品市場）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→適切な行動選択&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;＊市場に根ざした保有資本のポジショニング&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ヒト（就職，転職，副業）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノ（せどり，車や家，遺産相続）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;カネ（ポートフォリオ設計）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→適切な現状分析&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;＊生産力(=価値)は，経過時間に対して成長/減衰する&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ヒトの価値：UP/DOWN（知識と技術，管理，人間関係の質/量）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;モノの価値：UP/DOWN（骨董品や古酒，経年劣化）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;カネの価値：UP/DOWN（物価と金利，経済成長と株価）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→適切な未来予測&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;＊なぜ，金融市場に着目するべきか？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;カネは，法的・物理的制約の影響がもっとも小さい．
+&lt;ul&gt;
+&lt;li&gt;ヒトは法的制約を受ける：Ex.)労働時間の上限，勤務地の選択&lt;/li&gt;
+&lt;li&gt;モノは物理的制約を受ける：Ex.)石油埋蔵量の上限，人口上限&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→カネの市場価値は，定常状態に収束しないため，もっとも変化が激しい．&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
