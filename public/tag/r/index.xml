@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/r/</link>
+      <atom:link href="https://yumaloop.github.io/tag/r/index.xml" rel="self" type="application/rss+xml" />
+    <description>R</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>R</title>
+      <link>https://yumaloop.github.io/tag/r/</link>
+    </image>
+    
+    <item>
+      <title>Monte Carlo Simulation of Black-Scholes Option Pricing Model</title>
+      <link>https://yumaloop.github.io/post/2020-11-25-monte-carlo-sim-bsoption-r/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-11-25-monte-carlo-sim-bsoption-r/</guid>
+      <description>&lt;p&gt;幾何ブラウン運動のサンプルパスを生成することにより，株価が幾何ブラウン運動にしたがう場合のコールオプション価格をモンテカルロシミュレーションにより導出し，サンプルパスの生成回数を増やすことで理論値に収束することをプロットにより確認する．&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;1-コールオプションの価格理論&#34;&gt;1. コールオプションの価格理論&lt;/h2&gt;
+&lt;h4 id=&#34;ブラックショールズ式によるオプション価格の導出&#34;&gt;ブラックショールズ式によるオプション価格の導出&lt;/h4&gt;
+&lt;p&gt;満期$T$で原資産価格(株式価格)が連続時間確率過程$S = {(S_t)}_{t \in [0,T]}$に従うオプションの時刻$t \in [0, T]$における価格$C(t, S_t)$について考える．$S$が確率微分方程式:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+d S_t = \sigma S_t dt + \mu S_t d W_t
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;の解で与えられているとする($S$は幾何ブラウン運動に従う)．時刻$t \in [0, T]$において，オプションの原資産価格$S_t$とオプションの行使価格$K$が与えられたとき，ブラック・ショールズ式によってオプションの理論価格$C(t, S_t)$は&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+C(t, S_t) &amp;amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\&lt;br&gt;
+where ~~
+d_1 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}} \\&lt;br&gt;
+d_2 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;となる．ただし，$r$は無リスク資産の利率，$\Phi$は標準正規分布$\mathcal{N}(0,1)の累積分布関数とする．ここで，簡単のために満期$T$を$1$とすると，現在($t=0$)のオプション価格の理論値は，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+C(0, S_0) &amp;amp;= S_0 \Phi(d_1) - K e^{-r} \Phi(d_2) \\&lt;br&gt;
+where ~~
+d_1 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right)}{\sigma } \\&lt;br&gt;
+d_2 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right)}{\sigma}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;となる．&lt;/p&gt;
+&lt;h4 id=&#34;モンテカルロ法によるオプション価格の導出&#34;&gt;モンテカルロ法によるオプション価格の導出&lt;/h4&gt;
+&lt;p&gt;ブラックショールズ式に含まれる$S_T$の期待値計算をモンテカルロ法によって近似することを考える．すなわち，幾何ブラウン運動に従うサンプルパス$S = {(S_t)}_{t \in [0,T]}$を大量に生成することで，$S_T$の期待値を求める．&lt;/p&gt;
+&lt;p&gt;モンテカルロシミュレーションによって生成された，満期$T$における原資産価格$S_T$の$n$個のサンプルを$(s^{(1)}&lt;em&gt;{T}, \cdots, s^{(n)}&lt;/em&gt;{T})$とすると，時刻$t \in [0, T]$におけるオプションの価格の推定値$\hat{C}(t, S_t)$は&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\hat{C}(t, S_t) &amp;amp;= \frac{1}{n} \sum_{i=1}^{n} e^{-r(T-t)} \cdot max(s^{(i)}_{T} - K, 0)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;と求められる．ここで，簡単のために満期$T$を$1$とすると，現在($t=0$)のオプション価格の推定値は，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\hat{C}(0, S_0) &amp;amp;= \frac{1}{n} \sum_{i=1}^{n} e^{-r} \cdot max(s^{(i)}_{1} - K, 0)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;となる．&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;2-rでモンテカルロシミュレーション&#34;&gt;2. Rでモンテカルロシミュレーション&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://yuimaproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;YUIMA&lt;/a&gt;ライブラリをインストール（or 読み込み）する．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(&amp;quot;yuima&amp;quot;) # インストール (初回のみ)
+library(yuima) # ライブラリの読み込み
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;モンテカルロシミュレーションを実行するコード．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Calculation of call-option prices by Black-Sholes eq.
+BlackScholesCallPrice = function(S, K, r, sigma, T=1)
+{
+    d1 &amp;lt;- ( log(S/K) + (r + sigma^2/2) * T)/( sigma * sqrt(T))
+    d2 &amp;lt;- ( log(S/K) + (r - sigma^2/2) * T)/( sigma * sqrt(T))
+    C0 &amp;lt;- S * pnorm(d1) - K * exp(-r * T) * pnorm(d2)
+    return(C0)
+}
+
+# Calculation of call-option prices by Monte Carlo method
+MonteCarloCallPrice = function(S, K, r, sigma, n, T=1)
+{
+    n_sample &amp;lt;- 1000
+    c0_list &amp;lt;- list()
+    c0 &amp;lt;- 0
+    for (i in 1:n) {
+        resultGBM &amp;lt;- GBM_sample(S, r, sigma, n_sample)
+        sT &amp;lt;- resultGBM@data@original.data[n_sample]
+        c0 &amp;lt;- (1/i) * exp(-1*r*T) * max(sT - K, 0) + ((i-1)/i) * c0
+        c0_list &amp;lt;- append(c0_list, list(c0))
+    }
+    return(c0_list)
+}
+
+# A function which generates sample paths that follows a Geometric Brownian motion
+GBM_sample = function(x0, alpha, beta, n_sample, T=1)
+{
+    # Step1: Define SDE
+    # dS_t = alpha * S_t * dt + beta * S_t * dW_t
+    mod &amp;lt;-setModel(drift=&amp;quot;alpha*x&amp;quot;, diffusion=&amp;quot;beta*x&amp;quot;)
+    
+    # Step2: Define samples
+    samp &amp;lt;-setSampling(Initial=0, Terminal=T, n=n_sample)
+    
+    # Step3: define the statistical model
+    smod &amp;lt;-setYuima(model=mod, sampling=samp)
+    
+    # Step4: Generate sample paths
+    xinit &amp;lt;- x0
+    param &amp;lt;- list(alpha=alpha, beta=beta)
+    resultGBM &amp;lt;- simulate(smod, xinit=xinit, true.parameter=param)
+    return(resultGBM)
+}
+
+# Params for call-option pricing
+n &amp;lt;- 10000 # Num. of MonteCalro simulation
+K &amp;lt;- 900 # Option exercise price (at t=T)
+S &amp;lt;- 1000 # Curent asset price (at t=0)
+r &amp;lt;- 0.005 # Drift for Geometric Brownian motion
+sigma &amp;lt;- 0.3 # Diffusion for Geometric Brownian motion
+T &amp;lt;- 1 # Optional term
+
+# Main procedure: Run simulation
+bs_price &amp;lt;- BlackScholesCallPrice(S, K, r, sigma, T=1)
+mc_price &amp;lt;- MonteCarloCallPrice(S, K, r, sigma, n, T=1)
+print(bs_price)
+plot(1:n, mc_price, main=&amp;quot;Monte Carlo Simulation:\nBlack-Scholes Option Pricing Model&amp;quot;, xlab=&amp;quot;Number of sample paths: # of ST&amp;quot;, ylab=&amp;quot;Option Price: C0&amp;quot;, cex=0.5)
+abline(h=bs_price, col=&#39;red&#39;, lwd=1, lty=2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Case 1.&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/r_mcbs1.png&#34;&gt;
+&lt;p&gt;モンテカルロ法によるコールオプションの推定価格が，
+BS式による理論価格172.7457に漸近している．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;パラメータ設定
+&lt;ul&gt;
+&lt;li&gt;n: 10000 # モンテカルロシミュレーションの回数&lt;/li&gt;
+&lt;li&gt;K: 900 # コールオプションの権利行使価格 (t=T)&lt;/li&gt;
+&lt;li&gt;S: 1000 # 株式の現在価格 (t=0)&lt;/li&gt;
+&lt;li&gt;r: 0.005 # 幾何ブラウン運動のdrift&lt;/li&gt;
+&lt;li&gt;sigma: 0.3 # 幾何ブラウン運動のdiffusion&lt;/li&gt;
+&lt;li&gt;T: 1 # オプションの満期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Case 2.&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/r_mcbs2.png&#34;&gt;
+&lt;p&gt;モンテカルロ法によるコールオプションの推定価格が，
+BS式による理論価格83.1821に漸近している．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;パラメータ設定
+&lt;ul&gt;
+&lt;li&gt;n: 10000 # モンテカルロシミュレーションの回数&lt;/li&gt;
+&lt;li&gt;K: 1100 # コールオプションの権利行使価格 (t=T)&lt;/li&gt;
+&lt;li&gt;S: 1000 # 株式の現在価格 (t=0)&lt;/li&gt;
+&lt;li&gt;r: 0.005 # 幾何ブラウン運動のdrift&lt;/li&gt;
+&lt;li&gt;sigma: 0.3 # 幾何ブラウン運動のdiffusion&lt;/li&gt;
+&lt;li&gt;T: 1 # オプションの満期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

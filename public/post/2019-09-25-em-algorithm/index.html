@@ -1,0 +1,1259 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Nelson Bighetti">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="​	EM algorithm is an algorithm for deriving the maximum likelihood estimator (MLE), which is generally applied to statistical methods for incomplete data. Originally, the concept of “incomplete data and complete data” was established to handle missing data, but by extending the definition, it can be applied to cut data, censored data, mixed distribution models, Robust distribution models, and latent data.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://yumaloop.github.io/post/2019-09-25-em-algorithm/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#1565c0">
+  
+
+  
+  
+  
+  <script src="https://yumaloop.github.io/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://yumaloop.github.io/css/wowchemy.3848b427d7eb1e57a64b3ba29764068e.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+  <link rel="manifest" href="https://yumaloop.github.io/index.webmanifest">
+  
+
+  <link rel="icon" type="image/png" href="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://yumaloop.github.io/post/2019-09-25-em-algorithm/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Yuma Uchiumi">
+  <meta property="og:url" content="https://yumaloop.github.io/post/2019-09-25-em-algorithm/">
+  <meta property="og:title" content="EM Algorithm | Yuma Uchiumi">
+  <meta property="og:description" content="​	EM algorithm is an algorithm for deriving the maximum likelihood estimator (MLE), which is generally applied to statistical methods for incomplete data. Originally, the concept of “incomplete data and complete data” was established to handle missing data, but by extending the definition, it can be applied to cut data, censored data, mixed distribution models, Robust distribution models, and latent data."><meta property="og:image" content="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-09-25T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2019-09-25T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yumaloop.github.io/post/2019-09-25-em-algorithm/"
+  },
+  "headline": "EM Algorithm",
+  
+  "datePublished": "2019-09-25T00:00:00Z",
+  "dateModified": "2019-09-25T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Nelson Bighetti"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yuma Uchiumi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "​\tEM algorithm is an algorithm for deriving the maximum likelihood estimator (MLE), which is generally applied to statistical methods for incomplete data. Originally, the concept of “incomplete data and complete data” was established to handle missing data, but by extending the definition, it can be applied to cut data, censored data, mixed distribution models, Robust distribution models, and latent data."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>EM Algorithm | Yuma Uchiumi</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="https://yumaloop.github.io/js/wowchemy-init.min.7264cf0eba3b66951b36da7d2cecf9c5.js"></script>
+
+  
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="https://yumaloop.github.io/">Yuma Uchiumi</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="https://yumaloop.github.io/">Yuma Uchiumi</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="https://yumaloop.github.io/"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="https://yumaloop.github.io/about/"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="https://yumaloop.github.io/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>EM Algorithm</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Sep 25, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="https://yumaloop.github.io/category/statml/">StatML</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <div class='pixels-photo'>
+<a href='https://500px.com/photo/1002517180/The-algorithm-by-Luca-Rovatti' alt='The algorithm... by Luca Rovatti on 500px.com'>
+  <img src='https://drscdn.500px.org/photo/1002517180/m%3D900/v2?sig=038077982809b60781286b9e0d94cd3b5dd1dba4a97d80d27302a7829d340618' alt='The algorithm... by Luca Rovatti on 500px.com' />
+</a>
+</div>
+<script type='text/javascript' src='https://500px.com/embed.js'></script>
+<p>​	EM algorithm is <strong>an algorithm for deriving the maximum likelihood estimator (MLE)</strong>, which is generally applied to statistical methods for incomplete data. Originally, the concept of <strong>“incomplete data and complete data”</strong> was established to handle missing data, but by extending the definition, it can be applied to cut data, censored data, mixed distribution models, Robust distribution models, and latent data. It can also be applied to variable models, and Bayesian modeling.</p>
+<p>​	Also, a number of statistical approach for clustering and unsupervised learning (eg, k-means, Gaussian mixture models) can be <strong>generalized</strong> as EM algorithms when focusing on the computational process. In addition, researches on analyzing the EM algorithm from the viewpoint of <strong>information geometry</strong> has been active, and applying EM algorithm to the stochastic model including an exponential family can be summarized in the form of <strong>e-projection / m-projection</strong>.</p>
+<br>
+<h2 id="1-statistical-inference">1. Statistical inference</h2>
+<blockquote>
+<p>Objectives: To find out the probability distribution $q(x)$ that a certain variable $x \in X$ follows.</p>
+</blockquote>
+<p>Namely, when considering a stochastic model $p(x \vert \theta)$ determined by the parameter $\theta \in \Theta$ and detecting the optimal parameter $\theta^{*} \in \Theta$ from dataset $ \mathcal{D} := {\{x_i\}}_{i=1}^{n}$, the follwing Approximation holds.</p>
+<p>$$
+\begin{align}
+x \sim q(x) \approx p(x|\theta)
+\end{align}
+$$</p>
+<p>This is called a statistical inference (or statistical estimation).</p>
+<br>
+<h2 id="2-maximum-likelihood-estimation">2. Maximum likelihood estimation</h2>
+<p>The most basic algorithm for statistical inference is maximum likelihood estimation (MLE). A log likelihood function of the stochastic model $p(x \vert \theta)$ is defined as</p>
+<p>$$
+\begin{align}
+\ell(\theta | x) := \log p(x | \theta)
+\end{align}
+$$</p>
+<p>and an empirical objective function of $\theta$:</p>
+<p>$$
+\begin{align}
+J(\theta) := \frac{1}{n} \sum_{i=1}^{n} \ell(\theta | x_i)
+\end{align}
+$$</p>
+<p>that depends on dataset $ \mathcal{D} := {{x_i}}_{i=1}^{n}$ can be obtained, MLE of parameter $\theta$ is derived as follows.</p>
+<p>$$
+\begin{align}
+\hat{\theta}_{MLE} = \underset{\theta \in \Theta}{\rm argmax} ~ J(\theta)
+\end{align}
+$$</p>
+<br>
+<h2 id="3-em-algorithm">3. EM algorithm</h2>
+<p>Let&rsquo;s define the following data categories.</p>
+<ul>
+<li>Complete data $Y \in \mathcal{Y}$ : <br>
+<ul>
+<li><strong>not observable</strong> but completely follows the true distribution $p(y)$</li>
+</ul>
+</li>
+<li>Imcomplete data $X \in \mathcal{X}$ : <br>
+<ul>
+<li>observable but <strong>not completely follows</strong> the true distribution $p(x)$</li>
+</ul>
+</li>
+</ul>
+<p>In general, the relationship complete data $y$ and incomplete data $x$ is a one-to-many relationship. but here, as a convenient assumption, I introduce a latent variable $z \in Z$ to express this constraint, that is assume $y = [x, z]$ holds. Considering the stochastic model for the complete data $x$,</p>
+<p>$$
+\begin{align}
+p(y | \theta) = p(x,z | \theta)
+\end{align}
+$$</p>
+<ul>
+<li>Complete data $\{X,Z\} \in \mathcal{X \times Z}$ : <br>
+<ul>
+<li><strong>not observable</strong> but completely follows the true distribution $p(x,z)$</li>
+</ul>
+</li>
+<li>Imcomplete data $X \in \mathcal{X}$ : <br>
+<ul>
+<li>observable but <strong>not completely follows</strong> the true distribution $p(x)$</li>
+</ul>
+</li>
+</ul>
+<p>data sample $x_i$ cannot be observed and its likelihood $p(x_i \vert \theta)$ cannot be calculated. However, for pair data sample $\{x_i, z_i\}$ can be observed and its likelihood $p(x_i, z_i \vert \theta)$ can be calculated.</p>
+<p>$$
+\begin{align}
+p(x_i | \theta)
+&amp;= \int_{Z} p(x_i, z_i | \theta) ~ dz \<br>
+\end{align}
+$$</p>
+<p>By using this formula, the estimated value of $\hat{\theta}_{MLE}$ can be obtained by approximating $p(x,z \vert \theta)$, the likelihood function of complete data $\{x, z\}$. The procedure to derive the estimated value of $\hat{\theta}_{MLE}$ is called EM algorithm because it is an iterative method that repeats E-step and M-step alternately.</p>
+<br>
+<blockquote>
+<p><strong>EM algorithm</strong></p>
+<ol>
+<li>
+<p>Initialize $\theta$ with $\theta^{0}$.</p>
+</li>
+<li>
+<p>For each step $t$:</p>
+<p><strong>E Step</strong>: Update the expectation value $Q$.</p>
+<p>$$ \begin{aligned} Q(\theta | \theta^{(t)}) &amp;= \mathbb{E}_{z \sim p(z \vert x, \theta^{(t)})} \left[ \log p(x, z \vert \theta)  \right] \\ &amp;\simeq \sum_{i=1}^{n} p(z_i \vert x_i, \theta^{(t)}) \log p(x_i, z_i \vert \theta) \\ &amp;= \sum_{i=1}^{n} p(z_i \vert x_i, \theta^{(t)}) \log p(z_i \vert x_i, \theta) + Const. \end{aligned}$$</p>
+<p><strong>M Step</strong>: Derive the optimal parameter ${\theta}^{(t+1)}$ that maximize $Q$ value.</p>
+<p>$$\begin{aligned} {\theta}^{(t+1)} &amp;= \underset{\theta \in \Theta}{\rm argmax} ~ Q(\theta \vert {\theta}^{(t)}) \end{aligned}$$</p>
+</li>
+<li>
+<p>Consider the convergence value $\theta^{(\infty)}$ as the algorithm output $\hat{\theta}_{EM}$.</p>
+</li>
+</ol>
+</blockquote>
+<br>
+<p>As a result, the estimated value of $\hat{\theta}_{MLE}$ is derived as $\hat{\theta}_{EM}$ and the following holds.</p>
+<p>$$
+\begin{align}
+\hat{\theta}_{MLE} \approx \hat{\theta}_{EM}, ~~~
+p(x|\hat{\theta}_{MLE} ) \approx p(x|\hat{\theta}_{EM} )
+\end{align}
+$$</p>
+<p>Also, the summarized formula of calculations in E step and M step is as follows.</p>
+<blockquote>
+<ol start="2">
+<li>
+<p>For each step $t$:</p>
+<p><strong>EM Step</strong>:</p>
+<p>$$\begin{align} \theta^{(t+1)} &amp;= \underset{\theta \in \Theta}{\rm argmax} ~ \mathbb{E}_{z \sim p(z \vert x, \theta^{(t)})} \left[ \log p(x, z \vert \theta)  \right] \\ &amp;= \underset{\theta \in \Theta}{\rm argmax} ~ \sum_{i=1}^{n} p(z_i \vert x_i, \theta^{(t)}) \log p(x_i, z_i \vert \theta) \end{align} $$</p>
+</li>
+</ol>
+</blockquote>
+<br>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://users.isr.ist.utl.pt/~wurmd/Livros/school/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf">PRML Chapter 9: Mixture models and EM</a></li>
+<li><a href="http://ebsa.ism.ac.jp/ebooks/sites/default/files/ebook/1881/pdf/vol3_ch9.pdf">9章 EMアルゴリズム - 「21 世紀の統計科学」第 III 巻 日本統計学会, 2008</a></li>
+<li><a href="https://staff.aist.go.jp/s.akaho/papers/josho-main.pdf">解説 EMアルゴリズムの幾何学 - 赤穂昭太郎, 電子技術総合研究所</a></li>
+<li><a href="https://www.ism.ac.jp/~shiro/papers/books/embook2000.pdf">EMアルゴリズムと神経回路網, 2000, 統計数理研究所</a></li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="https://yumaloop.github.io/tag/bayes/">Bayes</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://yumaloop.github.io/post/2019-09-25-em-algorithm/&amp;text=EM%20Algorithm" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://yumaloop.github.io/post/2019-09-25-em-algorithm/&amp;t=EM%20Algorithm" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=EM%20Algorithm&amp;body=https://yumaloop.github.io/post/2019-09-25-em-algorithm/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://yumaloop.github.io/post/2019-09-25-em-algorithm/&amp;title=EM%20Algorithm" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=EM%20Algorithm%20https://yumaloop.github.io/post/2019-09-25-em-algorithm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://yumaloop.github.io/post/2019-09-25-em-algorithm/&amp;title=EM%20Algorithm" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://yumaloop.github.io/"><img class="avatar mr-3 avatar-circle" src="https://yumaloop.github.io/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q75_lanczos_center.jpg" alt="Nelson Bighetti"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://yumaloop.github.io/">Nelson Bighetti</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://yumaloop.github.io/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/gcushen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-03-18-particle_filter/">State Space Model &amp; Particle Filter</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-03-10-free_energy_on_bayes_inference/">Free energy and Bayes inference</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-02-24-deriving-elbo/">Deriving ELBO</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2018-04-19-kl-divergence/">Kullback-Leibler Divergence</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/">Time-steady States on Systems</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'event' : "Events",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="https://yumaloop.github.io/js/wowchemy.min.aeecf26c1eff6b9588dbafc1a9f3953c.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

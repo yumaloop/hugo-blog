@@ -3,5 +3,5 @@
 
 # Hugo
 /resources/
-public/
+# public/
 jsconfig.json

@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/python/</link>
+      <atom:link href="https://yumaloop.github.io/tag/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>Python</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Python</title>
+      <link>https://yumaloop.github.io/tag/python/</link>
+    </image>
+    
+    <item>
+      <title>StackOverflow - 2020 Developer Survey</title>
+      <link>https://yumaloop.github.io/post/2020-12-20-stackoverflow-developer-survey-2020/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-12-20-stackoverflow-developer-survey-2020/</guid>
+      <description>&lt;p&gt;StackOverflow published its &lt;strong&gt;Developer Survey 2020&lt;/strong&gt;. Click &lt;a href=&#34;https://insights.stackoverflow.com/survey/2020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;In 2020,
+&lt;strong&gt;Python&lt;/strong&gt;, &lt;strong&gt;Go&lt;/strong&gt;, &lt;strong&gt;TypeScript&lt;/strong&gt;, &lt;strong&gt;Rust&lt;/strong&gt; are the programming language most loved by developers in the world.
+It means that these languages are in vogue and new learners are on the rise.
+While &lt;strong&gt;JavaScript&lt;/strong&gt; swallows everything, &lt;strong&gt;Perl&lt;/strong&gt;, &lt;strong&gt;PHP&lt;/strong&gt;, and &lt;strong&gt;Ruby&lt;/strong&gt; seem to be still in high demand.&lt;/p&gt;
+&lt;p&gt;Frameworks packaging frontends, backends and database into one, such as Rails, are already not preferred.
+Today, dividing frontends with &lt;strong&gt;JavaScript&lt;/strong&gt; (&lt;strong&gt;Node.js&lt;/strong&gt;, &lt;strong&gt;Vue.js&lt;/strong&gt;, &lt;strong&gt;React.js&lt;/strong&gt;)
+and backends/database with scalable cloud services (&lt;strong&gt;AWS&lt;/strong&gt;, &lt;strong&gt;GCP&lt;/strong&gt;)
+is major approach for adaptive web applications.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Python&lt;/strong&gt; and &lt;strong&gt;Java&lt;/strong&gt; have always been very popular
+and in demand as general languages that can be used for many purposes.
+In the future, it will be interesting to see if &lt;strong&gt;Go&lt;/strong&gt; and &lt;strong&gt;Rust&lt;/strong&gt; can take their place.&lt;/p&gt;
+&lt;p&gt;Finally, I would like to introduce the cluster map of major development technologies found by the StackOverflow Developer Survey 2020.
+With the penetration of new technologies such as &lt;strong&gt;mobile&lt;/strong&gt;, &lt;strong&gt;container&lt;/strong&gt; and &lt;strong&gt;cloud computing&lt;/strong&gt;,
+it will be more difficult to become a full-stack engineer in the near future.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Assembly, C, C++&lt;/li&gt;
+&lt;li&gt;Raspberry Pi, Arduino&lt;/li&gt;
+&lt;li&gt;Unity, UnrealEngine&lt;/li&gt;
+&lt;li&gt;Hadoop, Scala, Apache Spark&lt;/li&gt;
+&lt;li&gt;Python, Pandas, Torch/PyTorch&lt;/li&gt;
+&lt;li&gt;Linux, Docker, Kubernetes, Bash/Shell&lt;/li&gt;
+&lt;li&gt;AWS, Redis, Ansible, DynamoDB, PostgreSQL&lt;/li&gt;
+&lt;li&gt;JavaScript, Node.js, React.js, Angular, TypeScript, MongoDB,&lt;/li&gt;
+&lt;li&gt;PHP, MySQL, jQuery, WordPress&lt;/li&gt;
+&lt;li&gt;Java, Swift, Android, iOS, Kotlin, SQLite, Firebase&lt;/li&gt;
+&lt;li&gt;C#, .NET, Windows, Azure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/so_ds_2020_cluster.png&#34;&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Counterfactual Regret Minimization</title>
+      <link>https://yumaloop.github.io/post/2020-02-10-counterfactual-regret-minimization/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-02-10-counterfactual-regret-minimization/</guid>
+      <description>&lt;p&gt;In this post, I introduce you the Counterfactual Regret Minimization (CFR Algorithm). It is mainly used for the algorithm to figure out the optimal strategy of a extensive-form game with incomplete information such as Poker and Mahjong.&lt;/p&gt;
+&lt;h3 id=&#34;extensive-form-game&#34;&gt;Extensive-form Game&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Set, variables
+&lt;ul&gt;
+&lt;li&gt;$N: $ set of players
+&lt;ul&gt;
+&lt;li&gt;$i \in N$: player&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$A :$ set of actions
+&lt;ul&gt;
+&lt;li&gt;$a \in A: $ action&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$H: $set of sequences
+&lt;ul&gt;
+&lt;li&gt;$h \in H: $ sequences (= possible history of actions, $h = (a_1, \dots, a_t$)&lt;/li&gt;
+&lt;li&gt;$Z \subseteq H: $ set of terminal histories. $Z = {z \in H \vert \forall h \in H, z \notin h }$&lt;/li&gt;
+&lt;li&gt;$z \in Z$: sea&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Function, relations
+&lt;ul&gt;
+&lt;li&gt;$u_i: Z \to \mathbb{R}: $ utility function of player $i$&lt;/li&gt;
+&lt;li&gt;$\sigma_i: A \to [0,1]$ a strategy of player $i$, probability distribution on action set $A$.&lt;/li&gt;
+&lt;li&gt;$\sigma~: A^N \to [0,1]$ a strategy profile, $\sigma := (\sigma_1, \dots, \sigma_N)$&lt;/li&gt;
+&lt;li&gt;$\pi^{\sigma}&lt;em&gt;i: H \to [0,1]: $ probability of history $h$ under a strategy $$\sigma&lt;/em&gt;$ of player $i$&lt;/li&gt;
+&lt;li&gt;$\pi^{\sigma}: H^N \to [0,1]: $ probability of history $h$ under a strategy profile $\sigma$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then, you can also interplate $u_i$ as the function mapping a storategy profile $\sigma$ to its utility.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+u_i(\sigma)
+&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\&lt;br&gt;
+&amp;amp;= \sum_{h \in Z} u_i(h) \prod_{i \in N} \pi^{\sigma}_i(h)
+\end{align}
+$$
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nash-equilibrium&#34;&gt;Nash equilibrium&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; $(\text{Nash equilibrium})$&lt;/p&gt;
+&lt;p&gt;In $N$-player extensive game, a strategy profile $\acute{\sigma} := (\acute{\sigma_1}, \dots, \acute{\sigma_N})$ is the Nash equilibrium if and only if the followings holds.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N})
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N})
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
+&amp;amp;~ \vdots \\&lt;br&gt;
+u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N})
+&amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition: $\text{(}\varepsilon\text{-Nash equilibrium)}$&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In $N$-player extensive game, a strategy profile $\acute{\sigma} := (\acute{\sigma_1}, \dots, \acute{\sigma_N})$ is the $\varepsilon$-Nash equilibrium if and only if the followings holds when $\forall \varepsilon \geq 0$ is given.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
+&amp;amp;~ \vdots \\&lt;br&gt;
+u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
+&amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
+\end{aligned}
+$$&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;regret-matching&#34;&gt;Regret matching&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Average overall regret of player $i$ at time $T$：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+R_i^T
+:= \underset{\sigma_i^*}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^*, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Average strategy for player $i$ from time $1$ to $T$：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{align}
+\overline{\sigma}_i^t(I)(a)
+&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\&lt;br&gt;
+&amp;amp;= \frac{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h) \cdot \sigma^t(h)(a)}{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h)}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;If the average overall regret holds $R_i^T \leq \varepsilon$, the average strategy $\overline{\sigma}_i^t(I)(a) $ is $2 \varepsilon$-Nash equilibrium for player $i$ in time $t$. So that, in order to derive Nash equilibrium, we should minimize the average overall regret $R_i^T$ or its upper bound $\varepsilon$ according to $R_i^T \to 0 ~~ (\varepsilon \to 0)$.&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;cfr-algorithm&#34;&gt;CFR Algorithm&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Counterfactual utility：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{align}
+u_i(\sigma, I) = \frac{\sum_{h \in H, h&#39; \in Z} \pi_{-i}^{\sigma}(h)\pi^{\sigma}(h,h&#39;)u_i(h) }{\pi_{-i}^{\sigma}(I)}
+\end{align}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;immediate counteractual regret of action $a$ in Information set $I$:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{aligned}
+R_{i,imm}^{T}(I, a)
+:=
+\frac{1}{T} \sum_{t=1}^{T}
+\pi_{-i}^{\sigma^t}(I)
+\left(
+u_i(\sigma^t_{I \to a}, I) - u_i(\sigma^t, I)
+\right)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Immediate counterfactual regret of Information set $I$：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\begin{aligned}
+R_{i,imm}^{T}(I)
+&amp;amp;:= \underset{a \in A(I)}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T}
+\pi_{-i}^{\sigma^t}(I)
+\left(
+u_i(\sigma^t_{I \to a}, I) - u_i(\sigma^t, I)
+\right)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;The following inequality holds for &lt;strong&gt;the average overall regret&lt;/strong&gt; $R_i^T $ and &lt;strong&gt;the immediate counterfactual regret&lt;/strong&gt;  $R_{i,imm}^{T}(I)$:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+R_i^T
+\leq \sum_{I \in \mathcal{I}_i} &amp;amp;R_{i,imm}^{T,+}(I) \\&lt;br&gt;
+where ~~~
+&amp;amp;R_{i,imm}^{T, +}(I)
+:= max(R_{i,imm}^{T}(I), 0)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;So that, we obtain the sufficient condition of $R_{i,imm}^{T}(I)$  for the average strategy $\overline{\sigma}_i^t(I)(a)$ to become a Nash equilibrium strategy as below.&lt;/p&gt;
+&lt;p&gt;$$
+\sum_{I \in \mathcal{I}_i} R_{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
+$$&lt;/p&gt;
+&lt;p&gt;Now all we need is to minimize the immediate counterfactual regret  $R_{i,imm}^{T}(I)$.&lt;/p&gt;
+&lt;p&gt;In addition, as can be seen from the above formula, the computational complexity of the CFR algorithm depends on the number of information sets $I$. Also, to avoid the complete search of game tree (searching all information sets $I$), subsequent algorithms such as CFR + propose an abstraction of the game state.&lt;/p&gt;
+&lt;h3 id=&#34;python-code-to-run-cfr-algorithm-for-kuhn-poker&#34;&gt;Python code to run CFR algorithm for Kuhn Poker&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+
+# Number of actions a player can take at a decision node.
+_N_ACTIONS = 2
+_N_CARDS = 3
+
+def main():
+    &amp;quot;&amp;quot;&amp;quot;
+    Run iterations of counterfactual regret minimization algorithm.
+    &amp;quot;&amp;quot;&amp;quot;
+    i_map = {}  # map of information sets
+    n_iterations = 10000
+    expected_game_value = 0
+
+    for _ in range(n_iterations):
+        expected_game_value += cfr(i_map)
+        for _, v in i_map.items():
+            v.next_strategy()
+
+    expected_game_value /= n_iterations
+    display_results(expected_game_value, i_map)
+
+
+def cfr(i_map, history=&amp;quot;&amp;quot;, card_1=-1, card_2=-1, pr_1=1, pr_2=1, pr_c=1):
+    &amp;quot;&amp;quot;&amp;quot;
+    Counterfactual regret minimization algorithm.
+    Parameters
+    ----------
+    i_map: dict
+        Dictionary of all information sets.
+    history : [{&#39;r&#39;, &#39;c&#39;, &#39;b&#39;}], str
+        A string representation of the game tree path we have taken.
+        Each character of the string represents a single action:
+        &#39;r&#39;: random chance action
+        &#39;c&#39;: check action
+        &#39;b&#39;: bet action
+    card_1 : (0, 2), int
+        player A&#39;s card
+    card_2 : (0, 2), int
+        player B&#39;s card
+    pr_1 : (0, 1.0), float
+        The probability that player A reaches `history`.
+    pr_2 : (0, 1.0), float
+        The probability that player B reaches `history`.
+    pr_c: (0, 1.0), float
+        The probability contribution of chance events to reach `history`.
+    &amp;quot;&amp;quot;&amp;quot;
+    if is_chance_node(history):
+        return chance_util(i_map)
+    if is_terminal(history):
+        return terminal_util(history, card_1, card_2)
+
+    n = len(history)
+    is_player_1 = n % 2 == 0
+    info_set = get_info_set(i_map, card_1 if is_player_1 else card_2, history)
+
+    strategy = info_set.strategy
+    if is_player_1:
+        info_set.reach_pr += pr_1
+    else:
+        info_set.reach_pr += pr_2
+
+    # Counterfactual utility per action.
+    action_utils = np.zeros(_N_ACTIONS)
+
+    for i, action in enumerate([&amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;]):
+        next_history = history + action
+        if is_player_1:
+            action_utils[i] = -1 * cfr(i_map, next_history, card_1, card_2, pr_1 * strategy[i], pr_2, pr_c)
+        else:
+            action_utils[i] = -1 * cfr(i_map, next_history, card_1, card_2, pr_1, pr_2 * strategy[i], pr_c)
+
+    # Utility of information set.
+    util = sum(action_utils * strategy)
+    regrets = action_utils - util
+    if is_player_1:
+        info_set.regret_sum += pr_2 * pr_c * regrets
+    else:
+        info_set.regret_sum += pr_1 * pr_c * regrets
+
+    return util
+
+def is_chance_node(history):
+    &amp;quot;&amp;quot;&amp;quot;
+    Determine if we are at a chance node based on tree history.
+    &amp;quot;&amp;quot;&amp;quot;
+    return history == &amp;quot;&amp;quot;
+
+def chance_util(i_map):
+    expected_value = 0
+    n_possibilities = 6
+    for i in range(_N_CARDS):
+        for j in range(_N_CARDS):
+            if i != j:
+                expected_value += cfr(i_map, &amp;quot;rr&amp;quot;, i, j, 1, 1, 1/n_possibilities)
+    return expected_value/n_possibilities
+
+
+def is_terminal(history):
+    possibilities = { &amp;quot;rrcc&amp;quot;: True, &amp;quot;rrcbc&amp;quot;: True,
+                     &amp;quot;rrcbb&amp;quot;: True, &amp;quot;rrbc&amp;quot;: True, &amp;quot;rrbb&amp;quot;: True}
+    return history in possibilities
+
+def terminal_util(history, card_1, card_2):
+    n = len(history)
+    card_player = card_1 if n % 2 == 0 else card_2
+    card_opponent = card_2 if n % 2 == 0 else card_1
+
+    if history == &amp;quot;rrcbc&amp;quot; or history == &amp;quot;rrbc&amp;quot;:
+        # Last player folded. The current player wins.
+        return 1
+    elif history == &amp;quot;rrcc&amp;quot;:
+        # Showdown with no bets
+        return 1 if card_player &amp;gt; card_opponent else -1
+
+    # Showdown with 1 bet
+    assert(history == &amp;quot;rrcbb&amp;quot; or history == &amp;quot;rrbb&amp;quot;)
+    return 2 if card_player &amp;gt; card_opponent else -2
+
+def card_str(card):
+    if card == 0:
+        return &amp;quot;J&amp;quot;
+    elif card == 1:
+        return &amp;quot;Q&amp;quot;
+    elif card == 2:
+        return &amp;quot;K&amp;quot;
+
+def get_info_set(i_map, card, history):
+    &amp;quot;&amp;quot;&amp;quot;
+    Retrieve information set from dictionary.
+    &amp;quot;&amp;quot;&amp;quot;
+    key = card_str(card) + &amp;quot; &amp;quot; + history
+    info_set = None
+
+    if key not in i_map:
+        info_set = InformationSet(key)
+        i_map[key] = info_set
+        return info_set
+
+    return i_map[key]
+
+class InformationSet():
+    def __init__(self, key):
+        self.key = key
+        self.regret_sum = np.zeros(_N_ACTIONS)
+        self.strategy_sum = np.zeros(_N_ACTIONS)
+        self.strategy = np.repeat(1/_N_ACTIONS, _N_ACTIONS)
+        self.reach_pr = 0
+        self.reach_pr_sum = 0
+        
+    def next_strategy(self):
+        self.strategy_sum += self.reach_pr * self.strategy
+        self.strategy = self.calc_strategy()
+        self.reach_pr_sum += self.reach_pr
+        self.reach_pr = 0
+
+    def calc_strategy(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        Calculate current strategy from the sum of regret.
+        &amp;quot;&amp;quot;&amp;quot;
+        strategy = self.make_positive(self.regret_sum)
+        total = sum(strategy)
+        if total &amp;gt; 0:
+            strategy = strategy / total
+        else:
+            n = _N_ACTIONS
+            strategy = np.repeat(1/n, n)
+
+        return strategy
+
+    def get_average_strategy(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        Calculate average strategy over all iterations. This is the
+        Nash equilibrium strategy.
+        &amp;quot;&amp;quot;&amp;quot;
+        strategy = self.strategy_sum / self.reach_pr_sum
+
+        # Purify to remove actions that are likely a mistake
+        strategy = np.where(strategy &amp;lt; 0.001, 0, strategy)
+
+        # Re-normalize
+        total = sum(strategy)
+        strategy /= total
+
+        return strategy
+
+    def make_positive(self, x):
+        return np.where(x &amp;gt; 0, x, 0)
+
+    def __str__(self):
+        strategies = [&#39;{:03.2f}&#39;.format(x)
+                      for x in self.get_average_strategy()]
+        return &#39;{} {}&#39;.format(self.key.ljust(6), strategies)
+
+def display_results(ev, i_map):
+    print(&#39;player 1 expected value: {}&#39;.format(ev))
+    print(&#39;player 2 expected value: {}&#39;.format(-1 * ev))
+
+    print()
+    print(&#39;player 1 strategies:&#39;)
+    sorted_items = sorted(i_map.items(), key=lambda x: x[0])
+    for _, v in filter(lambda x: len(x[0]) % 2 == 0, sorted_items):
+        print(v)
+    print()
+    print(&#39;player 2 strategies:&#39;)
+    for _, v in filter(lambda x: len(x[0]) % 2 == 1, sorted_items):
+        print(v)
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    main()
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Automatically Login to keio.jp using Selenium on Python</title>
+      <link>https://yumaloop.github.io/post/2019-06-21-keiojp-auto-login/</link>
+      <pubDate>Fri, 21 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2019-06-21-keiojp-auto-login/</guid>
+      <description>&lt;p&gt;Have you ever want to login to keio.jp automatically? Don&amp;rsquo;t you think it is cool? At least I think so and I write down the way to achieve that with Python.&lt;/p&gt;
+&lt;br&gt;
+&lt;div style=&#34;text-align:center&#34;&gt;
+  &lt;video style=&#34;width: 100%;&#34; controls autoplay loop muted&gt;
+    &lt;source src=&#34;{{ &#34;/assets/video/keio_login.mp4&#34; | relative_url }}&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;In order to login to keio.jp (Keio Single Sign-On System), it is necessary to satisfy the page transition as below.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://auth.keio.jp&#34;&gt;https://auth.keio.jp&lt;/a&gt; (SSO login page)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://gslbs.adst.keio.ac.jp/student/index.html&#34;&gt;https://gslbs.adst.keio.ac.jp/student/index.html&lt;/a&gt; (Syllabus page)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.edu.keio.jp/ess2/login?&#34;&gt;https://www.edu.keio.jp/ess2/login?&lt;/a&gt; (Class support page)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So, this time, a static web-scraping library like BeautifulSoup is not enough, because it doesn&amp;rsquo;t support the dynamic site with Javascript or page redirection. Then I use &lt;a href=&#34;https://selenium.dev/documentation/en/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Selenium&lt;/a&gt; and &lt;a href=&#34;http://chromedriver.chromium.org/getting-started&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChromeDriver&lt;/a&gt; in python.&lt;/p&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;example-1--auto-login-to-keiojp&#34;&gt;Example 1 : Auto login to keio.jp&lt;/h4&gt;
+&lt;p&gt;If you are the student in Keio University, you can login to keio.jp automatically. All you need is to assign your email address and password in the below script and run it in command line.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+
+ID = &amp;quot;*****&amp;quot; # your email in keio.jp (ex. example@keio.jp)  #
+PW = &amp;quot;*****&amp;quot; # your password in keio.jp #
+
+# Optional settings of chrome driver
+options = webdriver.ChromeOptions()
+options.add_argument(&#39;--headless&#39;)
+
+# Boot chrome driver
+driver = webdriver.Chrome(&amp;quot;/usr/local/bin/chromedriver&amp;quot;, options=options)
+driver.set_page_load_timeout(15) # Time out 15 sec
+
+# GET (HTML Page)
+driver.get(&amp;quot;https://auth.keio.jp&amp;quot;)
+
+# Find elements and POST (send keys to the input tag)
+id_element = driver.find_element_by_name(&amp;quot;j_username&amp;quot;)
+id_element.send_keys(ID)
+pw_element = driver.find_element_by_name(&amp;quot;j_password&amp;quot;)
+pw_element.send_keys(PW)
+
+# Click login button
+login_button = driver.find_element_by_name(&amp;quot;_eventId_proceed&amp;quot;)
+login_button.click()
+
+# GET (HTML Page)
+driver.get(&amp;quot;https://gslbs.adst.keio.ac.jp/student/index.html&amp;quot;)
+
+# GET (HTML Page)
+driver.get(&amp;quot;https://www.edu.keio.jp/ess2/login?&amp;quot;)
+
+# Close chrome driver
+driver.quit()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;example-2--auto-login-to-twittercom&#34;&gt;Example 2 : Auto login to twitter.com&lt;/h4&gt;
+&lt;p&gt;If you have twitter account, you can also login to twitter.com automatically. All you need is to assign your username (@********) and password (********) in the below script and run it in command line.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+
+USERNAME=&amp;quot;*****&amp;quot; # your username in twitter #
+PASSWORD=&amp;quot;*****&amp;quot; # your password in twitter #
+
+# Optional settings of chrome driver
+options = webdriver.ChromeOptions()
+options.add_argument(&#39;--headless&#39;)
+
+# Boot chrome driver
+driver = webdriver.Chrome(&amp;quot;/usr/local/bin/chromedriver&amp;quot;, options=options)
+driver.set_page_load_timeout(15) # Time out 15 sec
+
+# GET (HTML Page)
+driver.get(&amp;quot;https://twitter.com/login&amp;quot;)
+
+# Find elements and POST (send keys to the input tag)
+username_element = driver.find_element_by_class_name(&#39;js-username-field&#39;)
+username_element.send_keys(USERNAME)
+password_element = driver.find_element_by_class_name(&#39;js-password-field&#39;)
+password_element.send_keys(PASSWORD)
+
+# Click login button
+login_button = driver.find_element_by_css_selector(&#39;button.submit.EdgeButton.EdgeButton--primary.EdgeButtom--medium&#39;)
+login_button.click()
+
+# Close chrome driver
+driver.quit()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;example-3--auto-search-in-googlecom&#34;&gt;Example 3 : Auto search in google.com&lt;/h4&gt;
+&lt;p&gt;If you refer to Selenium Getting started guide, you can aquire the search result with the keyword &amp;ldquo;cheese&amp;rdquo; at google.com with Selenium on Python. (This requires Selenium WebDriver 3.13 or newer.)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.expected_conditions import presence_of_element_located
+
+# Open web driver (Google Chrome)
+driver = webdriver.Firefox()
+
+wait = WebDriverWait(driver, 10) 
+
+# GET HTML page source of google.com
+driver.get(&amp;quot;https://google.com/ncr&amp;quot;) # GET 
+# POST the keyword &amp;quot;cheese&amp;quot; in &amp;quot;q&amp;quot; element in google.com
+driver.find_element_by_name(&amp;quot;q&amp;quot;).send_keys(&amp;quot;cheese&amp;quot; + Keys.RETURN) # POST 
+
+first_result = wait.until(presence_of_element_located((By.CSS_SELECTOR, &amp;quot;h3&amp;gt;div&amp;quot;)))
+
+# Search result as text
+print(first_result.get_attribute(&amp;quot;textContent&amp;quot;))
+
+# Close web driver (Google Chrome)
+driver.quit()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The Selenium Browser Automation Project &amp;gt; Getting started &amp;gt; Quick tour&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

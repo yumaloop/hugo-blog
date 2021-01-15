@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Book | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/book/</link>
+      <atom:link href="https://yumaloop.github.io/tag/book/index.xml" rel="self" type="application/rss+xml" />
+    <description>Book</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Book</title>
+      <link>https://yumaloop.github.io/tag/book/</link>
+    </image>
+    
+    <item>
+      <title>Whiteside&#39;s Outline Method</title>
+      <link>https://yumaloop.github.io/post/2019-11-25-whitesides_outline_method/</link>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2019-11-25-whitesides_outline_method/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gmwgroup.harvard.edu/people/george-m-whitesides&#34;&gt;Prof. George M. Whitesides&lt;/a&gt; is a top-level researcher on chemistry and also known as one of the highest h-index researchers in the world. He explains his unique writing techniques called Outline Method in the article, &lt;a href=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34;&gt;&amp;ldquo;Whitesides&#39; Group: Writing a Paper&amp;rdquo;&lt;/a&gt;. I&amp;rsquo;ve translated that into Japanese and publish it here.&lt;/p&gt;
+&lt;h2 id=&#34;original-paper&#34;&gt;Original paper&lt;/h2&gt;
+&lt;object data=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;800px&#34;&gt;
+    &lt;embed src=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34;&gt;
+        &lt;p&gt;This browser does not support PDFs. Please download the PDF to view it: &lt;a href=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34;&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;
+    &lt;/embed&gt;
+&lt;/object&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;japanese--translation&#34;&gt;Japanese  translation&lt;/h2&gt;
+&lt;object data=&#34;{{ site.baseurl }}/assets/pdf/whiteside_outline_method_jp.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;800px&#34;&gt;
+    &lt;embed src=&#34;{{ site.baseurl }}/assets/pdf/whiteside_outline_method_jp.pdf&#34;&gt;
+        &lt;p&gt;This browser does not support PDFs. Please download the PDF to view it: &lt;a href=&#34;{{ site.baseurl }}/assets/pdf/whiteside_outline_method_jp.pdf&#34;&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;
+    &lt;/embed&gt;
+&lt;/object&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

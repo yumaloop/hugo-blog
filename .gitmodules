@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/yumaloop/yumaloop.github.io
+	branch = main

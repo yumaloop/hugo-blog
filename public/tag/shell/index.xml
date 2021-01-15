@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/shell/</link>
+      <atom:link href="https://yumaloop.github.io/tag/shell/index.xml" rel="self" type="application/rss+xml" />
+    <description>Shell</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Sun, 01 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Shell</title>
+      <link>https://yumaloop.github.io/tag/shell/</link>
+    </image>
+    
+    <item>
+      <title>Bash script for git push</title>
+      <link>https://yumaloop.github.io/post/2020-03-01-bash_script_for_git_push/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-03-01-bash_script_for_git_push/</guid>
+      <description>&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/1020520426/El-charco-de-La-Laja-Puesta-de-Sol-by-Fernando-Lopez&#39; alt=&#39;El charco de La Laja Puesta de Sol by Fernando Lopez on 500px.com&#39;&gt;
+&lt;img src=&#39;https://drscdn.500px.org/photo/1020520426/m%3D900/v2?sig=030069c9c40fd7219d4f7b87f23b0e26f2eb84e701e8e867ee04f716d7b3bef6&#39; alt=&#39;El charco de La Laja Puesta de Sol by Fernando Lopez on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;p&gt;In Git, commit messages are very imoportant to avoid confused commit log in your branch.
+But in some small projects that you develope alone, thinking about every commit message might be dull.&lt;/p&gt;
+&lt;p&gt;I usualy use the following script to send local data to the remote repository. Please try it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
+
+# Go To .git root directory
+cd ~/workspace/{project_name}
+
+# Add all changes to git.
+git add .
+
+# Commit changes.
+msg=&amp;quot;update repo `date`&amp;quot;
+if [ $# -eq 1 ]
+  then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

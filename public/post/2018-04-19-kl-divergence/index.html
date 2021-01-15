@@ -1,0 +1,1373 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Nelson Bighetti">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This is a basic notebook for KL-divergence which frequently appears in many fields such as statistics and information theory.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://yumaloop.github.io/post/2018-04-19-kl-divergence/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#1565c0">
+  
+
+  
+  
+  
+  <script src="https://yumaloop.github.io/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://yumaloop.github.io/css/wowchemy.3848b427d7eb1e57a64b3ba29764068e.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+  <link rel="manifest" href="https://yumaloop.github.io/index.webmanifest">
+  
+
+  <link rel="icon" type="image/png" href="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://yumaloop.github.io/post/2018-04-19-kl-divergence/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Yuma Uchiumi">
+  <meta property="og:url" content="https://yumaloop.github.io/post/2018-04-19-kl-divergence/">
+  <meta property="og:title" content="Kullback-Leibler Divergence | Yuma Uchiumi">
+  <meta property="og:description" content="This is a basic notebook for KL-divergence which frequently appears in many fields such as statistics and information theory."><meta property="og:image" content="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2018-04-19T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2018-04-19T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yumaloop.github.io/post/2018-04-19-kl-divergence/"
+  },
+  "headline": "Kullback-Leibler Divergence",
+  
+  "datePublished": "2018-04-19T00:00:00Z",
+  "dateModified": "2018-04-19T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Nelson Bighetti"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yuma Uchiumi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "This is a basic notebook for KL-divergence which frequently appears in many fields such as statistics and information theory."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Kullback-Leibler Divergence | Yuma Uchiumi</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="https://yumaloop.github.io/js/wowchemy-init.min.7264cf0eba3b66951b36da7d2cecf9c5.js"></script>
+
+  
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="https://yumaloop.github.io/">Yuma Uchiumi</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="https://yumaloop.github.io/">Yuma Uchiumi</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="https://yumaloop.github.io/"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="https://yumaloop.github.io/about/"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="https://yumaloop.github.io/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Kullback-Leibler Divergence</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Apr 19, 2018
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="https://yumaloop.github.io/category/statml/">StatML</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>KL-divergence frequently appears in many fields such as statistics and information theory. It is defined as the <strong>expected value</strong> of <strong>logarithmic</strong> transformation of <strong>likelihood ratio</strong>. Note that:</p>
+<ol>
+<li>expected value: weighted integration with probability density.</li>
+<li>logarithmic transformation: conversion multiplication to linear combination that is suitable for convex optimization and function analysis.</li>
+<li>likelihood ratio: a measure of likelihood comparison</li>
+</ol>
+<br>
+<h2 id="1-what-is-kl-divergence">1. What is KL-divergence?</h2>
+<h4 id="11-definition">1.1 Definition</h4>
+<p>　For any probability distributions $P$ and $Q$, <strong>KL-divergence</strong> (Kullback-Leibler divergence)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is defined as follows, using their probability density function $p(x)$ and $q(x)$.</p>
+<p>\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;:= \int q(x) \log \frac{q(x)}{p(x)} ~dx
+\end{align}</p>
+<br>
+<h4 id="12-basic-properties">1.2 Basic properties</h4>
+<p>　KL-divergence has the following properties.</p>
+<ul>
+<li>（<strong>non-negative</strong>）It has a non-negative range.</li>
+</ul>
+<p>\begin{align}
+0 \leq D_{KL}( Q \mid\mid P ) &amp;\leq \infty
+\end{align}</p>
+<ul>
+<li>（<em><strong>completeness</strong></em>）When it equals to $0$, $P$ and $Q$ are equivalent.</li>
+</ul>
+<p>\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;= 0 ~~ \Leftrightarrow ~~ P = Q
+\end{align}</p>
+<ul>
+<li>（<strong>assymmetry</strong>）It is not symmetric about $P$ and $Q$.</li>
+</ul>
+<p>\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;\neq D_{KL}( P \mid\mid Q )
+\end{align}</p>
+<ul>
+<li>（<strong>absolute continuity</strong>）Unless it diverges, $Q$ is absolutely continuous with respect to $P$.</li>
+</ul>
+<p>\begin{align}
+D_{KL}( Q \mid\mid P )
+&amp;\lt \infty ~~ \Rightarrow ~~ P \gg Q
+\end{align}</p>
+<br>
+<p>​	For example, calculating KL-divergence<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> between two Gaussian distributions gives the following results: It can be seen that the more the shapes between two distributions do not match, the more  KL-divergence increases.</p>
+<p><img src="%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_norm.png" alt="img"></p>
+<br>
+<h4 id="13-is-kl-divergence-a-metrics">1.3 Is KL-divergence a metrics?</h4>
+<p>​	KL-divergence is so important measurement when considering probability and information that it is called by various names depending on the field and context.</p>
+<blockquote>
+<ul>
+<li>&ldquo;KL-divergence&rdquo;</li>
+<li>&ldquo;KL-metrics&rdquo;</li>
+<li>&ldquo;KL-information&rdquo;</li>
+<li>&ldquo;Information divergence&rdquo;</li>
+<li>&ldquo;Information gain&rdquo;</li>
+<li>&ldquo;Relative entropy&rdquo;</li>
+</ul>
+</blockquote>
+<p>Since KL-divergence is always non-negative, it might be interpreted as the metrics in the space where the probability distributions $P$ and $Q$ exist. However, KL-divergence is <strong>not</strong> strictly a metric because it only satisfies &ldquo;non-negativity&rdquo; and &ldquo;completeness&rdquo; among the following <strong>axioms of metrics</strong>.</p>
+<blockquote>
+<p>Axioms of metrics $d(~)$:</p>
+<ol>
+<li>
+<p>non-negativity                     $d(x, ~ y) \geq 0$</p>
+</li>
+<li>
+<p>completeness                      $d(x, ~ y) = 0 ~~ \Leftrightarrow ~~ x = y$</p>
+</li>
+<li>
+<p>symmetry                             $d(x, ~ y) = d(y, ~ x)$</p>
+</li>
+<li>
+<p>The triangle inequality       $d(x, ~ y) + d(y, ~ z) \geq d(x, ~ z)$</p>
+</li>
+</ol>
+</blockquote>
+<p>Note that $d()$ is called the <em>distance function</em> or simply <em>distance</em></p>
+<p>For example, Euclidean distance, squared distance, Mahalanobis distance, and Hamming distance satisfy these conditions, and can be clearly considered as metrics. On the other hand, KL-divergence is a divergence, not metrics. In mathematics, <strong>&ldquo;divergence&rdquo;</strong> is an extended concept of &ldquo;metrics&rdquo; that satisfies only <strong>non-negativity</strong> and <strong>completeness</strong> among axioms of metrics. By introducing &ldquo;divergence&rdquo;, you can reduce the constraints of axioms of metrics and  have a high level of abstraction.</p>
+<p>The word &ldquo;divergence&rdquo; is generally interpreted as the process or state of diverging; for example, in physics it appears as a vector operator <strong>div</strong>. There is no Japanese words that corresponds to the meaning of divergence, but it seems that &ldquo;相違度&rdquo;, &ldquo;分離度&rdquo;, &ldquo;逸脱度&rdquo;, &ldquo;乖離度&rdquo; etc. might be used.</p>
+<p>As an example, let&rsquo;s measure the KL-divergence between two Gaussian distributions $ N (0, 1) $ (blue) and $ N (1, 2) $ (red). In the figure, the left shows <strong>KL-divergence from red one as seen from blue one</strong>, and the right shows <strong>KL-divergence from blue one as seen from red one</strong>. Their value are surely different.</p>
+<p>Note that given two Gaussian distribution $p_1,p_2$ as</p>
+<p>$$
+\begin{align}
+p_1(x) &amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\<br>
+p_2(x) &amp;= \mathcal{N}(\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2 \pi \sigma_2^2}} \exp \left\{ - \frac{ {(x - \mu_2)}^2}{2 \sigma_2^2} \right\}
+\end{align}
+$$</p>
+<p>the following holds.</p>
+<p>$$
+\begin{align}
+{D}_{KL}(p_1 \mid\mid p_2)
+&amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\<br>
+&amp;= \log \frac{\sigma_2}{\sigma_1} + \frac{\sigma_1^2 + {( \mu_1 - \mu_2 )}^2}{2 \sigma_2^2} - \frac{1}{2}
+\end{align}
+$$</p>
+<p><img src="%7B%7Bsite.baseurl%7D%7D/assets/img/post/comparison_of_dkl_norm.png" alt="img"></p>
+<p>Incidentally, in addition to the KL-divergence, the following is known as a measure of the proximity (or closeness) between two probability distributions.</p>
+<blockquote>
+<p><strong>The metrics to measure closeness between $q(x)$ and $p(x)$</strong></p>
+<ul>
+<li>$ {\chi}^2(q ; p) := \sum_{i=1}^{k} \frac{ { { p_i - q_i } }^{2} }{p_i}$        ($\chi^2$-statistics)</li>
+<li>$ L_1(q ; p) := \int \vert q(x) - p(x) \vert ~ dx$        ($L_1$-norm)</li>
+<li>$ L_2(q ; p) := \int { { q(x) - p(x) } }^{2} ~ dx$        ($L_2$-norm)</li>
+<li>$ I_K(q ; p) := \int { \{ \sqrt{ q(x) } - \sqrt{ p(x) } \} }^{2} ~ dx $        (Herringer distance)</li>
+<li>$ \mathbb{D}(q ; p) := \int f \left( {\large \frac{q(x)}{p(x)} } \right) q(x) ~ dx$        ($f$-divergence)</li>
+<li>$ I_{\lambda}(q ; p) := \int \left\{ { \left( {\large \frac{q(x)}{p(x)} } \right) }^{\lambda} - 1 \right\} q(x) ~ dx$        (Generalized information)</li>
+<li>$ {D}_{KL}(q ; p) := \int \log \left( {\large \frac{q(x)}{p(x)} } \right) q(x) ~ dx$        (KL-divergence)</li>
+<li>$ JSD(q \mid\mid p) := \frac{1}{2} {D}_{KL}(q \mid\mid \frac{q+p}{2}) + \frac{1}{2} {D}_{KL}(p \mid\mid \frac{q+p}{2})$        (JS-divergence)</li>
+</ul>
+</blockquote>
+<br>
+<h2 id="2-relatinoship-to-other-measurements">2. Relatinoship to other measurements</h2>
+<h4 id="21-kl-divergence-vs-mutual-information">2.1 KL-divergence vs Mutual information</h4>
+<p>　In information theory, entropy $H(X)$, join entropy $H(X,Y)$, conditional entropy $H(X \vert Y)$, mutual information $MI(X,Y)$ are defined as follows by using probability density $Pr()$<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<p>\begin{align}
+H(X)    &amp;:= - \int Pr(x) \log Pr(x) ~dx \\<br>
+H(X,Y)  &amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\<br>
+H(X|Y)  &amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\<br>
+MI(X,Y) &amp;:= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy
+\end{align}</p>
+<p>For any two random variable $X$ and $Y$, mutual information $MI(X, Y)$ specifies the mutual (symmetric) dependence between them.</p>
+<p><img src="%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_mutual_information.png" alt="img"></p>
+<p>\begin{align}
+MI(X,Y) &amp;= H(X) - H(X|Y)  \\<br>
+&amp;= H(Y) - H(Y|X) \\<br>
+&amp;= H(X) + H(Y) - H(X,Y)
+\end{align}</p>
+<p>Here, the following relationship holds between KL-divergence and mutual information.</p>
+<p>\begin{align}
+MI(X, Y)
+&amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\<br>
+&amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\<br>
+&amp;= \mathbb{E}_{X} \bigl[ D_{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
+\end{align}</p>
+<p>So that, mutual information $MI (X, Y)$ is interpreted as the degree of difference (average degree of deviation) between the joint distribution $Pr (x, y)$ when the $X$ and $Y$ are <strong>not independent</strong> and the joint distribution $Pr (x) Pr (y)$ when $X$ and $Y$ are <strong>independent</strong>.</p>
+<p>（cf.）Formula transformation of mutual information:</p>
+<p>\begin{align}
+MI(X,Y)
+&amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\<br>
+&amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\<br>
+&amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\<br>
+&amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\<br>
+&amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
+\end{align}</p>
+<br>
+<h3 id="22-kl-divergence-vs-log-likelihood-ratio">2.2 KL-divergence vs Log likelihood ratio</h3>
+<p>In the field of Bayes inference and statistical modeling, you often face the problem of estimating the <strong>true distribution</strong> $q(x)$ by $p_{\hat{\theta}}(x)$ (that is the combination of stochastic model $p_{\theta}(x)$ and estimated parameter $\hat{\theta}$ ) . Therefore, KL-divergence is used when you want to measure the difference between two distributions, or when you want to incorporate the estimation error into the loss function or risk function in order to solve  the optimization problem for the parameter $\theta$.</p>
+<p>Also, KL-divergence is related to the log likelihood ratio so much that it has a deep connection to the model selection method <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> such as likelihood ratio test, Bayes factor, and AIC (Akaike&rsquo;s information criterion).</p>
+<ul>
+<li>KL-divergence of estimated distribution $p_{\theta}(x)$ for the true distribution $q(x)$ : $D_{KL}(q \mid\mid p_{\theta})$ is considerd as the expected value of the log likelihood ratio $q(x)/p_{\theta}(x)$ for tue true distribution $q(x)$.</li>
+</ul>
+<p>\begin{align}
+\left( \text{Log likelihood ratio} \right)
+&amp;= \log \frac{q(x)}{p_{\theta}(x)} \\<br>
+D_{KL}( q \mid\mid p_{\theta} )
+&amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\<br>
+&amp;= \mathbb{E}_{X} \left[ \log \frac{q(x)}{p_{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
+\end{align}</p>
+<p>When using KL-divergence as the evaluation/loss value in model selection/comparison, it is equivalent that minimizing KL-divergence: $D_{KL}( q \mid\mid p )$ and maximizing the log likelihood: $\log p(x)$ as follows.</p>
+<p>\begin{align}
+D_{KL}( q \mid\mid p_{\theta} )
+&amp;= \mathbb{E}_{X} \bigl[ \log q(x) \bigr] - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \\<br>
+&amp;\propto - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
+\end{align}</p>
+<ul>
+<li>
+<p>For any parametric stochastic model $f(x \vert \theta)$ (such as a linear regression model) which represents the estimated distribution as</p>
+<p>\begin{align}
+p_{\theta}(x) = f(x|\theta)
+\end{align}</p>
+<p>, if a certain loss function $L(\theta)$ is given, the optimal parameter $\theta^*$ exists as it satisfy the following.</p>
+<p>\begin{align}
+q(x) &amp;= f(x|\theta^*)
+\end{align}</p>
+<p>Then, for any estimated parameter $\hat{\theta}$ ,the estimated loss of the model $f(x \vert \hat{\theta})$ is represented by KL-divergence. (Note that $\ell( \cdot \vert x)$ means the log likelihood function.)</p>
+</li>
+</ul>
+<p>\begin{align}
+\left( \text{Log likelihood ratio} \right)
+&amp;=  \log \frac{f(x|\theta^{*})}{f(x|\hat{\theta})}
+\end{align}</p>
+<p>\begin{align}
+\hat{\theta}
+&amp;:= \underset{\theta \in \Theta}{\rm argmin} ~ L(\theta) \tag{7}
+\\<br>
+D_{KL}( q \mid\mid p_{\hat{\theta}} )
+&amp;= D_{KL}( p_{\theta^{*}} \mid\mid p_{\hat{\theta}} ) \\<br>
+&amp;= D_{KL}( f_{\theta^{*}} \mid\mid f_{\hat{\theta}} ) \\<br>
+&amp;= \int f(x|\theta^{*}) \log \frac{f(x|\theta^{*})}{ f(x|\hat{\theta})} dx \\<br>
+&amp;= \mathbb{E}_{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\<br>
+&amp;= \mathbb{E}_{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
+\end{align}</p>
+<br>
+<h4 id="23-kl-divergence-vs-fisher-information">2.3 KL-divergence vs Fisher information</h4>
+<p>Given a certain stochastic model $f(\cdot \vert \theta)$, <strong>Fisher information</strong> $I(\theta)$ for the parameter $\theta$ is defined as follows.  (Note that $ \ell( \cdot \vert x) $ means the log likelihood function.)</p>
+<p>\begin{align}
+I(\theta)
+&amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\<br>
+&amp;= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \log f(x|\theta) \right\} }^{2} \right]
+\end{align}</p>
+<p>Also, between KL-divergence and Fisher information, the following holds.</p>
+<p>\begin{align}
+\lim_{h \to 0} \frac{1}{h^{2}} D_{KL} \bigl( f(x|\theta) \mid\mid f(x|\theta+h) \bigr)
+&amp;= \frac{1}{2} I(\theta)<br>
+\end{align}</p>
+<p>(cf.) The following equation holds by using Taylor expansion of $\ell( \cdot \vert x)$.<br></p>
+<p>\begin{align}
+\ell(\theta + h) - \ell(\theta)
+&amp;= {\ell}^{'}(\theta)h + \frac{1}{2} {\ell}^{''}(\theta) h^{2} + O(h^{3})
+\end{align}</p>
+<p>This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is **directly proportional to** Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures **the local information** that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.</p>
+<p><img src="%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_fisher_information.png" alt="img"></p>
+<br>
+<h2 id="3-references">3. References</h2>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=yumaloop0f-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4254127820&linkId=1456f8ade37cd01c91d31448ce7b50f2&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
+</iframe>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=yumaloop0f-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4785314117&linkId=a437161b2bfff7107300d73243499d9d&bc1=FFFFFF&lt1=_top&fc1=333333&lc1=0066C0&bg1=FFFFFF&f=ifr">
+</iframe>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=yumaloop0f-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=0471241954&linkId=477c693b4215ab3b8aa2cdee1450fef7&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
+</iframe>
+<p><br><br><br></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Also, f-divergence is defined as its generalized class. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>I used scipy.stats.entropy(). <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. <a href="http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html">http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Article on gneralized information criterion(GIC): <a href="https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf">https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="https://yumaloop.github.io/tag/bayes/">Bayes</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://yumaloop.github.io/post/2018-04-19-kl-divergence/&amp;text=Kullback-Leibler%20Divergence" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://yumaloop.github.io/post/2018-04-19-kl-divergence/&amp;t=Kullback-Leibler%20Divergence" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Kullback-Leibler%20Divergence&amp;body=https://yumaloop.github.io/post/2018-04-19-kl-divergence/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://yumaloop.github.io/post/2018-04-19-kl-divergence/&amp;title=Kullback-Leibler%20Divergence" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Kullback-Leibler%20Divergence%20https://yumaloop.github.io/post/2018-04-19-kl-divergence/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://yumaloop.github.io/post/2018-04-19-kl-divergence/&amp;title=Kullback-Leibler%20Divergence" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://yumaloop.github.io/"><img class="avatar mr-3 avatar-circle" src="https://yumaloop.github.io/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q75_lanczos_center.jpg" alt="Nelson Bighetti"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://yumaloop.github.io/">Nelson Bighetti</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://yumaloop.github.io/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/gcushen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-03-18-particle_filter/">State Space Model &amp; Particle Filter</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-03-10-free_energy_on_bayes_inference/">Free energy and Bayes inference</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-02-24-deriving-elbo/">Deriving ELBO</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2019-09-25-em-algorithm/">EM Algorithm</a></li>
+      
+      <li><a href="https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/">Time-steady States on Systems</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'event' : "Events",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="https://yumaloop.github.io/js/wowchemy.min.aeecf26c1eff6b9588dbafc1a9f3953c.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
