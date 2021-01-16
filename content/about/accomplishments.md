@@ -23,27 +23,27 @@ date_format: Jan 2006
 #   Leave other parameters empty if not required.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 item:
-- certificate_url: https://www.coursera.org
+- certificate_url: ""
   date_end: ""
   date_start: "2019-12-01"
   description: ""
-  organization: Japan Statistical Society Certificate.
-  organization_url: https://www.coursera.org
-  title: Grade 1, Mathematical statistics
-- certificate_url: https://www.coursera.org
+  organization: Japan Statistical Society
+  organization_url: https://www.jss.gr.jp/en/
+  title: <i class="fas fa-star"></i> Grade 1, Mathematical statistics - Japan Statistical Society Certificate.
+- certificate_url: ""
   date_end: ""
   date_start: "2019-12-01"
   description: ""
-  organization: Japan Statistical Society Certificate.
-  organization_url: https://www.coursera.org
-  title: Grade 1, Applied statistics
+  organization: Japan Statistical Society
+  organization_url: https://www.jss.gr.jp/en/
+  title: <i class="fas fa-star"></i> Grade 1, Applied statistics - Japan Statistical Society Certificate.
   url: ""
-- certificate_url: https://www.edx.org
+- certificate_url: ""
   date_end: ""
   date_start: "2014-04-01"
   description: ""
   organization: Eiken Foundation of Japan.
-  organization_url: https://www.edx.org
-  title: Grade 2, The EIKEN Test in Practical English Proficiency
+  organization_url: https://www.eiken.or.jp/
+  title: <i class="fas fa-star"></i> Grade 2, The EIKEN Test in Practical English Proficiency
   url: ""
 ---

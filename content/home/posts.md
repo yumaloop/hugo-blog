@@ -7,7 +7,7 @@ widget: pages
 headless: true
 
 # Order that this section appears on the page.
-weight: 21
+weight: 2
 
 title: Recent Posts
 subtitle: A set of random things passing through my messy memory.
@@ -15,8 +15,10 @@ subtitle: A set of random things passing through my messy memory.
 content:
   # Page type to display. E.g. post, talk, publication...
   page_type: post
+  
   # Choose how many pages you would like to display (0 = all pages)
-  count: 5
+  count: 3
+
   # Filter on criteria
   filters:
     author: ""
