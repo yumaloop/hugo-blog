@@ -14,7 +14,7 @@ baseurl = "https://yumaloop.github.io/"
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
-copyright = "Copyright &copy; Yuma Uchiumi 2018-{year} Powered by Jekyll, Proudly hosted by GitHub Pages."
+copyright = "&copy; Yuma Uchiumi 2018-{year}"
 
 ############################
 ## Advanced options below ##
