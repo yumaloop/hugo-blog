@@ -13,7 +13,7 @@ weight: 1
 title: '<div align="left">About Me</div>'
 
 # Section subtitle
-subtitle: '<div align="left"><i>Know thyself - γνῶθι σεαυτόν</i></div>'
+subtitle: '<font color="gray"><div align="left"><i>Know thyself - γνῶθι σεαυτόν</i></div></font>'
 
 # Section design
 design:

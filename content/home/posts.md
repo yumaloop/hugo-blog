@@ -10,7 +10,7 @@ headless: true
 weight: 21
 
 title: Recent Posts
-subtitle:
+subtitle: A set of random things passing through my messy memory.
 
 content:
   # Page type to display. E.g. post, talk, publication...

@@ -1,5 +1,6 @@
 ---
 title: Posts
+subtitle: Archive of all articles
 
 # View.
 #   1 = List
