@@ -10,7 +10,7 @@ headless: true
 weight: 1
 
 # Section title
-title: '<div align="left">About Me</div>'
+title: '<div align="left">Biography</div>'
 
 # Section subtitle
 subtitle: '<font color="gray"><div align="left"><i>Know thyself - γνῶθι σεαυτόν</i></div></font>'
