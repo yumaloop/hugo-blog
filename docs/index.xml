@@ -7,7 +7,7 @@
     <description>Yuma Uchiumi</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © Yuma Uchiumi 2018-2021 Powered by Jekyll, Proudly hosted by GitHub Pages.</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://yumaloop.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://yumaloop.github.io/images/icon_huce064df24ffccf2a6c5bbf6190838da4_436_512x512_fill_lanczos_center_2.png</url>
       <title>Yuma Uchiumi</title>
       <link>https://yumaloop.github.io/</link>
     </image>
@@ -1673,6 +1673,14 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
     </item>
     
     <item>
+      <title>About</title>
+      <link>https://yumaloop.github.io/about/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Whiteside&#39;s Outline Method</title>
       <link>https://yumaloop.github.io/post/2019-11-25-whitesides_outline_method/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
@@ -2124,14 +2132,6 @@ driver.quit()
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Landing Page</title>
-      <link>https://yumaloop.github.io/about/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/about/</guid>
-      <description></description>
     </item>
     
     <item>
