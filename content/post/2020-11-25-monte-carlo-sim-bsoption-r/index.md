@@ -148,7 +148,7 @@ abline(h=bs_price, col='red', lwd=1, lty=2)
 
 **Case 1.**
 
-<img src="{{ site.baseurl }}/assets/img/post/r_mcbs1.png">
+![img1](./r_mcbs1.png)
 
 モンテカルロ法によるコールオプションの推定価格が，
 BS式による理論価格172.7457に漸近している．
@@ -163,7 +163,7 @@ BS式による理論価格172.7457に漸近している．
 
 **Case 2.**
 
-<img src="{{ site.baseurl }}/assets/img/post/r_mcbs2.png">
+![img2](./r_mcbs2.png)
 
 モンテカルロ法によるコールオプションの推定価格が，
 BS式による理論価格83.1821に漸近している．

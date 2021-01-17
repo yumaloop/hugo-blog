@@ -128,7 +128,7 @@ plot(1:n, mc_price, main=&amp;quot;Monte Carlo Simulation:\nBlack-Scholes Option
 abline(h=bs_price, col=&#39;red&#39;, lwd=1, lty=2)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Case 1.&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/r_mcbs1.png&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;./r_mcbs1.png&#34; alt=&#34;img1&#34;&gt;&lt;/p&gt;
 &lt;p&gt;モンテカルロ法によるコールオプションの推定価格が，
 BS式による理論価格172.7457に漸近している．&lt;/p&gt;
 &lt;ul&gt;
@@ -144,7 +144,7 @@ BS式による理論価格172.7457に漸近している．&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Case 2.&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/r_mcbs2.png&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;./r_mcbs2.png&#34; alt=&#34;img2&#34;&gt;&lt;/p&gt;
 &lt;p&gt;モンテカルロ法によるコールオプションの推定価格が，
 BS式による理論価格83.1821に漸近している．&lt;/p&gt;
 &lt;ul&gt;

@@ -13,7 +13,6 @@ tags:
 - React
 ---
 
-
 StackOverflow published its **Developer Survey 2020**. Click [here](https://insights.stackoverflow.com/survey/2020) for details.
 
 In 2020, 
@@ -46,6 +45,4 @@ it will be more difficult to become a full-stack engineer in the near future.
 - Java, Swift, Android, iOS, Kotlin, SQLite, Firebase
 - C#, .NET, Windows, Azure
 
-<img src="{{ site.baseurl }}/assets/img/post/so_ds_2020_cluster.png">
-
-
+![img](./so_ds_2020_cluster.png)
