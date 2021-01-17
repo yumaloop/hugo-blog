@@ -21,8 +21,8 @@ design:
   # Use a 1-column layout
   columns: "1"
 ---
-I'm Yuma Uchiumi, a graduate student majoring in computer science.
-I was born on December 8, 1997 in Tokyo, Japan.  [see CV](https://yumaloop.github.io/assets/pdf/CV202011.pdf)
+I'm Yuma Uchiumi, a graduate student majoring in computer science. 
+I was born on December 8, 1997 in Tokyo, Japan. 
 My research goal is to understand and implement the computation for human thinking;
 I study statistical algorithms, stochastic models, and information processing systems to solve the cognitive problems with human thinking.
 &#x1f47b; &#x1f36d; &#x1f984; &#x1f308; &#x26c5; &#x2728;
