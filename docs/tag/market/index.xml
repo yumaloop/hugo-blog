@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Market | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/market/</link>
+      <atom:link href="https://yumaloop.github.io/tag/market/index.xml" rel="self" type="application/rss+xml" />
+    <description>Market</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2021</copyright><lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_huce064df24ffccf2a6c5bbf6190838da4_436_512x512_fill_lanczos_center_2.png</url>
+      <title>Market</title>
+      <link>https://yumaloop.github.io/tag/market/</link>
+    </image>
+    
+    <item>
+      <title>On Arbitrage in the Cryptocurrency Market</title>
+      <link>https://yumaloop.github.io/post/2021-01-18-cryptocurrency-market-arbitrage-expected-risk/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2021-01-18-cryptocurrency-market-arbitrage-expected-risk/</guid>
+      <description>&lt;h1 id=&#34;bitcoin&#34;&gt;bitcoin&lt;/h1&gt;
+&lt;p&gt;価格の期待値をnowcastするか/forcastするか&lt;/p&gt;
+&lt;p&gt;random walkは本質的に予測不可能&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
