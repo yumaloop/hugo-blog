@@ -1,5 +1,5 @@
 ---
-title: Bisection on inferences: All hypotheses must be dichotomized
+title: Bisection on inferences; All hypotheses must be dichotomized
 draft: true
 date: "2021-01-10"
 
@@ -71,8 +71,8 @@ tags:
 「選択」とは「エントロピー最小化」である
 
 
-- 確率変数$$X$$の不確実性を，期待値$$\int xp(x) dx$$で束縛すること
-- 変数$$X$$を値$$x$$で束縛すること
+- 確率変数$X$の不確実性を，期待値$\int xp(x) dx$で束縛すること
+- 変数$X$を値$x$で束縛すること
 
 
 
