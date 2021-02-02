@@ -21,7 +21,6 @@ draft: false
 featured: false
 
 tags:
-- Tips
 - System
 - Capitalism
 

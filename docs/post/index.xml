@@ -50,6 +50,32 @@ it will be more difficult to become a full-stack engineer in the near future.&lt
     </item>
     
     <item>
+      <title>Maximize the cell size of Jupyter notebook</title>
+      <link>https://yumaloop.github.io/post/2020-11-29-maximize-jupyter-notebook-cell-height/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-11-29-maximize-jupyter-notebook-cell-height/</guid>
+      <description>&lt;h3 id=&#34;tldr&#34;&gt;TL;DR&lt;/h3&gt;
+&lt;p&gt;Put the following magic command (cell magic) in a cell and execute it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%%javascript
+IPython.OutputArea.auto_scroll_threshold = 9999;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note: This is not &lt;code&gt;line magic&lt;/code&gt; like &lt;code&gt;% matplotlib inline&lt;/code&gt; and some errors will occur unless the executed cell is independent.
+See &lt;a href=&#34;https://ipython.readthedocs.io/en/stable/interactive/magics.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IPython Official Documentation&lt;/a&gt; for details.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;%&lt;/code&gt; - All available &lt;em&gt;line magic&lt;/em&gt; commands - &lt;a href=&#34;https://ipython.readthedocs.io/en/stable/interactive/magics.html#line-magics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;check here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;%%&lt;/code&gt; - All available &lt;em&gt;cell magic&lt;/em&gt; commands - &lt;a href=&#34;https://ipython.readthedocs.io/en/stable/interactive/magics.html#cell-magics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;check here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cf&#34;&gt;Cf.&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#magic-functions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Magic functions - IPython公式ドキュメント&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ipython/ipython/issues/2172#issuecomment-53708976&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;comment:53708976 issue:2172 ipython github.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qastack.jp/programming/18770504/resize-ipython-notebook-output-window&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ipythonノートブックの出力ウィンドウのサイズを変更する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/daifuku_mochi2/items/30258e58750ff8e85d37&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jupyter notebookで列をすべて表示したい - Qitta&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Monte Carlo Simulation of Black-Scholes Option Pricing Model</title>
       <link>https://yumaloop.github.io/post/2020-11-25-monte-carlo-sim-bsoption-r/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
@@ -196,6 +222,615 @@ BS式による理論価格83.1821に漸近している．&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Basic Portfolio Optimization with Python: Markowitz&#39;s Mean-Variance Model</title>
+      <link>https://yumaloop.github.io/post/2020-11-12-portfolio-optimization-by-python/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-11-12-portfolio-optimization-by-python/</guid>
+      <description>&lt;p&gt;Pythonでbacktestする際のTipsをまとめたものです．面倒な前処理をさくっと終わらせてモデル作りに専念しましょう！という主旨です．記事では紹介していませんが，&lt;code&gt;pandas-datareader&lt;/code&gt;でマクロデータもだいたい取れるので，複数因子モデルなど，さまざまなポートフォリオ選択モデルを試すことができます．&lt;/p&gt;
+&lt;font color=&#34;gray&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Overview:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;PythonでBacktestする環境を整える．&lt;/li&gt;
+&lt;li&gt;東証TOPIX構成銘柄から対象資産を選び最小分散ポートフォリオを組む．&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/font&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;1-株価データの取得&#34;&gt;1. 株価データの取得&lt;/h2&gt;
+&lt;br&gt;
+&lt;p&gt;まず，&lt;code&gt;pandas-datareader&lt;/code&gt;を環境にインストールします．&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pandas-datareader&lt;/code&gt;は，株価などの市場データをWeb API経由でダウンロードできる（pandas.Dataframe friendlyで）便利なPythonパッケージです．IEX, World Bank, OECD, &lt;a href=&#34;https://finance.yahoo.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Yahoo! Finance&lt;/a&gt;，&lt;a href=&#34;https://fred.stlouisfed.org/docs/api/fred/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FRED&lt;/a&gt;，&lt;a href=&#34;https://stooq.com/q/?s=usdkrw&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stooq&lt;/a&gt;などのAPIを内部で叩き、pythonコード上に取得したデータを読み込みことができます．詳しい使い方は&lt;a href=&#34;https://pandas-datareader.readthedocs.io/en/latest/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;公式ドキュメント&lt;/a&gt;を参照してください．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Install pandas-datareader (latest version)
+pip install git+https://github.com/pydata/pandas-datareader.git
+# Or install pandas-datareader (stable version)
+pip install pandas-datareader
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;今回は，東京証券取引所（東証）に上場している株式銘柄を対象商品とします．
+Web上で公開されているデータは圧倒的に米国市場のものが多いですが，ポーランドの最強サイト&lt;a href=&#34;https://stooq.com/q/?s=usdkrw&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stooq.com&lt;/a&gt;は東京証券取引所の過去データを公開しています．&lt;code&gt;pandas-datareader&lt;/code&gt;を使ってstooqから個別銘柄のデータを取得しましょう．&lt;/p&gt;
+&lt;p&gt;基本的には，&lt;code&gt;pandas_datareader.stooq.StooqDailyReader()&lt;/code&gt;を実行すればOKです．引数には，各市場に登録してある証券コード(or ティッカーシンボル)と、データ公開元のサイト(Yahoo!, Stooq, &amp;hellip;)を指定します．&lt;/p&gt;
+&lt;p&gt;東京証券取引所で取り扱いされている株式銘柄には，4桁の証券コードが割り当てられているので、今回はこれを使います．（例：&lt;a href=&#34;https://stocks.finance.yahoo.co.jp/stocks/detail/?code=7203&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;トヨタ自動車&lt;/a&gt;の株式は、東証では証券コードが&lt;strong&gt;7203&lt;/strong&gt;である銘柄として，NYSEではティッカーシンボルが&lt;strong&gt;TM&lt;/strong&gt;である銘柄として取引されています．）&lt;/p&gt;
+&lt;p&gt;試しに，トヨタ自動車(東証:7203)の株価データを取得してプロットしてみましょう，&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import datetime
+import pandas_datareader
+
+start = datetime.datetime(2015, 1, 1)
+end = datetime.datetime(2020, 11, 30)
+stockcode = &amp;quot;7203.jp&amp;quot; # Toyota Motor Corporation (TM)
+
+df = pandas_datareader.stooq.StooqDailyReader(stockcode, start, end).read()
+df = df.sort_values(by=&#39;Date&#39;,ascending=True)
+display(df) # Show dataframe
+-----
+            Open	High	Low	    Close	Volume
+Date					
+2015-01-05	6756.50	6765.42	6623.43	6704.69	10653925
+2015-01-06	6539.48	6601.09	6519.83	6519.83	13870266
+2015-01-07	6480.52	6685.05	6479.64	6615.40	12837377
+2015-01-08	6698.46	6748.46	6693.98	6746.69	11257646
+2015-01-09	6814.56	6846.70	6752.92	6795.80	11672928
+...	...	...	...	...	...
+2020-11-04	7024.00	7054.00	6976.00	6976.00	6278100
+2020-11-05	6955.00	7032.00	6923.00	6984.00	5643400
+2020-11-06	7070.00	7152.00	7015.00	7019.00	11092900
+2020-11-09	7159.00	7242.00	7119.00	7173.00	7838600
+2020-11-10	7320.00	7360.00	7212.00	7267.00	8825700
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;日別の株価推移データがpandas.Dataframeとして取得できました！
+いま作成した&lt;code&gt;df&lt;/code&gt;の中身をプロットしてみます．（基本的に終値をつかいます）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Plot timeseries (2015/1/1 - 2020/11/30)
+plt.figure(figsize=(12,8))
+plt.plot(df.index, df[&amp;quot;Close&amp;quot;].values)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下図のように，終値(Close)の推移が簡単にプロットできました．
+&lt;img src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/295228/ef4c8a3e-7e1b-4a6e-d1e2-40f12c91691c.png&#34; alt=&#34;hoge.png&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;2-対象資産のパネルデータを作る&#34;&gt;2. 対象資産のパネルデータを作る&lt;/h2&gt;
+&lt;br&gt;
+&lt;p&gt;ポートフォリオ最適化問題を解くための準備として，複数の資産(株式銘柄)に対するパネルデータを作り，pandas.Dataframeオブジェクトとして整理します．&lt;/p&gt;
+&lt;p&gt;今回は&lt;a href=&#34;https://www.jpx.co.jp/markets/indices/topix/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TOPIX 500&lt;/a&gt;に掲載されている銘柄から5つ選び，投資対象資産とします．また，前処理として「終値」を「終値ベースの収益率」へ変換しています．この部分のコードは状況に合わせて変えてください．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import datetime
+import numpy as np
+import pandas as pd
+import pandas_datareader.data as web
+import pandas_datareader.stooq as stooq
+
+
+def get_stockvalues_tokyo(stockcode, start, end, use_ratio=False):
+    &amp;quot;&amp;quot;&amp;quot;
+    stockcode: market code of each target stock (ex. &amp;quot;NNNN&amp;quot;) defined by the Tokyo stock market.
+    start, end: datetime object
+    &amp;quot;&amp;quot;&amp;quot;
+    # Get index data from https://stooq.com/
+    df = stooq.StooqDailyReader(f&amp;quot;{stockcode}.jp&amp;quot;, start, end).read()
+    df = df.sort_values(by=&#39;Date&#39;,ascending=True)
+    
+    if use_ratio:
+        df = df.apply(lambda x: (x - x[0]) / x[0] )
+    return df
+
+def get_paneldata_tokyo(stockcodes, start, end, use_ratio=False):
+    # Use &amp;quot;Close&amp;quot; value only 
+    dfs = []
+    for sc in stockcodes:
+        df = get_stockvalues_tokyo(sc, start, end, use_ratio)[[&#39;Close&#39;]]
+        df = df.rename(columns={&#39;Close&#39;: sc})
+        dfs.append(df)
+    df_concat = pd.concat(dfs, axis=1)
+    return df_concat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;get_paneldata_tokyo()&lt;/code&gt;を使ってパネルデータを作成します．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;start = datetime.datetime(2015, 1, 1)
+end = datetime.datetime(2020, 11, 30)
+stockcodes=[&amp;quot;1301&amp;quot;, &amp;quot;1762&amp;quot;, &amp;quot;1820&amp;quot;, &amp;quot;1967&amp;quot;, &amp;quot;2127&amp;quot;]
+
+df = get_paneldata_tokyo(stockcodes, start, end, use_ratio=True)
+display(df) # return ratio daily
+-----
+            1301	    1762    	1820    	1967	    2127
+Date					
+2015-01-05	0.000000	0.000000	0.000000	0.000000	0.000000
+2015-01-06	-0.010929	-0.018385	-0.033937	-0.002265	-0.038448
+2015-01-07	-0.014564	-0.020433	-0.059863	-0.013823	-0.059680
+2015-01-08	-0.007302	-0.016338	-0.057883	-0.013823	-0.039787
+2015-01-09	0.000000	-0.004490	-0.031938	-0.025407	-0.043770
+...	...	...	...	...	...
+2020-10-29	0.096138	-0.032923	-0.030777	0.858573	5.682321
+2020-10-30	0.093336	-0.039657	-0.041199	0.832831	5.704266
+2020-11-02	0.107748	-0.026188	-0.032198	0.845702	5.418978
+2020-11-04	0.099341	-0.024392	-0.020829	0.858573	5.704266
+2020-11-05	0.069315	-0.014964	-0.042147	0.904909	6.055390
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;これで，評価対象となる各資産のパネルデータを取得できました．&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;3-マーコビッツの平均分散モデルとその解法&#34;&gt;3. マーコビッツの平均分散モデルとその解法&lt;/h2&gt;
+&lt;br&gt;
+&lt;p&gt;投資対象となる複数の資産に対して，適当な投資比率をそれぞれ決定することを&lt;strong&gt;ポートフォリオ最適化&lt;/strong&gt;といいます．今回は，最も基本的なポートフォリオ最適化の問題設定として，Markowitzが提唱した&lt;strong&gt;平均分散モデル&lt;/strong&gt;(Mean-Variance Model)を採用します．&lt;/p&gt;
+&lt;h3 id=&#34;31-markowitzの平均分散モデル&#34;&gt;3.1. Markowitzの平均分散モデル&lt;/h3&gt;
+&lt;p&gt;Markowitzの平均分散モデルでは，「ポートフォリオの期待収益率(Expected return)が一定値以上となる」という制約条件の下で，「ポートフォリオの分散を最小化する」最適化問題を考えます．&lt;/p&gt;
+&lt;p&gt;一般に，$n$コの資産で構成されるポートフォリオの場合，ポートフォリオの分散は$n$コの資産間の共分散行列の二次形式となるので，この最適化問題は二次計画問題(Quadratic Programming, QP)のクラスとなり，次のように定式化されます．&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\underset{\bf x}{\rm minimize} ~~~ &amp;amp;{\bf x}^T \Sigma {\bf x} \\&lt;br&gt;
+{\rm subject~to} ~~~ &amp;amp;{\bf r}^T {\bf x} = \sum_{i=1}^{n} r_i x_i \geq r_e \\&lt;br&gt;
+&amp;amp;{|| {\bf x} ||}_{1} = \sum_{i=1}^{n} x_i = 1 \\&lt;br&gt;
+&amp;amp;x_i \geq 0 ~~ (i = 1, \cdots, n)
+\end{align}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\Sigma \in \mathbb{R}^{n \times n}$ ー $n$コの資産の共分散行列&lt;/li&gt;
+&lt;li&gt;${\bf x} \in \mathbb{R}^{n}$ ー $n$コの資産の投資比率ベクトル&lt;/li&gt;
+&lt;li&gt;$\bar{\bf r} \in \mathbb{R}^{n}$ ー $n$コの資産の期待収益率ベクトル&lt;/li&gt;
+&lt;li&gt;$x_i \in \mathbb{R}$ ー 資産$i$の投資比率&lt;/li&gt;
+&lt;li&gt;$\bar{r}_i \in \mathbb{R}$ ー 資産$i$の期待収益率&lt;/li&gt;
+&lt;li&gt;$r_e \in \mathbb{R}$ ー 投資家の要求期待収益率&lt;/li&gt;
+&lt;li&gt;$\bar{r}_p \in \mathbb{R}$ ー ポートフォリオの収益率の期待値&lt;/li&gt;
+&lt;li&gt;$\sigma_p \in \mathbb{R}$ ー ポートフォリオの収益率の標準偏差&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1つ目の制約式は，ポートフォリオの期待収益率が一定値($=r_e$)以上となることを要請しています．2つ目，3つ目の制約式はポートフォリオの定義からくる自明なものです．資産の空売りを許す場合，3つ目の制約式を除くこともあります．&lt;/p&gt;
+&lt;h3 id=&#34;32-cvxoptの使い方&#34;&gt;3.2. CVXOPTの使い方&lt;/h3&gt;
+&lt;p&gt;Pythonの凸最適化向けパッケージ&lt;a href=&#34;https://cvxopt.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CVXOPT&lt;/a&gt;を使って，この二次計画問題(QP)を解きます．
+CVXOPTで二次計画問題を扱う場合は，解きたい最適化問題を以下の一般化されたフォーマットに整理して，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\underset{\bf x}{\rm minimize} ~~~ &amp;amp;\frac{1}{2} {\bf x}^{T} P {\bf x} + {\bf q}^{T} {\bf x} \\&lt;br&gt;
+{\rm subject~to} ~~~ &amp;amp; G {\bf x} \leq {\bf h} \\&lt;br&gt;
+&amp;amp;A {\bf x} = {\bf b}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;パラメータ&lt;code&gt;P&lt;/code&gt;,&lt;code&gt;q&lt;/code&gt;,&lt;code&gt;G&lt;/code&gt;,&lt;code&gt;h&lt;/code&gt;,&lt;code&gt;A&lt;/code&gt;を計算し，&lt;code&gt;cvxopt.solvers.qp()&lt;/code&gt;関数を実行することで最適解と最適値を求めます．Markowitzの平均・分散モデルの場合は，&lt;/p&gt;
+&lt;p&gt;$$
+P = 2 \cdot \Sigma, ~~~
+q = {\bf 0}_n, ~~~
+G = -1 \cdot
+\begin{pmatrix}
+\bar{r}_1 &amp;amp; \cdots &amp;amp; \bar{r}_n \\&lt;br&gt;
+1 &amp;amp; \cdots &amp;amp; 0 \\&lt;br&gt;
+\vdots &amp;amp; \ddots &amp;amp; \vdots \\&lt;br&gt;
+0 &amp;amp; \cdots &amp;amp; 1
+\end{pmatrix}, ~~~
+h = -1 \cdot
+\left(
+\begin{array}{c}
+r_e \\&lt;br&gt;
+0 \\&lt;br&gt;
+\vdots \\&lt;br&gt;
+0
+\end{array}
+\right), ~~~
+A = {\bf 1}_n^{\mathrm{T}}, ~~~
+b = 1
+$$&lt;/p&gt;
+&lt;p&gt;となります．&lt;/p&gt;
+&lt;p&gt;参考:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&#34;&gt;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&#34;&gt;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;33-pythonで計算&#34;&gt;3.3. Pythonで計算&lt;/h3&gt;
+&lt;p&gt;対象資産のパネルデータ&lt;code&gt;df&lt;/code&gt;から，必要な統計量を計算します．&lt;/p&gt;
+&lt;p&gt;ポートフォリオ内の資産間の共分散行列 $\Sigma$：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.cov() # Covariance matrix
+-----
+        1301	    1762        1820	    1967	    2127
+1301	0.024211	0.015340	0.018243	0.037772	0.081221
+1762	0.015340	0.014867	0.015562	0.023735	0.038868
+1820	0.018243	0.015562	0.025023	0.029918	0.040811
+1967	0.037772	0.023735	0.029918	0.109754	0.312827
+2127	0.081221	0.038868	0.040811	0.312827	1.703412
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ポートフォリオ内の各資産の期待収益率 ${\bf r}$：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.mean().values # Expected returns
+-----
+array([0.12547322, 0.10879767, 0.07469455, 0.44782516, 1.75209493])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;CVXOPTを使って最適化問題を解く．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import cvxopt
+
+def cvxopt_qp_solver(r, r_e, cov):
+    # CVXOPT QP Solver for Markowitz&#39; Mean-Variance Model
+    # See https://cvxopt.org/userguide/coneprog.html#quadratic-programming
+    # See https://cdn.hackaday.io/files/277521187341568/art-mpt.pdf
+    n = len(r)
+    r = cvxopt.matrix(r)
+    
+    P = cvxopt.matrix(2.0 * np.array(cov))
+    q = cvxopt.matrix(np.zeros((n, 1)))
+    G = cvxopt.matrix(np.concatenate((-np.transpose(r), -np.identity(n)), 0))
+    h = cvxopt.matrix(np.concatenate((-np.ones((1,1)) * r_e, np.zeros((n,1))), 0))
+    A = cvxopt.matrix(1.0, (1, n))
+    b = cvxopt.matrix(1.0)    
+    sol = cvxopt.solvers.qp(P, q, G, h, A, b)
+    return sol
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;r = df.mean().values # Expected returns
+r_e = 0.005 * # Lower bound for portfolio&#39;s return
+cov = df.cov() # Covariance matrix
+
+# Solve QP and derive optimal portfolio
+sol = cvxopt_qp_solver(r, r_e, cov)
+x_opt = np.array(sol[&#39;x&#39;])
+print(x_opt)
+print(&amp;quot;Variance (x_opt) :&amp;quot;, sol[&amp;quot;primal objective&amp;quot;])
+
+-----
+
+ pcost       dcost       gap    pres   dres
+ 0:  4.3680e-03 -8.6883e-02  5e+00  2e+00  2e+00
+ 1:  9.1180e-02 -2.2275e-01  5e-01  1e-01  1e-01
+ 2:  2.1337e-02 -6.0274e-02  8e-02  2e-16  1e-16
+ 3:  1.0483e-02 -1.7810e-03  1e-02  1e-16  3e-17
+ 4:  4.9857e-03  1.5180e-03  3e-03  2e-16  8e-18
+ 5:  4.0217e-03  3.6059e-03  4e-04  3e-17  1e-17
+ 6:  3.7560e-03  3.7107e-03  5e-05  3e-17  1e-18
+ 7:  3.7187e-03  3.7168e-03  2e-06  1e-17  4e-18
+ 8:  3.7169e-03  3.7168e-03  2e-08  1e-16  6e-18
+Optimal solution found.
+[ 5.56e-05]
+[ 1.00e+00]
+[ 1.76e-05]
+[ 3.84e-07]
+[ 2.63e-07]
+
+Variance (x_opt):  0.003716866155475511 # 最適ポートフォリオの分散
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最適解（各資産への最適な投資比率）と，最適値（最適な投資比率を適用した場合のポートフォリオの分散）が求められました．なお，今回使った平均分散モデルによる最適解はポートフォリオのリスク(分散)に対する最適性を重視しているので，「最小分散ポートフォリオ」と呼ばれます．&lt;/p&gt;
+&lt;p&gt;なお，収益率に対する評価指標には，無リスク資産の収益率(インフレ率)を加味したシャープレシオを用いるケースが多いです．backtestの方法についてはいくつか流儀があるので，専門書や論文を参照してください．&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;4-実装例&#34;&gt;4. 実装例&lt;/h2&gt;
+&lt;br&gt;
+&lt;p&gt;上のコードをまとめて，自作のバックテスト用Pythonクラス&lt;code&gt;MarkowitzMinVarianceModel()&lt;/code&gt;を作りました．
+以下は参考例です．&lt;/p&gt;
+&lt;h3 id=&#34;41-バックテスト用のpythonクラス&#34;&gt;4.1. バックテスト用のPythonクラス&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import cvxopt
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+class MarkowitzMinVarianceModel():
+    &amp;quot;&amp;quot;&amp;quot;
+    Args:
+    =====
+    - df: pandas.dataframe
+        panel data for target assets for the portfolio. 
+            its index must be `numpy.datetime64` type.
+            its columns must be time-series data of target assets.
+    - window_size: int
+        the size of time-window which is used when deriving (or updating) the portfolio.
+    - rebalance_freq: int
+        rebalance frequency of the portfolio.
+    - r_e: float
+        min of the return ratio (= capital gain / investment).
+    - r_f: float
+        rate of returns of the risk-free asset.
+    &amp;quot;&amp;quot;&amp;quot;
+    def __init__(self, df, window_size, rebalance_freq, r_e=None, r_f=None):
+        self.df = self._reset_index(df)
+        self.df_chg = self.df.pct_change()
+        self.df_chg[:1] = 0.0 # set 0.0 to the first record
+        self.df_bt = None
+        self.df_bt_r = None
+        self.df_bt_x = None
+        self.window_size = window_size
+        self.rebalance_freq = rebalance_freq
+        self.jgb_int = 0.0001 # 0.01% per year (Japanese Government Bond)
+        self.r_f = r_f if r_f is not None else self.jgb_int * (1/12) # adjust monthly
+        self.r_e = r_e if r_e is not None else r_f
+        
+    def _reset_index(self, df):
+        df = df.copy()
+        df[&#39;date&#39;] = pd.to_datetime(df.index)
+        df = df.set_index(&#39;date&#39;)
+        return df
+    
+    def get_dfbt_r(self):
+        return self.df_bt_r
+    
+    def get_dfbt_x(self):
+        return self.df_bt_x
+        
+    def backtest(self):
+        date_init = self.df.index.values[self.window_size]
+        df_bt = pd.DataFrame([[0.0, np.nan]], index=[date_init], columns=[&#39;ror&#39;, &#39;std&#39;])
+        df_bt_r = pd.DataFrame(columns=list(self.df.columns.values))
+        df_bt_x = pd.DataFrame(columns=list(self.df.columns.values))
+        for idx, date in enumerate(self.df.index.values):
+            if idx &amp;gt;= self.window_size + self.rebalance_freq:
+                if (idx - self.window_size) % self.rebalance_freq == 0:
+                    # df_chg_train
+                    st = idx - self.rebalance_freq - self.window_size
+                    ed = idx - self.rebalance_freq
+                    df_chg_train = self.df_chg[st:ed]
+                    
+                    # expected returns per target term
+                    if isinstance(self.r_e, pd.core.frame.DataFrame):
+                        r_e = self.r_e.iloc[st:ed].values.mean()
+                    else:
+                        r_e = self.r_e
+                    
+                    # x_p: min variance portfolio
+                    x_p = self.calc_portfolio(df_chg_train, r_e)
+                    
+                    # df_chg_test
+                    st = idx - self.rebalance_freq
+                    ed = idx
+                    df_chg_test = self.df_chg[st:ed]
+                    df_chgcum_test = (1.0 + df_chg_test).cumprod() - 1.0
+                                                            
+                    # ror_p: rate of return (portfolio)
+                    ror_test = df_chgcum_test.iloc[-1].values
+                    ror_p = float(np.dot(ror_test, x_p))
+                    df_bt_r.loc[date] = ror_test
+                    df_bt_x.loc[date] = x_p
+                    
+                    # std (portfolio)
+                    if self.rebalance_freq == 1:
+                        std_p = np.nan
+                    else:
+                        std_test = df_chg_test.std(ddof=True).values
+                        std_p = float(np.dot(std_test, np.abs(x_p)))
+
+                    # append
+                    df_one = pd.DataFrame([[ror_p, std_p]], index=[date], columns=df_bt.columns)                    
+                    df_bt = df_bt.append(df_one)
+                    
+        # reset index
+        self.df_bt = self._reset_index(df_bt)
+        self.df_bt_r = self._reset_index(df_bt_r)  
+        self.df_bt_x = self._reset_index(df_bt_x)  
+        return self.df_bt
+
+    def calc_portfolio(self, df_retchg, r_e):
+        r = df_retchg.mean().values
+        cov = np.array(df_retchg.cov())
+        x_opt = self.cvxopt_qp_solver(r, r_e, cov)
+        return x_opt
+        
+    def cvxopt_qp_solver(self, r, r_e, cov):
+        &amp;quot;&amp;quot;&amp;quot;
+        CVXOPT QP Solver for Markowitz&#39; Mean-Variance Model
+        - See also https://cvxopt.org/userguide/coneprog.html#quadratic-programming
+        - See also https://cdn.hackaday.io/files/277521187341568/art-mpt.pdf
+        
+        r: mean returns of target assets. (vector)
+        r_e: min of the return ratio (= capital gain / investment).
+        cov: covariance matrix of target assets. (matrix)
+        &amp;quot;&amp;quot;&amp;quot;
+        n = len(r)
+        r = cvxopt.matrix(r)
+
+        # Create Objective matrices
+        P = cvxopt.matrix(2.0 * np.array(cov))
+        q = cvxopt.matrix(np.zeros((n, 1)))
+
+        # Create constraint matrices
+        G = cvxopt.matrix(np.concatenate((-np.transpose(r), -np.eye(n)), 0))
+        h = cvxopt.matrix(np.concatenate((-np.ones((1,1))*r_e, np.zeros((n,1))), 0))
+        A = cvxopt.matrix(1.0, (1, n))
+        b = cvxopt.matrix(1.0)
+        
+        # Adjust params (stop log messages)
+        cvxopt.solvers.options[&#39;show_progress&#39;] = False # default: True
+        cvxopt.solvers.options[&#39;maxiters&#39;] = 1000 # default: 100
+        
+        sol = cvxopt.solvers.qp(P, q, G, h, A, b)
+        x_opt = np.squeeze(np.array(sol[&#39;x&#39;]))
+        return x_opt
+    
+    def get_yearly_performance(self):
+        if self.df_bt is None:
+            pass
+        else:
+            df_yearly = self.df_bt[[&amp;quot;ror&amp;quot;]].resample(&#39;y&#39;).sum()
+            df_yearly[&amp;quot;std&amp;quot;] = self.df_bt[&amp;quot;ror&amp;quot;].resample(&#39;y&#39;).std().values
+            df_yearly[&amp;quot;sharpe_ratio&amp;quot;] = df_yearly.apply(lambda d: (d[&amp;quot;ror&amp;quot;] - self.r_f) / d[&amp;quot;std&amp;quot;], axis=1)
+            return df_yearly
+
+    def evaluate_backtest(self, logging=False):   
+        if self.df_bt is None:
+            pass
+        else:
+            self.r_mean = self.df_bt[&amp;quot;ror&amp;quot;].mean()
+            self.r_std = self.df_bt[&amp;quot;ror&amp;quot;].std(ddof=True)
+            self.sharpe_ratio = (self.r_mean - self.r_f) / self.r_std
+            self.net_capgain = (self.df_bt[&amp;quot;ror&amp;quot;] + 1.0).cumprod().iloc[-1] - 1.0
+            
+            self.r_mean_peryear = 12 * self.r_mean
+            self.r_std_peryear = np.sqrt(12) * self.r_std
+            self.sharpe_ratio_peryear = (self.r_mean_peryear - self.jgb_int) / self.r_std_peryear
+
+            if logging:
+                print(&amp;quot;Portfolio Performance&amp;quot;)
+                print(&amp;quot;=======================&amp;quot;)
+                print(&amp;quot;Returns per month&amp;quot;)
+                print(&amp;quot;  sharpe ratio     : {:.8f}&amp;quot;.format(self.sharpe_ratio))
+                print(&amp;quot;  mean of returns  : {:.8f}&amp;quot;.format(self.r_mean))
+                print(&amp;quot;  std of returns   : {:.8f}&amp;quot;.format(self.r_std))
+                print(&amp;quot;    risk-free rate : {:.8f}&amp;quot;.format(self.r_f))
+                print(&amp;quot;    capgain ratio  : {:.8f}&amp;quot;.format(self.net_capgain))
+                print(&amp;quot;Returns per year&amp;quot;)
+                print(&amp;quot;  sharpe ratio     : {:.8f}&amp;quot;.format(self.sharpe_ratio_peryear))
+                print(&amp;quot;  mean of returns  : {:.8f}&amp;quot;.format(self.r_mean_peryear))
+                print(&amp;quot;  std of returns   : {:.8f}&amp;quot;.format(self.r_std_peryear))
+                
+            
+    def plot_returns(self):
+        if self.df_bt is None:
+            pass
+        else:
+            xlabels = [d.strftime(&#39;%Y-%m&#39;) for idx, d in enumerate(self.df_bt.index) if idx % 12 == 0]
+            
+            fig, ax = plt.subplots(figsize=(12,6))
+            ax.plot(self.df_bt.index.values, self.df_bt[&amp;quot;ror&amp;quot;].values, label=&amp;quot;rate of returns&amp;quot;)
+            ax.plot(self.df_bt.index.values, self.df_bt[&amp;quot;ror&amp;quot;].cumsum().values, label=&amp;quot;total capital gain ratio&amp;quot;)
+            ax.legend(loc=&amp;quot;upper left&amp;quot;)
+            ax.set_xticks(xlabels)
+            ax.set_xticklabels(xlabels, rotation=40)
+            return fig            
+        
+    def plot_returns_histgram(self):
+        if self.df_bt is None:
+            pass
+        else:
+            x = self.df_bt[&amp;quot;ror&amp;quot;].values
+            r_mean = &amp;quot;{:.4f}&amp;quot;.format(x.mean())
+            r_std = &amp;quot;{:.4f}&amp;quot;.format(x.std())
+            
+            fig, ax = plt.subplots(figsize=(12,6))
+            ax.hist(x, bins=30, alpha=0.75)
+            ax.set_title(f&amp;quot;mean={r_mean}, std={r_std}&amp;quot;)
+            return fig
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;42-使い方&#34;&gt;4.2. 使い方&lt;/h3&gt;
+&lt;p&gt;対象資産としてTOPIX Core30に含まれる内国株30銘柄を選び，これらに(最適な)投資比率を与えてバックテストしてみましょう．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/295228/f10c6efd-6301-ee1a-8a68-2e7e495f9bc5.png&#34; alt=&#34;topixcore30_chg_20041031-20201031.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/295228/c0361f2e-ff37-7ed8-b06c-05a4602ac4f0.png&#34; alt=&#34;topixcore30_cum_20041031-20201031.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;まず，&lt;code&gt;pandas_datareader.data.DataReader&lt;/code&gt;でTOPIX Core30構成銘柄のヒストリカルデータを読み込んで，すこし整形します．&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Get historical data
+st = &#39;2004/10/31&#39; # start date
+ed = &#39;2020/10/31&#39; # end date
+stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 
+                  4503, 5401, 6301, 6501, 6502, 
+                  6752, 6758, 6954, 7201, 7203, 
+                  7267, 7751, 8031, 8058, 8306, 
+                  8316, 8411, 8604, 8766, 8802, 
+                  9021, 9432, 9433, 9437, 9984] # list of tickers in TOPIX Core30
+symbols =  [str(s)+&#39;.T&#39; for s in stocks_topix30] 
+dfs = []
+for symbol in symbols:
+    df = pandas_datareader.data.DataReader(symbol, &#39;yahoo&#39;, st, ed) # daily
+    df = df.resample(&#39;M&#39;).mean() # daily -&amp;gt; monthly
+    df = df.sort_values(by=&#39;Date&#39;, ascending=True)
+    df = df.fillna(method=&#39;ffill&#39;) # 1つ前の行の値で埋める
+    df = df[[&#39;Close&#39;]].rename(columns={&#39;Close&#39;: symbol})
+    dfs.append(df)
+df_tpx30 = pd.concat(dfs, axis=1)
+
+# fill nan
+for col in df_tpx30.columns:
+    st_idx = df_tpx30[col].first_valid_index()
+    ed_idx = df_tpx30[col].last_valid_index()
+    # for any columns (stocks)
+    if df_tpx30[col].isnull().any():
+        # New listing (新規上場)
+        if st_idx != df_tpx30.index[0]:
+            df_tpx30[col] = df_tpx30[col].fillna(df_tpx30[col][st_idx])
+        # Delisting (上場廃止)
+        if df_tpx30.index[-1] != ed_idx:
+            df_tpx30[col] = df_tpx30[col].fillna(df_tpx30[col][ed_idx])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;こんな感じのパネルデータができれば準備OK．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;df_tpx30.tail()
+
+Date	    2914.T	    3382.T	    4063.T	    4452.T	    4502.T	    4503.T	    5401.T	    6301.T	    6501.T	    6502.T	...	8316.T	    8411.T	    8604.T	    8766.T	8802.T	    9021.T	9432.T	    9433.T	    9437.T	    9984.T																				
+2020-06-30	2147.159091	3710.272727	12471.136364	8774.045455	4024.818182	1824.386364	1063.240909	2220.500000	3561.590909	3275.681818	...	3172.181818	1363.545455	486.763636	4795.681818	1701.840909	6502.181818	2500.454545	3184.863636	2913.454545	5287.318182
+2020-07-31	1933.785714	3427.333333	12802.619048	8465.428571	3763.000000	1731.785714	998.023810	2239.047619	3371.714286	3450.714286	...	3029.809524	1347.857143	491.138096	4699.238095	1576.000000	5405.428571	2523.428571	3289.142857	2944.547619	6311.333333
+2020-08-31	1995.300000	3399.050000	12785.500000	8041.000000	3967.150000	1712.075000	1009.300000	2207.650000	3489.050000	3351.750000	...	3023.050000	1402.250000	531.764998	4779.850000	1644.575000	5106.050000	2570.875000	3285.300000	3066.400000	6453.700000
+2020-09-30	1970.425000	3357.000000	13804.250000	8053.550000	3898.200000	1622.550000	1073.164999	2352.600000	3631.650000	2941.300000	...	3090.425000	1402.175000	522.770003	4871.900000	1638.575000	5578.100000	2313.800000	2851.150000	2879.875000	6278.600000
+2020-10-31	1989.095238	3412.714286	14189.761905	7731.619048	3568.904762	1489.047619	1070.538095	2432.285714	3605.000000	2783.952381	...	2969.428571	1311.571429	487.642857	4804.000000	1611.214286	4938.571429	2237.142857	2742.738095	3882.095238	6991.047619
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;あとは，自作クラス&lt;code&gt;MarkowitzMinVarianceModel()&lt;/code&gt;のインスタンスオブジェクト&lt;code&gt;model&lt;/code&gt;にパラメータと価格データ&lt;code&gt;df_tpx30&lt;/code&gt;を食わせてバックテストを実行．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from datetime import datetime
+
+# Const.
+ST_BACKTEST = datetime(2011,10,31) # Investment period (start date)
+ED_BACKTEST = datetime(2020,10,31) # Investment period (end date)
+
+# Params
+params = {
+    &amp;quot;window_size&amp;quot;: 36, # 収益率の特性量(平均，分散)の推定に使う期間 (例: 運用時から過去36カ月)
+    &amp;quot;rebalance_freq&amp;quot;: 1, # リバランスの頻度 (1か月ごとにポートフォリオ内の投資比率を変更)
+    &amp;quot;r_f&amp;quot;: 0.0001 * (1/12) # リスクフリーレート (日本国債10年物利回り:0.01%を単利計算で月次に変換)
+}
+
+# Data
+st = (ST_BACKTEST - relativedelta(months=params[&amp;quot;window_size&amp;quot;])).strftime(&#39;%Y-%m-%d&#39;)
+ed = ED_BACKTEST.strftime(&#39;%Y-%m-%d&#39;)
+df = df_tpx30[st:ed]
+params[&amp;quot;r_e&amp;quot;]=  df_tpx[st:ed] # 要求期待収益率(r_e)は同時期のTOPIX Indexの収益率とする (df_tpx作成コードは省略)
+
+# Create model
+model = MarkowitzMinVarianceModel(df, **params)
+
+# Backtest by model
+df_bt = model.backtest()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ここからは，自作クラス&lt;code&gt;MarkowitzMinVarianceModel()&lt;/code&gt;に用意したバックテスト評価用のメソッドを使う．(分析は無限大)&lt;/p&gt;
+&lt;h5 id=&#34;ポートフォリオのパフォーマンス評価&#34;&gt;ポートフォリオのパフォーマンス評価&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Evaluate
+model.evaluate_backtest(logging=True)
+
+Portfolio Performance
+=======================
+Returns per month
+  sharpe ratio     : 0.18788996
+  mean of returns  : 0.00735206
+  std of returns   : 0.03908527
+    risk-free rate : 0.00000833
+    capgain ratio  : 1.04714952
+Returns per year
+  sharpe ratio     : 0.65086993
+  mean of returns  : 0.08822476
+  std of returns   : 0.13539535
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;ポートフォリオの収益率累積収益率プロット&#34;&gt;ポートフォリオの収益率・累積収益率プロット&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig = model.plot_returns() # Plot returns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/295228/360b0fc7-2d30-ad33-958e-44bc412026dd.png&#34; alt=&#34;mmvp_tpx30_w=36_plot.png&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;ポートフォリオの月次収益率分布&#34;&gt;ポートフォリオの月次収益率分布&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig = model.plot_returns_histgram()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/295228/608c7327-1312-35d7-0c13-5464a98ade5f.png&#34; alt=&#34;mmvp_tpx30_w=36_hist.png&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;ポートフォリオの年次パフォーマンス&#34;&gt;ポートフォリオの年次パフォーマンス&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_yearly = model.get_yearly_performance()
+df_yearly
+
+date		ror	    std    	    sharpe_ratio
+2011-12-31	-0.0001	3.3888e-05	-3.6736
+2012-12-31	-0.0444	1.2435e-02	-3.5695
+2013-12-31	0.5524	6.5010e-02	8.4973
+2014-12-31	0.2448	5.2800e-02	4.6357
+2015-12-31	0.0952	4.1543e-02	2.2923
+2016-12-31	-0.0970	4.0639e-02	-2.3871
+2017-12-31	0.2486	3.0262e-02	8.2144
+2018-12-31	-0.0097	3.6705e-02	-0.2644
+2019-12-31	0.0254	3.1904e-02	0.7947
+2020-12-31	-0.1793	7.3461e-02	-2.4404
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;ポートフォリオ内の各銘柄の収益率&#34;&gt;ポートフォリオ内の各銘柄の収益率(%)&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_bt_r = model.get_dfbt_r() # rate_of_returns
+df_bt_x = model.get_dfbt_x() # investment_ratio
+
+df1 = df_bt_r * df_bt_x # (rate_of_returns) × (investment_ratio)
+
+df1 = df1.resample(&amp;quot;y&amp;quot;).sum()
+df1.columns = [c.replace(&amp;quot;.T&amp;quot;, &amp;quot;&amp;quot;) for c in df1.columns]
+df1 = df1.T * 100 # transpose &amp;amp;&amp;amp; convert as pct.
+df1.columns = [c.strftime(&#39;%Y&#39;) for c in df1.columns]
+
+plt.figure(figsize=(12,12))
+sns.heatmap(df1, cmap=&amp;quot;RdBu&amp;quot;, center=0, annot=True, fmt=&amp;quot;.2f&amp;quot;, cbar=True)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/295228/64fac1bb-3bcc-c673-fbf7-b8ef77482995.png&#34; alt=&#34;mmvp_tpx30_w=36_hm.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最後まで読んでいただき，ありがとうございます！&lt;/p&gt;
+&lt;div class=&#39;pixels-photo&#39;&gt;
+&lt;a href=&#39;https://500px.com/photo/284676583/thanks-by-Esther-Moreno&#39; alt=&#39;thanks by Esther Moreno on 500px.com&#39;&gt;
+  &lt;img src=&#39;https://drscdn.500px.org/photo/284676583/m%3D900/v2?sig=2c8aeb84d84531b9e9050dab1d209ed269be3747408c2f74e172ac60e7c89f52&#39; alt=&#39;thanks by Esther Moreno on 500px.com&#39; /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;https://500px.com/embed.js&#39;&gt;&lt;/script&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;code&gt;stocks_topix30&lt;/code&gt;はTOPIX Core30構成銘柄の証券コードのリストです．構成銘柄は毎年10/31に更新されます．サンプルコードを再現したい場合&lt;code&gt;stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 4503, 5401, 6301, 6501, 6502, 6752, 6758, 6954, 7201, 7203, 7267, 7751, 8031, 8058, 8306, 8316, 8411, 8604, 8766, 8802, 9021, 9432, 9433, 9437, 9984]&lt;/code&gt;としてください． &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
 </description>
     </item>
     
@@ -2103,6 +2738,679 @@ driver.quit()
 &lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Display All Physical Fonts That Can Be Used As Strings in Java</title>
+      <link>https://yumaloop.github.io/post/2018-07-24-java-get-all-fonts/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2018-07-24-java-get-all-fonts/</guid>
+      <description>&lt;h3 id=&#34;tldr&#34;&gt;TL;DR&lt;/h3&gt;
+&lt;p&gt;Use &lt;code&gt;getLocalGraphicsEnvironment().getAllFonts();&lt;/code&gt; method defined in
+&lt;code&gt;java.awt.GraphicsEnvironment&lt;/code&gt; class.&lt;/p&gt;
+&lt;h3 id=&#34;cf&#34;&gt;Cf.&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&#34;&gt;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;Code Sample (Java):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+	    Font[] fonts  = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
+	    for (int i = 0; i &amp;lt; fonts.length; i++) {
+	      System.out.print(fonts[i].getFontName() + &amp;quot;, &amp;quot;);
+	      System.out.print(fonts[i].getFamily() + &amp;quot;, &amp;quot;);
+	      System.out.print(fonts[i].getName());
+	      System.out.println();
+	    }
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;Output Result:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Serif, Serif, Serif,
+SansSerif, SansSerif, SansSerif,
+Monospaced, Monospaced, Monospaced,
+Dialog, Dialog, Dialog,
+DialogInput, DialogInput, DialogInput,
+.SFNSText, .SF NS Text, .SFNSText,
+.SFNSText-Bold, .SF NS Text, .SFNSText-Bold,
+AlBayan, Al Bayan, AlBayan,
+AlBayan-Bold, Al Bayan, AlBayan-Bold,
+AlNile, Al Nile, AlNile,
+AlNile-Bold, Al Nile, AlNile-Bold,
+AlTarikh, Al Tarikh, AlTarikh,
+AmericanTypewriter, American Typewriter, AmericanTypewriter,
+AmericanTypewriter-Bold, American Typewriter, AmericanTypewriter-Bold,
+AmericanTypewriter-Condensed, American Typewriter, AmericanTypewriter-Condensed,
+AmericanTypewriter-CondensedBold, American Typewriter, AmericanTypewriter-CondensedBold,
+AmericanTypewriter-CondensedLight, American Typewriter, AmericanTypewriter-CondensedLight,
+AmericanTypewriter-Light, American Typewriter, AmericanTypewriter-Light,
+AmericanTypewriter-Semibold, American Typewriter, AmericanTypewriter-Semibold,
+AndaleMono, Andale Mono, AndaleMono,
+Apple-Chancery, Apple Chancery, Apple-Chancery,
+AppleBraille, Apple Braille, AppleBraille,
+AppleBraille-Outline6Dot, Apple Braille, AppleBraille-Outline6Dot,
+AppleBraille-Outline8Dot, Apple Braille, AppleBraille-Outline8Dot,
+AppleBraille-Pinpoint6Dot, Apple Braille, AppleBraille-Pinpoint6Dot,
+AppleBraille-Pinpoint8Dot, Apple Braille, AppleBraille-Pinpoint8Dot,
+AppleColorEmoji, Apple Color Emoji, AppleColorEmoji,
+AppleGothic, AppleGothic, AppleGothic,
+AppleMyungjo, AppleMyungjo, AppleMyungjo,
+AppleSDGothicNeo-Bold, Apple SD Gothic Neo, AppleSDGothicNeo-Bold,
+AppleSDGothicNeo-ExtraBold, Apple SD Gothic Neo, AppleSDGothicNeo-ExtraBold,
+AppleSDGothicNeo-Heavy, Apple SD Gothic Neo, AppleSDGothicNeo-Heavy,
+AppleSDGothicNeo-Light, Apple SD Gothic Neo, AppleSDGothicNeo-Light,
+AppleSDGothicNeo-Medium, Apple SD Gothic Neo, AppleSDGothicNeo-Medium,
+AppleSDGothicNeo-Regular, Apple SD Gothic Neo, AppleSDGothicNeo-Regular,
+AppleSDGothicNeo-SemiBold, Apple SD Gothic Neo, AppleSDGothicNeo-SemiBold,
+AppleSDGothicNeo-Thin, Apple SD Gothic Neo, AppleSDGothicNeo-Thin,
+AppleSDGothicNeo-UltraLight, Apple SD Gothic Neo, AppleSDGothicNeo-UltraLight,
+AppleSymbols, Apple Symbols, AppleSymbols,
+Arial-Black, Arial Black, Arial-Black,
+Arial-BoldItalicMT, Arial, Arial-BoldItalicMT,
+Arial-BoldMT, Arial, Arial-BoldMT,
+Arial-ItalicMT, Arial, Arial-ItalicMT,
+ArialHebrew, Arial Hebrew, ArialHebrew,
+ArialHebrew-Bold, Arial Hebrew, ArialHebrew-Bold,
+ArialHebrew-Light, Arial Hebrew, ArialHebrew-Light,
+ArialHebrewScholar, Arial Hebrew Scholar, ArialHebrewScholar,
+ArialHebrewScholar-Bold, Arial Hebrew Scholar, ArialHebrewScholar-Bold,
+ArialHebrewScholar-Light, Arial Hebrew Scholar, ArialHebrewScholar-Light,
+ArialMT, Arial, ArialMT,
+ArialNarrow, Arial Narrow, ArialNarrow,
+ArialNarrow-Bold, Arial Narrow, ArialNarrow-Bold,
+ArialNarrow-BoldItalic, Arial Narrow, ArialNarrow-BoldItalic,
+ArialNarrow-Italic, Arial Narrow, ArialNarrow-Italic,
+ArialRoundedMTBold, Arial Rounded MT Bold, ArialRoundedMTBold,
+ArialUnicodeMS, Arial Unicode MS, ArialUnicodeMS,
+Athelas-Bold, Athelas, Athelas-Bold,
+Athelas-BoldItalic, Athelas, Athelas-BoldItalic,
+Athelas-Italic, Athelas, Athelas-Italic,
+Athelas-Regular, Athelas, Athelas-Regular,
+Avenir-Black, Avenir, Avenir-Black,
+Avenir-BlackOblique, Avenir, Avenir-BlackOblique,
+Avenir-Book, Avenir, Avenir-Book,
+Avenir-BookOblique, Avenir, Avenir-BookOblique,
+Avenir-Heavy, Avenir, Avenir-Heavy,
+Avenir-HeavyOblique, Avenir, Avenir-HeavyOblique,
+Avenir-Light, Avenir, Avenir-Light,
+Avenir-LightOblique, Avenir, Avenir-LightOblique,
+Avenir-Medium, Avenir, Avenir-Medium,
+Avenir-MediumOblique, Avenir, Avenir-MediumOblique,
+Avenir-Oblique, Avenir, Avenir-Oblique,
+Avenir-Roman, Avenir, Avenir-Roman,
+AvenirNext-Bold, Avenir Next, AvenirNext-Bold,
+AvenirNext-BoldItalic, Avenir Next, AvenirNext-BoldItalic,
+AvenirNext-DemiBold, Avenir Next, AvenirNext-DemiBold,
+AvenirNext-DemiBoldItalic, Avenir Next, AvenirNext-DemiBoldItalic,
+AvenirNext-Heavy, Avenir Next, AvenirNext-Heavy,
+AvenirNext-HeavyItalic, Avenir Next, AvenirNext-HeavyItalic,
+AvenirNext-Italic, Avenir Next, AvenirNext-Italic,
+AvenirNext-Medium, Avenir Next, AvenirNext-Medium,
+AvenirNext-MediumItalic, Avenir Next, AvenirNext-MediumItalic,
+AvenirNext-Regular, Avenir Next, AvenirNext-Regular,
+AvenirNext-UltraLight, Avenir Next, AvenirNext-UltraLight,
+AvenirNext-UltraLightItalic, Avenir Next, AvenirNext-UltraLightItalic,
+AvenirNextCondensed-Bold, Avenir Next Condensed, AvenirNextCondensed-Bold,
+AvenirNextCondensed-BoldItalic, Avenir Next Condensed, AvenirNextCondensed-BoldItalic,
+AvenirNextCondensed-DemiBold, Avenir Next Condensed, AvenirNextCondensed-DemiBold,
+AvenirNextCondensed-DemiBoldItalic, Avenir Next Condensed, AvenirNextCondensed-DemiBoldItalic,
+AvenirNextCondensed-Heavy, Avenir Next Condensed, AvenirNextCondensed-Heavy,
+AvenirNextCondensed-HeavyItalic, Avenir Next Condensed, AvenirNextCondensed-HeavyItalic,
+AvenirNextCondensed-Italic, Avenir Next Condensed, AvenirNextCondensed-Italic,
+AvenirNextCondensed-Medium, Avenir Next Condensed, AvenirNextCondensed-Medium,
+AvenirNextCondensed-MediumItalic, Avenir Next Condensed, AvenirNextCondensed-MediumItalic,
+AvenirNextCondensed-Regular, Avenir Next Condensed, AvenirNextCondensed-Regular,
+AvenirNextCondensed-UltraLight, Avenir Next Condensed, AvenirNextCondensed-UltraLight,
+AvenirNextCondensed-UltraLightItalic, Avenir Next Condensed, AvenirNextCondensed-UltraLightItalic,
+Ayuthaya, Ayuthaya, Ayuthaya,
+Baghdad, Baghdad, Baghdad,
+BanglaMN, Bangla MN, BanglaMN,
+BanglaMN-Bold, Bangla MN, BanglaMN-Bold,
+BanglaSangamMN, Bangla Sangam MN, BanglaSangamMN,
+BanglaSangamMN-Bold, Bangla Sangam MN, BanglaSangamMN-Bold,
+Baskerville, Baskerville, Baskerville,
+Baskerville-Bold, Baskerville, Baskerville-Bold,
+Baskerville-BoldItalic, Baskerville, Baskerville-BoldItalic,
+Baskerville-Italic, Baskerville, Baskerville-Italic,
+Baskerville-SemiBold, Baskerville, Baskerville-SemiBold,
+Baskerville-SemiBoldItalic, Baskerville, Baskerville-SemiBoldItalic,
+Beirut, Beirut, Beirut,
+BigCaslon-Medium, Big Caslon, BigCaslon-Medium,
+BodoniOrnamentsITCTT, Bodoni Ornaments, BodoniOrnamentsITCTT,
+BodoniSvtyTwoITCTT-Bold, Bodoni 72, BodoniSvtyTwoITCTT-Bold,
+BodoniSvtyTwoITCTT-Book, Bodoni 72, BodoniSvtyTwoITCTT-Book,
+BodoniSvtyTwoITCTT-BookIta, Bodoni 72, BodoniSvtyTwoITCTT-BookIta,
+BodoniSvtyTwoOSITCTT-Bold, Bodoni 72 Oldstyle, BodoniSvtyTwoOSITCTT-Bold,
+BodoniSvtyTwoOSITCTT-Book, Bodoni 72 Oldstyle, BodoniSvtyTwoOSITCTT-Book,
+BodoniSvtyTwoOSITCTT-BookIt, Bodoni 72 Oldstyle, BodoniSvtyTwoOSITCTT-BookIt,
+BodoniSvtyTwoSCITCTT-Book, Bodoni 72 Smallcaps, BodoniSvtyTwoSCITCTT-Book,
+BradleyHandITCTT-Bold, Bradley Hand, BradleyHandITCTT-Bold,
+BrushScriptMT, Brush Script MT, BrushScriptMT,
+Chalkboard, Chalkboard, Chalkboard,
+Chalkboard-Bold, Chalkboard, Chalkboard-Bold,
+ChalkboardSE-Bold, Chalkboard SE, ChalkboardSE-Bold,
+ChalkboardSE-Light, Chalkboard SE, ChalkboardSE-Light,
+ChalkboardSE-Regular, Chalkboard SE, ChalkboardSE-Regular,
+Chalkduster, Chalkduster, Chalkduster,
+Charter-Black, Charter, Charter-Black,
+Charter-BlackItalic, Charter, Charter-BlackItalic,
+Charter-Bold, Charter, Charter-Bold,
+Charter-BoldItalic, Charter, Charter-BoldItalic,
+Charter-Italic, Charter, Charter-Italic,
+Charter-Roman, Charter, Charter-Roman,
+Cochin, Cochin, Cochin,
+Cochin-Bold, Cochin, Cochin-Bold,
+Cochin-BoldItalic, Cochin, Cochin-BoldItalic,
+Cochin-Italic, Cochin, Cochin-Italic,
+ComicSansMS, Comic Sans MS, ComicSansMS,
+ComicSansMS-Bold, Comic Sans MS, ComicSansMS-Bold,
+Copperplate, Copperplate, Copperplate,
+Copperplate-Bold, Copperplate, Copperplate-Bold,
+Copperplate-Light, Copperplate, Copperplate-Light,
+CorsivaHebrew, Corsiva Hebrew, CorsivaHebrew,
+CorsivaHebrew-Bold, Corsiva Hebrew, CorsivaHebrew-Bold,
+Courier, Courier, Courier,
+Courier-Bold, Courier, Courier-Bold,
+Courier-BoldOblique, Courier, Courier-BoldOblique,
+Courier-Oblique, Courier, Courier-Oblique,
+CourierNewPS-BoldItalicMT, Courier New, CourierNewPS-BoldItalicMT,
+CourierNewPS-BoldMT, Courier New, CourierNewPS-BoldMT,
+CourierNewPS-ItalicMT, Courier New, CourierNewPS-ItalicMT,
+CourierNewPSMT, Courier New, CourierNewPSMT,
+DFKaiShu-SB-Estd-BF, BiauKai, DFKaiShu-SB-Estd-BF,
+DFWaWaSC-W5, Wawati SC, DFWaWaSC-W5,
+DFWaWaTC-W5, Wawati TC, DFWaWaTC-W5,
+DINAlternate-Bold, DIN Alternate, DINAlternate-Bold,
+DINCondensed-Bold, DIN Condensed, DINCondensed-Bold,
+Damascus, Damascus, Damascus,
+DamascusBold, Damascus, DamascusBold,
+DamascusLight, Damascus, DamascusLight,
+DamascusMedium, Damascus, DamascusMedium,
+DamascusSemiBold, Damascus, DamascusSemiBold,
+DecoTypeNaskh, DecoType Naskh, DecoTypeNaskh,
+DevanagariMT, Devanagari MT, DevanagariMT,
+DevanagariMT-Bold, Devanagari MT, DevanagariMT-Bold,
+DevanagariSangamMN, Devanagari Sangam MN, DevanagariSangamMN,
+DevanagariSangamMN-Bold, Devanagari Sangam MN, DevanagariSangamMN-Bold,
+Didot, Didot, Didot,
+Didot-Bold, Didot, Didot-Bold,
+Didot-Italic, Didot, Didot-Italic,
+DiwanKufi, Diwan Kufi, DiwanKufi,
+DiwanMishafi, Mishafi, DiwanMishafi,
+DiwanMishafiGold, Mishafi Gold, DiwanMishafiGold,
+DiwanThuluth, Diwan Thuluth, DiwanThuluth,
+EuphemiaUCAS, Euphemia UCAS, EuphemiaUCAS,
+EuphemiaUCAS-Bold, Euphemia UCAS, EuphemiaUCAS-Bold,
+EuphemiaUCAS-Italic, Euphemia UCAS, EuphemiaUCAS-Italic,
+FZLTTHB--B51-0, Lantinghei TC, FZLTTHB--B51-0,
+FZLTTHK--GBK1-0, Lantinghei SC, FZLTTHK--GBK1-0,
+FZLTXHB--B51-0, Lantinghei TC, FZLTXHB--B51-0,
+FZLTXHK--GBK1-0, Lantinghei SC, FZLTXHK--GBK1-0,
+FZLTZHB--B51-0, Lantinghei TC, FZLTZHB--B51-0,
+FZLTZHK--GBK1-0, Lantinghei SC, FZLTZHK--GBK1-0,
+Farah, Farah, Farah,
+Farisi, Farisi, Farisi,
+Futura-Bold, Futura, Futura-Bold,
+Futura-CondensedExtraBold, Futura, Futura-CondensedExtraBold,
+Futura-CondensedMedium, Futura, Futura-CondensedMedium,
+Futura-Medium, Futura, Futura-Medium,
+Futura-MediumItalic, Futura, Futura-MediumItalic,
+GB18030Bitmap, GB18030 Bitmap, GB18030Bitmap,
+GeezaPro, Geeza Pro, GeezaPro,
+GeezaPro-Bold, Geeza Pro, GeezaPro-Bold,
+Geneva, Geneva, Geneva,
+Georgia, Georgia, Georgia,
+Georgia-Bold, Georgia, Georgia-Bold,
+Georgia-BoldItalic, Georgia, Georgia-BoldItalic,
+Georgia-Italic, Georgia, Georgia-Italic,
+GillSans, Gill Sans, GillSans,
+GillSans-Bold, Gill Sans, GillSans-Bold,
+GillSans-BoldItalic, Gill Sans, GillSans-BoldItalic,
+GillSans-Italic, Gill Sans, GillSans-Italic,
+GillSans-Light, Gill Sans, GillSans-Light,
+GillSans-LightItalic, Gill Sans, GillSans-LightItalic,
+GillSans-SemiBold, Gill Sans, GillSans-SemiBold,
+GillSans-SemiBoldItalic, Gill Sans, GillSans-SemiBoldItalic,
+GillSans-UltraBold, Gill Sans, GillSans-UltraBold,
+GujaratiMT, Gujarati MT, GujaratiMT,
+GujaratiMT-Bold, Gujarati MT, GujaratiMT-Bold,
+GujaratiSangamMN, Gujarati Sangam MN, GujaratiSangamMN,
+GujaratiSangamMN-Bold, Gujarati Sangam MN, GujaratiSangamMN-Bold,
+GurmukhiMN, Gurmukhi MN, GurmukhiMN,
+GurmukhiMN-Bold, Gurmukhi MN, GurmukhiMN-Bold,
+GurmukhiSangamMN, Gurmukhi Sangam MN, GurmukhiSangamMN,
+GurmukhiSangamMN-Bold, Gurmukhi Sangam MN, GurmukhiSangamMN-Bold,
+HannotateSC-W5, Hannotate SC, HannotateSC-W5,
+HannotateSC-W7, Hannotate SC, HannotateSC-W7,
+HannotateTC-W5, Hannotate TC, HannotateTC-W5,
+HannotateTC-W7, Hannotate TC, HannotateTC-W7,
+HanziPenSC-W3, HanziPen SC, HanziPenSC-W3,
+HanziPenSC-W5, HanziPen SC, HanziPenSC-W5,
+HanziPenTC-W3, HanziPen TC, HanziPenTC-W3,
+HanziPenTC-W5, HanziPen TC, HanziPenTC-W5,
+Helvetica, Helvetica, Helvetica,
+Helvetica-Bold, Helvetica, Helvetica-Bold,
+Helvetica-BoldOblique, Helvetica, Helvetica-BoldOblique,
+Helvetica-Light, Helvetica, Helvetica-Light,
+Helvetica-LightOblique, Helvetica, Helvetica-LightOblique,
+Helvetica-Oblique, Helvetica, Helvetica-Oblique,
+HelveticaNeue, Helvetica Neue, HelveticaNeue,
+HelveticaNeue-Bold, Helvetica Neue, HelveticaNeue-Bold,
+HelveticaNeue-BoldItalic, Helvetica Neue, HelveticaNeue-BoldItalic,
+HelveticaNeue-CondensedBlack, Helvetica Neue, HelveticaNeue-CondensedBlack,
+HelveticaNeue-CondensedBold, Helvetica Neue, HelveticaNeue-CondensedBold,
+HelveticaNeue-Italic, Helvetica Neue, HelveticaNeue-Italic,
+HelveticaNeue-Light, Helvetica Neue, HelveticaNeue-Light,
+HelveticaNeue-LightItalic, Helvetica Neue, HelveticaNeue-LightItalic,
+HelveticaNeue-Medium, Helvetica Neue, HelveticaNeue-Medium,
+HelveticaNeue-MediumItalic, Helvetica Neue, HelveticaNeue-MediumItalic,
+HelveticaNeue-Thin, Helvetica Neue, HelveticaNeue-Thin,
+HelveticaNeue-ThinItalic, Helvetica Neue, HelveticaNeue-ThinItalic,
+HelveticaNeue-UltraLight, Helvetica Neue, HelveticaNeue-UltraLight,
+HelveticaNeue-UltraLightItalic, Helvetica Neue, HelveticaNeue-UltraLightItalic,
+Herculanum, Herculanum, Herculanum,
+HiraKakuPro-W3, Hiragino Kaku Gothic Pro, HiraKakuPro-W3,
+HiraKakuPro-W6, Hiragino Kaku Gothic Pro, HiraKakuPro-W6,
+HiraKakuProN-W3, Hiragino Kaku Gothic ProN, HiraKakuProN-W3,
+HiraKakuProN-W6, Hiragino Kaku Gothic ProN, HiraKakuProN-W6,
+HiraKakuStd-W8, Hiragino Kaku Gothic Std, HiraKakuStd-W8,
+HiraKakuStdN-W8, Hiragino Kaku Gothic StdN, HiraKakuStdN-W8,
+HiraMaruPro-W4, Hiragino Maru Gothic Pro, HiraMaruPro-W4,
+HiraMaruProN-W4, Hiragino Maru Gothic ProN, HiraMaruProN-W4,
+HiraMinPro-W3, Hiragino Mincho Pro, HiraMinPro-W3,
+HiraMinPro-W6, Hiragino Mincho Pro, HiraMinPro-W6,
+HiraMinProN-W3, Hiragino Mincho ProN, HiraMinProN-W3,
+HiraMinProN-W6, Hiragino Mincho ProN, HiraMinProN-W6,
+HiraginoSans-W0, Hiragino Sans, HiraginoSans-W0,
+HiraginoSans-W1, Hiragino Sans, HiraginoSans-W1,
+HiraginoSans-W2, Hiragino Sans, HiraginoSans-W2,
+HiraginoSans-W3, Hiragino Sans, HiraginoSans-W3,
+HiraginoSans-W4, Hiragino Sans, HiraginoSans-W4,
+HiraginoSans-W5, Hiragino Sans, HiraginoSans-W5,
+HiraginoSans-W6, Hiragino Sans, HiraginoSans-W6,
+HiraginoSans-W7, Hiragino Sans, HiraginoSans-W7,
+HiraginoSans-W8, Hiragino Sans, HiraginoSans-W8,
+HiraginoSans-W9, Hiragino Sans, HiraginoSans-W9,
+HiraginoSansCNS-W3, Hiragino Sans CNS, HiraginoSansCNS-W3,
+HiraginoSansCNS-W6, Hiragino Sans CNS, HiraginoSansCNS-W6,
+HiraginoSansGB-W3, Hiragino Sans GB, HiraginoSansGB-W3,
+HiraginoSansGB-W6, Hiragino Sans GB, HiraginoSansGB-W6,
+HoeflerText-Black, Hoefler Text, HoeflerText-Black,
+HoeflerText-BlackItalic, Hoefler Text, HoeflerText-BlackItalic,
+HoeflerText-Italic, Hoefler Text, HoeflerText-Italic,
+HoeflerText-Ornaments, Hoefler Text, HoeflerText-Ornaments,
+HoeflerText-Regular, Hoefler Text, HoeflerText-Regular,
+ITFDevanagari-Bold, ITF Devanagari, ITFDevanagari-Bold,
+ITFDevanagari-Book, ITF Devanagari, ITFDevanagari-Book,
+ITFDevanagari-Demi, ITF Devanagari, ITFDevanagari-Demi,
+ITFDevanagari-Light, ITF Devanagari, ITFDevanagari-Light,
+ITFDevanagari-Medium, ITF Devanagari, ITFDevanagari-Medium,
+ITFDevanagariMarathi-Bold, ITF Devanagari Marathi, ITFDevanagariMarathi-Bold,
+ITFDevanagariMarathi-Book, ITF Devanagari Marathi, ITFDevanagariMarathi-Book,
+ITFDevanagariMarathi-Demi, ITF Devanagari Marathi, ITFDevanagariMarathi-Demi,
+ITFDevanagariMarathi-Light, ITF Devanagari Marathi, ITFDevanagariMarathi-Light,
+ITFDevanagariMarathi-Medium, ITF Devanagari Marathi, ITFDevanagariMarathi-Medium,
+Impact, Impact, Impact,
+InaiMathi, InaiMathi, InaiMathi,
+InaiMathi-Bold, InaiMathi, InaiMathi-Bold,
+IowanOldStyle-Black, Iowan Old Style, IowanOldStyle-Black,
+IowanOldStyle-BlackItalic, Iowan Old Style, IowanOldStyle-BlackItalic,
+IowanOldStyle-Bold, Iowan Old Style, IowanOldStyle-Bold,
+IowanOldStyle-BoldItalic, Iowan Old Style, IowanOldStyle-BoldItalic,
+IowanOldStyle-Italic, Iowan Old Style, IowanOldStyle-Italic,
+IowanOldStyle-Roman, Iowan Old Style, IowanOldStyle-Roman,
+IowanOldStyle-Titling, Iowan Old Style, IowanOldStyle-Titling,
+JCHEadA, HeadLineA, JCHEadA,
+JCfg, PilGi, JCfg,
+JCkg, GungSeo, JCkg,
+JCsmPC, PCMyungjo, JCsmPC,
+Kailasa, Kailasa, Kailasa,
+Kailasa-Bold, Kailasa, Kailasa-Bold,
+KannadaMN, Kannada MN, KannadaMN,
+KannadaMN-Bold, Kannada MN, KannadaMN-Bold,
+KannadaSangamMN, Kannada Sangam MN, KannadaSangamMN,
+KannadaSangamMN-Bold, Kannada Sangam MN, KannadaSangamMN-Bold,
+Kefa-Bold, Kefa, Kefa-Bold,
+Kefa-Regular, Kefa, Kefa-Regular,
+KhmerMN, Khmer MN, KhmerMN,
+KhmerMN-Bold, Khmer MN, KhmerMN-Bold,
+KhmerSangamMN, Khmer Sangam MN, KhmerSangamMN,
+Klee-Demibold, Klee, Klee-Demibold,
+Klee-Medium, Klee, Klee-Medium,
+KohinoorBangla-Bold, Kohinoor Bangla, KohinoorBangla-Bold,
+KohinoorBangla-Light, Kohinoor Bangla, KohinoorBangla-Light,
+KohinoorBangla-Medium, Kohinoor Bangla, KohinoorBangla-Medium,
+KohinoorBangla-Regular, Kohinoor Bangla, KohinoorBangla-Regular,
+KohinoorBangla-Semibold, Kohinoor Bangla, KohinoorBangla-Semibold,
+KohinoorDevanagari-Bold, Kohinoor Devanagari, KohinoorDevanagari-Bold,
+KohinoorDevanagari-Light, Kohinoor Devanagari, KohinoorDevanagari-Light,
+KohinoorDevanagari-Medium, Kohinoor Devanagari, KohinoorDevanagari-Medium,
+KohinoorDevanagari-Regular, Kohinoor Devanagari, KohinoorDevanagari-Regular,
+KohinoorDevanagari-Semibold, Kohinoor Devanagari, KohinoorDevanagari-Semibold,
+KohinoorTelugu-Bold, Kohinoor Telugu, KohinoorTelugu-Bold,
+KohinoorTelugu-Light, Kohinoor Telugu, KohinoorTelugu-Light,
+KohinoorTelugu-Medium, Kohinoor Telugu, KohinoorTelugu-Medium,
+KohinoorTelugu-Regular, Kohinoor Telugu, KohinoorTelugu-Regular,
+KohinoorTelugu-Semibold, Kohinoor Telugu, KohinoorTelugu-Semibold,
+Kokonor, Kokonor, Kokonor,
+Krungthep, Krungthep, Krungthep,
+KufiStandardGK, KufiStandardGK, KufiStandardGK,
+LaoMN, Lao MN, LaoMN,
+LaoMN-Bold, Lao MN, LaoMN-Bold,
+LaoSangamMN, Lao Sangam MN, LaoSangamMN,
+LiGothicMed, Apple LiGothic, LiGothicMed,
+LiHeiPro, LiHei Pro, LiHeiPro,
+LiSongPro, LiSong Pro, LiSongPro,
+LiSungLight, Apple LiSung, LiSungLight,
+Lucida Bright Demibold, Lucida Bright, Lucida Bright Demibold,
+Lucida Bright Demibold Italic, Lucida Bright, Lucida Bright Demibold Italic,
+Lucida Bright Italic, Lucida Bright, Lucida Bright Italic,
+Lucida Bright Regular, Lucida Bright, Lucida Bright Regular,
+Lucida Sans Demibold, Lucida Sans, Lucida Sans Demibold,
+Lucida Sans Regular, Lucida Sans, Lucida Sans Regular,
+Lucida Sans Typewriter Bold, Lucida Sans Typewriter, Lucida Sans Typewriter Bold,
+Lucida Sans Typewriter Regular, Lucida Sans Typewriter, Lucida Sans Typewriter Regular,
+LucidaBright, Lucida Bright, LucidaBright,
+LucidaBright-Demi, Lucida Bright, LucidaBright-Demi,
+LucidaBright-DemiItalic, Lucida Bright, LucidaBright-DemiItalic,
+LucidaBright-Italic, Lucida Bright, LucidaBright-Italic,
+LucidaGrande, Lucida Grande, LucidaGrande,
+LucidaGrande-Bold, Lucida Grande, LucidaGrande-Bold,
+LucidaSans, Lucida Sans, LucidaSans,
+LucidaSans-Demi, Lucida Sans, LucidaSans-Demi,
+LucidaSans-Typewriter, Lucida Sans Typewriter, LucidaSans-Typewriter,
+LucidaSans-TypewriterBold, Lucida Sans Typewriter, LucidaSans-TypewriterBold,
+Luminari-Regular, Luminari, Luminari-Regular,
+MLingWaiMedium-SC, LingWai SC, MLingWaiMedium-SC,
+MLingWaiMedium-TC, LingWai TC, MLingWaiMedium-TC,
+MalayalamMN, Malayalam MN, MalayalamMN,
+MalayalamMN-Bold, Malayalam MN, MalayalamMN-Bold,
+MalayalamSangamMN, Malayalam Sangam MN, MalayalamSangamMN,
+MalayalamSangamMN-Bold, Malayalam Sangam MN, MalayalamSangamMN-Bold,
+Marion-Bold, Marion, Marion-Bold,
+Marion-Italic, Marion, Marion-Italic,
+Marion-Regular, Marion, Marion-Regular,
+MarkerFelt-Thin, Marker Felt, MarkerFelt-Thin,
+MarkerFelt-Wide, Marker Felt, MarkerFelt-Wide,
+Menlo-Bold, Menlo, Menlo-Bold,
+Menlo-BoldItalic, Menlo, Menlo-BoldItalic,
+Menlo-Italic, Menlo, Menlo-Italic,
+Menlo-Regular, Menlo, Menlo-Regular,
+MicrosoftSansSerif, Microsoft Sans Serif, MicrosoftSansSerif,
+Monaco, Monaco, Monaco,
+MonotypeGurmukhi, Gurmukhi MT, MonotypeGurmukhi,
+Mshtakan, Mshtakan, Mshtakan,
+MshtakanBold, Mshtakan, MshtakanBold,
+MshtakanBoldOblique, Mshtakan, MshtakanBoldOblique,
+MshtakanOblique, Mshtakan, MshtakanOblique,
+Muna, Muna, Muna,
+MunaBlack, Muna, MunaBlack,
+MunaBold, Muna, MunaBold,
+MyanmarMN, Myanmar MN, MyanmarMN,
+MyanmarMN-Bold, Myanmar MN, MyanmarMN-Bold,
+MyanmarSangamMN, Myanmar Sangam MN, MyanmarSangamMN,
+MyanmarSangamMN-Bold, Myanmar Sangam MN, MyanmarSangamMN-Bold,
+Nadeem, Nadeem, Nadeem,
+NanumBrush, Nanum Brush Script, NanumBrush,
+NanumGothic, Nanum Gothic, NanumGothic,
+NanumGothicBold, Nanum Gothic, NanumGothicBold,
+NanumGothicExtraBold, Nanum Gothic, NanumGothicExtraBold,
+NanumMyeongjo, Nanum Myeongjo, NanumMyeongjo,
+NanumMyeongjoBold, Nanum Myeongjo, NanumMyeongjoBold,
+NanumMyeongjoExtraBold, Nanum Myeongjo, NanumMyeongjoExtraBold,
+NanumPen, Nanum Pen Script, NanumPen,
+NewPeninimMT, New Peninim MT, NewPeninimMT,
+NewPeninimMT-Bold, New Peninim MT, NewPeninimMT-Bold,
+NewPeninimMT-BoldInclined, New Peninim MT, NewPeninimMT-BoldInclined,
+NewPeninimMT-Inclined, New Peninim MT, NewPeninimMT-Inclined,
+Noteworthy-Bold, Noteworthy, Noteworthy-Bold,
+Noteworthy-Light, Noteworthy, Noteworthy-Light,
+NotoNastaliqUrdu, Noto Nastaliq Urdu, NotoNastaliqUrdu,
+Optima-Bold, Optima, Optima-Bold,
+Optima-BoldItalic, Optima, Optima-BoldItalic,
+Optima-ExtraBlack, Optima, Optima-ExtraBlack,
+Optima-Italic, Optima, Optima-Italic,
+Optima-Regular, Optima, Optima-Regular,
+OriyaMN, Oriya MN, OriyaMN,
+OriyaMN-Bold, Oriya MN, OriyaMN-Bold,
+OriyaSangamMN, Oriya Sangam MN, OriyaSangamMN,
+OriyaSangamMN-Bold, Oriya Sangam MN, OriyaSangamMN-Bold,
+Osaka, Osaka, Osaka,
+Osaka-Mono, Osaka, Osaka-Mono,
+PTMono-Bold, PT Mono, PTMono-Bold,
+PTMono-Regular, PT Mono, PTMono-Regular,
+PTSans-Bold, PT Sans, PTSans-Bold,
+PTSans-BoldItalic, PT Sans, PTSans-BoldItalic,
+PTSans-Caption, PT Sans Caption, PTSans-Caption,
+PTSans-CaptionBold, PT Sans Caption, PTSans-CaptionBold,
+PTSans-Italic, PT Sans, PTSans-Italic,
+PTSans-Narrow, PT Sans Narrow, PTSans-Narrow,
+PTSans-NarrowBold, PT Sans Narrow, PTSans-NarrowBold,
+PTSans-Regular, PT Sans, PTSans-Regular,
+PTSerif-Bold, PT Serif, PTSerif-Bold,
+PTSerif-BoldItalic, PT Serif, PTSerif-BoldItalic,
+PTSerif-Caption, PT Serif Caption, PTSerif-Caption,
+PTSerif-CaptionItalic, PT Serif Caption, PTSerif-CaptionItalic,
+PTSerif-Italic, PT Serif, PTSerif-Italic,
+PTSerif-Regular, PT Serif, PTSerif-Regular,
+Palatino-Bold, Palatino, Palatino-Bold,
+Palatino-BoldItalic, Palatino, Palatino-BoldItalic,
+Palatino-Italic, Palatino, Palatino-Italic,
+Palatino-Roman, Palatino, Palatino-Roman,
+Papyrus, Papyrus, Papyrus,
+Papyrus-Condensed, Papyrus, Papyrus-Condensed,
+Phosphate-Inline, Phosphate, Phosphate-Inline,
+Phosphate-Solid, Phosphate, Phosphate-Solid,
+PingFangHK-Light, PingFang HK, PingFangHK-Light,
+PingFangHK-Medium, PingFang HK, PingFangHK-Medium,
+PingFangHK-Regular, PingFang HK, PingFangHK-Regular,
+PingFangHK-Semibold, PingFang HK, PingFangHK-Semibold,
+PingFangHK-Thin, PingFang HK, PingFangHK-Thin,
+PingFangHK-Ultralight, PingFang HK, PingFangHK-Ultralight,
+PingFangSC-Light, PingFang SC, PingFangSC-Light,
+PingFangSC-Medium, PingFang SC, PingFangSC-Medium,
+PingFangSC-Regular, PingFang SC, PingFangSC-Regular,
+PingFangSC-Semibold, PingFang SC, PingFangSC-Semibold,
+PingFangSC-Thin, PingFang SC, PingFangSC-Thin,
+PingFangSC-Ultralight, PingFang SC, PingFangSC-Ultralight,
+PingFangTC-Light, PingFang TC, PingFangTC-Light,
+PingFangTC-Medium, PingFang TC, PingFangTC-Medium,
+PingFangTC-Regular, PingFang TC, PingFangTC-Regular,
+PingFangTC-Semibold, PingFang TC, PingFangTC-Semibold,
+PingFangTC-Thin, PingFang TC, PingFangTC-Thin,
+PingFangTC-Ultralight, PingFang TC, PingFangTC-Ultralight,
+PlantagenetCherokee, Plantagenet Cherokee, PlantagenetCherokee,
+Raanana, Raanana, Raanana,
+RaananaBold, Raanana, RaananaBold,
+SIL-Hei-Med-Jian, Hei, SIL-Hei-Med-Jian,
+SIL-Kai-Reg-Jian, Kai, SIL-Kai-Reg-Jian,
+STBaoliSC-Regular, Baoli SC, STBaoliSC-Regular,
+STBaoliTC-Regular, Baoli TC, STBaoliTC-Regular,
+STFangsong, STFangsong, STFangsong,
+STHeiti, STHeiti, STHeiti,
+STHeitiSC-Light, Heiti SC, STHeitiSC-Light,
+STHeitiSC-Medium, Heiti SC, STHeitiSC-Medium,
+STHeitiTC-Light, Heiti TC, STHeitiTC-Light,
+STHeitiTC-Medium, Heiti TC, STHeitiTC-Medium,
+STIXGeneral-Bold, STIXGeneral, STIXGeneral-Bold,
+STIXGeneral-BoldItalic, STIXGeneral, STIXGeneral-BoldItalic,
+STIXGeneral-Italic, STIXGeneral, STIXGeneral-Italic,
+STIXGeneral-Regular, STIXGeneral, STIXGeneral-Regular,
+STIXIntegralsD-Bold, STIXIntegralsD, STIXIntegralsD-Bold,
+STIXIntegralsD-Regular, STIXIntegralsD, STIXIntegralsD-Regular,
+STIXIntegralsSm-Bold, STIXIntegralsSm, STIXIntegralsSm-Bold,
+STIXIntegralsSm-Regular, STIXIntegralsSm, STIXIntegralsSm-Regular,
+STIXIntegralsUp-Bold, STIXIntegralsUp, STIXIntegralsUp-Bold,
+STIXIntegralsUp-Regular, STIXIntegralsUp, STIXIntegralsUp-Regular,
+STIXIntegralsUpD-Bold, STIXIntegralsUpD, STIXIntegralsUpD-Bold,
+STIXIntegralsUpD-Regular, STIXIntegralsUpD, STIXIntegralsUpD-Regular,
+STIXIntegralsUpSm-Bold, STIXIntegralsUpSm, STIXIntegralsUpSm-Bold,
+STIXIntegralsUpSm-Regular, STIXIntegralsUpSm, STIXIntegralsUpSm-Regular,
+STIXNonUnicode-Bold, STIXNonUnicode, STIXNonUnicode-Bold,
+STIXNonUnicode-BoldItalic, STIXNonUnicode, STIXNonUnicode-BoldItalic,
+STIXNonUnicode-Italic, STIXNonUnicode, STIXNonUnicode-Italic,
+STIXNonUnicode-Regular, STIXNonUnicode, STIXNonUnicode-Regular,
+STIXSizeFiveSym-Regular, STIXSizeFiveSym, STIXSizeFiveSym-Regular,
+STIXSizeFourSym-Bold, STIXSizeFourSym, STIXSizeFourSym-Bold,
+STIXSizeFourSym-Regular, STIXSizeFourSym, STIXSizeFourSym-Regular,
+STIXSizeOneSym-Bold, STIXSizeOneSym, STIXSizeOneSym-Bold,
+STIXSizeOneSym-Regular, STIXSizeOneSym, STIXSizeOneSym-Regular,
+STIXSizeThreeSym-Bold, STIXSizeThreeSym, STIXSizeThreeSym-Bold,
+STIXSizeThreeSym-Regular, STIXSizeThreeSym, STIXSizeThreeSym-Regular,
+STIXSizeTwoSym-Bold, STIXSizeTwoSym, STIXSizeTwoSym-Bold,
+STIXSizeTwoSym-Regular, STIXSizeTwoSym, STIXSizeTwoSym-Regular,
+STIXVariants-Bold, STIXVariants, STIXVariants-Bold,
+STIXVariants-Regular, STIXVariants, STIXVariants-Regular,
+STKaiti, STKaiti, STKaiti,
+STKaitiSC-Black, Kaiti SC, STKaitiSC-Black,
+STKaitiSC-Bold, Kaiti SC, STKaitiSC-Bold,
+STKaitiSC-Regular, Kaiti SC, STKaitiSC-Regular,
+STKaitiTC-Black, Kaiti TC, STKaitiTC-Black,
+STKaitiTC-Bold, Kaiti TC, STKaitiTC-Bold,
+STKaitiTC-Regular, Kaiti TC, STKaitiTC-Regular,
+STLibianSC-Regular, Libian SC, STLibianSC-Regular,
+STLibianTC-Regular, Libian TC, STLibianTC-Regular,
+STSong, STSong, STSong,
+STSongti-SC-Black, Songti SC, STSongti-SC-Black,
+STSongti-SC-Bold, Songti SC, STSongti-SC-Bold,
+STSongti-SC-Light, Songti SC, STSongti-SC-Light,
+STSongti-SC-Regular, Songti SC, STSongti-SC-Regular,
+STSongti-TC-Bold, Songti TC, STSongti-TC-Bold,
+STSongti-TC-Light, Songti TC, STSongti-TC-Light,
+STSongti-TC-Regular, Songti TC, STSongti-TC-Regular,
+STXihei, STHeiti, STXihei,
+STXingkaiSC-Bold, Xingkai SC, STXingkaiSC-Bold,
+STXingkaiSC-Light, Xingkai SC, STXingkaiSC-Light,
+STXingkaiTC-Bold, Xingkai TC, STXingkaiTC-Bold,
+STXingkaiTC-Light, Xingkai TC, STXingkaiTC-Light,
+STYuanti-SC-Bold, Yuanti SC, STYuanti-SC-Bold,
+STYuanti-SC-Light, Yuanti SC, STYuanti-SC-Light,
+STYuanti-SC-Regular, Yuanti SC, STYuanti-SC-Regular,
+STYuanti-TC-Bold, Yuanti TC, STYuanti-TC-Bold,
+STYuanti-TC-Light, Yuanti TC, STYuanti-TC-Light,
+STYuanti-TC-Regular, Yuanti TC, STYuanti-TC-Regular,
+Sana, Sana, Sana,
+Sathu, Sathu, Sathu,
+SavoyeLetPlain, Savoye LET, SavoyeLetPlain,
+Seravek, Seravek, Seravek,
+Seravek-Bold, Seravek, Seravek-Bold,
+Seravek-BoldItalic, Seravek, Seravek-BoldItalic,
+Seravek-ExtraLight, Seravek, Seravek-ExtraLight,
+Seravek-ExtraLightItalic, Seravek, Seravek-ExtraLightItalic,
+Seravek-Italic, Seravek, Seravek-Italic,
+Seravek-Light, Seravek, Seravek-Light,
+Seravek-LightItalic, Seravek, Seravek-LightItalic,
+Seravek-Medium, Seravek, Seravek-Medium,
+Seravek-MediumItalic, Seravek, Seravek-MediumItalic,
+ShreeDev0714, Shree Devanagari 714, ShreeDev0714,
+ShreeDev0714-Bold, Shree Devanagari 714, ShreeDev0714-Bold,
+ShreeDev0714-BoldItalic, Shree Devanagari 714, ShreeDev0714-BoldItalic,
+ShreeDev0714-Italic, Shree Devanagari 714, ShreeDev0714-Italic,
+SignPainter-HouseScript, SignPainter, SignPainter-HouseScript,
+SignPainter-HouseScriptSemibold, SignPainter, SignPainter-HouseScriptSemibold,
+Silom, Silom, Silom,
+SinhalaMN, Sinhala MN, SinhalaMN,
+SinhalaMN-Bold, Sinhala MN, SinhalaMN-Bold,
+SinhalaSangamMN, Sinhala Sangam MN, SinhalaSangamMN,
+SinhalaSangamMN-Bold, Sinhala Sangam MN, SinhalaSangamMN-Bold,
+Skia-Regular, Skia, Skia-Regular,
+Skia-Regular_Black, Skia, Skia-Regular_Black,
+Skia-Regular_Black-Condensed, Skia, Skia-Regular_Black-Condensed,
+Skia-Regular_Black-Extended, Skia, Skia-Regular_Black-Extended,
+Skia-Regular_Bold, Skia, Skia-Regular_Bold,
+Skia-Regular_Condensed, Skia, Skia-Regular_Condensed,
+Skia-Regular_Extended, Skia, Skia-Regular_Extended,
+Skia-Regular_Light, Skia, Skia-Regular_Light,
+Skia-Regular_Light-Condensed, Skia, Skia-Regular_Light-Condensed,
+Skia-Regular_Light-Extended, Skia, Skia-Regular_Light-Extended,
+SnellRoundhand, Snell Roundhand, SnellRoundhand,
+SnellRoundhand-Black, Snell Roundhand, SnellRoundhand-Black,
+SnellRoundhand-Bold, Snell Roundhand, SnellRoundhand-Bold,
+SukhumvitSet-Bold, Sukhumvit Set, SukhumvitSet-Bold,
+SukhumvitSet-Light, Sukhumvit Set, SukhumvitSet-Light,
+SukhumvitSet-Medium, Sukhumvit Set, SukhumvitSet-Medium,
+SukhumvitSet-SemiBold, Sukhumvit Set, SukhumvitSet-SemiBold,
+SukhumvitSet-Text, Sukhumvit Set, SukhumvitSet-Text,
+SukhumvitSet-Thin, Sukhumvit Set, SukhumvitSet-Thin,
+Superclarendon-Black, Superclarendon, Superclarendon-Black,
+Superclarendon-BlackItalic, Superclarendon, Superclarendon-BlackItalic,
+Superclarendon-Bold, Superclarendon, Superclarendon-Bold,
+Superclarendon-BoldItalic, Superclarendon, Superclarendon-BoldItalic,
+Superclarendon-Italic, Superclarendon, Superclarendon-Italic,
+Superclarendon-Light, Superclarendon, Superclarendon-Light,
+Superclarendon-LightItalic, Superclarendon, Superclarendon-LightItalic,
+Superclarendon-Regular, Superclarendon, Superclarendon-Regular,
+Symbol, Symbol, Symbol,
+Tahoma, Tahoma, Tahoma,
+Tahoma-Bold, Tahoma, Tahoma-Bold,
+TamilMN, Tamil MN, TamilMN,
+TamilMN-Bold, Tamil MN, TamilMN-Bold,
+TamilSangamMN, Tamil Sangam MN, TamilSangamMN,
+TamilSangamMN-Bold, Tamil Sangam MN, TamilSangamMN-Bold,
+TeluguMN, Telugu MN, TeluguMN,
+TeluguMN-Bold, Telugu MN, TeluguMN-Bold,
+TeluguSangamMN, Telugu Sangam MN, TeluguSangamMN,
+TeluguSangamMN-Bold, Telugu Sangam MN, TeluguSangamMN-Bold,
+Thonburi, Thonburi, Thonburi,
+Thonburi-Bold, Thonburi, Thonburi-Bold,
+Thonburi-Light, Thonburi, Thonburi-Light,
+Times-Bold, Times, Times-Bold,
+Times-BoldItalic, Times, Times-BoldItalic,
+Times-Italic, Times, Times-Italic,
+Times-Roman, Times, Times-Roman,
+TimesNewRomanPS-BoldItalicMT, Times New Roman, TimesNewRomanPS-BoldItalicMT,
+TimesNewRomanPS-BoldMT, Times New Roman, TimesNewRomanPS-BoldMT,
+TimesNewRomanPS-ItalicMT, Times New Roman, TimesNewRomanPS-ItalicMT,
+TimesNewRomanPSMT, Times New Roman, TimesNewRomanPSMT,
+ToppanBunkyuGothicPr6N-DB, Toppan Bunkyu Gothic, ToppanBunkyuGothicPr6N-DB,
+ToppanBunkyuGothicPr6N-Regular, Toppan Bunkyu Gothic, ToppanBunkyuGothicPr6N-Regular,
+ToppanBunkyuMidashiGothicStdN-ExtraBold, Toppan Bunkyu Midashi Gothic, ToppanBunkyuMidashiGothicStdN-ExtraBold,
+ToppanBunkyuMidashiMinchoStdN-ExtraBold, Toppan Bunkyu Midashi Mincho, ToppanBunkyuMidashiMinchoStdN-ExtraBold,
+ToppanBunkyuMinchoPr6N-Regular, Toppan Bunkyu Mincho, ToppanBunkyuMinchoPr6N-Regular,
+Trattatello, Trattatello, Trattatello,
+Trebuchet-BoldItalic, Trebuchet MS, Trebuchet-BoldItalic,
+TrebuchetMS, Trebuchet MS, TrebuchetMS,
+TrebuchetMS-Bold, Trebuchet MS, TrebuchetMS-Bold,
+TrebuchetMS-Italic, Trebuchet MS, TrebuchetMS-Italic,
+TsukuARdGothic-Bold, Tsukushi A Round Gothic, TsukuARdGothic-Bold,
+TsukuARdGothic-Regular, Tsukushi A Round Gothic, TsukuARdGothic-Regular,
+TsukuBRdGothic-Bold, Tsukushi B Round Gothic, TsukuBRdGothic-Bold,
+TsukuBRdGothic-Regular, Tsukushi B Round Gothic, TsukuBRdGothic-Regular,
+Verdana, Verdana, Verdana,
+Verdana-Bold, Verdana, Verdana-Bold,
+Verdana-BoldItalic, Verdana, Verdana-BoldItalic,
+Verdana-Italic, Verdana, Verdana-Italic,
+Waseem, Waseem, Waseem,
+WaseemLight, Waseem, WaseemLight,
+Webdings, Webdings, Webdings,
+WeibeiSC-Bold, Weibei SC, WeibeiSC-Bold,
+WeibeiTC-Bold, Weibei TC, WeibeiTC-Bold,
+Wingdings-Regular, Wingdings, Wingdings-Regular,
+Wingdings2, Wingdings 2, Wingdings2,
+Wingdings3, Wingdings 3, Wingdings3,
+YuGo-Bold, YuGothic, YuGo-Bold,
+YuGo-Medium, YuGothic, YuGo-Medium,
+YuKyo-Bold, YuKyokasho, YuKyo-Bold,
+YuKyo-Medium, YuKyokasho, YuKyo-Medium,
+YuKyo_Yoko-Bold, YuKyokasho Yoko, YuKyo_Yoko-Bold,
+YuKyo_Yoko-Medium, YuKyokasho Yoko, YuKyo_Yoko-Medium,
+YuMin-Demibold, YuMincho, YuMin-Demibold,
+YuMin-Extrabold, YuMincho, YuMin-Extrabold,
+YuMin-Medium, YuMincho, YuMin-Medium,
+YuMin_36pKn-Demibold, YuMincho +36p Kana, YuMin_36pKn-Demibold,
+YuMin_36pKn-Extrabold, YuMincho +36p Kana, YuMin_36pKn-Extrabold,
+YuMin_36pKn-Medium, YuMincho +36p Kana, YuMin_36pKn-Medium,
+YuppySC-Regular, Yuppy SC, YuppySC-Regular,
+YuppyTC-Regular, Yuppy TC, YuppyTC-Regular,
+ZapfDingbatsITC, Zapf Dingbats, ZapfDingbatsITC,
+Zapfino, Zapfino, Zapfino,
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

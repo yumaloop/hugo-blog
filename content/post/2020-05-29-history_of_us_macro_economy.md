@@ -7,7 +7,9 @@ date: "2020-05-29T00:00:00Z"
 categories:
 - Finance
 tags:
-- Tips
+- Macroeconomics
+- Market
+- Pricing
 ---
 2020年05月現在，コロナショックで，景気後退が予測されている．
 S&P 500 YTDをみると，2018年・2019年と比較しても低調だ．

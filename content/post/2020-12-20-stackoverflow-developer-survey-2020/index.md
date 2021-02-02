@@ -4,9 +4,11 @@ draft: false
 date: "2020-12-20T00:00:00Z"
 
 categories:
-- Personal
+- Dev
 tags:
 - Tips
+- Programming
+- Web
 - Python
 - Go
 - Java

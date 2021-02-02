@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://yumaloop.github.io/category/dev/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yumaloop.github.io/tag/go/</loc>
     <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url>
@@ -18,12 +23,12 @@
   </url>
   
   <url>
-    <loc>https://yumaloop.github.io/category/personal/</loc>
+    <loc>https://yumaloop.github.io/post/</loc>
     <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yumaloop.github.io/post/</loc>
+    <loc>https://yumaloop.github.io/tag/programming/</loc>
     <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -53,8 +58,23 @@
   </url>
   
   <url>
+    <loc>https://yumaloop.github.io/tag/web/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yumaloop.github.io/</loc>
     <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/tag/jupyter/</loc>
+    <lastmod>2020-11-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/post/2020-11-29-maximize-jupyter-notebook-cell-height/</loc>
+    <lastmod>2020-11-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -73,7 +93,37 @@
   </url>
   
   <url>
+    <loc>https://yumaloop.github.io/post/2020-11-12-portfolio-optimization-by-python/</loc>
+    <lastmod>2020-11-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/tag/market/</loc>
+    <lastmod>2020-11-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/tag/optimization/</loc>
+    <lastmod>2020-11-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/tag/portfolio/</loc>
+    <lastmod>2020-11-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/tag/trading/</loc>
+    <lastmod>2020-11-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yumaloop.github.io/tag/books/</loc>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/category/personal/</loc>
     <lastmod>2020-06-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -105,6 +155,16 @@
   <url>
     <loc>https://yumaloop.github.io/post/2020-06-10-tencent-acg/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/tag/macroeconomics/</loc>
+    <lastmod>2020-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/tag/pricing/</loc>
+    <lastmod>2020-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -220,6 +280,11 @@
   <url>
     <loc>https://yumaloop.github.io/post/2019-06-21-keiojp-auto-login/</loc>
     <lastmod>2019-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yumaloop.github.io/post/2018-07-24-java-get-all-fonts/</loc>
+    <lastmod>2018-07-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>

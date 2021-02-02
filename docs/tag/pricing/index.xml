@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pricing | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/pricing/</link>
+      <atom:link href="https://yumaloop.github.io/tag/pricing/index.xml" rel="self" type="application/rss+xml" />
+    <description>Pricing</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2021</copyright><lastBuildDate>Fri, 29 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_huce064df24ffccf2a6c5bbf6190838da4_436_512x512_fill_lanczos_center_2.png</url>
+      <title>Pricing</title>
+      <link>https://yumaloop.github.io/tag/pricing/</link>
+    </image>
+    
+    <item>
+      <title>United States Macroeconomic History</title>
+      <link>https://yumaloop.github.io/post/2020-05-29-history_of_us_macro_economy/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-05-29-history_of_us_macro_economy/</guid>
+      <description>&lt;p&gt;2020年05月現在，コロナショックで，景気後退が予測されている．
+S&amp;amp;P 500 YTDをみると，2018年・2019年と比較しても低調だ．&lt;/p&gt;
+&lt;p&gt;アメリカ株は予想に反して高い水準を維持しているが，6月以降の統計結果によっては落ち込む可能性も高い．このポストでは，アメリカのマクロ経済史を振り返り,2021年以降のアメリカ経済について考えてみたい．&lt;/p&gt;
+&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/sp-500-ytd-performance-2020-06-12-macrotrends.png&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index YTD Daily Performance&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2490/sp-500-ytd-performance&#34;&gt;https://www.macrotrends.net/2490/sp-500-ytd-performance&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;gdp&#34;&gt;GDP&lt;/h1&gt;
+&lt;p&gt;USの実質GDP年間推移(1947 - 2020)をみてみる．インフレ率を補正すると，ほぼ線形に増加していることがわかる．&lt;/p&gt;
+&lt;img src=&#34;https://alfred.stlouisfed.org/graph/alfredgraph.png?g=rxJG&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: Real GDP, Billions of Chained 2012 Dollars, Annual Rate (1947 - 2020)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://alfred.stlouisfed.org/series?seid=GDPC1&#34;&gt;https://alfred.stlouisfed.org/series?seid=GDPC1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;次に，成長率(1次微分)．USの四半期ごとのGDP成長率(YOY)を，戦後(1947-2020)に限定してみてみる．基本的にランダムウォークにみえるが，興味深いのは&lt;strong&gt;1985年ごろを境に，分散が小さくなっていること&lt;/strong&gt;だ．&lt;/p&gt;
+&lt;img src=&#34;{{site.baseurl}}/assets/img/post/USGDP1947-2020.png&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: United States GDP Growth Rate, YOY (1947 - 2020)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://tradingeconomics.com/united-states/gdp-growth&#34;&gt;https://tradingeconomics.com/united-states/gdp-growth&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;FREDのサイトにある，年間のGDP成長率(YOY)も載せておく．&lt;/p&gt;
+&lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=qPxn&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: Real GDP, Percent Change from Preceding Period (1930 - 2020)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/?g=oM2u&#34;&gt;https://fred.stlouisfed.org/graph/?g=oM2u&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;equity-market&#34;&gt;Equity Market&lt;/h1&gt;
+&lt;p&gt;米国株式市場の歴史．まず事実として，USの株式市場は長期的に上昇トレンドである．また，S&amp;amp;P 500とDJIAは長期間でみると同じ挙動を示す．&lt;/p&gt;
+&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/sp-500-historical-chart-data-2020-06-12-macrotrends.png&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index (1928.01 - 2020.06)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
+&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/dow-jones-100-year-historical-chart-2020-06-12-macrotrends.png&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: Dow Jones Industrial Average (DJIA) (1915.02 - 2020.06)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
+&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/nasdaq-historical-chart-2020-06-13-macrotrends.png&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: NASDAQ Composite (1971.02 - 2020.06)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/1320/nasdaq-historical-chart&#34;&gt;https://www.macrotrends.net/1320/nasdaq-historical-chart&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;そして，狭い意味での効率的市場仮説を支持するならば，短期(年あるいは月単位)での景気循環は平滑化される．また事実として，あらゆる経済統計がせいぜい100年分しか存在しない以上，景気循環説や効率的市場仮説は正しく検証できない．&lt;/p&gt;
+&lt;p&gt;S&amp;amp;P 500は，NYSEとNSDAQの上場銘柄から(流動性の高い大型株の)時価総額を指数化したものなので，DJIAより実体経済(企業部門の利益)を反映している(と言われている)．&lt;/p&gt;
+&lt;p&gt;ここで，S&amp;amp;P 500の過去10年間(2010 - 2020)の推移をみてみる．&lt;/p&gt;
+&lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index, Daily Close (2010.06.15 - 2020.06.12)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI,&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI,&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index Change from Year Ago (2011.06.13 - 2020.06.12)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;S&amp;amp;P 500の日別の変化量(YOY)．マイナスとなった期間は2015/08~2016/07，2018/11~2019/05，2020/03~05の3回である．&lt;/p&gt;
+&lt;br&gt;
+&lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index Change, Daily Close (2010.06.15 - 2020.06.12)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;S&amp;amp;P 500の日別の変化量(DOD)．&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;economic-policy&#34;&gt;Economic Policy&lt;/h1&gt;
+&lt;p&gt;株価(cf. S&amp;amp;P 500)は，マクロ経済(GDP)に対する先行指標であると同時に，政府が経済対策を決定するための原因となる（結果ではない）．S&amp;amp;P 500の歴史と，その結果として時の米国政府がどのような経済政策を実施したか，その政策は具体的にどのようなマクロ経済理論によって裏付け(アドバイス)されたか，を考えてみる．&lt;/p&gt;
+&lt;p&gt;S&amp;amp;P 500の前年比変動率（1929-2020/03）をみてみよう．&lt;/p&gt;
+&lt;img src=&#34;{{ site.baseurl }}/assets/img/post/SP500HistoricalAnnualReturns1928-2020.png&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Historical Annual Returns (1928 - 2020)&lt;/strong&gt; &lt;br&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&#34;&gt;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;S&amp;amp;P 500の統計が開始されてから，1929-2019年のちょうど100年間で，年換算で前年比マイナスとなった年は22回しかない．そして，2020年は23番目の年になるかもしれない．全22回をリストアップしてみる．&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;統計上の留意点：S&amp;amp;P 500指数の発行元であるS&amp;amp;P Global社の沿革:&lt;/p&gt;
+&lt;p&gt;1941年，スタンダード統計社(Standard Statistics Bureau)とプアー出版社(H.V. and H.W. Poor Co.)が合併してS&amp;amp;P社(Standard&amp;amp;Poor&amp;rsquo;s)が誕生．1957年，S&amp;amp;P 500が誕生．1966年，マグロウヒル社がS&amp;amp;P社を買収し，現在の運営体制 (S&amp;amp;P Global Inc.;  1995年までの旧名:The McGraw-Hill Companies)となった．&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;great-depression-1929-1936-7-years&#34;&gt;Great Depression (1929-1936, 7 years)&lt;/h4&gt;
+&lt;p&gt;ケインズ，ニューディール 政策 有効需要&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1929: (-11.91% YoY) 世界恐慌&lt;/li&gt;
+&lt;li&gt;1930: (-28.48% YoY) 世界恐慌&lt;/li&gt;
+&lt;li&gt;1931: (-47.07% YoY) 世界恐慌&lt;/li&gt;
+&lt;li&gt;1932: (-15.15% YoY) 世界恐慌&lt;/li&gt;
+&lt;li&gt;1934: (-05.94% YoY) 世界恐慌&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;world-war--1937-1945-8-years&#34;&gt;World War Ⅱ (1937-1945, 8 years)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;1937: (-38.59% YoY) 第二次世界大戦&lt;/li&gt;
+&lt;li&gt;1939: (-05.45% YoY) 第二次世界大戦&lt;/li&gt;
+&lt;li&gt;1940: (-15.29% YoY) 第二次世界大戦&lt;/li&gt;
+&lt;li&gt;1941: (-17.86% YoY) 第二次世界大戦&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;post-war-prosperity-1945-1973-28-years&#34;&gt;Post-war Prosperity (1945-1973, 28 years)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;60s後半-70s前半のスタグフレーションの結果として，1972,73: ニクソンショック(ブレトン・ウッズ協定崩壊)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1946: (-11.87% YoY) 戦後&lt;/li&gt;
+&lt;li&gt;1953: (-06.62% YoY)&lt;/li&gt;
+&lt;li&gt;1957: (-14.31% YoY)&lt;/li&gt;
+&lt;li&gt;1960: (-02.97% YoY)&lt;/li&gt;
+&lt;li&gt;1962: (-11.81% YoY)&lt;/li&gt;
+&lt;li&gt;1966: (-13.09% YoY)&lt;/li&gt;
+&lt;li&gt;1969: (-11.36% YoY)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;reaganomics-1974-1990-16-years&#34;&gt;Reaganomics (1974-1990, 16 years)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;新自由主義，エネルギー規制の緩和，レーガノミクス(所得減税)，プラザ合意，双子の赤字(財政赤字と貿易赤字の拡大)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1973: (-17.37% YoY) 第一次オイルショック&lt;/li&gt;
+&lt;li&gt;1974: (-29.72% YoY) 第一次オイルショック&lt;/li&gt;
+&lt;li&gt;1977: (-11.50% YoY)&lt;/li&gt;
+&lt;li&gt;1981: (-09.73% YoY) 第二次オイルショック&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;new-economy-1990-2000-10-years&#34;&gt;New Economy (1990-2000, 10 years)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;情報通信業の牽引，ドットコムバブル，90sのUSGDPは69%増，S&amp;amp;P 500は3倍に上昇&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1990: (-06.56%  YoY) 通貨危機&lt;/li&gt;
+&lt;li&gt;2000: (-10.14% YoY) ドットコムバブル崩壊&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;financial-crisis-2001-2009-8-years&#34;&gt;Financial Crisis (2001-2009, 8 years)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2001年の同時多発テロ，2001-2007の住宅バブルとサブプライムローンによる金融危機，ミンスキーの金融不安定仮説，&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;2001: (-13.04% YoY) ドットコムバブル崩壊&lt;/li&gt;
+&lt;li&gt;2002: (-23.37% YoY) ドットコムバブル崩壊&lt;/li&gt;
+&lt;li&gt;2009: (-38.49% YoY) リーマンショック&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;tech-boom-2010-2019-10years&#34;&gt;Tech boom (2010-2019, 10years)&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;西海岸テック株の牽引，中国経済の台頭&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;2018: (-06.42% YoY) 上海危機&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;new-normal-2020-&#34;&gt;New Normal? (2020-????)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;2020: (-3.34% YTD) コロナショック&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;references--source&#34;&gt;References &amp;amp; Source&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;www.macrotrends.net - S&amp;amp;P 500, historical annual returns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.macrotrends.net/1319/dow-jones-100-year-historical-chart&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;www.macrotrends.net - DJIA, 100 years historical chart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://us.spindices.com/indices/equity/sp-500&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;us.spindices.com - S&amp;amp;P 500&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://us.spindices.com/indices/equity/dow-jones-industrial-average&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;us.spindices.com - Dow Jones Industrial Average&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tradingeconomics.com/united-states/gdp-growth&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tradingeconomics.com - United States GDP Growth Rate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tradingeconomics.com/spx:ind&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tradingeconomics.com - S&amp;amp;P 500&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tradingeconomics.com/united-states/stock-market&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tradingeconomics.com - Dow Jones Industrial Average&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fred.stlouisfed.org/graph/?g=oM2u&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fred.stlouisfed.org - Real Gross Domestic Product&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fred.stlouisfed.org/series/SP500&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fred.stlouisfed.org - S&amp;amp;P 500 Index&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fred.stlouisfed.org/series/DJIA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fred.stlouisfed.org - Dow Jones Industrial Average&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Economic_history_of_the_United_States&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia - Economic history of the United States&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_recessions_in_the_United_States&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia - List of recessions in the United States&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_economic_expansions_in_the_United_States&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia - List of economic expansions in the United States&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

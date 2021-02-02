@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jupyter | Yuma Uchiumi</title>
+    <link>https://yumaloop.github.io/tag/jupyter/</link>
+      <atom:link href="https://yumaloop.github.io/tag/jupyter/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jupyter</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2021</copyright><lastBuildDate>Sun, 29 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yumaloop.github.io/images/icon_huce064df24ffccf2a6c5bbf6190838da4_436_512x512_fill_lanczos_center_2.png</url>
+      <title>Jupyter</title>
+      <link>https://yumaloop.github.io/tag/jupyter/</link>
+    </image>
+    
+    <item>
+      <title>Maximize the cell size of Jupyter notebook</title>
+      <link>https://yumaloop.github.io/post/2020-11-29-maximize-jupyter-notebook-cell-height/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://yumaloop.github.io/post/2020-11-29-maximize-jupyter-notebook-cell-height/</guid>
+      <description>&lt;h3 id=&#34;tldr&#34;&gt;TL;DR&lt;/h3&gt;
+&lt;p&gt;Put the following magic command (cell magic) in a cell and execute it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%%javascript
+IPython.OutputArea.auto_scroll_threshold = 9999;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note: This is not &lt;code&gt;line magic&lt;/code&gt; like &lt;code&gt;% matplotlib inline&lt;/code&gt; and some errors will occur unless the executed cell is independent.
+See &lt;a href=&#34;https://ipython.readthedocs.io/en/stable/interactive/magics.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IPython Official Documentation&lt;/a&gt; for details.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;%&lt;/code&gt; - All available &lt;em&gt;line magic&lt;/em&gt; commands - &lt;a href=&#34;https://ipython.readthedocs.io/en/stable/interactive/magics.html#line-magics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;check here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;%%&lt;/code&gt; - All available &lt;em&gt;cell magic&lt;/em&gt; commands - &lt;a href=&#34;https://ipython.readthedocs.io/en/stable/interactive/magics.html#cell-magics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;check here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cf&#34;&gt;Cf.&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#magic-functions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Magic functions - IPython公式ドキュメント&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ipython/ipython/issues/2172#issuecomment-53708976&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;comment:53708976 issue:2172 ipython github.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qastack.jp/programming/18770504/resize-ipython-notebook-output-window&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ipythonノートブックの出力ウィンドウのサイズを変更する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/daifuku_mochi2/items/30258e58750ff8e85d37&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jupyter notebookで列をすべて表示したい - Qitta&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
