@@ -27,13 +27,6 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `>-` multi-line prefix.
 experience:
-  - title: <font color="LightCoral">Web Speed Hackathon Online</font>
-    company: CyberAgent, Inc. 
-    company_url: 'https://www.cyberagent.co.jp/en/'
-    location: Tokyo, Japan.
-    date_start: '2021-02-06'
-    date_end: '2021-02-07'
-    description: A Hackathon competing for improved performance of web applications (Node.js).
   - title: <font color="MediumSlateBlue">Data Science Intern</font>
     company: DATAWISE, inc. 
     company_url: 'https://www.datawise.co.jp/'
