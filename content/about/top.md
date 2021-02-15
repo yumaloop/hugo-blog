@@ -48,6 +48,9 @@ I study statistical algorithms, stochastic models, and information processing sy
 ###### <font color="gray"><i class="fas fa-caret-right"></i> Domestic Conference (Japan)</font>
 
 1. Yuma Uchiumi, Michita Imai,
+"An Elimination of Visual Ambiguity in Top-down Manner",
+The 35th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI 2021), Jun. 8-11, 2021, Virtual Conference.
+1. Yuma Uchiumi, Michita Imai,
 "A Computation of Visual Attentions on the Stochastic Model Using the Fisher Information Matrix",
 The 30th Annual Conference of the Japanese Neural Network Society (JNNS 2020), Dec. 2-5, 2020, Virtual Conference.
 [(PDF)](https://drive.google.com/file/d/1slhR-bAkC3M1dUPb6Aaw5tF1alxQ-sMo/view?usp=sharing)
