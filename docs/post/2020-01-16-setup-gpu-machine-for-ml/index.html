@@ -79,6 +79,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
 
     
+    
 
     
     
@@ -198,16 +199,6 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
-      
-    
-      
-      
-
-      
-      
-
-      
     
       
       
@@ -260,7 +251,7 @@
   
   
   
-  <link rel="stylesheet" href="https://yumaloop.github.io/css/wowchemy.e24b620a3d5519201a70a464052a0494.css" />
+  <link rel="stylesheet" href="https://yumaloop.github.io/css/wowchemy.37edc85a34d94773b55fd6bb1489909b.css" />
 
   
 
@@ -269,6 +260,10 @@
   
 
   
+
+  
+
+
 
 
   
@@ -281,11 +276,12 @@
     <link rel="manifest" href="https://yumaloop.github.io/index.webmanifest" />
   
 
-  <link rel="icon" type="image/png" href="https://yumaloop.github.io/images/icon_huce064df24ffccf2a6c5bbf6190838da4_436_32x32_fill_lanczos_center_2.png" />
-  <link rel="apple-touch-icon" type="image/png" href="https://yumaloop.github.io/images/icon_huce064df24ffccf2a6c5bbf6190838da4_436_180x180_fill_lanczos_center_2.png" />
+  <link rel="icon" type="image/png" href="https://yumaloop.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="https://yumaloop.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
 
   <link rel="canonical" href="https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/" />
 
+  
   
   
   
@@ -305,8 +301,8 @@
   <meta property="og:site_name" content="Yuma Uchiumi" />
   <meta property="og:url" content="https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/" />
   <meta property="og:title" content="Setting up a GPU machine for Machine Learning | Yuma Uchiumi" />
-  <meta property="og:description" content="In this note, I describe how to install NVIDIA GPU and set up CUDA/cuDNN on Ubuntu 16.04LTS machine that has been clean booted. Also, I write down some linux commands" /><meta property="og:image" content="https://yumaloop.github.io/images/icon_huce064df24ffccf2a6c5bbf6190838da4_436_512x512_fill_lanczos_center_2.png" />
-    <meta property="twitter:image" content="https://yumaloop.github.io/images/icon_huce064df24ffccf2a6c5bbf6190838da4_436_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:description" content="In this note, I describe how to install NVIDIA GPU and set up CUDA/cuDNN on Ubuntu 16.04LTS machine that has been clean booted. Also, I write down some linux commands" /><meta property="og:image" content="https://yumaloop.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://yumaloop.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -355,7 +351,7 @@
     "name": "Yuma Uchiumi",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://yumaloop.github.io/images/icon_huce064df24ffccf2a6c5bbf6190838da4_436_192x192_fill_lanczos_center_2.png"
+      "url": "https://yumaloop.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png"
     }
   },
   "description": "In this note, I describe how to install NVIDIA GPU and set up CUDA/cuDNN on Ubuntu 16.04LTS machine that has been clean booted. Also, I write down some linux commands"
@@ -378,7 +374,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="1269f2e0e4402c1d9168bd4342744f90" >
 
   
   
@@ -388,7 +384,7 @@
   
   
   
-  <script src="https://yumaloop.github.io/js/wowchemy-init.min.8be00435174e2a694d14c4b53a403b4d.js"></script>
+  <script src="https://yumaloop.github.io/js/wowchemy-init.min.76abe0ff166961e9adc403995f18189f.js"></script>
 
   
 
@@ -1289,10 +1285,13 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
     
     
     
-    Published with
-    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
-    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
-    open source</a> website builder that empowers creators.
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1342,6 +1341,7 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
       
 
       
+      
 
       
 
@@ -1369,7 +1369,12 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
     
     
 
-    <script src="https://yumaloop.github.io/js/_vendor/bootstrap.bundle.min.29d2abb07db775505d3a2efc824e7b29.js"></script>
+    
+    
+    
+    
+
+    <script src="https://yumaloop.github.io/js/_vendor/bootstrap.bundle.min.f81d0a1705048649befc8b595e455a94.js"></script>
 
     
     
@@ -1383,7 +1388,7 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
     
     
     
-    <script src="https://yumaloop.github.io/en/js/wowchemy.min.ca72b29051859be0d23e83ef763d442f.js"></script>
+    <script src="https://yumaloop.github.io/en/js/wowchemy.min.0a233ecde900ea57d5cd5ad14636ad45.js"></script>
 
     
 
