@@ -48,7 +48,7 @@ I study statistical algorithms, stochastic models, and information processing sy
 ###### <font color="gray"><i class="fas fa-caret-right"></i> Domestic Conference (Japan)</font>
 
 1. Yuma Uchiumi, Yosuke Fukuchi, Mitsuhiko Kimoto, Michita Imai,
-"An Elimination of Visual Ambiguity in Top-down Manner",
+"A Top-down Penetration to the Visual Attention via Elimination of the Ambiguity",
 The 35th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI 2021), Jun. 8-11, 2021, Virtual Conference.
 1. Yuma Uchiumi, Michita Imai,
 "A Computation of Visual Attentions on the Stochastic Model Using the Fisher Information Matrix",
