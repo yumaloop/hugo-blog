@@ -11,7 +11,7 @@ role: <font size="-0.5">Graduate Student (Computer Science)</font>
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: Keio University,  Japan.
+- name: Keio University, Japan.
   url: https://www.keio.ac.jp/
 
 # Short bio (displayed in user profile at end of posts)
@@ -19,12 +19,12 @@ organizations:
 
 # Interests to show in About widget
 interests:
-- Artificial Intelligence
 - Cognitive Science
 - Human Vision
-- Perception
-- Machine Learning
+- Machine Perception
 - Information Theory
+- Machine Learning
+- Statistics
 
 
 # Education to show in About widget
