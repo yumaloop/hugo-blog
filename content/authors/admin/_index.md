@@ -69,6 +69,6 @@ email: "yumaloop@gmail.com"
 highlight_name: false
 ---
 
-I’m Yuma Uchiumi ([@yumaloop](https://yumaloop.github.io/)), a graduate student majoring in computer science. I was born on December 8, 1997 in Tokyo, Japan. My research goal is to understand and implement the computation for human thinking; I study statistical algorithms, stochastic models, and information processing systems to solve the cognitive problems with human thinking.
+Hi, I’m Yuma Uchiumi ([@yumaloop](https://yumaloop.github.io/about/)), a graduate student majoring in computer science. I was born on December 8, 1997 in Tokyo, Japan. My research goal is to understand and implement the computation for human thinking; I study statistical algorithms, stochastic models, and information processing systems to solve the cognitive problems with human thinking.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/CV202011.pdf" "newtab" >}}resumé{{< /staticref >}}.
