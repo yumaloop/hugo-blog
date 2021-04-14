@@ -3,6 +3,14 @@
 ## DEbug
 
 
+### Homebrew (on MacOS)
+
+```
+$ brew update
+$ brew upgrade
+$ brew cleanup
+```
+
 ### Hugo
 
 ```
@@ -28,7 +36,34 @@ install-on-request: 17,971 (30 days), 46,660 (90 days), 250,680 (365 days)
 build-error: 0 (30 days)
 ```
 
+- update hugo version https://gohugo.io/getting-started/installing/
+
+```
+$ # show the location of the hugo executable
+which hugo
+/usr/local/bin/hugo
+
+# show the installed version
+ls -l $( which hugo )
+lrwxr-xr-x  1 mdhender admin  30 Mar 28 22:19 /usr/local/bin/hugo -> ../Cellar/hugo/0.13_1/bin/hugo
+
+# verify that hugo runs correctly
+hugo version
+Hugo Static Site Generator v0.13 BuildDate: 2015-03-09T21:34:47-05:00
+```
+
 ### Hugo Academic
 
-https://wowchemy.com/docs/
+On 2021/04/14, Update `wowchemy` with:
+
+```
+hugo mod clean
+hugo mod get github.com/wowchemy/wowchemy-hugo-modules/wowchemy@5fa9412
+hugo mod get github.com/wowchemy/wowchemy-hugo-modules/netlify-cms-academic@5fa9412
+hugo mod tidy
+```
+
+to [v5.0.0-beta.1](https://wowchemy.com/blog/v5.0.0-beta.1/).
+
+- https://wowchemy.com/docs/
 
