@@ -43,7 +43,7 @@ I study statistical algorithms, stochastic models, and information processing sy
 
 1. Yuma Uchiumi, Yuki Abe, Michita Imai,
 "Disentangled Motion Representation Learning for Video Encoding and Generation",
-2021 International Symposium on Intelligent Unmanned Systems and Artificial Intelligence (SIUSAI 2021), April 19-21, 2021, Singapore.
+2021 International Symposium on Intelligent Unmanned Systems and Artificial Intelligence (SIUSAI 2021), April 19-21, 2021, Singapore. (Best Student Paper)
 
 ###### <font color="gray"><i class="fas fa-caret-right"></i> Domestic Conference (Japan)</font>
 
