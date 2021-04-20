@@ -1,4 +1,16 @@
+github.com/wowchemy/wowchemy-hugo-modules/netlify-cms-academic v0.0.0-20201016182837-be0fa17ac006 h1:YNTYgXSXNVmvBTwD4Fp7jnrHKjczvxv30FOmBvfPkK8=
+github.com/wowchemy/wowchemy-hugo-modules/netlify-cms-academic v0.0.0-20201016182837-be0fa17ac006/go.mod h1:TU3QDPUdBSQnvDP5QVCwjAkBIdVMS/bKFA8jr3eI5AY=
 github.com/wowchemy/wowchemy-hugo-modules/netlify-cms-academic v0.0.0-20201204174723-5fa9412f9e76 h1:ZfyIYItmejwZrB7lr/XU+YAacaqTh/KgaEvJSdlqecY=
 github.com/wowchemy/wowchemy-hugo-modules/netlify-cms-academic v0.0.0-20201204174723-5fa9412f9e76/go.mod h1:TU3QDPUdBSQnvDP5QVCwjAkBIdVMS/bKFA8jr3eI5AY=
+github.com/wowchemy/wowchemy-hugo-modules/netlify-cms-academic v0.0.0-20210418194315-e9cec2d3e993 h1:EDMtSmzpod/ZUUBwOUK8rbQHMFBQIRm8I3lWHx4ZI/U=
+github.com/wowchemy/wowchemy-hugo-modules/netlify-cms-academic v0.0.0-20210418194315-e9cec2d3e993/go.mod h1:TU3QDPUdBSQnvDP5QVCwjAkBIdVMS/bKFA8jr3eI5AY=
+github.com/wowchemy/wowchemy-hugo-modules/wowchemy v0.0.0-20201016182837-be0fa17ac006 h1:0TttxcFCinLEfPQxtpCRcCnf34vQm/S247UQ9lrzh38=
+github.com/wowchemy/wowchemy-hugo-modules/wowchemy v0.0.0-20201016182837-be0fa17ac006/go.mod h1:H22qfH9qj3FWwsk7+bAZpmT24yRGNQURah2/IRwjbn8=
 github.com/wowchemy/wowchemy-hugo-modules/wowchemy v0.0.0-20201204174723-5fa9412f9e76 h1:3vnocWPhhHgIKoXmFjO16GIn0t7uM/Uc17nLRXDFKVI=
 github.com/wowchemy/wowchemy-hugo-modules/wowchemy v0.0.0-20201204174723-5fa9412f9e76/go.mod h1:H22qfH9qj3FWwsk7+bAZpmT24yRGNQURah2/IRwjbn8=
+github.com/wowchemy/wowchemy-hugo-modules/wowchemy v0.0.0-20210211185922-b811f9a1bb9c h1:rcd9H2OHyw3xiu2H140g22AUvYZPBfvynAyTfubpvg4=
+github.com/wowchemy/wowchemy-hugo-modules/wowchemy v0.0.0-20210211185922-b811f9a1bb9c/go.mod h1:H22qfH9qj3FWwsk7+bAZpmT24yRGNQURah2/IRwjbn8=
+github.com/wowchemy/wowchemy-hugo-modules/wowchemy v0.0.0-20210418194315-e9cec2d3e993 h1:9LxExeICmhQtDbYL3qTIRg3u5M9/cp7Ke1PZuFVdXPQ=
+github.com/wowchemy/wowchemy-hugo-modules/wowchemy v0.0.0-20210418194315-e9cec2d3e993/go.mod h1:H22qfH9qj3FWwsk7+bAZpmT24yRGNQURah2/IRwjbn8=
+github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms v0.0.0-20210211185922-b811f9a1bb9c h1:a5+8Lgpcomdgpz9pPDhKQ53RMbNkKmifQ3hNrYWA0dg=
+github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms v0.0.0-20210211185922-b811f9a1bb9c/go.mod h1:AKpYbqUVlj0VYsc7Jsxe1o8Ko2yV31A5ZPdfpACcXJw=
