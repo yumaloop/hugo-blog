@@ -18,13 +18,17 @@
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       <guid>https://yumaloop.github.io/project/duck-rabbit-illusion/</guid>
       <description>&lt;img src=&#34;duck-rabbit.png&#34; alt=&#34;drawing&#34; style=&#34;width:450px;&#34;/&gt;
-&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+&lt;i&gt;Which does this look like a duck or a rabbit?&lt;/i&gt;
+&lt;/div&gt;
+&lt;h5 id=&#34;overview&#34;&gt;Overview&lt;/h5&gt;
 &lt;p&gt;In order to elucidate human perceptual functions, it is necessary to consider both bottom-up information processing, in which stimulus information received from the sensory organs is encoded into symbolic information, and top-down information processing, which is objective-oriented and based on memory, beliefs, and context. In this paper, we take the ResNet50 image classification problem as an example task, and conduct a basic study on the information processing when humans make judgments about visual information with ambiguities, and discuss the computation by which working memory during task execution penetrates the discrimination results of the model in a top-down manner.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-vim&#34;&gt;Yuma Uchiumi, Yosuke Fukuchi, Mitsuhiko Kimoto, Michita Imai, 
 “A Top-down Penetration to the Visual Attention via Elimination of the Ambiguity”, 
 The 35th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI 2021), 
 Jun. 8-11, 2021, Virtual Conference.
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h3 id=&#34;measurement-of-the-ambiguity&#34;&gt;Measurement of the Ambiguity&lt;/h3&gt;
 &lt;p&gt;When a single stochastic model $f:X \to Y$ get a data sample $\boldsymbol{x}^{*}$ of the input random variable $X$,
 the ambiguity of the model&amp;rsquo;s inference result can be defined as the conditional entropy of the output random variable $Y$.&lt;/p&gt;
@@ -51,7 +55,8 @@ $$&lt;/p&gt;
 A(Y; f, \boldsymbol{x}^{*}) + \beta \cdot S(Y; f, \boldsymbol{x}^{*}, p)
 $$&lt;/p&gt;
 &lt;p&gt;where $\beta$ is a weighting factor in $[0,1]$. The overall computation is shown below.&lt;/p&gt;
-&lt;h3 id=&#34;training-the-model--deriving-the-ambiguity&#34;&gt;Training the model &amp;amp; deriving the ambiguity&lt;/h3&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;training-the-model--deriving-the-ambiguity&#34;&gt;Training the Model &amp;amp; Deriving the Ambiguity&lt;/h3&gt;
 &lt;p&gt;First of all, we trained the ResNet-50 as the image classification model $f:$&lt;/p&gt;
 &lt;p&gt;$$
 X \in \mathbb{R}^{H \times W \times C} \to Y \in \{\text{duck}, \text{rabbit}, \text{dummy}\}
@@ -63,7 +68,8 @@ the ambiguity and the surprise in the model is calculated.
 The overall computation is shown below.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;fig2_architecture.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In the experiment, initially 30 images were sampled from the prior categorical distribution of the class label $Y$ and then its posterior distribution $p(y)$ (belief) was formed. Afterwards, the model made inferences for the Duck-Rabbit illusion image $\boldsymbol{x}^{*}$.&lt;/p&gt;
-&lt;h3 id=&#34;plasticity-of-visual-attention&#34;&gt;Plasticity of visual attention&lt;/h3&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;plasticity-of-the-visual-attention&#34;&gt;Plasticity of the Visual Attention&lt;/h3&gt;
 &lt;p&gt;Futhermore, we applied the elimination process of the ambiguity to the model.
 Target parameters of the convolutional kernels &lt;code&gt;conv1&lt;/code&gt; in ResNet-50 was updated according to the defined metrics of the ambiguity and surprise.&lt;/p&gt;
 &lt;p&gt;The attention maps that the model had for the input image during inference are shown as the following figures. As the belief distribution makes a difference between them,

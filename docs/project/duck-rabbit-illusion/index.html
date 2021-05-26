@@ -700,13 +700,17 @@
 
     <div class="article-style">
       <img src="duck-rabbit.png" alt="drawing" style="width:450px;"/>
-<h3 id="overview">Overview</h3>
+<div style="text-align: center;">
+<i>Which does this look like a duck or a rabbit?</i>
+</div>
+<h5 id="overview">Overview</h5>
 <p>In order to elucidate human perceptual functions, it is necessary to consider both bottom-up information processing, in which stimulus information received from the sensory organs is encoded into symbolic information, and top-down information processing, which is objective-oriented and based on memory, beliefs, and context. In this paper, we take the ResNet50 image classification problem as an example task, and conduct a basic study on the information processing when humans make judgments about visual information with ambiguities, and discuss the computation by which working memory during task execution penetrates the discrimination results of the model in a top-down manner.</p>
 <pre><code class="language-vim">Yuma Uchiumi, Yosuke Fukuchi, Mitsuhiko Kimoto, Michita Imai, 
 “A Top-down Penetration to the Visual Attention via Elimination of the Ambiguity”, 
 The 35th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI 2021), 
 Jun. 8-11, 2021, Virtual Conference.
 </code></pre>
+<br>
 <h3 id="measurement-of-the-ambiguity">Measurement of the Ambiguity</h3>
 <p>When a single stochastic model $f:X \to Y$ get a data sample $\boldsymbol{x}^{*}$ of the input random variable $X$,
 the ambiguity of the model&rsquo;s inference result can be defined as the conditional entropy of the output random variable $Y$.</p>
@@ -733,7 +737,8 @@ $$</p>
 A(Y; f, \boldsymbol{x}^{*}) + \beta \cdot S(Y; f, \boldsymbol{x}^{*}, p)
 $$</p>
 <p>where $\beta$ is a weighting factor in $[0,1]$. The overall computation is shown below.</p>
-<h3 id="training-the-model--deriving-the-ambiguity">Training the model &amp; deriving the ambiguity</h3>
+<br>
+<h3 id="training-the-model--deriving-the-ambiguity">Training the Model &amp; Deriving the Ambiguity</h3>
 <p>First of all, we trained the ResNet-50 as the image classification model $f:$</p>
 <p>$$
 X \in \mathbb{R}^{H \times W \times C} \to Y \in \{\text{duck}, \text{rabbit}, \text{dummy}\}
@@ -745,7 +750,8 @@ the ambiguity and the surprise in the model is calculated.
 The overall computation is shown below.</p>
 <p><img src="fig2_architecture.png" alt="img"></p>
 <p>In the experiment, initially 30 images were sampled from the prior categorical distribution of the class label $Y$ and then its posterior distribution $p(y)$ (belief) was formed. Afterwards, the model made inferences for the Duck-Rabbit illusion image $\boldsymbol{x}^{*}$.</p>
-<h3 id="plasticity-of-visual-attention">Plasticity of visual attention</h3>
+<br>
+<h3 id="plasticity-of-the-visual-attention">Plasticity of the Visual Attention</h3>
 <p>Futhermore, we applied the elimination process of the ambiguity to the model.
 Target parameters of the convolutional kernels <code>conv1</code> in ResNet-50 was updated according to the defined metrics of the ambiguity and surprise.</p>
 <p>The attention maps that the model had for the input image during inference are shown as the following figures. As the belief distribution makes a difference between them,

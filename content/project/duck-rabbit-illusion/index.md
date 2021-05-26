@@ -15,7 +15,12 @@ url_video: ""
 
 <img src="duck-rabbit.png" alt="drawing" style="width:450px;"/>
 
-### Overview
+<div style="text-align: center;">
+<i>Which does this look like a duck or a rabbit?</i>
+</div>
+
+
+##### Overview
 
 In order to elucidate human perceptual functions, it is necessary to consider both bottom-up information processing, in which stimulus information received from the sensory organs is encoded into symbolic information, and top-down information processing, which is objective-oriented and based on memory, beliefs, and context. In this paper, we take the ResNet50 image classification problem as an example task, and conduct a basic study on the information processing when humans make judgments about visual information with ambiguities, and discuss the computation by which working memory during task execution penetrates the discrimination results of the model in a top-down manner.
 
@@ -25,6 +30,8 @@ Yuma Uchiumi, Yosuke Fukuchi, Mitsuhiko Kimoto, Michita Imai,
 The 35th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI 2021), 
 Jun. 8-11, 2021, Virtual Conference.
 ```
+
+<br>
 
 ### Measurement of the Ambiguity
 
@@ -60,8 +67,9 @@ $$
 
 where $\beta$ is a weighting factor in $[0,1]$. The overall computation is shown below.
 
+<br>
 
-### Training the model & deriving the ambiguity
+### Training the Model & Deriving the Ambiguity
 
 First of all, we trained the ResNet-50 as the image classification model $f:$ 
 
@@ -79,7 +87,9 @@ The overall computation is shown below.
 
 In the experiment, initially 30 images were sampled from the prior categorical distribution of the class label $Y$ and then its posterior distribution $p(y)$ (belief) was formed. Afterwards, the model made inferences for the Duck-Rabbit illusion image $\boldsymbol{x}^{\*}$.
 
-### Plasticity of visual attention
+<br>
+
+### Plasticity of the Visual Attention
 
 Futhermore, we applied the elimination process of the ambiguity to the model.
 Target parameters of the convolutional kernels `conv1` in ResNet-50 was updated according to the defined metrics of the ambiguity and surprise.
