@@ -74,7 +74,7 @@ where $\beta$ is a weighting factor in $[0,1]$. The overall computation is shown
 First of all, we trained the ResNet-50 as the image classification model $f:$ 
 
 $$
-X \in \mathbb{R}^{H \times W \times C} \to Y \in \\{\text{duck}, \text{rabbit}, \text{dummy}\\}
+X \in \mathbb{R}^{H \times W \times C} \to Y \in \\{\text{duck}, \text{rabbit}, \text{others}\\}
 $$
 
 on the Google Open Image Dataset. 
