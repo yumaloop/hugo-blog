@@ -29,6 +29,8 @@ content:
     tag: '*'
   - name: Deep Learning
     tag: Deep Learning
+  - name: Cognitive Science
+    tag: Cognitive Science
   - name: Other
     tag: Demo
 

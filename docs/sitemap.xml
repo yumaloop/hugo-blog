@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://yumaloop.github.io/tag/cognitive-science/</loc>
+    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yumaloop.github.io/project/duck-rabbit-illusion/</loc>
+    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yumaloop.github.io/project/</loc>
+    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yumaloop.github.io/tags/</loc>
+    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yumaloop.github.io/</loc>
+    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yumaloop.github.io/categories/</loc>
     <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -29,16 +44,10 @@
     <loc>https://yumaloop.github.io/post/2020-12-20-stackoverflow-developer-survey-2020/</loc>
     <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yumaloop.github.io/tags/</loc>
-    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yumaloop.github.io/tag/tips/</loc>
     <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yumaloop.github.io/tag/web/</loc>
-    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yumaloop.github.io/</loc>
     <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yumaloop.github.io/tag/jupyter/</loc>
@@ -180,9 +189,6 @@
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yumaloop.github.io/project/example/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yumaloop.github.io/project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yumaloop.github.io/publication_types/</loc>
