@@ -1,13 +1,13 @@
 ---
 # An instance of the Blank widget.
 # Documentation: https://wowchemy.com/docs/page-builder/
-widget: blank
+# widget: blank
 
 # This file represents a page section.
 headless: true
 
 # Order that this section appears on the page.
-weight: 130
+# weight: 130 # whether showing this page or not
 
 # Section title
 # title: '<div align="left">Contact</div>'
@@ -17,10 +17,10 @@ title: "Contact"
 subtitle: 
 
 # Section design
-design:
-  # Choose how many columns the section has. Valid values: 1 or 2.
-  # Use a 1-column layout
-  columns: "2"
+# design:
+#   # Choose how many columns the section has. Valid values: 1 or 2.
+#   # Use a 1-column layout
+#   columns: "2"
 ---
 ### Social Links
 * <i class="fab fa-facebook"></i> Facebook: [yumauchiumi](https://www.facebook.com/yumauchiumi)

@@ -11,7 +11,7 @@ role: <font size="-0.5">Data Scientist</font>
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: Accenture PLC.
+- name: Accenture, Strategy & Consulting
   url: https://www.accenture.com/jp-ja/about/consulting-index
 # organizations:
 # - name: Keio University, Japan.
@@ -22,19 +22,22 @@ organizations:
 
 # Interests to show in About widget
 interests:
-- Marketing Science
-- Algorithmic Marketing
 - Cognitive Science
-- Statistical Modeling
+- Human Vision
+- Machine Perception
+- Information Theory
+- Machine Learning
+- Statistics
+
 
 # Education to show in About widget
 education:
   courses:
-  - course: MS in Computer Science
-    institution: Keio University, Japan.
+  - course: MSc in Computer Science
+    institution: Center for Information & Computer Science, Keio University, Japan.
     year: 2022
-  - course: BE in Computer Science
-    institution: Keio University, Japan.
+  - course: BSc in Computer Science
+    institution: Department of Information & Computer Science, Keio University, Japan.
     year: 2020
 
 # Social/Academic Networking
@@ -45,6 +48,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '/about/#contact'
+- icon: twitter
+  icon_pack: fab
+  link: https://twitter.com/yumaloop
 - icon: github
   icon_pack: fab
   link: https://github.com/yumaloop
@@ -66,8 +72,6 @@ email: "yumaloop@gmail.com"
 highlight_name: false
 ---
 
-Hi, I’m [Yuma Uchiumi](https://yumaloop.github.io/about/), a data science analyst in a consulting company. I was born on December 8, 1997 in Tokyo, Japan. My current interests are the algorithmic marketing and cognitive problems with human thinking.
+Hi, I’m Yuma Uchiumi ([@yumaloop](https://yumaloop.github.io/about/)), a graduate student majoring in computer science. I was born on December 8, 1997 in Tokyo, Japan. My research goal is to understand and implement the computation for human thinking; I study statistical algorithms, stochastic models, and information processing systems to solve the cognitive problems with human thinking.
 
-- {{< icon name="github" pack="fab" >}} {{< staticref "https://github.com/yumaloop" "newtab" >}}GitHub{{< /staticref >}}
-- {{< icon name="linkedin" pack="fab" >}} {{< staticref "https://www.linkedin.com/in/yuma-uchiumi-699398151" "newtab" >}}Linkedin{{< /staticref >}}
-- {{< icon name="spotify" pack="fab" >}} {{< staticref "https://open.spotify.com/user/xndo1nzh6y83p775etrktk2mv?si=s3ZU58pZTHKGt4aOfpwmKg&nd=1" "newtab" >}}Spotify{{< /staticref >}}
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/CV202011.pdf" "newtab" >}}resumé{{< /staticref >}}.

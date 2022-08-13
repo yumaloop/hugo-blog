@@ -1,21 +1,16 @@
 ---
 # An instance of the Experience widget.
 # Documentation: https://wowchemy.com/docs/page-builder/
-widget: experience
+# widget: experience
 
 # This file represents a page section.
 headless: true
 
 # Order that this section appears on the page.
-weight: 40
+# weight: 40 # whether showing this page or not
 
 title: Work Experience
 subtitle: >-
-    - <font color="MediumSlateBlue">Part-time Job / Intern</font><br>
-
-    - <font color="SteelBlue">Outsorcing Agreement</font><br>
-
-    - <font color="LightCoral">Others</font>
 
 # Date format for experience
 #   Refer to https://wowchemy.com/docs/customization/#date-format
@@ -76,4 +71,11 @@ experience:
     date_start: '2020-12-15'
     date_end: '2020-12-31'
     description: I formed a team with young technology consultants and considered what kind of data analysis method would be most suitable for solving the problems faced by companies and organizations.
+  - title: <font color="Black">Data Science Analyst</font>
+    company: Accenture PLC
+    company_url: 'https://www.accenture.com/jp-ja'
+    location: Tokyo, Japan
+    date_start: '2022-04-01'
+    date_end: ''
+    description: I am engaged in the Marketing Process Optimization and the Digital Transformation for my clients.
 ---

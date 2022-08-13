@@ -21,49 +21,64 @@ design:
   # Use a 1-column layout
   columns: "1"
 ---
-I'm Yuma Uchiumi, a graduate student majoring in computer science. 
-I was born on December 8, 1997 in Tokyo, Japan. 
-My research goal is to understand and implement the computation for human thinking;
-I study statistical algorithms, stochastic models, and information processing systems to solve the cognitive problems with human thinking.
+Hi, I’m Yuma Uchiumi, a data science analyst in a consulting company. I was born on December 8, 1997 in Tokyo, Japan. My current interests are the algorithmic marketing and cognitive problems with human thinking.
 &#x1f47b; &#x1f36d; &#x1f984; &#x1f308; &#x26c5; &#x2728;
-> <i>keywords: Statistics, Machine Learning, Cognitive Science, Perception, Multi-Agent System, Game Theory<br></i>
-
-<br>
+> <i>keywords: Statistical Modeling, Machine Learning, Algorithmic Marketing, Marketing Science, Cognitive Science<br></i>
 
 ### Education
 
-- MSc in Computer Science (Apr. 2020 - Mar. 2022), Center for Information & Computer Science, School of Science for Open and Environmental Systems, Graduate School of Science and Technology, Keio University, Japan. [(Link)](https://www.st.keio.ac.jp/en/departments/open/info.html)
-- BSc in Computer Science (Apr. 2016 - Mar. 2020), Department of Information & Computer Science, Faculty of Science and Technology, Keio University, Japan. [(Link)](https://www.st.keio.ac.jp/en/departments/faculty/ics.html)
-
-<br>
+- MS in Computer Science (Apr. 2020 - Mar. 2022), Center for Information & Computer Science, School of Science for Open and Environmental Systems, Graduate School of Science and Technology, Keio University, Japan. [(Link)](https://www.st.keio.ac.jp/en/departments/open/info.html)
+- BE in Computer Science (Apr. 2016 - Mar. 2020), Department of Information & Computer Science, Faculty of Science and Technology, Keio University, Japan. [(Link)](https://www.st.keio.ac.jp/en/departments/faculty/ics.html)
 
 ### Publications
 
-###### <font color="gray"><i class="fas fa-caret-right"></i> International Conference</font>
+##### <font color="dimgray">International Conference</font>
 
-1. Yuma Uchiumi, Yuki Abe, Michita Imai,
-"Disentangled Motion Representation Learning for Video Encoding and Generation",
-2021 International Symposium on Intelligent Unmanned Systems and Artificial Intelligence (SIUSAI 2021), April 19-21, 2021, Singapore. (Best Student Paper)
+1. Yuma Uchiumi, Yuki Abe, Michita Imai.
+<i>Disentangled Motion Representation Learning for Video Encoding and Generation</i>.
+2021 International Symposium on Intelligent Unmanned Systems and Artificial Intelligence (SIUSAI 2021). April 19-21, 2021. Singapore. (Best Student Paper)
 
-###### <font color="gray"><i class="fas fa-caret-right"></i> Domestic Conference (Japan)</font>
+##### <font color="dimgray">Domestic Conference (Japan)</font>
 
-1. Yuma Uchiumi, Yosuke Fukuchi, Mitsuhiko Kimoto, Michita Imai,
-"A Top-down Penetration to the Visual Attention via Elimination of the Ambiguity",
-The 35th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI 2021), Jun. 8-11, 2021, Virtual Conference.
-1. Yuma Uchiumi, Michita Imai,
-"A Computation of Visual Attentions on the Stochastic Model Using the Fisher Information Matrix",
-The 30th Annual Conference of the Japanese Neural Network Society (JNNS 2020), Dec. 2-5, 2020, Virtual Conference.
-[(PDF)](https://drive.google.com/file/d/1slhR-bAkC3M1dUPb6Aaw5tF1alxQ-sMo/view?usp=sharing)
-1. Yuma Uchiumi, Yuki Abe, Takuma Seno, Michita Imai,
-"Unsupervised Motion Feature Extraction in Video via Bi-directional GAN",
-The 34th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI 2020), Jun. 9-12, 2020, Virtual Conference.
-[(PDF)](https://www.jstage.jst.go.jp/article/pjsai/JSAI2020/0/JSAI2020_1I5GS204/_pdf/-char/ja)
-1. Yuma Uchiumi, Yuki Abe, Takuma Seno, Michita Imai,
-"Motion Disentangled Bidirectional GAN",
-Human-Agent Interaction Symposium 2020, Mar. 6-7, 2020, Virtual Conference.
-[(PDF)](http://hai-conference.net/symp2020/proceedings/pdf/P-9.pdf)
+1. Yuma Uchiumi, Yosuke Fukuchi, Mitsuhiko Kimoto, Michita Imai.
+<i>A Top-down Penetration to the Visual Attention via Elimination of the Ambiguity</i>.
+The 35th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI 2021). Jun. 8-11, 2021. Virtual Conference.
+1. Yuma Uchiumi, Michita Imai.
+<i>A Computation of Visual Attentions on the Stochastic Model Using the Fisher Information Matrix</i>.
+The 30th Annual Conference of the Japanese Neural Network Society (JNNS 2020). Dec. 2-5, 2020. Virtual Conference.
+1. Yuma Uchiumi, Yuki Abe, Takuma Seno, Michita Imai.
+<i>Unsupervised Motion Feature Extraction in Video via Bi-directional GAN</i>.
+The 34th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI 2020). Jun. 9-12, 2020. Virtual Conference.
+1. Yuma Uchiumi, Yuki Abe, Takuma Seno, Michita Imai.
+<i>Motion Disentangled Bidirectional GAN</i>
+Human-Agent Interaction Symposium (HAIS 2020). Mar. 6-7, 2020. Virtual Conference.
 
-<br>
+##### <font color="dimgray">Theses</font>
+
+1. Yuma Uchiumi. (2022). <i>Dynamic Cognitive Models for the Temporal Evolution of Interpretation Results in the Visual Disambiguation</i>. Master's thesis. Graduate School of Science and Technology, Keio University.
+1. Yuma Uchiumi. (2020). <i>Disentangled Motion Representation Learning for Video Encoding and Generation</i>. Bachelor’s thesis. Department of Information & Computer Science, Keio University.
+
+### Work Experience
+
+##### <font color="dimgray">Full-time Job</font>
+
+* Data Science Analyst, Accenture Strategy & Consulting. (Apr. 2022 - Present)
+  <br>I am engaged in the Marketing Process Optimization and the Digital Transformation for my clients.
+
+##### <font color="dimgray">Part-time Job</font>
+
+* Teaching Assistant, Keio University. (Oct. 2020 – Jan. 2021)
+  <br>I was TA on a class for the real-time robot control using the physics simulator CopperiaSim in Fall semester 2020.
+* Summer Intern in Data Engineering, Yahoo Japan Co., Ltd. (Aug. 2020 – Sep. 2020)
+  <br>I worked in bigdata analysis at the Finance Office Headquarters Development Division DD Room. I conducted an association analysis on log data on the Web and proposed some marketing measures.
+* Data Science Intern, DATAWISE, inc. (Apr. 2020 – Dec. 2020)
+  <br>I worked on analyzing the GPS data of mobile phone users in data science team. Specifically, I worked on improving the algorithm that estimates the total population from location data of NTT docomo users, crawling and batch processing public data, and building backend apps on GCP.
+* R&D Intern, ARAYA, inc. (Jul. 2018 – Mar. 2020)
+  <br>I was engaged in the R&D project for the computational cost of the Deep Neural Nets. I’ve surveyed related papers and conducted some PoC implementations and experiments on it.
+
+##### <font color="dimgray">Others</font>
+
+* PwC Analytics Hackathon, PwC Japan Group (Dec. 2020)
 
 ### Technical Skills
 
@@ -76,3 +91,30 @@ Human-Agent Interaction Symposium 2020, Mar. 6-7, 2020, Virtual Conference.
 * Cloud Services:
   - AWS (EC2, S3, Lambda, Amplify, Sagemaker).
   - GCP (ComputeEngine, CloudFunctions, CloudStrage, BigQuerty, AppScript).
+
+### Qualifications
+
+* Grade 1, Applied statistics (Natural Science) - Japan Statistical Society Certificate. Japan Statistical Society (JSC). Dec. 2019.
+* Big Data Analysis with Scala and Spark - Coursera.org (EPFL). Jun. 2022. 8B2PDQVPPQSP.
+* Scaling Python for Data Scientist - DataCamp. May. 2022.
+
+### Personality
+
+* Top5 of Clifton Strengths - "Strategic", "Learner", "Ideation", "Individualization", "Analytical". (2022)
+* GlobeSmart Profile - "Independent", "Egalitarian", "Certainty-oriented", "Direct", "Task-oriented". (2022)
+* MBTI - INTP-A Type; "Introverted", "Intuitive", "Thinking", "Perceiving". (2022)
+
+### Social Links
+* <i class="fab fa-facebook"></i> Facebook: [yumauchiumi](https://www.facebook.com/yumauchiumi)
+* <i class="fab fa-instagram"></i> Instagram: [uchiumiyuma](https://www.instagram.com/uchiumiyuma)
+* <i class="fab fa-twitter"></i> Twitter: [@yumaloop](https://twitter.com/yumaloop)
+* <i class="fab fa-linkedin"></i> Linkedin: [yuma-uchiumi-699398151](https://www.linkedin.com/in/yuma-uchiumi-699398151/)
+* <i class="fab fa-medium"></i> Medium: [@yumaloop](https://medium.com/@yumaloop)
+* <i class="fab fa-github"></i> Github: [@yumaloop](https://github.com/yumaloop)
+* <i class="fab fa-kaggle"></i> Kaggle: [@yumaloop](https://www.kaggle.com/yumaloop)
+* <i class="fab fa-hackerrank"></i> HackerRank: [@yumaloop](https://www.hackerrank.com/yumaloop?hr_r=1)
+* <i class="fab fa-spotify"></i> Spotify: [xndo1nzh6y83p775etrktk2mv](https://open.spotify.com/user/xndo1nzh6y83p775etrktk2mv?si=s3ZU58pZTHKGt4aOfpwmKg)
+* <i class="fab fa-500px"></i> 500px: [@yumaloop](https://500px.com/yumaloop)
+* <i class="far fa-folder"></i> Hatena Blog: [yul.hatenablog.com](https://yul.hatenablog.com/archive)
+* <i class="far fa-sticky-note"></i> Qitta: [@yumaloop](https://qiita.com/yumaloop)
+* <i class="far fa-file"></i> Wantedly: [users/18935801](https://www.wantedly.com/users/18935801)
