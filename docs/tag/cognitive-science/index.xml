@@ -5,7 +5,7 @@
     <link>https://yumaloop.github.io/tag/cognitive-science/</link>
       <atom:link href="https://yumaloop.github.io/tag/cognitive-science/index.xml" rel="self" type="application/rss+xml" />
     <description>Cognitive Science</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2021</copyright><lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2022</copyright><lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yumaloop.github.io/media/static/media/icon.png</url>
       <title>Cognitive Science</title>
@@ -59,7 +59,7 @@ $$&lt;/p&gt;
 &lt;h3 id=&#34;training-the-model--deriving-the-ambiguity&#34;&gt;Training the Model &amp;amp; Deriving the Ambiguity&lt;/h3&gt;
 &lt;p&gt;First of all, we trained the ResNet-50 as the image classification model $f:$&lt;/p&gt;
 &lt;p&gt;$$
-X \in \mathbb{R}^{H \times W \times C} \to Y \in \{\text{duck}, \text{rabbit}, \text{dummy}\}
+X \in \mathbb{R}^{H \times W \times C} \to Y \in \{\text{duck}, \text{rabbit}, \text{others}\}
 $$&lt;/p&gt;
 &lt;p&gt;on the Google Open Image Dataset.
 Then,
