@@ -1,5 +1,52 @@
 # hugo-blog
 
+## Depoly
+
+```
+$ hugo
+hugo: downloading modules …
+hugo: collected modules in 4605 ms
+Start building sites …
+
+                   | EN
+-------------------+------
+  Pages            | 116
+  Paginator pages  |   4
+  Non-page files   |  12
+  Static files     |   7
+  Processed images |  12
+  Aliases          |  39
+  Sitemaps         |   1
+  Cleaned          |   0
+
+Total in 5543 ms
+```
+
+```
+$ hugo server
+Start building sites …
+
+                   | EN
+-------------------+------
+  Pages            | 116
+  Paginator pages  |   4
+  Non-page files   |  12
+  Static files     |   7
+  Processed images |  10
+  Aliases          |  39
+  Sitemaps         |   1
+  Cleaned          |   0
+
+Built in 561 ms
+Watching for changes in /Users/xxxx/xxxx/yumaloop.github.io/{assets,content,data,static}
+Watching for config changes in /Users/xxxx/xxxx/yumaloop.github.io/config.toml, /Users/xxxx/xxxx/yumaloop.github.io/config/_default, /Users/xxxx/xxxx/yumaloop.github.io/go.mod
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+```
+
 ## Debug log
 
 ### Homebrew (on MacOS)
