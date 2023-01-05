@@ -53,12 +53,22 @@ Press Ctrl+C to stop
 
 ## Debug log
 
-### Homebrew (on MacOS)
+### Install Hugo
 
+- Homebrew (on MacOS)
 ```
 $ brew update
 $ brew upgrade
+$ brew install hugo
 $ brew cleanup # <-- too heavy to run
+```
+
+- apt (on Ubuntu/WSL2)
+
+```
+$ sudo apt update -y
+$ sudo apt upgrade -y
+$ sudo apt install hugo -y
 ```
 
 ### Hugo
