@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Env | Yuma Uchiumi</title>
-    <link>https://yumaloop.github.io/tag/env/</link>
-      <atom:link href="https://yumaloop.github.io/tag/env/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yumauchiumi.com/tag/env/</link>
+      <atom:link href="https://yumauchiumi.com/tag/env/index.xml" rel="self" type="application/rss+xml" />
     <description>Env</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2023</copyright><lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://yumaloop.github.io/media/static/media/icon.png</url>
+      <url>https://yumauchiumi.com/media/static/media/icon.png</url>
       <title>Env</title>
-      <link>https://yumaloop.github.io/tag/env/</link>
+      <link>https://yumauchiumi.com/tag/env/</link>
     </image>
     
     <item>
       <title>Setting up a GPU machine for Machine Learning</title>
-      <link>https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/</link>
+      <link>https://yumauchiumi.com/post/2020-01-16-setup-gpu-machine-for-ml/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/</guid>
+      <guid>https://yumauchiumi.com/post/2020-01-16-setup-gpu-machine-for-ml/</guid>
       <description>&lt;div class=&#39;pixels-photo&#39;&gt;
 &lt;a href=&#39;https://500px.com/photo/1020504822/PicosDeEuropa-by-Kapan-Tay&#39; alt=&#39;Picos_De_Europa by Kapan Tay on 500px.com&#39;&gt;
   &lt;img src=&#39;https://drscdn.500px.org/photo/1020504822/m%3D900/v2?sig=e8cd1e4a2a70e4a800399c2bfba893fceb8d54699dcaf0ed8a62e1e9979c3f02&#39; alt=&#39;Picos_De_Europa by Kapan Tay on 500px.com&#39; /&gt;

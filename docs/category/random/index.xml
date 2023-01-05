@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Random | Yuma Uchiumi</title>
-    <link>https://yumaloop.github.io/category/random/</link>
-      <atom:link href="https://yumaloop.github.io/category/random/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yumauchiumi.com/category/random/</link>
+      <atom:link href="https://yumauchiumi.com/category/random/index.xml" rel="self" type="application/rss+xml" />
     <description>Random</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2023</copyright><lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://yumaloop.github.io/media/static/media/icon.png</url>
+      <url>https://yumauchiumi.com/media/static/media/icon.png</url>
       <title>Random</title>
-      <link>https://yumaloop.github.io/category/random/</link>
+      <link>https://yumauchiumi.com/category/random/</link>
     </image>
     
     <item>
       <title>Tencent&#39;s Strategy for the ACG and the Impact on Japan</title>
-      <link>https://yumaloop.github.io/post/2020-06-10-tencent-acg/</link>
+      <link>https://yumauchiumi.com/post/2020-06-10-tencent-acg/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-06-10-tencent-acg/</guid>
+      <guid>https://yumauchiumi.com/post/2020-06-10-tencent-acg/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iZYT.usmZYtc/v0/740x-1.jpg&#34; alt=&#34;img000&#34; title=&#34;img000&#34;&gt;&lt;/p&gt;
 &lt;p&gt;中国のTencentが日本のACG(Anime, Comics, Game)産業へ大きな関心を寄せているらしい．
 すなわち，コンソールゲームの制作とヒットシリーズのフランチャイズに関する日本の専門知識を吸収しながら，
@@ -27,9 +27,9 @@
     
     <item>
       <title>Setting up a GPU machine for Machine Learning</title>
-      <link>https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/</link>
+      <link>https://yumauchiumi.com/post/2020-01-16-setup-gpu-machine-for-ml/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-01-16-setup-gpu-machine-for-ml/</guid>
+      <guid>https://yumauchiumi.com/post/2020-01-16-setup-gpu-machine-for-ml/</guid>
       <description>&lt;div class=&#39;pixels-photo&#39;&gt;
 &lt;a href=&#39;https://500px.com/photo/1020504822/PicosDeEuropa-by-Kapan-Tay&#39; alt=&#39;Picos_De_Europa by Kapan Tay on 500px.com&#39;&gt;
   &lt;img src=&#39;https://drscdn.500px.org/photo/1020504822/m%3D900/v2?sig=e8cd1e4a2a70e4a800399c2bfba893fceb8d54699dcaf0ed8a62e1e9979c3f02&#39; alt=&#39;Picos_De_Europa by Kapan Tay on 500px.com&#39; /&gt;
@@ -399,9 +399,9 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
     
     <item>
       <title>Whiteside&#39;s Outline Method</title>
-      <link>https://yumaloop.github.io/post/2019-11-25-whitesides_outline_method/</link>
+      <link>https://yumauchiumi.com/post/2019-11-25-whitesides_outline_method/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2019-11-25-whitesides_outline_method/</guid>
+      <guid>https://yumauchiumi.com/post/2019-11-25-whitesides_outline_method/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://gmwgroup.harvard.edu/people/george-m-whitesides&#34;&gt;Prof. George M. Whitesides&lt;/a&gt; is a top-level researcher on chemistry and also known as one of the highest h-index researchers in the world. He explains his unique writing techniques called Outline Method in the article, &lt;a href=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34;&gt;&amp;ldquo;Whitesides&#39; Group: Writing a Paper&amp;rdquo;&lt;/a&gt;. I&amp;rsquo;ve translated that into Japanese and publish it here.&lt;/p&gt;
 &lt;h2 id=&#34;original-paper&#34;&gt;Original paper&lt;/h2&gt;
 &lt;object data=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;800px&#34;&gt;
@@ -421,9 +421,9 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
     
     <item>
       <title>Automatically Login to keio.jp using Selenium on Python</title>
-      <link>https://yumaloop.github.io/post/2019-06-21-keiojp-auto-login/</link>
+      <link>https://yumauchiumi.com/post/2019-06-21-keiojp-auto-login/</link>
       <pubDate>Fri, 21 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2019-06-21-keiojp-auto-login/</guid>
+      <guid>https://yumauchiumi.com/post/2019-06-21-keiojp-auto-login/</guid>
       <description>&lt;p&gt;Have you ever want to login to keio.jp automatically? Don&amp;rsquo;t you think it is cool? At least I think so and I write down the way to achieve that with Python.&lt;/p&gt;
 &lt;br&gt;
 &lt;div style=&#34;text-align:center&#34;&gt;

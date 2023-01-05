@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>StatML | Yuma Uchiumi</title>
-    <link>https://yumaloop.github.io/category/statml/</link>
-      <atom:link href="https://yumaloop.github.io/category/statml/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yumauchiumi.com/category/statml/</link>
+      <atom:link href="https://yumauchiumi.com/category/statml/index.xml" rel="self" type="application/rss+xml" />
     <description>StatML</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2023</copyright><lastBuildDate>Fri, 24 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://yumaloop.github.io/media/static/media/icon.png</url>
+      <url>https://yumauchiumi.com/media/static/media/icon.png</url>
       <title>StatML</title>
-      <link>https://yumaloop.github.io/category/statml/</link>
+      <link>https://yumauchiumi.com/category/statml/</link>
     </image>
     
     <item>
       <title>Time-steady States on Systems</title>
-      <link>https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/</link>
+      <link>https://yumauchiumi.com/post/2020-04-24-time-steady-state-on-system/</link>
       <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-04-24-time-steady-state-on-system/</guid>
+      <guid>https://yumauchiumi.com/post/2020-04-24-time-steady-state-on-system/</guid>
       <description>&lt;h3 id=&#34;システムと定常状態&#34;&gt;システムと定常状態&lt;/h3&gt;
 &lt;p&gt;多くの動的モデル（Dynamic Model-System）は，定常状態（time-steady state）に至ることを目的として設計される．ここで，定常状態とは，「ある変数$X$に作用する，何らかの時変量（parameter $\theta_t$）や関数$L_t(x; \theta)$）が一定値に収束すること」と定義しておく．&lt;/p&gt;
 &lt;p&gt;そして，着目している動的モデルが定常状態に至るプロセスは，システム同定（System identification）と呼ばれ，定常状態を示した概念として，均衡（equilibrium）や平衡（balance）と呼ばれる用語が使われる．&lt;/p&gt;
@@ -130,9 +130,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>State Space Model &amp; Particle Filter</title>
-      <link>https://yumaloop.github.io/post/2020-03-18-particle_filter/</link>
+      <link>https://yumauchiumi.com/post/2020-03-18-particle_filter/</link>
       <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-03-18-particle_filter/</guid>
+      <guid>https://yumauchiumi.com/post/2020-03-18-particle_filter/</guid>
       <description>&lt;div class=&#39;pixels-photo&#39;&gt;
 &lt;a href=&#39;https://500px.com/photo/80813059/Flow-of-Time-by-Jimin--Jacob&#39; alt=&#39;Flow of Time... by Jimin  Jacob on 500px.com&#39;&gt;
   &lt;img src=&#39;https://drscdn.500px.org/photo/80813059/m%3D900/v2?sig=9c99293070333accc348ef432437c6c0eeb6b87f5d14199485cae5d51d92e3db&#39; alt=&#39;Flow of Time... by Jimin  Jacob on 500px.com&#39; /&gt;
@@ -205,9 +205,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>Free energy and Bayes inference</title>
-      <link>https://yumaloop.github.io/post/2020-03-10-free_energy_on_bayes_inference/</link>
+      <link>https://yumauchiumi.com/post/2020-03-10-free_energy_on_bayes_inference/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-03-10-free_energy_on_bayes_inference/</guid>
+      <guid>https://yumauchiumi.com/post/2020-03-10-free_energy_on_bayes_inference/</guid>
       <description>&lt;h3 id=&#34;平均場近似と自由エネルギー&#34;&gt;平均場近似と自由エネルギー&lt;/h3&gt;
 &lt;p&gt;ある変数$X$のとりうるすべての状態(実現値)$x$に対して，何らかのエネルギー関数$\phi(x)$が与えられたとする．このとき，変数$X$のGibbs分布（Boltzmann分布）:&lt;/p&gt;
 &lt;p&gt;$$
@@ -346,9 +346,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>Deriving ELBO</title>
-      <link>https://yumaloop.github.io/post/2020-02-24-deriving-elbo/</link>
+      <link>https://yumauchiumi.com/post/2020-02-24-deriving-elbo/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-02-24-deriving-elbo/</guid>
+      <guid>https://yumauchiumi.com/post/2020-02-24-deriving-elbo/</guid>
       <description>&lt;div class=&#39;pixels-photo&#39;&gt;
 &lt;a href=&#39;https://500px.com/photo/1020528836/Untitled-by-Vladimir-Maric&#39; alt=&#39;Untitled by Vladimir Maric on 500px.com&#39;&gt;
   &lt;img src=&#39;https://drscdn.500px.org/photo/1020528836/m%3D900/v2?sig=9c4001aaf8730c97353ae102428c6bc64818166778d359c4979d17eb42cf809d&#39; alt=&#39;Untitled by Vladimir Maric on 500px.com&#39; /&gt;
@@ -411,9 +411,9 @@ $$
     
     <item>
       <title>Counterfactual Regret Minimization</title>
-      <link>https://yumaloop.github.io/post/2020-02-10-counterfactual-regret-minimization/</link>
+      <link>https://yumauchiumi.com/post/2020-02-10-counterfactual-regret-minimization/</link>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-02-10-counterfactual-regret-minimization/</guid>
+      <guid>https://yumauchiumi.com/post/2020-02-10-counterfactual-regret-minimization/</guid>
       <description>&lt;p&gt;In this post, I introduce you the Counterfactual Regret Minimization (CFR Algorithm). It is mainly used for the algorithm to figure out the optimal strategy of a extensive-form game with incomplete information such as Poker and Mahjong.&lt;/p&gt;
 &lt;h3 id=&#34;extensive-form-game&#34;&gt;Extensive-form Game&lt;/h3&gt;
 &lt;ul&gt;
@@ -778,9 +778,9 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     
     <item>
       <title>EM Algorithm</title>
-      <link>https://yumaloop.github.io/post/2019-09-25-em-algorithm/</link>
+      <link>https://yumauchiumi.com/post/2019-09-25-em-algorithm/</link>
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2019-09-25-em-algorithm/</guid>
+      <guid>https://yumauchiumi.com/post/2019-09-25-em-algorithm/</guid>
       <description>&lt;div class=&#39;pixels-photo&#39;&gt;
 &lt;a href=&#39;https://500px.com/photo/1002517180/The-algorithm-by-Luca-Rovatti&#39; alt=&#39;The algorithm... by Luca Rovatti on 500px.com&#39;&gt;
   &lt;img src=&#39;https://drscdn.500px.org/photo/1002517180/m%3D900/v2?sig=038077982809b60781286b9e0d94cd3b5dd1dba4a97d80d27302a7829d340618&#39; alt=&#39;The algorithm... by Luca Rovatti on 500px.com&#39; /&gt;
@@ -912,9 +912,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>Kullback-Leibler Divergence</title>
-      <link>https://yumaloop.github.io/post/2018-04-19-kl-divergence/</link>
+      <link>https://yumauchiumi.com/post/2018-04-19-kl-divergence/</link>
       <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2018-04-19-kl-divergence/</guid>
+      <guid>https://yumauchiumi.com/post/2018-04-19-kl-divergence/</guid>
       <description>&lt;p&gt;KL-divergence frequently appears in many fields such as statistics and information theory. It is defined as the &lt;strong&gt;expected value&lt;/strong&gt; of &lt;strong&gt;logarithmic&lt;/strong&gt; transformation of &lt;strong&gt;likelihood ratio&lt;/strong&gt;. Note that:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;expected value: weighted integration with probability density.&lt;/li&gt;

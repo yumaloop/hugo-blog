@@ -47,6 +47,10 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
+## DNS settings
+
+- See https://docs.github.com/ja/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+
 ## Debug log
 
 ### Homebrew (on MacOS)

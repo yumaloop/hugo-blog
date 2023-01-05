@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Finance | Yuma Uchiumi</title>
-    <link>https://yumaloop.github.io/category/finance/</link>
-      <atom:link href="https://yumaloop.github.io/category/finance/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yumauchiumi.com/category/finance/</link>
+      <atom:link href="https://yumauchiumi.com/category/finance/index.xml" rel="self" type="application/rss+xml" />
     <description>Finance</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2023</copyright><lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://yumaloop.github.io/media/static/media/icon.png</url>
+      <url>https://yumauchiumi.com/media/static/media/icon.png</url>
       <title>Finance</title>
-      <link>https://yumaloop.github.io/category/finance/</link>
+      <link>https://yumauchiumi.com/category/finance/</link>
     </image>
     
     <item>
       <title>Monte Carlo Simulation of Black-Scholes Option Pricing Model</title>
-      <link>https://yumaloop.github.io/post/2020-11-25-monte-carlo-sim-bsoption-r/</link>
+      <link>https://yumauchiumi.com/post/2020-11-25-monte-carlo-sim-bsoption-r/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-11-25-monte-carlo-sim-bsoption-r/</guid>
+      <guid>https://yumauchiumi.com/post/2020-11-25-monte-carlo-sim-bsoption-r/</guid>
       <description>&lt;p&gt;幾何ブラウン運動のサンプルパスを生成することにより，株価が幾何ブラウン運動にしたがう場合のコールオプション価格をモンテカルロシミュレーションにより導出し，サンプルパスの生成回数を増やすことで理論値に収束することをプロットにより確認する．&lt;/p&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;1-コールオプションの価格理論&#34;&gt;1. コールオプションの価格理論&lt;/h2&gt;
@@ -164,9 +164,9 @@ BS式による理論価格83.1821に漸近している．&lt;/p&gt;
     
     <item>
       <title>Basic Portfolio Optimization with Python: Markowitz&#39;s Mean-Variance Model</title>
-      <link>https://yumaloop.github.io/post/2020-11-12-portfolio-optimization-by-python/</link>
+      <link>https://yumauchiumi.com/post/2020-11-12-portfolio-optimization-by-python/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-11-12-portfolio-optimization-by-python/</guid>
+      <guid>https://yumauchiumi.com/post/2020-11-12-portfolio-optimization-by-python/</guid>
       <description>&lt;p&gt;Pythonでbacktestする際のTipsをまとめたものです．面倒な前処理をさくっと終わらせてモデル作りに専念しましょう！という主旨です．記事では紹介していませんが，&lt;code&gt;pandas-datareader&lt;/code&gt;でマクロデータもだいたい取れるので，複数因子モデルなど，さまざまなポートフォリオ選択モデルを試すことができます．&lt;/p&gt;
 &lt;font color=&#34;gray&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Overview:&lt;/strong&gt;&lt;/p&gt;
@@ -773,9 +773,9 @@ plt.show()
     
     <item>
       <title>Recursion of the Capital</title>
-      <link>https://yumaloop.github.io/post/2020-06-11-recurrent-structure-in-capita/</link>
+      <link>https://yumauchiumi.com/post/2020-06-11-recurrent-structure-in-capita/</link>
       <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-06-11-recurrent-structure-in-capita/</guid>
+      <guid>https://yumauchiumi.com/post/2020-06-11-recurrent-structure-in-capita/</guid>
       <description>&lt;div class=&#39;pixels-photo&#39;&gt;
 &lt;a href=&#39;https://500px.com/photo/1013781606/The-glare-of-empty-square-by-Sara-Biljana-Gaon&#39; alt=&#39;The glare of empty square by Sara Biljana Gaon on 500px.com&#39;&gt;
   &lt;img src=&#39;https://drscdn.500px.org/photo/1013781606/m%3D900/v2?sig=8fbfac0615a131ce9fe97ebac12eca86ca0e9b9eec82ba6b4fa68ce6da3cfc07&#39; alt=&#39;The glare of empty square by Sara Biljana Gaon on 500px.com&#39; style=&#34;width: 40vw; min-width: 330px;&#34; /&gt;
@@ -858,9 +858,9 @@ The services with more registrants/subscribers tend to have more registrants/sub
     
     <item>
       <title>Tencent&#39;s Strategy for the ACG and the Impact on Japan</title>
-      <link>https://yumaloop.github.io/post/2020-06-10-tencent-acg/</link>
+      <link>https://yumauchiumi.com/post/2020-06-10-tencent-acg/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-06-10-tencent-acg/</guid>
+      <guid>https://yumauchiumi.com/post/2020-06-10-tencent-acg/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iZYT.usmZYtc/v0/740x-1.jpg&#34; alt=&#34;img000&#34; title=&#34;img000&#34;&gt;&lt;/p&gt;
 &lt;p&gt;中国のTencentが日本のACG(Anime, Comics, Game)産業へ大きな関心を寄せているらしい．
 すなわち，コンソールゲームの制作とヒットシリーズのフランチャイズに関する日本の専門知識を吸収しながら，
@@ -871,9 +871,9 @@ The services with more registrants/subscribers tend to have more registrants/sub
     
     <item>
       <title>United States Macroeconomic History</title>
-      <link>https://yumaloop.github.io/post/2020-05-29-history_of_us_macro_economy/</link>
+      <link>https://yumauchiumi.com/post/2020-05-29-history_of_us_macro_economy/</link>
       <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-05-29-history_of_us_macro_economy/</guid>
+      <guid>https://yumauchiumi.com/post/2020-05-29-history_of_us_macro_economy/</guid>
       <description>&lt;p&gt;2020年05月現在，コロナショックで，景気後退が予測されている．
 S&amp;amp;P 500 YTDをみると，2018年・2019年と比較しても低調だ．&lt;/p&gt;
 &lt;p&gt;アメリカ株は予想に反して高い水準を維持しているが，6月以降の統計結果によっては落ち込む可能性も高い．このポストでは，アメリカのマクロ経済史を振り返り,2021年以降のアメリカ経済について考えてみたい．&lt;/p&gt;
@@ -1028,9 +1028,9 @@ Source: &lt;a href=&#34;https://www.macrotrends.net/2526/sp-500-historical-annua
     
     <item>
       <title>A Capitalist&#39;s Game</title>
-      <link>https://yumaloop.github.io/post/2020-04-05-adaptation-strategies-for-capitalism/</link>
+      <link>https://yumauchiumi.com/post/2020-04-05-adaptation-strategies-for-capitalism/</link>
       <pubDate>Fri, 21 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://yumaloop.github.io/post/2020-04-05-adaptation-strategies-for-capitalism/</guid>
+      <guid>https://yumauchiumi.com/post/2020-04-05-adaptation-strategies-for-capitalism/</guid>
       <description>&lt;div class=&#39;pixels-photo&#39;&gt;
 &lt;a href=&#39;https://500px.com/photo/111743009/Frankfurt-Facades-by-Ingo-Juergens&#39; alt=&#39;Frankfurt Facades by Ingo Juergens on 500px.com&#39;&gt;
   &lt;img src=&#39;https://drscdn.500px.org/photo/111743009/m%3D900/v2?sig=01f0547db1460ab77c620ba8181bf7d5ac38c2816f1aa262a9f543309c896823&#39; alt=&#39;Frankfurt Facades by Ingo Juergens on 500px.com&#39; /&gt;

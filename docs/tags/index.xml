@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Yuma Uchiumi</title>
-    <link>https://yumaloop.github.io/tags/</link>
-      <atom:link href="https://yumaloop.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yumauchiumi.com/tags/</link>
+      <atom:link href="https://yumauchiumi.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2023</copyright><lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://yumaloop.github.io/media/static/media/icon.png</url>
+      <url>https://yumauchiumi.com/media/static/media/icon.png</url>
       <title>Tags</title>
-      <link>https://yumaloop.github.io/tags/</link>
+      <link>https://yumauchiumi.com/tags/</link>
     </image>
     
   </channel>
