@@ -259,8 +259,8 @@
   
 
   <link rel="manifest" href="https://yumauchiumi.com/index.webmanifest">
-  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="https://yumauchiumi.com/post/2020-02-24-deriving-elbo/">
 
@@ -329,7 +329,7 @@
     "name": "Yuma Uchiumi",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png"
+      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": "Evidence Lower Bound (ELBO) is widely used in variational inference. Recently, according to the massive success of DeepLearning and related models, variational inference (and its technic) gains exposure in the filed of representation learning."
@@ -675,13 +675,13 @@
 <p>$$
 \begin{aligned}
 (\text{Evidence})
-&amp;= \log p(x) \\<br>
-&amp;= \log \int_{Z} p(x,z) \\<br>
-&amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\<br>
-&amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\<br>
-&amp;= \log \mathbb{E}_{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\<br>
-&amp;\geq \mathbb{E}_{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\<br>
-&amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\<br>
+&amp;= \log p(x) \\
+&amp;= \log \int_{Z} p(x,z) \\
+&amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\
+&amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\
+&amp;= \log \mathbb{E}<em>{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\
+&amp;\geq \mathbb{E}</em>{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\
+&amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\
 &amp;= ELBO(q) ~~~ (\text{Evidence Lower Bound, ELBO})
 \end{aligned}
 $$</p>
@@ -696,7 +696,7 @@ $$</p>
 <p>$$
 \begin{aligned}
 D_{KL}( q(z) \vert\vert p(z \vert x) )
-&amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\<br>
+&amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\
 &amp;= - H_q(Z) - \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right]
 \end{aligned}
 $$</p>
@@ -704,10 +704,10 @@ $$</p>
 <p>$$
 \begin{align}
 ELBO
-&amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\<br>
-&amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\<br>
-&amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\<br>
-&amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\<br>
+&amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\
+&amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\
+&amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\
+&amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\
 &amp;= \log p(x) - D_{KL}( q(z) \vert\vert p(z \vert x) )
 \end{align}
 $$</p>
@@ -715,7 +715,7 @@ $$</p>
 <p>$$
 \begin{align}
 \underset{\theta}{\rm max} ~ \log p_{\theta}(x)
-&amp;= \underset{q}{\rm max} ~ ELBO(q) \\<br>
+&amp;= \underset{q}{\rm max} ~ ELBO(q) \\
 &amp;= \underset{q}{\rm min} ~ D_{KL}( q(z) \vert\vert p(z|x) )
 \end{align}
 $$

@@ -55,7 +55,7 @@
 &lt;p&gt;$$
 \begin{align}
 u_i(\sigma)
-&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\&lt;br&gt;
+&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\
 &amp;amp;= \sum_{h \in Z} u_i(h) \prod_{i \in N} \pi^{\sigma}_i(h)
 \end{align}
 $$
@@ -67,10 +67,10 @@ $$
 &lt;p&gt;$$
 \begin{aligned}
 u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N})
-&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\
 u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N})
-&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
-&amp;amp;~ \vdots \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\
+&amp;amp;~ \vdots \\
 u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N})
 &amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
 \end{aligned}
@@ -80,10 +80,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
-&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\
 u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
-&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
-&amp;amp;~ \vdots \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\
+&amp;amp;~ \vdots \\
 u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
 &amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
 \end{aligned}
@@ -95,8 +95,8 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;$$
 R_i^T
-:= \underset{\sigma_i^*}{\rm max} ~
-\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^*, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
+:= \underset{\sigma_i^&lt;em&gt;}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^&lt;/em&gt;, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
 $$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Average strategy for player $i$ from time $1$ to $T$：&lt;/li&gt;
@@ -104,7 +104,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \overline{\sigma}_i^t(I)(a)
-&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\&lt;br&gt;
+&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\
 &amp;amp;= \frac{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h) \cdot \sigma^t(h)(a)}{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h)}
 \end{align}
 $$&lt;/p&gt;
@@ -151,7 +151,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 R_i^T
-\leq \sum_{I \in \mathcal{I}_i} &amp;amp;R_{i,imm}^{T,+}(I) \\&lt;br&gt;
+\leq \sum_{I \in \mathcal{I}&lt;em&gt;i} &amp;amp;R&lt;/em&gt;{i,imm}^{T,+}(I) \\
 where ~~~
 &amp;amp;R_{i,imm}^{T, +}(I)
 := max(R_{i,imm}^{T}(I), 0)
@@ -159,7 +159,7 @@ where ~~~
 $$&lt;/p&gt;
 &lt;p&gt;So that, we obtain the sufficient condition of $R_{i,imm}^{T}(I)$  for the average strategy $\overline{\sigma}_i^t(I)(a)$ to become a Nash equilibrium strategy as below.&lt;/p&gt;
 &lt;p&gt;$$
-\sum_{I \in \mathcal{I}_i} R_{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
+\sum_{I \in \mathcal{I}&lt;em&gt;i} R&lt;/em&gt;{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
 $$&lt;/p&gt;
 &lt;p&gt;Now all we need is to minimize the immediate counterfactual regret  $R_{i,imm}^{T}(I)$.&lt;/p&gt;
 &lt;p&gt;In addition, as can be seen from the above formula, the computational complexity of the CFR algorithm depends on the number of information sets $I$. Also, to avoid the complete search of game tree (searching all information sets $I$), subsequent algorithms such as CFR + propose an abstraction of the game state.&lt;/p&gt;

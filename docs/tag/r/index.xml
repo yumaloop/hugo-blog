@@ -30,18 +30,18 @@ $$&lt;/p&gt;
 &lt;p&gt;の解で与えられているとする($S$は幾何ブラウン運動に従う)．時刻$t \in [0, T]$において，オプションの原資産価格$S_t$とオプションの行使価格$K$が与えられたとき，ブラック・ショールズ式によってオプションの理論価格$C(t, S_t)$は&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-C(t, S_t) &amp;amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\&lt;br&gt;
+C(t, S_t) &amp;amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\
 where ~~
-d_1 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}} \\&lt;br&gt;
+d_1 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}} \\
 d_2 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}}
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;となる．ただし，$r$は無リスク資産の利率，$\Phi$は標準正規分布$\mathcal{N}(0,1)の累積分布関数とする．ここで，簡単のために満期$T$を$1$とすると，現在($t=0$)のオプション価格の理論値は，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-C(0, S_0) &amp;amp;= S_0 \Phi(d_1) - K e^{-r} \Phi(d_2) \\&lt;br&gt;
+C(0, S_0) &amp;amp;= S_0 \Phi(d_1) - K e^{-r} \Phi(d_2) \\
 where ~~
-d_1 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right)}{\sigma } \\&lt;br&gt;
+d_1 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right)}{\sigma } \\
 d_2 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right)}{\sigma}
 \end{align}
 $$&lt;/p&gt;

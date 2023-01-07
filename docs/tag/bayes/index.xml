@@ -32,7 +32,7 @@ This model is effective if you consider a system having two different variables;
 &lt;p&gt;Equation of each state $x_t$ :&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x_{t+1} &amp;amp;= F(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+x_{t+1} &amp;amp;= F(x_t) ~~ (\text{Deterministic process}) \\
 x_{t+1} &amp;amp;\sim f(\cdot\vert x_t) ~~ (\text{Stochastic process})
 \end{aligned}
 $$&lt;/p&gt;
@@ -41,7 +41,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Equation of each observation $y_t$ :&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-y_t &amp;amp;= H(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+y_t &amp;amp;= H(x_t) ~~ (\text{Deterministic process}) \\
 y_t &amp;amp;\sim h(\cdot \vert x_t) ~~ (\text{Stochastic process})
 \end{aligned}
 $$&lt;/p&gt;
@@ -78,7 +78,7 @@ $$&lt;/p&gt;
 $$
 \begin{aligned}
 p(x_t \vert y_{1:t})
-&amp;amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\&lt;br&gt;
+&amp;amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\
 &amp;amp;\approx \sum_{i=1}^{M} \frac{}{\sum_{i=1}^{M} } \delta(x_t - \hat{x}^i_{t \vert t-1})
 \end{aligned}
 $$&lt;/p&gt;
@@ -111,9 +111,9 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 D_{KL}(q \vert\vert p)
-&amp;amp;= \beta \int_X q(x)\phi(x) - \left\{ - \int_X q(x)\log q(x) \right\} + \log \int_X \exp(-\beta \phi(x)) \\&lt;br&gt;
-&amp;amp;= \beta~ \mathbb{E}_{x \sim q}[\phi(x)] - H_q(X) + \log Z^{\phi}(\beta) \\&lt;br&gt;
-&amp;amp;= \beta~ (\text{Internal energy}) - (\text{Entropy}) + (\text{Const.}) \\&lt;br&gt;
+&amp;amp;= \beta \int_X q(x)\phi(x) - \left\{ - \int_X q(x)\log q(x) \right\} + \log \int_X \exp(-\beta \phi(x)) \\
+&amp;amp;= \beta~ \mathbb{E}_{x \sim q}[\phi(x)] - H_q(X) + \log Z^{\phi}(\beta) \\
+&amp;amp;= \beta~ (\text{Internal energy}) - (\text{Entropy}) + (\text{Const.}) \\
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;いま，近似分布$q(x)$に対する汎関数として，自由エネルギー:&lt;/p&gt;
@@ -156,7 +156,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$F^{\phi}(q)$の定義式で，$F = F^{\phi}(q)$，$U = \mathbb{E}_{x \sim q}[\phi(x)]$，$S = H_q(X)$とおけば，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-\beta F &amp;amp;= \beta U - S \\&lt;br&gt;
+\beta F &amp;amp;= \beta U - S \\
 F &amp;amp;= U - \frac{1}{\beta} S
 \end{aligned}
 $$&lt;/p&gt;
@@ -169,9 +169,9 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 (\text{Evidence})
-&amp;amp;= \log p(y) \\&lt;br&gt;
-&amp;amp;\geq \mathbb{E}_{\theta \sim q}\left[ \log p(y, \theta) \right] - \mathbb{E}_{\theta \sim q} \left[ \log q(\theta) \right] \\&lt;br&gt;
-&amp;amp;= \mathcal{L}_{ELBO}(q) \\&lt;br&gt;
+&amp;amp;= \log p(y) \\
+&amp;amp;\geq \mathbb{E}_{\theta \sim q}\left[ \log p(y, \theta) \right] - \mathbb{E}_{\theta \sim q} \left[ \log q(\theta) \right] \\
+&amp;amp;= \mathcal{L}_{ELBO}(q) \\
 &amp;amp;= (\text{Evidence Lower Bound})
 \end{align}
 $$&lt;/p&gt;
@@ -183,10 +183,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 (\text{Surprise})
-&amp;amp;= - \log p(y) \\&lt;br&gt;
-&amp;amp;\leq - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)] \\&lt;br&gt;
-&amp;amp;= -\mathcal{L}_{ELBO}(q) \\&lt;br&gt;
-&amp;amp;= F(y) \\&lt;br&gt;
+&amp;amp;= - \log p(y) \\
+&amp;amp;\leq - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)] \\
+&amp;amp;= -\mathcal{L}_{ELBO}(q) \\
+&amp;amp;= F(y) \\
 &amp;amp;= (\text{Free energy})
 \end{aligned}
 $$&lt;/p&gt;
@@ -194,7 +194,7 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.fil.ion.ucl.ac.uk/~karl/The%20free-energy%20principle%20-%20a%20rough%20guide%20to%20the%20brain.pdf&#34;&gt;FristonのCell論文(2009)&lt;/a&gt;にあるエージェントの行動$\alpha$や脳の内部状態$\mu$の更新式:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\alpha^{*} &amp;amp;= \underset{\alpha}{\rm argmin} ~ F(y) \\&lt;br&gt;
+\alpha^{*} &amp;amp;= \underset{\alpha}{\rm argmin} ~ F(y) \\
 \mu^{*} &amp;amp;= \underset{\mu}{\rm argmin} ~ F(y)
 \end{align}
 $$&lt;/p&gt;
@@ -245,13 +245,13 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 (\text{Evidence})
-&amp;amp;= \log p(x) \\&lt;br&gt;
-&amp;amp;= \log \int_{Z} p(x,z) \\&lt;br&gt;
-&amp;amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\&lt;br&gt;
-&amp;amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\&lt;br&gt;
-&amp;amp;= \log \mathbb{E}_{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
-&amp;amp;\geq \mathbb{E}_{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= \log p(x) \\
+&amp;amp;= \log \int_{Z} p(x,z) \\
+&amp;amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\
+&amp;amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\
+&amp;amp;= \log \mathbb{E}&lt;em&gt;{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\
+&amp;amp;\geq \mathbb{E}&lt;/em&gt;{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\
 &amp;amp;= ELBO(q) ~~~ (\text{Evidence Lower Bound, ELBO})
 \end{aligned}
 $$&lt;/p&gt;
@@ -266,7 +266,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 D_{KL}( q(z) \vert\vert p(z \vert x) )
-&amp;amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\&lt;br&gt;
+&amp;amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\
 &amp;amp;= - H_q(Z) - \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right]
 \end{aligned}
 $$&lt;/p&gt;
@@ -274,10 +274,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 ELBO
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
-&amp;amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\
+&amp;amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\
 &amp;amp;= \log p(x) - D_{KL}( q(z) \vert\vert p(z \vert x) )
 \end{align}
 $$&lt;/p&gt;
@@ -285,7 +285,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \underset{\theta}{\rm max} ~ \log p_{\theta}(x)
-&amp;amp;= \underset{q}{\rm max} ~ ELBO(q) \\&lt;br&gt;
+&amp;amp;= \underset{q}{\rm max} ~ ELBO(q) \\
 &amp;amp;= \underset{q}{\rm min} ~ D_{KL}( q(z) \vert\vert p(z|x) )
 \end{align}
 $$
@@ -375,7 +375,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 p(x_i | \theta)
-&amp;amp;= \int_{Z} p(x_i, z_i | \theta) ~ dz \&lt;br&gt;
+&amp;amp;= \int_{Z} p(x_i, z_i | \theta) ~ dz \
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;By using this formula, the estimated value of $\hat{\theta}_{MLE}$ can be obtained by approximating $p(x,z \vert \theta)$, the likelihood function of complete data $\{x, z\}$. The procedure to derive the estimated value of $\hat{\theta}_{MLE}$ is called EM algorithm because it is an iterative method that repeats E-step and M-step alternately.&lt;/p&gt;
@@ -517,7 +517,7 @@ D_{KL}( Q \mid\mid P )
 &lt;p&gt;Note that given two Gaussian distribution $p_1,p_2$ as&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-p_1(x) &amp;amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\&lt;br&gt;
+p_1(x) &amp;amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\
 p_2(x) &amp;amp;= \mathcal{N}(\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2 \pi \sigma_2^2}} \exp \left\{ - \frac{ {(x - \mu_2)}^2}{2 \sigma_2^2} \right\}
 \end{align}
 $$&lt;/p&gt;
@@ -525,7 +525,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 {D}_{KL}(p_1 \mid\mid p_2)
-&amp;amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\&lt;br&gt;
+&amp;amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\
 &amp;amp;= \log \frac{\sigma_2}{\sigma_1} + \frac{\sigma_1^2 + {( \mu_1 - \mu_2 )}^2}{2 \sigma_2^2} - \frac{1}{2}
 \end{align}
 $$&lt;/p&gt;
@@ -549,34 +549,34 @@ $$&lt;/p&gt;
 &lt;h4 id=&#34;21-kl-divergence-vs-mutual-information&#34;&gt;2.1 KL-divergence vs Mutual information&lt;/h4&gt;
 &lt;p&gt;　In information theory, entropy $H(X)$, join entropy $H(X,Y)$, conditional entropy $H(X \vert Y)$, mutual information $MI(X,Y)$ are defined as follows by using probability density $Pr()$&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;\begin{align}
-H(X)    &amp;amp;:= - \int Pr(x) \log Pr(x) ~dx \\&lt;br&gt;
-H(X,Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\&lt;br&gt;
-H(X|Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\&lt;br&gt;
+H(X)    &amp;amp;:= - \int Pr(x) \log Pr(x) ~dx \\
+H(X,Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\
+H(X|Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\
 MI(X,Y) &amp;amp;:= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy
 \end{align}&lt;/p&gt;
 &lt;p&gt;For any two random variable $X$ and $Y$, mutual information $MI(X, Y)$ specifies the mutual (symmetric) dependence between them.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_mutual_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;\begin{align}
-MI(X,Y) &amp;amp;= H(X) - H(X|Y)  \\&lt;br&gt;
-&amp;amp;= H(Y) - H(Y|X) \\&lt;br&gt;
+MI(X,Y) &amp;amp;= H(X) - H(X|Y)  \\
+&amp;amp;= H(Y) - H(Y|X) \\
 &amp;amp;= H(X) + H(Y) - H(X,Y)
 \end{align}&lt;/p&gt;
 &lt;p&gt;Here, the following relationship holds between KL-divergence and mutual information.&lt;/p&gt;
 &lt;p&gt;\begin{align}
 MI(X, Y)
-&amp;amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \bigl[ D_{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
+&amp;amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{Y} \bigl[ D&lt;/em&gt;{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \bigl[ D&lt;/em&gt;{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
 \end{align}&lt;/p&gt;
 &lt;p&gt;So that, mutual information $MI (X, Y)$ is interpreted as the degree of difference (average degree of deviation) between the joint distribution $Pr (x, y)$ when the $X$ and $Y$ are &lt;strong&gt;not independent&lt;/strong&gt; and the joint distribution $Pr (x) Pr (y)$ when $X$ and $Y$ are &lt;strong&gt;independent&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;（cf.）Formula transformation of mutual information:&lt;/p&gt;
 &lt;p&gt;\begin{align}
 MI(X,Y)
-&amp;amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
-&amp;amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
-&amp;amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\&lt;br&gt;
-&amp;amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
+&amp;amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\
+&amp;amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\
+&amp;amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\
+&amp;amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{Y} \bigl[ D&lt;/em&gt;{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
 \end{align}&lt;/p&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;22-kl-divergence-vs-log-likelihood-ratio&#34;&gt;2.2 KL-divergence vs Log likelihood ratio&lt;/h3&gt;
@@ -587,16 +587,16 @@ MI(X,Y)
 &lt;/ul&gt;
 &lt;p&gt;\begin{align}
 \left( \text{Log likelihood ratio} \right)
-&amp;amp;= \log \frac{q(x)}{p_{\theta}(x)} \\&lt;br&gt;
+&amp;amp;= \log \frac{q(x)}{p_{\theta}(x)} \\
 D_{KL}( q \mid\mid p_{\theta} )
-&amp;amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{q(x)}{p_{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
+&amp;amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \left[ \log \frac{q(x)}{p&lt;/em&gt;{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
 \end{align}&lt;/p&gt;
 &lt;p&gt;When using KL-divergence as the evaluation/loss value in model selection/comparison, it is equivalent that minimizing KL-divergence: $D_{KL}( q \mid\mid p )$ and maximizing the log likelihood: $\log p(x)$ as follows.&lt;/p&gt;
 &lt;p&gt;\begin{align}
 D_{KL}( q \mid\mid p_{\theta} )
-&amp;amp;= \mathbb{E}_{X} \bigl[ \log q(x) \bigr] - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \\&lt;br&gt;
-&amp;amp;\propto - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \bigl[ \log q(x) \bigr] - \mathbb{E}&lt;/em&gt;{X} \bigl[ \log p_{\theta}(x) \bigr] \\
+&amp;amp;\propto - \mathbb{E}&lt;em&gt;{X} \bigl[ \log p&lt;/em&gt;{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
 \end{align}&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -618,20 +618,20 @@ q(x) &amp;amp;= f(x|\theta^*)
 &lt;p&gt;\begin{align}
 \hat{\theta}
 &amp;amp;:= \underset{\theta \in \Theta}{\rm argmin} ~ L(\theta) \tag{7}
-\\&lt;br&gt;
+\\
 D_{KL}( q \mid\mid p_{\hat{\theta}} )
-&amp;amp;= D_{KL}( p_{\theta^{*}} \mid\mid p_{\hat{\theta}} ) \\&lt;br&gt;
-&amp;amp;= D_{KL}( f_{\theta^{*}} \mid\mid f_{\hat{\theta}} ) \\&lt;br&gt;
-&amp;amp;= \int f(x|\theta^{*}) \log \frac{f(x|\theta^{*})}{ f(x|\hat{\theta})} dx \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
+&amp;amp;= D_{KL}( p_{\theta^{&lt;em&gt;}} \mid\mid p_{\hat{\theta}} ) \\
+&amp;amp;= D_{KL}( f_{\theta^{&lt;/em&gt;}} \mid\mid f_{\hat{\theta}} ) \\
+&amp;amp;= \int f(x|\theta^{&lt;em&gt;}) \log \frac{f(x|\theta^{&lt;/em&gt;})}{ f(x|\hat{\theta})} dx \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\
+&amp;amp;= \mathbb{E}&lt;/em&gt;{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
 \end{align}&lt;/p&gt;
 &lt;br&gt;
 &lt;h4 id=&#34;23-kl-divergence-vs-fisher-information&#34;&gt;2.3 KL-divergence vs Fisher information&lt;/h4&gt;
 &lt;p&gt;Given a certain stochastic model $f(\cdot \vert \theta)$, &lt;strong&gt;Fisher information&lt;/strong&gt; $I(\theta)$ for the parameter $\theta$ is defined as follows.  (Note that $ \ell( \cdot \vert x) $ means the log likelihood function.)&lt;/p&gt;
 &lt;p&gt;\begin{align}
 I(\theta)
-&amp;amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\&lt;br&gt;
+&amp;amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\
 &amp;amp;= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \log f(x|\theta) \right\} }^{2} \right]
 \end{align}&lt;/p&gt;
 &lt;p&gt;Also, between KL-divergence and Fisher information, the following holds.&lt;/p&gt;
@@ -644,7 +644,7 @@ I(\theta)
 \ell(\theta + h) - \ell(\theta)
 &amp;amp;= {\ell}^{&#39;}(\theta)h + \frac{1}{2} {\ell}^{&#39;&#39;}(\theta) h^{2} + O(h^{3})
 \end{align}&lt;/p&gt;
-&lt;p&gt;This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is **directly proportional to** Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures **the local information** that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.&lt;/p&gt;
+&lt;p&gt;This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is &lt;strong&gt;directly proportional to&lt;/strong&gt; Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures &lt;strong&gt;the local information&lt;/strong&gt; that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_fisher_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;3-references&#34;&gt;3. References&lt;/h2&gt;
@@ -659,16 +659,16 @@ I(\theta)
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Also, f-divergence is defined as its generalized class. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Also, f-divergence is defined as its generalized class.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;I used scipy.stats.entropy(). &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I used scipy.stats.entropy().&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. &lt;a href=&#34;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&#34;&gt;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. &lt;a href=&#34;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Article on gneralized information criterion(GIC): &lt;a href=&#34;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&#34;&gt;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Article on gneralized information criterion(GIC): &lt;a href=&#34;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

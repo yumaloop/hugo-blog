@@ -93,18 +93,18 @@ $$&lt;/p&gt;
 &lt;p&gt;の解で与えられているとする($S$は幾何ブラウン運動に従う)．時刻$t \in [0, T]$において，オプションの原資産価格$S_t$とオプションの行使価格$K$が与えられたとき，ブラック・ショールズ式によってオプションの理論価格$C(t, S_t)$は&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-C(t, S_t) &amp;amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\&lt;br&gt;
+C(t, S_t) &amp;amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\
 where ~~
-d_1 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}} \\&lt;br&gt;
+d_1 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}} \\
 d_2 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}}
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;となる．ただし，$r$は無リスク資産の利率，$\Phi$は標準正規分布$\mathcal{N}(0,1)の累積分布関数とする．ここで，簡単のために満期$T$を$1$とすると，現在($t=0$)のオプション価格の理論値は，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-C(0, S_0) &amp;amp;= S_0 \Phi(d_1) - K e^{-r} \Phi(d_2) \\&lt;br&gt;
+C(0, S_0) &amp;amp;= S_0 \Phi(d_1) - K e^{-r} \Phi(d_2) \\
 where ~~
-d_1 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right)}{\sigma } \\&lt;br&gt;
+d_1 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right)}{\sigma } \\
 d_2 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right)}{\sigma}
 \end{align}
 $$&lt;/p&gt;
@@ -354,9 +354,9 @@ Date
 &lt;p&gt;一般に，$n$コの資産で構成されるポートフォリオの場合，ポートフォリオの分散は$n$コの資産間の共分散行列の二次形式となるので，この最適化問題は二次計画問題(Quadratic Programming, QP)のクラスとなり，次のように定式化されます．&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\underset{\bf x}{\rm minimize} ~~~ &amp;amp;{\bf x}^T \Sigma {\bf x} \\&lt;br&gt;
-{\rm subject~to} ~~~ &amp;amp;{\bf r}^T {\bf x} = \sum_{i=1}^{n} r_i x_i \geq r_e \\&lt;br&gt;
-&amp;amp;{|| {\bf x} ||}_{1} = \sum_{i=1}^{n} x_i = 1 \\&lt;br&gt;
+\underset{\bf x}{\rm minimize} ~~~ &amp;amp;{\bf x}^T \Sigma {\bf x} \\
+{\rm subject~to} ~~~ &amp;amp;{\bf r}^T {\bf x} = \sum_{i=1}^{n} r_i x_i \geq r_e \\
+&amp;amp;{|| {\bf x} ||}_{1} = \sum_{i=1}^{n} x_i = 1 \\
 &amp;amp;x_i \geq 0 ~~ (i = 1, \cdots, n)
 \end{align}
 $$&lt;/p&gt;
@@ -376,8 +376,8 @@ $$&lt;/p&gt;
 CVXOPTで二次計画問題を扱う場合は，解きたい最適化問題を以下の一般化されたフォーマットに整理して，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\underset{\bf x}{\rm minimize} ~~~ &amp;amp;\frac{1}{2} {\bf x}^{T} P {\bf x} + {\bf q}^{T} {\bf x} \\&lt;br&gt;
-{\rm subject~to} ~~~ &amp;amp; G {\bf x} \leq {\bf h} \\&lt;br&gt;
+\underset{\bf x}{\rm minimize} ~~~ &amp;amp;\frac{1}{2} {\bf x}^{T} P {\bf x} + {\bf q}^{T} {\bf x} \\
+{\rm subject~to} ~~~ &amp;amp; G {\bf x} \leq {\bf h} \\
 &amp;amp;A {\bf x} = {\bf b}
 \end{align}
 $$&lt;/p&gt;
@@ -387,17 +387,17 @@ P = 2 \cdot \Sigma, ~~~
 q = {\bf 0}_n, ~~~
 G = -1 \cdot
 \begin{pmatrix}
-\bar{r}_1 &amp;amp; \cdots &amp;amp; \bar{r}_n \\&lt;br&gt;
-1 &amp;amp; \cdots &amp;amp; 0 \\&lt;br&gt;
-\vdots &amp;amp; \ddots &amp;amp; \vdots \\&lt;br&gt;
+\bar{r}_1 &amp;amp; \cdots &amp;amp; \bar{r}_n \\
+1 &amp;amp; \cdots &amp;amp; 0 \\
+\vdots &amp;amp; \ddots &amp;amp; \vdots \\
 0 &amp;amp; \cdots &amp;amp; 1
 \end{pmatrix}, ~~~
 h = -1 \cdot
 \left(
 \begin{array}{c}
-r_e \\&lt;br&gt;
-0 \\&lt;br&gt;
-\vdots \\&lt;br&gt;
+r_e \\
+0 \\
+\vdots \\
 0
 \end{array}
 \right), ~~~
@@ -407,8 +407,8 @@ $$&lt;/p&gt;
 &lt;p&gt;となります．&lt;/p&gt;
 &lt;p&gt;参考:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&#34;&gt;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&#34;&gt;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;33-pythonで計算&#34;&gt;3.3. Pythonで計算&lt;/h3&gt;
 &lt;p&gt;対象資産のパネルデータ&lt;code&gt;df&lt;/code&gt;から，必要な統計量を計算します．&lt;/p&gt;
@@ -827,7 +827,7 @@ plt.show()
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;code&gt;stocks_topix30&lt;/code&gt;はTOPIX Core30構成銘柄の証券コードのリストです．構成銘柄は毎年10/31に更新されます．サンプルコードを再現したい場合&lt;code&gt;stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 4503, 5401, 6301, 6501, 6502, 6752, 6758, 6954, 7201, 7203, 7267, 7751, 8031, 8058, 8306, 8316, 8411, 8604, 8766, 8802, 9021, 9432, 9433, 9437, 9984]&lt;/code&gt;としてください． &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;stocks_topix30&lt;/code&gt;はTOPIX Core30構成銘柄の証券コードのリストです．構成銘柄は毎年10/31に更新されます．サンプルコードを再現したい場合&lt;code&gt;stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 4503, 5401, 6301, 6501, 6502, 6752, 6758, 6954, 7201, 7203, 7267, 7751, 8031, 8058, 8306, 8316, 8411, 8604, 8766, 8802, 9021, 9432, 9433, 9437, 9984]&lt;/code&gt;としてください．&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -968,50 +968,50 @@ S&amp;amp;P 500 YTDをみると，2018年・2019年と比較しても低調だ�
 &lt;p&gt;アメリカ株は予想に反して高い水準を維持しているが，6月以降の統計結果によっては落ち込む可能性も高い．このポストでは，アメリカのマクロ経済史を振り返り,2021年以降のアメリカ経済について考えてみたい．&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/sp-500-ytd-performance-2020-06-12-macrotrends.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index YTD Daily Performance&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/2490/sp-500-ytd-performance&#34;&gt;https://www.macrotrends.net/2490/sp-500-ytd-performance&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2490/sp-500-ytd-performance&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/2490/sp-500-ytd-performance&lt;/a&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;br&gt;
 &lt;h1 id=&#34;gdp&#34;&gt;GDP&lt;/h1&gt;
 &lt;p&gt;USの実質GDP年間推移(1947 - 2020)をみてみる．インフレ率を補正すると，ほぼ線形に増加していることがわかる．&lt;/p&gt;
 &lt;img src=&#34;https://alfred.stlouisfed.org/graph/alfredgraph.png?g=rxJG&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: Real GDP, Billions of Chained 2012 Dollars, Annual Rate (1947 - 2020)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://alfred.stlouisfed.org/series?seid=GDPC1&#34;&gt;https://alfred.stlouisfed.org/series?seid=GDPC1&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://alfred.stlouisfed.org/series?seid=GDPC1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://alfred.stlouisfed.org/series?seid=GDPC1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;次に，成長率(1次微分)．USの四半期ごとのGDP成長率(YOY)を，戦後(1947-2020)に限定してみてみる．基本的にランダムウォークにみえるが，興味深いのは&lt;strong&gt;1985年ごろを境に，分散が小さくなっていること&lt;/strong&gt;だ．&lt;/p&gt;
 &lt;img src=&#34;{{site.baseurl}}/assets/img/post/USGDP1947-2020.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: United States GDP Growth Rate, YOY (1947 - 2020)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://tradingeconomics.com/united-states/gdp-growth&#34;&gt;https://tradingeconomics.com/united-states/gdp-growth&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://tradingeconomics.com/united-states/gdp-growth&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://tradingeconomics.com/united-states/gdp-growth&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;FREDのサイトにある，年間のGDP成長率(YOY)も載せておく．&lt;/p&gt;
 &lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=qPxn&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: Real GDP, Percent Change from Preceding Period (1930 - 2020)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/?g=oM2u&#34;&gt;https://fred.stlouisfed.org/graph/?g=oM2u&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/?g=oM2u&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://fred.stlouisfed.org/graph/?g=oM2u&lt;/a&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;br&gt;
 &lt;h1 id=&#34;equity-market&#34;&gt;Equity Market&lt;/h1&gt;
 &lt;p&gt;米国株式市場の歴史．まず事実として，USの株式市場は長期的に上昇トレンドである．また，S&amp;amp;P 500とDJIAは長期間でみると同じ挙動を示す．&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/sp-500-historical-chart-data-2020-06-12-macrotrends.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index (1928.01 - 2020.06)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/dow-jones-100-year-historical-chart-2020-06-12-macrotrends.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: Dow Jones Industrial Average (DJIA) (1915.02 - 2020.06)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/nasdaq-historical-chart-2020-06-13-macrotrends.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: NASDAQ Composite (1971.02 - 2020.06)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/1320/nasdaq-historical-chart&#34;&gt;https://www.macrotrends.net/1320/nasdaq-historical-chart&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/1320/nasdaq-historical-chart&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/1320/nasdaq-historical-chart&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;そして，狭い意味での効率的市場仮説を支持するならば，短期(年あるいは月単位)での景気循環は平滑化される．また事実として，あらゆる経済統計がせいぜい100年分しか存在しない以上，景気循環説や効率的市場仮説は正しく検証できない．&lt;/p&gt;
 &lt;p&gt;S&amp;amp;P 500は，NYSEとNSDAQの上場銘柄から(流動性の高い大型株の)時価総額を指数化したものなので，DJIAより実体経済(企業部門の利益)を反映している(と言われている)．&lt;/p&gt;
 &lt;p&gt;ここで，S&amp;amp;P 500の過去10年間(2010 - 2020)の推移をみてみる．&lt;/p&gt;
 &lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index, Daily Close (2010.06.15 - 2020.06.12)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI,&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI,&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI&lt;/a&gt;,&lt;/p&gt;
 &lt;br&gt;
 &lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index Change from Year Ago (2011.06.13 - 2020.06.12)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;S&amp;amp;P 500の日別の変化量(YOY)．マイナスとなった期間は2015/08~2016/07，2018/11~2019/05，2020/03~05の3回である．&lt;/p&gt;
 &lt;br&gt;
 &lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index Change, Daily Close (2010.06.15 - 2020.06.12)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;S&amp;amp;P 500の日別の変化量(DOD)．&lt;/p&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -1020,7 +1020,7 @@ Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#
 &lt;p&gt;S&amp;amp;P 500の前年比変動率（1929-2020/03）をみてみよう．&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/SP500HistoricalAnnualReturns1928-2020.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Historical Annual Returns (1928 - 2020)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&#34;&gt;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;S&amp;amp;P 500の統計が開始されてから，1929-2019年のちょうど100年間で，年換算で前年比マイナスとなった年は22回しかない．そして，2020年は23番目の年になるかもしれない．全22回をリストアップしてみる．&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;統計上の留意点：S&amp;amp;P 500指数の発行元であるS&amp;amp;P Global社の沿革:&lt;/p&gt;
@@ -1141,9 +1141,9 @@ Source: &lt;a href=&#34;https://www.macrotrends.net/2526/sp-500-historical-annua
 &lt;p&gt;答えはシンプルで，Taylor展開&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\frac{d x_1}{d t} &amp;amp;= f_1(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
-\frac{d x_2}{d t} &amp;amp;= f_2(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
-&amp;amp;\vdots \\&lt;br&gt;
+\frac{d x_1}{d t} &amp;amp;= f_1(x_1, \dots, x_n; \theta_1) \\
+\frac{d x_2}{d t} &amp;amp;= f_2(x_1, \dots, x_n; \theta_1) \\
+&amp;amp;\vdots \\
 \frac{d x_n}{d t} &amp;amp;= f_n(x_1, \dots, x_n; \theta_1)
 \end{align}
 $$&lt;/p&gt;
@@ -1153,50 +1153,50 @@ $$&lt;/p&gt;
 f_1 = f_2 = \cdots = f_n = 0
 \end{align}
 $$&lt;/p&gt;
-&lt;p&gt;が成り立つから，$n$個の変数${\bf x} = (x_1, x_2, \dots, x_n)$に対して，$n$個の方程式が得られる．この解がシステムの定常化となる．これを${\bf x}^* = (x_1^*, x_2^*, \dots, x_n^*)$とおくと，$f_1, f_2, \dots, f_n$に対して，点${\bf x}^*$の近傍でTaylor展開が可能になる．&lt;/p&gt;
+&lt;p&gt;が成り立つから，$n$個の変数${\bf x} = (x_1, x_2, \dots, x_n)$に対して，$n$個の方程式が得られる．この解がシステムの定常化となる．これを${\bf x}^* = (x_1^&lt;em&gt;, x_2^&lt;/em&gt;, \dots, x_n^&lt;em&gt;)$とおくと，$f_1, f_2, \dots, f_n$に対して，点${\bf x}^&lt;/em&gt;$の近傍でTaylor展開が可能になる．&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \frac{d x_1}{d t}
 = f_1(x_1, \dots, x_n; \theta_1)
-=&amp;amp; a_{11}(x_1 - x_1^*) + a_{12} {(x_2 - x_2^*)} + \cdots a_{1n} {(x_n - x_n^*)} + \\&lt;br&gt;
-&amp;amp; a_{111}{(x_1 - x_1^*)}^2 + a_{112}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{11n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\&lt;br&gt;
-&amp;amp; a_{11\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+=&amp;amp; a_{11}(x_1 - x_1^&lt;em&gt;) + a_{12} {(x_2 - x_2^&lt;/em&gt;)} + \cdots a_{1n} {(x_n - x_n^&lt;em&gt;)} + \\
+&amp;amp; a_{111}{(x_1 - x_1^&lt;/em&gt;)}^2 + a_{112}(x_1 - x_1^&lt;em&gt;)(x_2 - x_2^&lt;/em&gt;) + \cdots + a_{11n}{(x_1 - x_1^&lt;em&gt;)}^2 + \\
+&amp;amp; ~~ \vdots \\
+&amp;amp; a_{11\cdots1}{(x_1 - x_1^&lt;/em&gt;)}^n + \cdots \\
 \frac{d x_2}{d t}
 = f_2(x_1, \dots, x_n; \theta_1)
-=&amp;amp; a_{21}(x_1 - x_1^*) + a_{22} {(x_2 - x_2^*)} + \cdots a_{2n} {(x_n - x_n^*)} + \\&lt;br&gt;
-&amp;amp; a_{211}{(x_1 - x_1^*)}^2 + a_{212}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{21n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\&lt;br&gt;
-&amp;amp; a_{21\cdots1}{(x_1 - x_1^*)}^n + \cdots \\ \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\ \\&lt;br&gt;
+=&amp;amp; a_{21}(x_1 - x_1^&lt;em&gt;) + a_{22} {(x_2 - x_2^&lt;/em&gt;)} + \cdots a_{2n} {(x_n - x_n^&lt;em&gt;)} + \\
+&amp;amp; a_{211}{(x_1 - x_1^&lt;/em&gt;)}^2 + a_{212}(x_1 - x_1^&lt;em&gt;)(x_2 - x_2^&lt;/em&gt;) + \cdots + a_{21n}{(x_1 - x_1^&lt;em&gt;)}^2 + \\
+&amp;amp; ~~ \vdots \\
+&amp;amp; a_{21\cdots1}{(x_1 - x_1^&lt;/em&gt;)}^n + \cdots \\ \\
+&amp;amp; ~~ \vdots \\ \\\
 \frac{d x_n}{d t}
 = f_n(x_1, \dots, x_n; \theta_1)
-=&amp;amp; a_{n1}(x_1 - x_1^*) + a_{n2} {(x_2 - x_2^*)} + \cdots a_{nn} {(x_n - x_n^*)} + \\&lt;br&gt;
-&amp;amp; a_{n11}{(x_1 - x_1^*)}^2 + a_{n12}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{n1n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\&lt;br&gt;
-&amp;amp; a_{n1\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+=&amp;amp; a_{n1}(x_1 - x_1^&lt;em&gt;) + a_{n2} {(x_2 - x_2^&lt;/em&gt;)} + \cdots a_{nn} {(x_n - x_n^&lt;em&gt;)} + \\
+&amp;amp; a_{n11}{(x_1 - x_1^&lt;/em&gt;)}^2 + a_{n12}(x_1 - x_1^&lt;em&gt;)(x_2 - x_2^&lt;/em&gt;) + \cdots + a_{n1n}{(x_1 - x_1^&lt;em&gt;)}^2 + \\
+&amp;amp; ~~ \vdots \\
+&amp;amp; a_{n1\cdots1}{(x_1 - x_1^&lt;/em&gt;)}^n + \cdots \\
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;つまり，任意の微分可能関数$f_1, f_2, \dots, f_n$によって表現されたダイナミクスをもつ動的モデルは，（定常解の近傍では）任意のn次多項式によって近似できる．これにより，線形システムの妥当性が保証される．一般解は，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 x_1
-=&amp;amp; ~ x_1^*  + C_{11}e^{\lambda_1 t} + C_{12}e^{\lambda_2 t} + \cdots C_{1n}e^{\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{111}e^{2\lambda_1 t} + C_{112}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{11\cdots1}e^{n\lambda_1 t} + C_{11\cdots2}e^{n\lambda_2 t} + \cdots + C_{11\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+=&amp;amp; ~ x_1^*  + C_{11}e^{\lambda_1 t} + C_{12}e^{\lambda_2 t} + \cdots C_{1n}e^{\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ C_{111}e^{2\lambda_1 t} + C_{112}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\
+&amp;amp; ~~~~~~~~~~ C_{11\cdots1}e^{n\lambda_1 t} + C_{11\cdots2}e^{n\lambda_2 t} + \cdots + C_{11\cdots n}e^{n\lambda_n t} \\
 x_2
-=&amp;amp; ~ x_2^*  + C_{21}e^{\lambda_1 t} + C_{22}e^{\lambda_2 t} + \cdots C_{2n}e^{\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{211}e^{2\lambda_1 t} + C_{212}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{21\cdots1}e^{n\lambda_1 t} + C_{21\cdots2}e^{n\lambda_2 t} + \cdots + C_{21\cdots n}e^{n\lambda_n t} \\ \\&lt;br&gt;
+=&amp;amp; ~ x_2^*  + C_{21}e^{\lambda_1 t} + C_{22}e^{\lambda_2 t} + \cdots C_{2n}e^{\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ C_{211}e^{2\lambda_1 t} + C_{212}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\
+&amp;amp; ~~~~~~~~~~ C_{21\cdots1}e^{n\lambda_1 t} + C_{21\cdots2}e^{n\lambda_2 t} + \cdots + C_{21\cdots n}e^{n\lambda_n t} \\ \\\
 &amp;amp; ~~~~~~~~~~ ~~ \vdots
-\ \&lt;br&gt;
+\ \
 x_n
-=&amp;amp; ~ x_n^*  + C_{n1}e^{\lambda_1 t} + C_{n2}e^{\lambda_2 t} + \cdots C_{nn}e^{\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{n11}e^{2\lambda_1 t} + C_{n12}e^{2\lambda_2 t} + \cdots + C_{n1n}e^{2\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{n1\cdots1}e^{n\lambda_1 t} + C_{n1\cdots2}e^{n\lambda_2 t} + \cdots + C_{n1\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+=&amp;amp; ~ x_n^*  + C_{n1}e^{\lambda_1 t} + C_{n2}e^{\lambda_2 t} + \cdots C_{nn}e^{\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ C_{n11}e^{2\lambda_1 t} + C_{n12}e^{2\lambda_2 t} + \cdots + C_{n1n}e^{2\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\
+&amp;amp; ~~~~~~~~~~ C_{n1\cdots1}e^{n\lambda_1 t} + C_{n1\cdots2}e^{n\lambda_2 t} + \cdots + C_{n1\cdots n}e^{n\lambda_n t} \\
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;となる．&lt;/p&gt;
@@ -1221,7 +1221,7 @@ $$&lt;/p&gt;
 &lt;p&gt;移動平均とは何か？&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-m_t &amp;amp;= \gamma \cdot m_t − 1+η \cdot \frac{\partial L(w_t)}{\partial w} \\&lt;br&gt;
+m_t &amp;amp;= \gamma \cdot m_t − 1+η \cdot \frac{\partial L(w_t)}{\partial w} \\
 w_{t+1} &amp;amp;= w_t - m_t
 \end{align}
 $$&lt;/p&gt;
@@ -1251,7 +1251,7 @@ This model is effective if you consider a system having two different variables;
 &lt;p&gt;Equation of each state $x_t$ :&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x_{t+1} &amp;amp;= F(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+x_{t+1} &amp;amp;= F(x_t) ~~ (\text{Deterministic process}) \\
 x_{t+1} &amp;amp;\sim f(\cdot\vert x_t) ~~ (\text{Stochastic process})
 \end{aligned}
 $$&lt;/p&gt;
@@ -1260,7 +1260,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Equation of each observation $y_t$ :&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-y_t &amp;amp;= H(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+y_t &amp;amp;= H(x_t) ~~ (\text{Deterministic process}) \\
 y_t &amp;amp;\sim h(\cdot \vert x_t) ~~ (\text{Stochastic process})
 \end{aligned}
 $$&lt;/p&gt;
@@ -1297,7 +1297,7 @@ $$&lt;/p&gt;
 $$
 \begin{aligned}
 p(x_t \vert y_{1:t})
-&amp;amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\&lt;br&gt;
+&amp;amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\
 &amp;amp;\approx \sum_{i=1}^{M} \frac{}{\sum_{i=1}^{M} } \delta(x_t - \hat{x}^i_{t \vert t-1})
 \end{aligned}
 $$&lt;/p&gt;
@@ -1330,9 +1330,9 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 D_{KL}(q \vert\vert p)
-&amp;amp;= \beta \int_X q(x)\phi(x) - \left\{ - \int_X q(x)\log q(x) \right\} + \log \int_X \exp(-\beta \phi(x)) \\&lt;br&gt;
-&amp;amp;= \beta~ \mathbb{E}_{x \sim q}[\phi(x)] - H_q(X) + \log Z^{\phi}(\beta) \\&lt;br&gt;
-&amp;amp;= \beta~ (\text{Internal energy}) - (\text{Entropy}) + (\text{Const.}) \\&lt;br&gt;
+&amp;amp;= \beta \int_X q(x)\phi(x) - \left\{ - \int_X q(x)\log q(x) \right\} + \log \int_X \exp(-\beta \phi(x)) \\
+&amp;amp;= \beta~ \mathbb{E}_{x \sim q}[\phi(x)] - H_q(X) + \log Z^{\phi}(\beta) \\
+&amp;amp;= \beta~ (\text{Internal energy}) - (\text{Entropy}) + (\text{Const.}) \\
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;いま，近似分布$q(x)$に対する汎関数として，自由エネルギー:&lt;/p&gt;
@@ -1375,7 +1375,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$F^{\phi}(q)$の定義式で，$F = F^{\phi}(q)$，$U = \mathbb{E}_{x \sim q}[\phi(x)]$，$S = H_q(X)$とおけば，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-\beta F &amp;amp;= \beta U - S \\&lt;br&gt;
+\beta F &amp;amp;= \beta U - S \\
 F &amp;amp;= U - \frac{1}{\beta} S
 \end{aligned}
 $$&lt;/p&gt;
@@ -1388,9 +1388,9 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 (\text{Evidence})
-&amp;amp;= \log p(y) \\&lt;br&gt;
-&amp;amp;\geq \mathbb{E}_{\theta \sim q}\left[ \log p(y, \theta) \right] - \mathbb{E}_{\theta \sim q} \left[ \log q(\theta) \right] \\&lt;br&gt;
-&amp;amp;= \mathcal{L}_{ELBO}(q) \\&lt;br&gt;
+&amp;amp;= \log p(y) \\
+&amp;amp;\geq \mathbb{E}_{\theta \sim q}\left[ \log p(y, \theta) \right] - \mathbb{E}_{\theta \sim q} \left[ \log q(\theta) \right] \\
+&amp;amp;= \mathcal{L}_{ELBO}(q) \\
 &amp;amp;= (\text{Evidence Lower Bound})
 \end{align}
 $$&lt;/p&gt;
@@ -1402,10 +1402,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 (\text{Surprise})
-&amp;amp;= - \log p(y) \\&lt;br&gt;
-&amp;amp;\leq - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)] \\&lt;br&gt;
-&amp;amp;= -\mathcal{L}_{ELBO}(q) \\&lt;br&gt;
-&amp;amp;= F(y) \\&lt;br&gt;
+&amp;amp;= - \log p(y) \\
+&amp;amp;\leq - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)] \\
+&amp;amp;= -\mathcal{L}_{ELBO}(q) \\
+&amp;amp;= F(y) \\
 &amp;amp;= (\text{Free energy})
 \end{aligned}
 $$&lt;/p&gt;
@@ -1413,7 +1413,7 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.fil.ion.ucl.ac.uk/~karl/The%20free-energy%20principle%20-%20a%20rough%20guide%20to%20the%20brain.pdf&#34;&gt;FristonのCell論文(2009)&lt;/a&gt;にあるエージェントの行動$\alpha$や脳の内部状態$\mu$の更新式:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\alpha^{*} &amp;amp;= \underset{\alpha}{\rm argmin} ~ F(y) \\&lt;br&gt;
+\alpha^{*} &amp;amp;= \underset{\alpha}{\rm argmin} ~ F(y) \\
 \mu^{*} &amp;amp;= \underset{\mu}{\rm argmin} ~ F(y)
 \end{align}
 $$&lt;/p&gt;
@@ -1500,13 +1500,13 @@ git push origin master
 &lt;p&gt;$$
 \begin{aligned}
 (\text{Evidence})
-&amp;amp;= \log p(x) \\&lt;br&gt;
-&amp;amp;= \log \int_{Z} p(x,z) \\&lt;br&gt;
-&amp;amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\&lt;br&gt;
-&amp;amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\&lt;br&gt;
-&amp;amp;= \log \mathbb{E}_{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
-&amp;amp;\geq \mathbb{E}_{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= \log p(x) \\
+&amp;amp;= \log \int_{Z} p(x,z) \\
+&amp;amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\
+&amp;amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\
+&amp;amp;= \log \mathbb{E}&lt;em&gt;{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\
+&amp;amp;\geq \mathbb{E}&lt;/em&gt;{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\
 &amp;amp;= ELBO(q) ~~~ (\text{Evidence Lower Bound, ELBO})
 \end{aligned}
 $$&lt;/p&gt;
@@ -1521,7 +1521,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 D_{KL}( q(z) \vert\vert p(z \vert x) )
-&amp;amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\&lt;br&gt;
+&amp;amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\
 &amp;amp;= - H_q(Z) - \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right]
 \end{aligned}
 $$&lt;/p&gt;
@@ -1529,10 +1529,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 ELBO
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
-&amp;amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\
+&amp;amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\
 &amp;amp;= \log p(x) - D_{KL}( q(z) \vert\vert p(z \vert x) )
 \end{align}
 $$&lt;/p&gt;
@@ -1540,7 +1540,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \underset{\theta}{\rm max} ~ \log p_{\theta}(x)
-&amp;amp;= \underset{q}{\rm max} ~ ELBO(q) \\&lt;br&gt;
+&amp;amp;= \underset{q}{\rm max} ~ ELBO(q) \\
 &amp;amp;= \underset{q}{\rm min} ~ D_{KL}( q(z) \vert\vert p(z|x) )
 \end{align}
 $$
@@ -1591,7 +1591,7 @@ $$
 &lt;p&gt;$$
 \begin{align}
 u_i(\sigma)
-&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\&lt;br&gt;
+&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\
 &amp;amp;= \sum_{h \in Z} u_i(h) \prod_{i \in N} \pi^{\sigma}_i(h)
 \end{align}
 $$
@@ -1603,10 +1603,10 @@ $$
 &lt;p&gt;$$
 \begin{aligned}
 u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N})
-&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\
 u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N})
-&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
-&amp;amp;~ \vdots \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\
+&amp;amp;~ \vdots \\
 u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N})
 &amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
 \end{aligned}
@@ -1616,10 +1616,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
-&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\
 u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
-&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
-&amp;amp;~ \vdots \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\
+&amp;amp;~ \vdots \\
 u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
 &amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
 \end{aligned}
@@ -1631,8 +1631,8 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;$$
 R_i^T
-:= \underset{\sigma_i^*}{\rm max} ~
-\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^*, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
+:= \underset{\sigma_i^&lt;em&gt;}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^&lt;/em&gt;, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
 $$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Average strategy for player $i$ from time $1$ to $T$：&lt;/li&gt;
@@ -1640,7 +1640,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \overline{\sigma}_i^t(I)(a)
-&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\&lt;br&gt;
+&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\
 &amp;amp;= \frac{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h) \cdot \sigma^t(h)(a)}{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h)}
 \end{align}
 $$&lt;/p&gt;
@@ -1687,7 +1687,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 R_i^T
-\leq \sum_{I \in \mathcal{I}_i} &amp;amp;R_{i,imm}^{T,+}(I) \\&lt;br&gt;
+\leq \sum_{I \in \mathcal{I}&lt;em&gt;i} &amp;amp;R&lt;/em&gt;{i,imm}^{T,+}(I) \\
 where ~~~
 &amp;amp;R_{i,imm}^{T, +}(I)
 := max(R_{i,imm}^{T}(I), 0)
@@ -1695,7 +1695,7 @@ where ~~~
 $$&lt;/p&gt;
 &lt;p&gt;So that, we obtain the sufficient condition of $R_{i,imm}^{T}(I)$  for the average strategy $\overline{\sigma}_i^t(I)(a)$ to become a Nash equilibrium strategy as below.&lt;/p&gt;
 &lt;p&gt;$$
-\sum_{I \in \mathcal{I}_i} R_{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
+\sum_{I \in \mathcal{I}&lt;em&gt;i} R&lt;/em&gt;{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
 $$&lt;/p&gt;
 &lt;p&gt;Now all we need is to minimize the immediate counterfactual regret  $R_{i,imm}^{T}(I)$.&lt;/p&gt;
 &lt;p&gt;In addition, as can be seen from the above formula, the computational complexity of the CFR algorithm depends on the number of information sets $I$. Also, to avoid the complete search of game tree (searching all information sets $I$), subsequent algorithms such as CFR + propose an abstraction of the game state.&lt;/p&gt;
@@ -2213,7 +2213,7 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
 &lt;h2 id=&#34;nvidiaドライバとcudacudnnの導入&#34;&gt;NVIDIAドライバとCUDA/cuDNNの導入&lt;/h2&gt;
 &lt;h5 id=&#34;nvidiaドライバのインストール&#34;&gt;NVIDIAドライバのインストール&lt;/h5&gt;
 &lt;p&gt;1.下記リンクから，自分のGPUにあうドライバを検索してダウンロードする．&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.nvidia.co.jp/Download/index.aspx?lang=jp&#34;&gt;https://www.nvidia.co.jp/Download/index.aspx?lang=jp&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nvidia.co.jp/Download/index.aspx?lang=jp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.nvidia.co.jp/Download/index.aspx?lang=jp&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/m4MAKmekqihk5pqTUHLojPX6uzAZoaGoj2d9EazHOSlVxNuradgm_lF-7piupC_j1dBf-PffJ2e1SaDxf215GddSYx_XdaUAyUkucebB5SSyN9ZrGUl7qeqFe0aUxnnBqQxYYeK7&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;たとえば，GPU「&lt;a href=&#34;http://d.hatena.ne.jp/keyword/NVIDIA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NVIDIA&lt;/a&gt; &lt;a href=&#34;http://d.hatena.ne.jp/keyword/GeForce&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GeForce&lt;/a&gt; 1080」に対応したドライバは以下のようになる．&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/e951y4mwYumub525KR2Um_Cqbb6NxYIpnyThgMyIcClu7nvwHUzF5hGK5l3_4k0lPxf9T9uF33u-0t0cTJeovZFNsjXJkBBzCM1B61i4Kk8_xIBSsTWT0oUexsNDx5_QRFrIDIIj&#34; alt=&#34;img&#34;&gt;．&lt;/p&gt;
@@ -2227,11 +2227,11 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;CUDAの公式ドキュメントをよく読む．&lt;/p&gt;
-&lt;p&gt;CUDA Toolkit Documentation &lt;a href=&#34;https://docs.nvidia.com/cuda/index.html&#34;&gt;https://docs.nvidia.com/cuda/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CUDA Toolkit Documentation &lt;a href=&#34;https://docs.nvidia.com/cuda/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://docs.nvidia.com/cuda/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;下記リンクから，NVIDIAドライバに対応するCUDAのバージョンを確認する&lt;/p&gt;
-&lt;p&gt;CUDA Toolkit Documentation &amp;gt; Release Notes &amp;gt; 1. CUDA Toolkit Major Components &amp;gt; CUDA Driver &lt;a href=&#34;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html&#34;&gt;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CUDA Toolkit Documentation &amp;gt; Release Notes &amp;gt; 1. CUDA Toolkit Major Components &amp;gt; CUDA Driver &lt;a href=&#34;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/s8gpeKo-VZlCtUROQc6YG1L3ZQ9aJlggnswp_mAAxRFua_Sh0ILtYsa-K4uUYWrjbfgz21EIVJwSrt-StpbGhvpPrxUytW-Xjy146HAo7pmo-SyPT6cP5-YPSFWRHHASmR9xyFon&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
@@ -2239,7 +2239,7 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
 &lt;li&gt;
 &lt;p&gt;下記リンクから，tensorflow-&lt;a href=&#34;http://d.hatena.ne.jp/keyword/gpu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gpu&lt;/a&gt;に対応するcuDNN/CUDAのバージョンを確認する&lt;/p&gt;
 &lt;p&gt;TensorFlow (Linux) - テスト済みのビルド設定&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.tensorflow.org/install/source#linux&#34;&gt;https://www.tensorflow.org/install/source#linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tensorflow.org/install/source#linux&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.tensorflow.org/install/source#linux&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/LrKW-yUDWLZi5-iq1oz0BB_3dpt3hin3yLEyo8V1QtJzV958tWDaYr5RDwJsOniMxotiNqZsCcYa4-kqs3SdSLd7xzD9ABON4b2MT9kIHPbbnL3lP9GcgZpFRTWjVThXPuQMQNUP&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
@@ -2256,7 +2256,7 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;下記リンクから，自分の環境にあった「CUDA Toolkitパッケージ」を確認し，マシンへダウンロードする．&lt;/p&gt;
-&lt;p&gt;CUDA Toolkit Archive &lt;a href=&#34;https://developer.nvidia.com/cuda-toolkit-archive&#34;&gt;https://developer.nvidia.com/cuda-toolkit-archive&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CUDA Toolkit Archive &lt;a href=&#34;https://developer.nvidia.com/cuda-toolkit-archive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://developer.nvidia.com/cuda-toolkit-archive&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/6Wg51qcEzuCZ326X81F_48j0pU20MC4qKa0CU847Vw612vZQNUP302zFYWCJ9CA5uKABt6UU7UTLj8M6Kr9ndYKNzT-amTFv3hiWGDakR5gpjFlA3lppzcU-dORL0ojBI6qs-Pv5&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
@@ -2391,7 +2391,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 p(x_i | \theta)
-&amp;amp;= \int_{Z} p(x_i, z_i | \theta) ~ dz \&lt;br&gt;
+&amp;amp;= \int_{Z} p(x_i, z_i | \theta) ~ dz \
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;By using this formula, the estimated value of $\hat{\theta}_{MLE}$ can be obtained by approximating $p(x,z \vert \theta)$, the likelihood function of complete data $\{x, z\}$. The procedure to derive the estimated value of $\hat{\theta}_{MLE}$ is called EM algorithm because it is an iterative method that repeats E-step and M-step alternately.&lt;/p&gt;
@@ -2615,13 +2615,13 @@ $$&lt;/p&gt;
 &lt;p&gt;In order to login to keio.jp (Keio Single Sign-On System), it is necessary to satisfy the page transition as below.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://auth.keio.jp&#34;&gt;https://auth.keio.jp&lt;/a&gt; (SSO login page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://auth.keio.jp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://auth.keio.jp&lt;/a&gt; (SSO login page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://gslbs.adst.keio.ac.jp/student/index.html&#34;&gt;https://gslbs.adst.keio.ac.jp/student/index.html&lt;/a&gt; (Syllabus page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gslbs.adst.keio.ac.jp/student/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://gslbs.adst.keio.ac.jp/student/index.html&lt;/a&gt; (Syllabus page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.edu.keio.jp/ess2/login?&#34;&gt;https://www.edu.keio.jp/ess2/login?&lt;/a&gt; (Class support page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.edu.keio.jp/ess2/login&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.edu.keio.jp/ess2/login&lt;/a&gt;? (Class support page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;So, this time, a static web-scraping library like BeautifulSoup is not enough, because it doesn&amp;rsquo;t support the dynamic site with Javascript or page redirection. Then I use &lt;a href=&#34;https://selenium.dev/documentation/en/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Selenium&lt;/a&gt; and &lt;a href=&#34;http://chromedriver.chromium.org/getting-started&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChromeDriver&lt;/a&gt; in python.&lt;/p&gt;
@@ -2735,7 +2735,7 @@ driver.quit()
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The Selenium Browser Automation Project &amp;gt; Getting started &amp;gt; Quick tour&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -2751,7 +2751,7 @@ driver.quit()
 &lt;code&gt;java.awt.GraphicsEnvironment&lt;/code&gt; class.&lt;/p&gt;
 &lt;h3 id=&#34;cf&#34;&gt;Cf.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&#34;&gt;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;p&gt;Code Sample (Java):&lt;/p&gt;
@@ -3504,7 +3504,7 @@ D_{KL}( Q \mid\mid P )
 &lt;p&gt;Note that given two Gaussian distribution $p_1,p_2$ as&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-p_1(x) &amp;amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\&lt;br&gt;
+p_1(x) &amp;amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\
 p_2(x) &amp;amp;= \mathcal{N}(\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2 \pi \sigma_2^2}} \exp \left\{ - \frac{ {(x - \mu_2)}^2}{2 \sigma_2^2} \right\}
 \end{align}
 $$&lt;/p&gt;
@@ -3512,7 +3512,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 {D}_{KL}(p_1 \mid\mid p_2)
-&amp;amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\&lt;br&gt;
+&amp;amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\
 &amp;amp;= \log \frac{\sigma_2}{\sigma_1} + \frac{\sigma_1^2 + {( \mu_1 - \mu_2 )}^2}{2 \sigma_2^2} - \frac{1}{2}
 \end{align}
 $$&lt;/p&gt;
@@ -3536,34 +3536,34 @@ $$&lt;/p&gt;
 &lt;h4 id=&#34;21-kl-divergence-vs-mutual-information&#34;&gt;2.1 KL-divergence vs Mutual information&lt;/h4&gt;
 &lt;p&gt;　In information theory, entropy $H(X)$, join entropy $H(X,Y)$, conditional entropy $H(X \vert Y)$, mutual information $MI(X,Y)$ are defined as follows by using probability density $Pr()$&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;\begin{align}
-H(X)    &amp;amp;:= - \int Pr(x) \log Pr(x) ~dx \\&lt;br&gt;
-H(X,Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\&lt;br&gt;
-H(X|Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\&lt;br&gt;
+H(X)    &amp;amp;:= - \int Pr(x) \log Pr(x) ~dx \\
+H(X,Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\
+H(X|Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\
 MI(X,Y) &amp;amp;:= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy
 \end{align}&lt;/p&gt;
 &lt;p&gt;For any two random variable $X$ and $Y$, mutual information $MI(X, Y)$ specifies the mutual (symmetric) dependence between them.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_mutual_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;\begin{align}
-MI(X,Y) &amp;amp;= H(X) - H(X|Y)  \\&lt;br&gt;
-&amp;amp;= H(Y) - H(Y|X) \\&lt;br&gt;
+MI(X,Y) &amp;amp;= H(X) - H(X|Y)  \\
+&amp;amp;= H(Y) - H(Y|X) \\
 &amp;amp;= H(X) + H(Y) - H(X,Y)
 \end{align}&lt;/p&gt;
 &lt;p&gt;Here, the following relationship holds between KL-divergence and mutual information.&lt;/p&gt;
 &lt;p&gt;\begin{align}
 MI(X, Y)
-&amp;amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \bigl[ D_{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
+&amp;amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{Y} \bigl[ D&lt;/em&gt;{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \bigl[ D&lt;/em&gt;{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
 \end{align}&lt;/p&gt;
 &lt;p&gt;So that, mutual information $MI (X, Y)$ is interpreted as the degree of difference (average degree of deviation) between the joint distribution $Pr (x, y)$ when the $X$ and $Y$ are &lt;strong&gt;not independent&lt;/strong&gt; and the joint distribution $Pr (x) Pr (y)$ when $X$ and $Y$ are &lt;strong&gt;independent&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;（cf.）Formula transformation of mutual information:&lt;/p&gt;
 &lt;p&gt;\begin{align}
 MI(X,Y)
-&amp;amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
-&amp;amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
-&amp;amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\&lt;br&gt;
-&amp;amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
+&amp;amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\
+&amp;amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\
+&amp;amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\
+&amp;amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{Y} \bigl[ D&lt;/em&gt;{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
 \end{align}&lt;/p&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;22-kl-divergence-vs-log-likelihood-ratio&#34;&gt;2.2 KL-divergence vs Log likelihood ratio&lt;/h3&gt;
@@ -3574,16 +3574,16 @@ MI(X,Y)
 &lt;/ul&gt;
 &lt;p&gt;\begin{align}
 \left( \text{Log likelihood ratio} \right)
-&amp;amp;= \log \frac{q(x)}{p_{\theta}(x)} \\&lt;br&gt;
+&amp;amp;= \log \frac{q(x)}{p_{\theta}(x)} \\
 D_{KL}( q \mid\mid p_{\theta} )
-&amp;amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{q(x)}{p_{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
+&amp;amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \left[ \log \frac{q(x)}{p&lt;/em&gt;{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
 \end{align}&lt;/p&gt;
 &lt;p&gt;When using KL-divergence as the evaluation/loss value in model selection/comparison, it is equivalent that minimizing KL-divergence: $D_{KL}( q \mid\mid p )$ and maximizing the log likelihood: $\log p(x)$ as follows.&lt;/p&gt;
 &lt;p&gt;\begin{align}
 D_{KL}( q \mid\mid p_{\theta} )
-&amp;amp;= \mathbb{E}_{X} \bigl[ \log q(x) \bigr] - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \\&lt;br&gt;
-&amp;amp;\propto - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \bigl[ \log q(x) \bigr] - \mathbb{E}&lt;/em&gt;{X} \bigl[ \log p_{\theta}(x) \bigr] \\
+&amp;amp;\propto - \mathbb{E}&lt;em&gt;{X} \bigl[ \log p&lt;/em&gt;{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
 \end{align}&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -3605,20 +3605,20 @@ q(x) &amp;amp;= f(x|\theta^*)
 &lt;p&gt;\begin{align}
 \hat{\theta}
 &amp;amp;:= \underset{\theta \in \Theta}{\rm argmin} ~ L(\theta) \tag{7}
-\\&lt;br&gt;
+\\
 D_{KL}( q \mid\mid p_{\hat{\theta}} )
-&amp;amp;= D_{KL}( p_{\theta^{*}} \mid\mid p_{\hat{\theta}} ) \\&lt;br&gt;
-&amp;amp;= D_{KL}( f_{\theta^{*}} \mid\mid f_{\hat{\theta}} ) \\&lt;br&gt;
-&amp;amp;= \int f(x|\theta^{*}) \log \frac{f(x|\theta^{*})}{ f(x|\hat{\theta})} dx \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
+&amp;amp;= D_{KL}( p_{\theta^{&lt;em&gt;}} \mid\mid p_{\hat{\theta}} ) \\
+&amp;amp;= D_{KL}( f_{\theta^{&lt;/em&gt;}} \mid\mid f_{\hat{\theta}} ) \\
+&amp;amp;= \int f(x|\theta^{&lt;em&gt;}) \log \frac{f(x|\theta^{&lt;/em&gt;})}{ f(x|\hat{\theta})} dx \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\
+&amp;amp;= \mathbb{E}&lt;/em&gt;{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
 \end{align}&lt;/p&gt;
 &lt;br&gt;
 &lt;h4 id=&#34;23-kl-divergence-vs-fisher-information&#34;&gt;2.3 KL-divergence vs Fisher information&lt;/h4&gt;
 &lt;p&gt;Given a certain stochastic model $f(\cdot \vert \theta)$, &lt;strong&gt;Fisher information&lt;/strong&gt; $I(\theta)$ for the parameter $\theta$ is defined as follows.  (Note that $ \ell( \cdot \vert x) $ means the log likelihood function.)&lt;/p&gt;
 &lt;p&gt;\begin{align}
 I(\theta)
-&amp;amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\&lt;br&gt;
+&amp;amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\
 &amp;amp;= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \log f(x|\theta) \right\} }^{2} \right]
 \end{align}&lt;/p&gt;
 &lt;p&gt;Also, between KL-divergence and Fisher information, the following holds.&lt;/p&gt;
@@ -3631,7 +3631,7 @@ I(\theta)
 \ell(\theta + h) - \ell(\theta)
 &amp;amp;= {\ell}^{&#39;}(\theta)h + \frac{1}{2} {\ell}^{&#39;&#39;}(\theta) h^{2} + O(h^{3})
 \end{align}&lt;/p&gt;
-&lt;p&gt;This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is **directly proportional to** Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures **the local information** that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.&lt;/p&gt;
+&lt;p&gt;This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is &lt;strong&gt;directly proportional to&lt;/strong&gt; Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures &lt;strong&gt;the local information&lt;/strong&gt; that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_fisher_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;3-references&#34;&gt;3. References&lt;/h2&gt;
@@ -3646,16 +3646,16 @@ I(\theta)
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Also, f-divergence is defined as its generalized class. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Also, f-divergence is defined as its generalized class.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;I used scipy.stats.entropy(). &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I used scipy.stats.entropy().&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. &lt;a href=&#34;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&#34;&gt;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. &lt;a href=&#34;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Article on gneralized information criterion(GIC): &lt;a href=&#34;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&#34;&gt;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Article on gneralized information criterion(GIC): &lt;a href=&#34;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

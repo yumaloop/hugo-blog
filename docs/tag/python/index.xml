@@ -204,9 +204,9 @@ Date
 &lt;p&gt;一般に，$n$コの資産で構成されるポートフォリオの場合，ポートフォリオの分散は$n$コの資産間の共分散行列の二次形式となるので，この最適化問題は二次計画問題(Quadratic Programming, QP)のクラスとなり，次のように定式化されます．&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\underset{\bf x}{\rm minimize} ~~~ &amp;amp;{\bf x}^T \Sigma {\bf x} \\&lt;br&gt;
-{\rm subject~to} ~~~ &amp;amp;{\bf r}^T {\bf x} = \sum_{i=1}^{n} r_i x_i \geq r_e \\&lt;br&gt;
-&amp;amp;{|| {\bf x} ||}_{1} = \sum_{i=1}^{n} x_i = 1 \\&lt;br&gt;
+\underset{\bf x}{\rm minimize} ~~~ &amp;amp;{\bf x}^T \Sigma {\bf x} \\
+{\rm subject~to} ~~~ &amp;amp;{\bf r}^T {\bf x} = \sum_{i=1}^{n} r_i x_i \geq r_e \\
+&amp;amp;{|| {\bf x} ||}_{1} = \sum_{i=1}^{n} x_i = 1 \\
 &amp;amp;x_i \geq 0 ~~ (i = 1, \cdots, n)
 \end{align}
 $$&lt;/p&gt;
@@ -226,8 +226,8 @@ $$&lt;/p&gt;
 CVXOPTで二次計画問題を扱う場合は，解きたい最適化問題を以下の一般化されたフォーマットに整理して，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\underset{\bf x}{\rm minimize} ~~~ &amp;amp;\frac{1}{2} {\bf x}^{T} P {\bf x} + {\bf q}^{T} {\bf x} \\&lt;br&gt;
-{\rm subject~to} ~~~ &amp;amp; G {\bf x} \leq {\bf h} \\&lt;br&gt;
+\underset{\bf x}{\rm minimize} ~~~ &amp;amp;\frac{1}{2} {\bf x}^{T} P {\bf x} + {\bf q}^{T} {\bf x} \\
+{\rm subject~to} ~~~ &amp;amp; G {\bf x} \leq {\bf h} \\
 &amp;amp;A {\bf x} = {\bf b}
 \end{align}
 $$&lt;/p&gt;
@@ -237,17 +237,17 @@ P = 2 \cdot \Sigma, ~~~
 q = {\bf 0}_n, ~~~
 G = -1 \cdot
 \begin{pmatrix}
-\bar{r}_1 &amp;amp; \cdots &amp;amp; \bar{r}_n \\&lt;br&gt;
-1 &amp;amp; \cdots &amp;amp; 0 \\&lt;br&gt;
-\vdots &amp;amp; \ddots &amp;amp; \vdots \\&lt;br&gt;
+\bar{r}_1 &amp;amp; \cdots &amp;amp; \bar{r}_n \\
+1 &amp;amp; \cdots &amp;amp; 0 \\
+\vdots &amp;amp; \ddots &amp;amp; \vdots \\
 0 &amp;amp; \cdots &amp;amp; 1
 \end{pmatrix}, ~~~
 h = -1 \cdot
 \left(
 \begin{array}{c}
-r_e \\&lt;br&gt;
-0 \\&lt;br&gt;
-\vdots \\&lt;br&gt;
+r_e \\
+0 \\
+\vdots \\
 0
 \end{array}
 \right), ~~~
@@ -257,8 +257,8 @@ $$&lt;/p&gt;
 &lt;p&gt;となります．&lt;/p&gt;
 &lt;p&gt;参考:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&#34;&gt;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&#34;&gt;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;33-pythonで計算&#34;&gt;3.3. Pythonで計算&lt;/h3&gt;
 &lt;p&gt;対象資産のパネルデータ&lt;code&gt;df&lt;/code&gt;から，必要な統計量を計算します．&lt;/p&gt;
@@ -677,7 +677,7 @@ plt.show()
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;code&gt;stocks_topix30&lt;/code&gt;はTOPIX Core30構成銘柄の証券コードのリストです．構成銘柄は毎年10/31に更新されます．サンプルコードを再現したい場合&lt;code&gt;stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 4503, 5401, 6301, 6501, 6502, 6752, 6758, 6954, 7201, 7203, 7267, 7751, 8031, 8058, 8306, 8316, 8411, 8604, 8766, 8802, 9021, 9432, 9433, 9437, 9984]&lt;/code&gt;としてください． &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;stocks_topix30&lt;/code&gt;はTOPIX Core30構成銘柄の証券コードのリストです．構成銘柄は毎年10/31に更新されます．サンプルコードを再現したい場合&lt;code&gt;stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 4503, 5401, 6301, 6501, 6502, 6752, 6758, 6954, 7201, 7203, 7267, 7751, 8031, 8058, 8306, 8316, 8411, 8604, 8766, 8802, 9021, 9432, 9433, 9437, 9984]&lt;/code&gt;としてください．&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -727,7 +727,7 @@ plt.show()
 &lt;p&gt;$$
 \begin{align}
 u_i(\sigma)
-&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\&lt;br&gt;
+&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\
 &amp;amp;= \sum_{h \in Z} u_i(h) \prod_{i \in N} \pi^{\sigma}_i(h)
 \end{align}
 $$
@@ -739,10 +739,10 @@ $$
 &lt;p&gt;$$
 \begin{aligned}
 u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N})
-&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\
 u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N})
-&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
-&amp;amp;~ \vdots \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\
+&amp;amp;~ \vdots \\
 u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N})
 &amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
 \end{aligned}
@@ -752,10 +752,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
-&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\
 u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
-&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
-&amp;amp;~ \vdots \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\
+&amp;amp;~ \vdots \\
 u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
 &amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
 \end{aligned}
@@ -767,8 +767,8 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;$$
 R_i^T
-:= \underset{\sigma_i^*}{\rm max} ~
-\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^*, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
+:= \underset{\sigma_i^&lt;em&gt;}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^&lt;/em&gt;, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
 $$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Average strategy for player $i$ from time $1$ to $T$：&lt;/li&gt;
@@ -776,7 +776,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \overline{\sigma}_i^t(I)(a)
-&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\&lt;br&gt;
+&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\
 &amp;amp;= \frac{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h) \cdot \sigma^t(h)(a)}{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h)}
 \end{align}
 $$&lt;/p&gt;
@@ -823,7 +823,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 R_i^T
-\leq \sum_{I \in \mathcal{I}_i} &amp;amp;R_{i,imm}^{T,+}(I) \\&lt;br&gt;
+\leq \sum_{I \in \mathcal{I}&lt;em&gt;i} &amp;amp;R&lt;/em&gt;{i,imm}^{T,+}(I) \\
 where ~~~
 &amp;amp;R_{i,imm}^{T, +}(I)
 := max(R_{i,imm}^{T}(I), 0)
@@ -831,7 +831,7 @@ where ~~~
 $$&lt;/p&gt;
 &lt;p&gt;So that, we obtain the sufficient condition of $R_{i,imm}^{T}(I)$  for the average strategy $\overline{\sigma}_i^t(I)(a)$ to become a Nash equilibrium strategy as below.&lt;/p&gt;
 &lt;p&gt;$$
-\sum_{I \in \mathcal{I}_i} R_{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
+\sum_{I \in \mathcal{I}&lt;em&gt;i} R&lt;/em&gt;{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
 $$&lt;/p&gt;
 &lt;p&gt;Now all we need is to minimize the immediate counterfactual regret  $R_{i,imm}^{T}(I)$.&lt;/p&gt;
 &lt;p&gt;In addition, as can be seen from the above formula, the computational complexity of the CFR algorithm depends on the number of information sets $I$. Also, to avoid the complete search of game tree (searching all information sets $I$), subsequent algorithms such as CFR + propose an abstraction of the game state.&lt;/p&gt;
@@ -1068,13 +1068,13 @@ if __name__ == &amp;quot;__main__&amp;quot;:
 &lt;p&gt;In order to login to keio.jp (Keio Single Sign-On System), it is necessary to satisfy the page transition as below.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://auth.keio.jp&#34;&gt;https://auth.keio.jp&lt;/a&gt; (SSO login page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://auth.keio.jp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://auth.keio.jp&lt;/a&gt; (SSO login page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://gslbs.adst.keio.ac.jp/student/index.html&#34;&gt;https://gslbs.adst.keio.ac.jp/student/index.html&lt;/a&gt; (Syllabus page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gslbs.adst.keio.ac.jp/student/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://gslbs.adst.keio.ac.jp/student/index.html&lt;/a&gt; (Syllabus page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.edu.keio.jp/ess2/login?&#34;&gt;https://www.edu.keio.jp/ess2/login?&lt;/a&gt; (Class support page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.edu.keio.jp/ess2/login&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.edu.keio.jp/ess2/login&lt;/a&gt;? (Class support page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;So, this time, a static web-scraping library like BeautifulSoup is not enough, because it doesn&amp;rsquo;t support the dynamic site with Javascript or page redirection. Then I use &lt;a href=&#34;https://selenium.dev/documentation/en/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Selenium&lt;/a&gt; and &lt;a href=&#34;http://chromedriver.chromium.org/getting-started&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChromeDriver&lt;/a&gt; in python.&lt;/p&gt;
@@ -1188,7 +1188,7 @@ driver.quit()
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The Selenium Browser Automation Project &amp;gt; Getting started &amp;gt; Quick tour&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>

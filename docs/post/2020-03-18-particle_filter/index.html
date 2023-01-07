@@ -260,8 +260,8 @@ State Space Model(SSM) is widely used in the field requiring the sequential esti
   
 
   <link rel="manifest" href="https://yumauchiumi.com/index.webmanifest">
-  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="https://yumauchiumi.com/post/2020-03-18-particle_filter/">
 
@@ -331,7 +331,7 @@ State Space Model(SSM) is widely used in the field requiring the sequential esti
     "name": "Yuma Uchiumi",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png"
+      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": "State Space Model (SSM)\nState Space Model(SSM) is widely used in the field requiring the sequential estimation or online learning. This model is effective if you consider a system having two different variables; one completely represents the actual state but cannot be observed and the other partially represents the actual state but can be observed."
@@ -680,7 +680,7 @@ This model is effective if you consider a system having two different variables;
 <p>Equation of each state $x_t$ :</p>
 <p>$$
 \begin{aligned}
-x_{t+1} &amp;= F(x_t) ~~ (\text{Deterministic process}) \\<br>
+x_{t+1} &amp;= F(x_t) ~~ (\text{Deterministic process}) \\
 x_{t+1} &amp;\sim f(\cdot\vert x_t) ~~ (\text{Stochastic process})
 \end{aligned}
 $$</p>
@@ -689,7 +689,7 @@ $$</p>
 <p>Equation of each observation $y_t$ :</p>
 <p>$$
 \begin{aligned}
-y_t &amp;= H(x_t) ~~ (\text{Deterministic process}) \\<br>
+y_t &amp;= H(x_t) ~~ (\text{Deterministic process}) \\
 y_t &amp;\sim h(\cdot \vert x_t) ~~ (\text{Stochastic process})
 \end{aligned}
 $$</p>
@@ -726,7 +726,7 @@ $$</p>
 $$
 \begin{aligned}
 p(x_t \vert y_{1:t})
-&amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\<br>
+&amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\
 &amp;\approx \sum_{i=1}^{M} \frac{}{\sum_{i=1}^{M} } \delta(x_t - \hat{x}^i_{t \vert t-1})
 \end{aligned}
 $$</p>

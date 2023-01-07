@@ -67,18 +67,18 @@ $$&lt;/p&gt;
 &lt;p&gt;の解で与えられているとする($S$は幾何ブラウン運動に従う)．時刻$t \in [0, T]$において，オプションの原資産価格$S_t$とオプションの行使価格$K$が与えられたとき，ブラック・ショールズ式によってオプションの理論価格$C(t, S_t)$は&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-C(t, S_t) &amp;amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\&lt;br&gt;
+C(t, S_t) &amp;amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\
 where ~~
-d_1 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}} \\&lt;br&gt;
+d_1 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}} \\
 d_2 &amp;amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}}
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;となる．ただし，$r$は無リスク資産の利率，$\Phi$は標準正規分布$\mathcal{N}(0,1)の累積分布関数とする．ここで，簡単のために満期$T$を$1$とすると，現在($t=0$)のオプション価格の理論値は，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-C(0, S_0) &amp;amp;= S_0 \Phi(d_1) - K e^{-r} \Phi(d_2) \\&lt;br&gt;
+C(0, S_0) &amp;amp;= S_0 \Phi(d_1) - K e^{-r} \Phi(d_2) \\
 where ~~
-d_1 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right)}{\sigma } \\&lt;br&gt;
+d_1 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right)}{\sigma } \\
 d_2 &amp;amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right)}{\sigma}
 \end{align}
 $$&lt;/p&gt;
@@ -264,9 +264,9 @@ BS式による理論価格83.1821に漸近している．&lt;/p&gt;
 &lt;p&gt;答えはシンプルで，Taylor展開&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\frac{d x_1}{d t} &amp;amp;= f_1(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
-\frac{d x_2}{d t} &amp;amp;= f_2(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
-&amp;amp;\vdots \\&lt;br&gt;
+\frac{d x_1}{d t} &amp;amp;= f_1(x_1, \dots, x_n; \theta_1) \\
+\frac{d x_2}{d t} &amp;amp;= f_2(x_1, \dots, x_n; \theta_1) \\
+&amp;amp;\vdots \\
 \frac{d x_n}{d t} &amp;amp;= f_n(x_1, \dots, x_n; \theta_1)
 \end{align}
 $$&lt;/p&gt;
@@ -276,50 +276,50 @@ $$&lt;/p&gt;
 f_1 = f_2 = \cdots = f_n = 0
 \end{align}
 $$&lt;/p&gt;
-&lt;p&gt;が成り立つから，$n$個の変数${\bf x} = (x_1, x_2, \dots, x_n)$に対して，$n$個の方程式が得られる．この解がシステムの定常化となる．これを${\bf x}^* = (x_1^*, x_2^*, \dots, x_n^*)$とおくと，$f_1, f_2, \dots, f_n$に対して，点${\bf x}^*$の近傍でTaylor展開が可能になる．&lt;/p&gt;
+&lt;p&gt;が成り立つから，$n$個の変数${\bf x} = (x_1, x_2, \dots, x_n)$に対して，$n$個の方程式が得られる．この解がシステムの定常化となる．これを${\bf x}^* = (x_1^&lt;em&gt;, x_2^&lt;/em&gt;, \dots, x_n^&lt;em&gt;)$とおくと，$f_1, f_2, \dots, f_n$に対して，点${\bf x}^&lt;/em&gt;$の近傍でTaylor展開が可能になる．&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \frac{d x_1}{d t}
 = f_1(x_1, \dots, x_n; \theta_1)
-=&amp;amp; a_{11}(x_1 - x_1^*) + a_{12} {(x_2 - x_2^*)} + \cdots a_{1n} {(x_n - x_n^*)} + \\&lt;br&gt;
-&amp;amp; a_{111}{(x_1 - x_1^*)}^2 + a_{112}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{11n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\&lt;br&gt;
-&amp;amp; a_{11\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+=&amp;amp; a_{11}(x_1 - x_1^&lt;em&gt;) + a_{12} {(x_2 - x_2^&lt;/em&gt;)} + \cdots a_{1n} {(x_n - x_n^&lt;em&gt;)} + \\
+&amp;amp; a_{111}{(x_1 - x_1^&lt;/em&gt;)}^2 + a_{112}(x_1 - x_1^&lt;em&gt;)(x_2 - x_2^&lt;/em&gt;) + \cdots + a_{11n}{(x_1 - x_1^&lt;em&gt;)}^2 + \\
+&amp;amp; ~~ \vdots \\
+&amp;amp; a_{11\cdots1}{(x_1 - x_1^&lt;/em&gt;)}^n + \cdots \\
 \frac{d x_2}{d t}
 = f_2(x_1, \dots, x_n; \theta_1)
-=&amp;amp; a_{21}(x_1 - x_1^*) + a_{22} {(x_2 - x_2^*)} + \cdots a_{2n} {(x_n - x_n^*)} + \\&lt;br&gt;
-&amp;amp; a_{211}{(x_1 - x_1^*)}^2 + a_{212}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{21n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\&lt;br&gt;
-&amp;amp; a_{21\cdots1}{(x_1 - x_1^*)}^n + \cdots \\ \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\ \\&lt;br&gt;
+=&amp;amp; a_{21}(x_1 - x_1^&lt;em&gt;) + a_{22} {(x_2 - x_2^&lt;/em&gt;)} + \cdots a_{2n} {(x_n - x_n^&lt;em&gt;)} + \\
+&amp;amp; a_{211}{(x_1 - x_1^&lt;/em&gt;)}^2 + a_{212}(x_1 - x_1^&lt;em&gt;)(x_2 - x_2^&lt;/em&gt;) + \cdots + a_{21n}{(x_1 - x_1^&lt;em&gt;)}^2 + \\
+&amp;amp; ~~ \vdots \\
+&amp;amp; a_{21\cdots1}{(x_1 - x_1^&lt;/em&gt;)}^n + \cdots \\ \\
+&amp;amp; ~~ \vdots \\ \\\
 \frac{d x_n}{d t}
 = f_n(x_1, \dots, x_n; \theta_1)
-=&amp;amp; a_{n1}(x_1 - x_1^*) + a_{n2} {(x_2 - x_2^*)} + \cdots a_{nn} {(x_n - x_n^*)} + \\&lt;br&gt;
-&amp;amp; a_{n11}{(x_1 - x_1^*)}^2 + a_{n12}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{n1n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\&lt;br&gt;
-&amp;amp; a_{n1\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+=&amp;amp; a_{n1}(x_1 - x_1^&lt;em&gt;) + a_{n2} {(x_2 - x_2^&lt;/em&gt;)} + \cdots a_{nn} {(x_n - x_n^&lt;em&gt;)} + \\
+&amp;amp; a_{n11}{(x_1 - x_1^&lt;/em&gt;)}^2 + a_{n12}(x_1 - x_1^&lt;em&gt;)(x_2 - x_2^&lt;/em&gt;) + \cdots + a_{n1n}{(x_1 - x_1^&lt;em&gt;)}^2 + \\
+&amp;amp; ~~ \vdots \\
+&amp;amp; a_{n1\cdots1}{(x_1 - x_1^&lt;/em&gt;)}^n + \cdots \\
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;つまり，任意の微分可能関数$f_1, f_2, \dots, f_n$によって表現されたダイナミクスをもつ動的モデルは，（定常解の近傍では）任意のn次多項式によって近似できる．これにより，線形システムの妥当性が保証される．一般解は，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 x_1
-=&amp;amp; ~ x_1^*  + C_{11}e^{\lambda_1 t} + C_{12}e^{\lambda_2 t} + \cdots C_{1n}e^{\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{111}e^{2\lambda_1 t} + C_{112}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{11\cdots1}e^{n\lambda_1 t} + C_{11\cdots2}e^{n\lambda_2 t} + \cdots + C_{11\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+=&amp;amp; ~ x_1^*  + C_{11}e^{\lambda_1 t} + C_{12}e^{\lambda_2 t} + \cdots C_{1n}e^{\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ C_{111}e^{2\lambda_1 t} + C_{112}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\
+&amp;amp; ~~~~~~~~~~ C_{11\cdots1}e^{n\lambda_1 t} + C_{11\cdots2}e^{n\lambda_2 t} + \cdots + C_{11\cdots n}e^{n\lambda_n t} \\
 x_2
-=&amp;amp; ~ x_2^*  + C_{21}e^{\lambda_1 t} + C_{22}e^{\lambda_2 t} + \cdots C_{2n}e^{\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{211}e^{2\lambda_1 t} + C_{212}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{21\cdots1}e^{n\lambda_1 t} + C_{21\cdots2}e^{n\lambda_2 t} + \cdots + C_{21\cdots n}e^{n\lambda_n t} \\ \\&lt;br&gt;
+=&amp;amp; ~ x_2^*  + C_{21}e^{\lambda_1 t} + C_{22}e^{\lambda_2 t} + \cdots C_{2n}e^{\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ C_{211}e^{2\lambda_1 t} + C_{212}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\
+&amp;amp; ~~~~~~~~~~ C_{21\cdots1}e^{n\lambda_1 t} + C_{21\cdots2}e^{n\lambda_2 t} + \cdots + C_{21\cdots n}e^{n\lambda_n t} \\ \\\
 &amp;amp; ~~~~~~~~~~ ~~ \vdots
-\ \&lt;br&gt;
+\ \
 x_n
-=&amp;amp; ~ x_n^*  + C_{n1}e^{\lambda_1 t} + C_{n2}e^{\lambda_2 t} + \cdots C_{nn}e^{\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{n11}e^{2\lambda_1 t} + C_{n12}e^{2\lambda_2 t} + \cdots + C_{n1n}e^{2\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{n1\cdots1}e^{n\lambda_1 t} + C_{n1\cdots2}e^{n\lambda_2 t} + \cdots + C_{n1\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+=&amp;amp; ~ x_n^*  + C_{n1}e^{\lambda_1 t} + C_{n2}e^{\lambda_2 t} + \cdots C_{nn}e^{\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ C_{n11}e^{2\lambda_1 t} + C_{n12}e^{2\lambda_2 t} + \cdots + C_{n1n}e^{2\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\
+&amp;amp; ~~~~~~~~~~ C_{n1\cdots1}e^{n\lambda_1 t} + C_{n1\cdots2}e^{n\lambda_2 t} + \cdots + C_{n1\cdots n}e^{n\lambda_n t} \\
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;となる．&lt;/p&gt;
@@ -344,7 +344,7 @@ $$&lt;/p&gt;
 &lt;p&gt;移動平均とは何か？&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-m_t &amp;amp;= \gamma \cdot m_t − 1+η \cdot \frac{\partial L(w_t)}{\partial w} \\&lt;br&gt;
+m_t &amp;amp;= \gamma \cdot m_t − 1+η \cdot \frac{\partial L(w_t)}{\partial w} \\
 w_{t+1} &amp;amp;= w_t - m_t
 \end{align}
 $$&lt;/p&gt;
@@ -393,13 +393,13 @@ $$&lt;/p&gt;
 &lt;p&gt;In order to login to keio.jp (Keio Single Sign-On System), it is necessary to satisfy the page transition as below.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://auth.keio.jp&#34;&gt;https://auth.keio.jp&lt;/a&gt; (SSO login page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://auth.keio.jp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://auth.keio.jp&lt;/a&gt; (SSO login page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://gslbs.adst.keio.ac.jp/student/index.html&#34;&gt;https://gslbs.adst.keio.ac.jp/student/index.html&lt;/a&gt; (Syllabus page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gslbs.adst.keio.ac.jp/student/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://gslbs.adst.keio.ac.jp/student/index.html&lt;/a&gt; (Syllabus page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.edu.keio.jp/ess2/login?&#34;&gt;https://www.edu.keio.jp/ess2/login?&lt;/a&gt; (Class support page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.edu.keio.jp/ess2/login&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.edu.keio.jp/ess2/login&lt;/a&gt;? (Class support page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;So, this time, a static web-scraping library like BeautifulSoup is not enough, because it doesn&amp;rsquo;t support the dynamic site with Javascript or page redirection. Then I use &lt;a href=&#34;https://selenium.dev/documentation/en/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Selenium&lt;/a&gt; and &lt;a href=&#34;http://chromedriver.chromium.org/getting-started&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChromeDriver&lt;/a&gt; in python.&lt;/p&gt;
@@ -513,7 +513,7 @@ driver.quit()
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The Selenium Browser Automation Project &amp;gt; Getting started &amp;gt; Quick tour&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>

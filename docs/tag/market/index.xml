@@ -141,9 +141,9 @@ Date
 &lt;p&gt;一般に，$n$コの資産で構成されるポートフォリオの場合，ポートフォリオの分散は$n$コの資産間の共分散行列の二次形式となるので，この最適化問題は二次計画問題(Quadratic Programming, QP)のクラスとなり，次のように定式化されます．&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\underset{\bf x}{\rm minimize} ~~~ &amp;amp;{\bf x}^T \Sigma {\bf x} \\&lt;br&gt;
-{\rm subject~to} ~~~ &amp;amp;{\bf r}^T {\bf x} = \sum_{i=1}^{n} r_i x_i \geq r_e \\&lt;br&gt;
-&amp;amp;{|| {\bf x} ||}_{1} = \sum_{i=1}^{n} x_i = 1 \\&lt;br&gt;
+\underset{\bf x}{\rm minimize} ~~~ &amp;amp;{\bf x}^T \Sigma {\bf x} \\
+{\rm subject~to} ~~~ &amp;amp;{\bf r}^T {\bf x} = \sum_{i=1}^{n} r_i x_i \geq r_e \\
+&amp;amp;{|| {\bf x} ||}_{1} = \sum_{i=1}^{n} x_i = 1 \\
 &amp;amp;x_i \geq 0 ~~ (i = 1, \cdots, n)
 \end{align}
 $$&lt;/p&gt;
@@ -163,8 +163,8 @@ $$&lt;/p&gt;
 CVXOPTで二次計画問題を扱う場合は，解きたい最適化問題を以下の一般化されたフォーマットに整理して，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\underset{\bf x}{\rm minimize} ~~~ &amp;amp;\frac{1}{2} {\bf x}^{T} P {\bf x} + {\bf q}^{T} {\bf x} \\&lt;br&gt;
-{\rm subject~to} ~~~ &amp;amp; G {\bf x} \leq {\bf h} \\&lt;br&gt;
+\underset{\bf x}{\rm minimize} ~~~ &amp;amp;\frac{1}{2} {\bf x}^{T} P {\bf x} + {\bf q}^{T} {\bf x} \\
+{\rm subject~to} ~~~ &amp;amp; G {\bf x} \leq {\bf h} \\
 &amp;amp;A {\bf x} = {\bf b}
 \end{align}
 $$&lt;/p&gt;
@@ -174,17 +174,17 @@ P = 2 \cdot \Sigma, ~~~
 q = {\bf 0}_n, ~~~
 G = -1 \cdot
 \begin{pmatrix}
-\bar{r}_1 &amp;amp; \cdots &amp;amp; \bar{r}_n \\&lt;br&gt;
-1 &amp;amp; \cdots &amp;amp; 0 \\&lt;br&gt;
-\vdots &amp;amp; \ddots &amp;amp; \vdots \\&lt;br&gt;
+\bar{r}_1 &amp;amp; \cdots &amp;amp; \bar{r}_n \\
+1 &amp;amp; \cdots &amp;amp; 0 \\
+\vdots &amp;amp; \ddots &amp;amp; \vdots \\
 0 &amp;amp; \cdots &amp;amp; 1
 \end{pmatrix}, ~~~
 h = -1 \cdot
 \left(
 \begin{array}{c}
-r_e \\&lt;br&gt;
-0 \\&lt;br&gt;
-\vdots \\&lt;br&gt;
+r_e \\
+0 \\
+\vdots \\
 0
 \end{array}
 \right), ~~~
@@ -194,8 +194,8 @@ $$&lt;/p&gt;
 &lt;p&gt;となります．&lt;/p&gt;
 &lt;p&gt;参考:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&#34;&gt;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&#34;&gt;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://cvxopt.org/userguide/coneprog.html#quadratic-programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;33-pythonで計算&#34;&gt;3.3. Pythonで計算&lt;/h3&gt;
 &lt;p&gt;対象資産のパネルデータ&lt;code&gt;df&lt;/code&gt;から，必要な統計量を計算します．&lt;/p&gt;
@@ -614,7 +614,7 @@ plt.show()
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;code&gt;stocks_topix30&lt;/code&gt;はTOPIX Core30構成銘柄の証券コードのリストです．構成銘柄は毎年10/31に更新されます．サンプルコードを再現したい場合&lt;code&gt;stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 4503, 5401, 6301, 6501, 6502, 6752, 6758, 6954, 7201, 7203, 7267, 7751, 8031, 8058, 8306, 8316, 8411, 8604, 8766, 8802, 9021, 9432, 9433, 9437, 9984]&lt;/code&gt;としてください． &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;stocks_topix30&lt;/code&gt;はTOPIX Core30構成銘柄の証券コードのリストです．構成銘柄は毎年10/31に更新されます．サンプルコードを再現したい場合&lt;code&gt;stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 4503, 5401, 6301, 6501, 6502, 6752, 6758, 6954, 7201, 7203, 7267, 7751, 8031, 8058, 8306, 8316, 8411, 8604, 8766, 8802, 9021, 9432, 9433, 9437, 9984]&lt;/code&gt;としてください．&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -631,50 +631,50 @@ S&amp;amp;P 500 YTDをみると，2018年・2019年と比較しても低調だ�
 &lt;p&gt;アメリカ株は予想に反して高い水準を維持しているが，6月以降の統計結果によっては落ち込む可能性も高い．このポストでは，アメリカのマクロ経済史を振り返り,2021年以降のアメリカ経済について考えてみたい．&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/sp-500-ytd-performance-2020-06-12-macrotrends.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index YTD Daily Performance&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/2490/sp-500-ytd-performance&#34;&gt;https://www.macrotrends.net/2490/sp-500-ytd-performance&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2490/sp-500-ytd-performance&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/2490/sp-500-ytd-performance&lt;/a&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;br&gt;
 &lt;h1 id=&#34;gdp&#34;&gt;GDP&lt;/h1&gt;
 &lt;p&gt;USの実質GDP年間推移(1947 - 2020)をみてみる．インフレ率を補正すると，ほぼ線形に増加していることがわかる．&lt;/p&gt;
 &lt;img src=&#34;https://alfred.stlouisfed.org/graph/alfredgraph.png?g=rxJG&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: Real GDP, Billions of Chained 2012 Dollars, Annual Rate (1947 - 2020)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://alfred.stlouisfed.org/series?seid=GDPC1&#34;&gt;https://alfred.stlouisfed.org/series?seid=GDPC1&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://alfred.stlouisfed.org/series?seid=GDPC1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://alfred.stlouisfed.org/series?seid=GDPC1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;次に，成長率(1次微分)．USの四半期ごとのGDP成長率(YOY)を，戦後(1947-2020)に限定してみてみる．基本的にランダムウォークにみえるが，興味深いのは&lt;strong&gt;1985年ごろを境に，分散が小さくなっていること&lt;/strong&gt;だ．&lt;/p&gt;
 &lt;img src=&#34;{{site.baseurl}}/assets/img/post/USGDP1947-2020.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: United States GDP Growth Rate, YOY (1947 - 2020)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://tradingeconomics.com/united-states/gdp-growth&#34;&gt;https://tradingeconomics.com/united-states/gdp-growth&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://tradingeconomics.com/united-states/gdp-growth&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://tradingeconomics.com/united-states/gdp-growth&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;FREDのサイトにある，年間のGDP成長率(YOY)も載せておく．&lt;/p&gt;
 &lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=qPxn&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: Real GDP, Percent Change from Preceding Period (1930 - 2020)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/?g=oM2u&#34;&gt;https://fred.stlouisfed.org/graph/?g=oM2u&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/?g=oM2u&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://fred.stlouisfed.org/graph/?g=oM2u&lt;/a&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;br&gt;
 &lt;h1 id=&#34;equity-market&#34;&gt;Equity Market&lt;/h1&gt;
 &lt;p&gt;米国株式市場の歴史．まず事実として，USの株式市場は長期的に上昇トレンドである．また，S&amp;amp;P 500とDJIAは長期間でみると同じ挙動を示す．&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/sp-500-historical-chart-data-2020-06-12-macrotrends.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index (1928.01 - 2020.06)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/dow-jones-100-year-historical-chart-2020-06-12-macrotrends.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: Dow Jones Industrial Average (DJIA) (1915.02 - 2020.06)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2324/sp-500-historical-chart-data&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/2324/sp-500-historical-chart-data&lt;/a&gt;&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/nasdaq-historical-chart-2020-06-13-macrotrends.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: NASDAQ Composite (1971.02 - 2020.06)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/1320/nasdaq-historical-chart&#34;&gt;https://www.macrotrends.net/1320/nasdaq-historical-chart&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/1320/nasdaq-historical-chart&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/1320/nasdaq-historical-chart&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;そして，狭い意味での効率的市場仮説を支持するならば，短期(年あるいは月単位)での景気循環は平滑化される．また事実として，あらゆる経済統計がせいぜい100年分しか存在しない以上，景気循環説や効率的市場仮説は正しく検証できない．&lt;/p&gt;
 &lt;p&gt;S&amp;amp;P 500は，NYSEとNSDAQの上場銘柄から(流動性の高い大型株の)時価総額を指数化したものなので，DJIAより実体経済(企業部門の利益)を反映している(と言われている)．&lt;/p&gt;
 &lt;p&gt;ここで，S&amp;amp;P 500の過去10年間(2010 - 2020)の推移をみてみる．&lt;/p&gt;
 &lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index, Daily Close (2010.06.15 - 2020.06.12)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI,&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI,&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtxI&lt;/a&gt;,&lt;/p&gt;
 &lt;br&gt;
 &lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index Change from Year Ago (2011.06.13 - 2020.06.12)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyH&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;S&amp;amp;P 500の日別の変化量(YOY)．マイナスとなった期間は2015/08~2016/07，2018/11~2019/05，2020/03~05の3回である．&lt;/p&gt;
 &lt;br&gt;
 &lt;img src=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Index Change, Daily Close (2010.06.15 - 2020.06.12)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;S&amp;amp;P 500の日別の変化量(DOD)．&lt;/p&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -683,7 +683,7 @@ Source: &lt;a href=&#34;https://fred.stlouisfed.org/graph/fredgraph.png?g=rtyj&#
 &lt;p&gt;S&amp;amp;P 500の前年比変動率（1929-2020/03）をみてみよう．&lt;/p&gt;
 &lt;img src=&#34;{{ site.baseurl }}/assets/img/post/SP500HistoricalAnnualReturns1928-2020.png&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Fig: S&amp;amp;P 500 Historical Annual Returns (1928 - 2020)&lt;/strong&gt; &lt;br&gt;
-Source: &lt;a href=&#34;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&#34;&gt;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&lt;/a&gt;&lt;/p&gt;
+Source: &lt;a href=&#34;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.macrotrends.net/2526/sp-500-historical-annual-returns&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;S&amp;amp;P 500の統計が開始されてから，1929-2019年のちょうど100年間で，年換算で前年比マイナスとなった年は22回しかない．そして，2020年は23番目の年になるかもしれない．全22回をリストアップしてみる．&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;統計上の留意点：S&amp;amp;P 500指数の発行元であるS&amp;amp;P Global社の沿革:&lt;/p&gt;

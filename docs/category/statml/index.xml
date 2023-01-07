@@ -38,9 +38,9 @@
 &lt;p&gt;答えはシンプルで，Taylor展開&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\frac{d x_1}{d t} &amp;amp;= f_1(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
-\frac{d x_2}{d t} &amp;amp;= f_2(x_1, \dots, x_n; \theta_1) \\&lt;br&gt;
-&amp;amp;\vdots \\&lt;br&gt;
+\frac{d x_1}{d t} &amp;amp;= f_1(x_1, \dots, x_n; \theta_1) \\
+\frac{d x_2}{d t} &amp;amp;= f_2(x_1, \dots, x_n; \theta_1) \\
+&amp;amp;\vdots \\
 \frac{d x_n}{d t} &amp;amp;= f_n(x_1, \dots, x_n; \theta_1)
 \end{align}
 $$&lt;/p&gt;
@@ -50,50 +50,50 @@ $$&lt;/p&gt;
 f_1 = f_2 = \cdots = f_n = 0
 \end{align}
 $$&lt;/p&gt;
-&lt;p&gt;が成り立つから，$n$個の変数${\bf x} = (x_1, x_2, \dots, x_n)$に対して，$n$個の方程式が得られる．この解がシステムの定常化となる．これを${\bf x}^* = (x_1^*, x_2^*, \dots, x_n^*)$とおくと，$f_1, f_2, \dots, f_n$に対して，点${\bf x}^*$の近傍でTaylor展開が可能になる．&lt;/p&gt;
+&lt;p&gt;が成り立つから，$n$個の変数${\bf x} = (x_1, x_2, \dots, x_n)$に対して，$n$個の方程式が得られる．この解がシステムの定常化となる．これを${\bf x}^* = (x_1^&lt;em&gt;, x_2^&lt;/em&gt;, \dots, x_n^&lt;em&gt;)$とおくと，$f_1, f_2, \dots, f_n$に対して，点${\bf x}^&lt;/em&gt;$の近傍でTaylor展開が可能になる．&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \frac{d x_1}{d t}
 = f_1(x_1, \dots, x_n; \theta_1)
-=&amp;amp; a_{11}(x_1 - x_1^*) + a_{12} {(x_2 - x_2^*)} + \cdots a_{1n} {(x_n - x_n^*)} + \\&lt;br&gt;
-&amp;amp; a_{111}{(x_1 - x_1^*)}^2 + a_{112}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{11n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\&lt;br&gt;
-&amp;amp; a_{11\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+=&amp;amp; a_{11}(x_1 - x_1^&lt;em&gt;) + a_{12} {(x_2 - x_2^&lt;/em&gt;)} + \cdots a_{1n} {(x_n - x_n^&lt;em&gt;)} + \\
+&amp;amp; a_{111}{(x_1 - x_1^&lt;/em&gt;)}^2 + a_{112}(x_1 - x_1^&lt;em&gt;)(x_2 - x_2^&lt;/em&gt;) + \cdots + a_{11n}{(x_1 - x_1^&lt;em&gt;)}^2 + \\
+&amp;amp; ~~ \vdots \\
+&amp;amp; a_{11\cdots1}{(x_1 - x_1^&lt;/em&gt;)}^n + \cdots \\
 \frac{d x_2}{d t}
 = f_2(x_1, \dots, x_n; \theta_1)
-=&amp;amp; a_{21}(x_1 - x_1^*) + a_{22} {(x_2 - x_2^*)} + \cdots a_{2n} {(x_n - x_n^*)} + \\&lt;br&gt;
-&amp;amp; a_{211}{(x_1 - x_1^*)}^2 + a_{212}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{21n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\&lt;br&gt;
-&amp;amp; a_{21\cdots1}{(x_1 - x_1^*)}^n + \cdots \\ \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\ \\&lt;br&gt;
+=&amp;amp; a_{21}(x_1 - x_1^&lt;em&gt;) + a_{22} {(x_2 - x_2^&lt;/em&gt;)} + \cdots a_{2n} {(x_n - x_n^&lt;em&gt;)} + \\
+&amp;amp; a_{211}{(x_1 - x_1^&lt;/em&gt;)}^2 + a_{212}(x_1 - x_1^&lt;em&gt;)(x_2 - x_2^&lt;/em&gt;) + \cdots + a_{21n}{(x_1 - x_1^&lt;em&gt;)}^2 + \\
+&amp;amp; ~~ \vdots \\
+&amp;amp; a_{21\cdots1}{(x_1 - x_1^&lt;/em&gt;)}^n + \cdots \\ \\
+&amp;amp; ~~ \vdots \\ \\\
 \frac{d x_n}{d t}
 = f_n(x_1, \dots, x_n; \theta_1)
-=&amp;amp; a_{n1}(x_1 - x_1^*) + a_{n2} {(x_2 - x_2^*)} + \cdots a_{nn} {(x_n - x_n^*)} + \\&lt;br&gt;
-&amp;amp; a_{n11}{(x_1 - x_1^*)}^2 + a_{n12}(x_1 - x_1^*)(x_2 - x_2^*) + \cdots + a_{n1n}{(x_1 - x_1^*)}^2 + \\&lt;br&gt;
-&amp;amp; ~~ \vdots \\&lt;br&gt;
-&amp;amp; a_{n1\cdots1}{(x_1 - x_1^*)}^n + \cdots \\&lt;br&gt;
+=&amp;amp; a_{n1}(x_1 - x_1^&lt;em&gt;) + a_{n2} {(x_2 - x_2^&lt;/em&gt;)} + \cdots a_{nn} {(x_n - x_n^&lt;em&gt;)} + \\
+&amp;amp; a_{n11}{(x_1 - x_1^&lt;/em&gt;)}^2 + a_{n12}(x_1 - x_1^&lt;em&gt;)(x_2 - x_2^&lt;/em&gt;) + \cdots + a_{n1n}{(x_1 - x_1^&lt;em&gt;)}^2 + \\
+&amp;amp; ~~ \vdots \\
+&amp;amp; a_{n1\cdots1}{(x_1 - x_1^&lt;/em&gt;)}^n + \cdots \\
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;つまり，任意の微分可能関数$f_1, f_2, \dots, f_n$によって表現されたダイナミクスをもつ動的モデルは，（定常解の近傍では）任意のn次多項式によって近似できる．これにより，線形システムの妥当性が保証される．一般解は，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 x_1
-=&amp;amp; ~ x_1^*  + C_{11}e^{\lambda_1 t} + C_{12}e^{\lambda_2 t} + \cdots C_{1n}e^{\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{111}e^{2\lambda_1 t} + C_{112}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{11\cdots1}e^{n\lambda_1 t} + C_{11\cdots2}e^{n\lambda_2 t} + \cdots + C_{11\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+=&amp;amp; ~ x_1^*  + C_{11}e^{\lambda_1 t} + C_{12}e^{\lambda_2 t} + \cdots C_{1n}e^{\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ C_{111}e^{2\lambda_1 t} + C_{112}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\
+&amp;amp; ~~~~~~~~~~ C_{11\cdots1}e^{n\lambda_1 t} + C_{11\cdots2}e^{n\lambda_2 t} + \cdots + C_{11\cdots n}e^{n\lambda_n t} \\
 x_2
-=&amp;amp; ~ x_2^*  + C_{21}e^{\lambda_1 t} + C_{22}e^{\lambda_2 t} + \cdots C_{2n}e^{\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{211}e^{2\lambda_1 t} + C_{212}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{21\cdots1}e^{n\lambda_1 t} + C_{21\cdots2}e^{n\lambda_2 t} + \cdots + C_{21\cdots n}e^{n\lambda_n t} \\ \\&lt;br&gt;
+=&amp;amp; ~ x_2^*  + C_{21}e^{\lambda_1 t} + C_{22}e^{\lambda_2 t} + \cdots C_{2n}e^{\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ C_{211}e^{2\lambda_1 t} + C_{212}e^{2\lambda_2 t} + \cdots + C_{11n}e^{2\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\
+&amp;amp; ~~~~~~~~~~ C_{21\cdots1}e^{n\lambda_1 t} + C_{21\cdots2}e^{n\lambda_2 t} + \cdots + C_{21\cdots n}e^{n\lambda_n t} \\ \\\
 &amp;amp; ~~~~~~~~~~ ~~ \vdots
-\ \&lt;br&gt;
+\ \
 x_n
-=&amp;amp; ~ x_n^*  + C_{n1}e^{\lambda_1 t} + C_{n2}e^{\lambda_2 t} + \cdots C_{nn}e^{\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{n11}e^{2\lambda_1 t} + C_{n12}e^{2\lambda_2 t} + \cdots + C_{n1n}e^{2\lambda_n t} + \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ ~~ \vdots \\&lt;br&gt;
-&amp;amp; ~~~~~~~~~~ C_{n1\cdots1}e^{n\lambda_1 t} + C_{n1\cdots2}e^{n\lambda_2 t} + \cdots + C_{n1\cdots n}e^{n\lambda_n t} \\&lt;br&gt;
+=&amp;amp; ~ x_n^*  + C_{n1}e^{\lambda_1 t} + C_{n2}e^{\lambda_2 t} + \cdots C_{nn}e^{\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ C_{n11}e^{2\lambda_1 t} + C_{n12}e^{2\lambda_2 t} + \cdots + C_{n1n}e^{2\lambda_n t} + \\
+&amp;amp; ~~~~~~~~~~ ~~ \vdots \\
+&amp;amp; ~~~~~~~~~~ C_{n1\cdots1}e^{n\lambda_1 t} + C_{n1\cdots2}e^{n\lambda_2 t} + \cdots + C_{n1\cdots n}e^{n\lambda_n t} \\
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;となる．&lt;/p&gt;
@@ -118,7 +118,7 @@ $$&lt;/p&gt;
 &lt;p&gt;移動平均とは何か？&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-m_t &amp;amp;= \gamma \cdot m_t − 1+η \cdot \frac{\partial L(w_t)}{\partial w} \\&lt;br&gt;
+m_t &amp;amp;= \gamma \cdot m_t − 1+η \cdot \frac{\partial L(w_t)}{\partial w} \\
 w_{t+1} &amp;amp;= w_t - m_t
 \end{align}
 $$&lt;/p&gt;
@@ -148,7 +148,7 @@ This model is effective if you consider a system having two different variables;
 &lt;p&gt;Equation of each state $x_t$ :&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x_{t+1} &amp;amp;= F(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+x_{t+1} &amp;amp;= F(x_t) ~~ (\text{Deterministic process}) \\
 x_{t+1} &amp;amp;\sim f(\cdot\vert x_t) ~~ (\text{Stochastic process})
 \end{aligned}
 $$&lt;/p&gt;
@@ -157,7 +157,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Equation of each observation $y_t$ :&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-y_t &amp;amp;= H(x_t) ~~ (\text{Deterministic process}) \\&lt;br&gt;
+y_t &amp;amp;= H(x_t) ~~ (\text{Deterministic process}) \\
 y_t &amp;amp;\sim h(\cdot \vert x_t) ~~ (\text{Stochastic process})
 \end{aligned}
 $$&lt;/p&gt;
@@ -194,7 +194,7 @@ $$&lt;/p&gt;
 $$
 \begin{aligned}
 p(x_t \vert y_{1:t})
-&amp;amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\&lt;br&gt;
+&amp;amp;\approx \frac{1}{M} \sum_{i=1}^{M} \delta(x_t - \hat{x}^i_{t \vert t-1}) \\
 &amp;amp;\approx \sum_{i=1}^{M} \frac{}{\sum_{i=1}^{M} } \delta(x_t - \hat{x}^i_{t \vert t-1})
 \end{aligned}
 $$&lt;/p&gt;
@@ -227,9 +227,9 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 D_{KL}(q \vert\vert p)
-&amp;amp;= \beta \int_X q(x)\phi(x) - \left\{ - \int_X q(x)\log q(x) \right\} + \log \int_X \exp(-\beta \phi(x)) \\&lt;br&gt;
-&amp;amp;= \beta~ \mathbb{E}_{x \sim q}[\phi(x)] - H_q(X) + \log Z^{\phi}(\beta) \\&lt;br&gt;
-&amp;amp;= \beta~ (\text{Internal energy}) - (\text{Entropy}) + (\text{Const.}) \\&lt;br&gt;
+&amp;amp;= \beta \int_X q(x)\phi(x) - \left\{ - \int_X q(x)\log q(x) \right\} + \log \int_X \exp(-\beta \phi(x)) \\
+&amp;amp;= \beta~ \mathbb{E}_{x \sim q}[\phi(x)] - H_q(X) + \log Z^{\phi}(\beta) \\
+&amp;amp;= \beta~ (\text{Internal energy}) - (\text{Entropy}) + (\text{Const.}) \\
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;いま，近似分布$q(x)$に対する汎関数として，自由エネルギー:&lt;/p&gt;
@@ -272,7 +272,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$F^{\phi}(q)$の定義式で，$F = F^{\phi}(q)$，$U = \mathbb{E}_{x \sim q}[\phi(x)]$，$S = H_q(X)$とおけば，&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-\beta F &amp;amp;= \beta U - S \\&lt;br&gt;
+\beta F &amp;amp;= \beta U - S \\
 F &amp;amp;= U - \frac{1}{\beta} S
 \end{aligned}
 $$&lt;/p&gt;
@@ -285,9 +285,9 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 (\text{Evidence})
-&amp;amp;= \log p(y) \\&lt;br&gt;
-&amp;amp;\geq \mathbb{E}_{\theta \sim q}\left[ \log p(y, \theta) \right] - \mathbb{E}_{\theta \sim q} \left[ \log q(\theta) \right] \\&lt;br&gt;
-&amp;amp;= \mathcal{L}_{ELBO}(q) \\&lt;br&gt;
+&amp;amp;= \log p(y) \\
+&amp;amp;\geq \mathbb{E}_{\theta \sim q}\left[ \log p(y, \theta) \right] - \mathbb{E}_{\theta \sim q} \left[ \log q(\theta) \right] \\
+&amp;amp;= \mathcal{L}_{ELBO}(q) \\
 &amp;amp;= (\text{Evidence Lower Bound})
 \end{align}
 $$&lt;/p&gt;
@@ -299,10 +299,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 (\text{Surprise})
-&amp;amp;= - \log p(y) \\&lt;br&gt;
-&amp;amp;\leq - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)] \\&lt;br&gt;
-&amp;amp;= -\mathcal{L}_{ELBO}(q) \\&lt;br&gt;
-&amp;amp;= F(y) \\&lt;br&gt;
+&amp;amp;= - \log p(y) \\
+&amp;amp;\leq - \mathbb{E}_{\theta \sim q}[\log p(y,\theta)] + \mathbb{E}_{\theta \sim q}[\log q(\theta)] \\
+&amp;amp;= -\mathcal{L}_{ELBO}(q) \\
+&amp;amp;= F(y) \\
 &amp;amp;= (\text{Free energy})
 \end{aligned}
 $$&lt;/p&gt;
@@ -310,7 +310,7 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.fil.ion.ucl.ac.uk/~karl/The%20free-energy%20principle%20-%20a%20rough%20guide%20to%20the%20brain.pdf&#34;&gt;FristonのCell論文(2009)&lt;/a&gt;にあるエージェントの行動$\alpha$や脳の内部状態$\mu$の更新式:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-\alpha^{*} &amp;amp;= \underset{\alpha}{\rm argmin} ~ F(y) \\&lt;br&gt;
+\alpha^{*} &amp;amp;= \underset{\alpha}{\rm argmin} ~ F(y) \\
 \mu^{*} &amp;amp;= \underset{\mu}{\rm argmin} ~ F(y)
 \end{align}
 $$&lt;/p&gt;
@@ -361,13 +361,13 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 (\text{Evidence})
-&amp;amp;= \log p(x) \\&lt;br&gt;
-&amp;amp;= \log \int_{Z} p(x,z) \\&lt;br&gt;
-&amp;amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\&lt;br&gt;
-&amp;amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\&lt;br&gt;
-&amp;amp;= \log \mathbb{E}_{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
-&amp;amp;\geq \mathbb{E}_{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
+&amp;amp;= \log p(x) \\
+&amp;amp;= \log \int_{Z} p(x,z) \\
+&amp;amp;= \log \int_{Z} p(x,z) \frac{q(z)}{q(z)} \\
+&amp;amp;= \log \int_{Z} q(z) \frac{p(x,z)}{q(z)} \\
+&amp;amp;= \log \mathbb{E}&lt;em&gt;{z \sim q} \left[ \frac{p(x,z)}{q(z)} \right] \\
+&amp;amp;\geq \mathbb{E}&lt;/em&gt;{z \sim q} \left[ \log \frac{p(x,z)}{q(z)} \right] \\
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\
 &amp;amp;= ELBO(q) ~~~ (\text{Evidence Lower Bound, ELBO})
 \end{aligned}
 $$&lt;/p&gt;
@@ -382,7 +382,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 D_{KL}( q(z) \vert\vert p(z \vert x) )
-&amp;amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\&lt;br&gt;
+&amp;amp;= \int_{Z} q(z) \frac{q(z)}{p(z \vert x)} \\
 &amp;amp;= - H_q(Z) - \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right]
 \end{aligned}
 $$&lt;/p&gt;
@@ -390,10 +390,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 ELBO
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\&lt;br&gt;
-&amp;amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\&lt;br&gt;
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x,z) \right] + H_q(Z) \\
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) + \log p(z|x) \right] + H_q(Z) \\
+&amp;amp;= \mathbb{E}_{z \sim q} \left[ \log p(x) \right] + \mathbb{E}_{z \sim q} \left[ \log p(z|x) \right] + H_q(Z) \\
+&amp;amp;= \log p(x) + H_q(Z) + \mathbb{E}_{z \sim q} \left[ \log p(z \vert x) \right] \\
 &amp;amp;= \log p(x) - D_{KL}( q(z) \vert\vert p(z \vert x) )
 \end{align}
 $$&lt;/p&gt;
@@ -401,7 +401,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \underset{\theta}{\rm max} ~ \log p_{\theta}(x)
-&amp;amp;= \underset{q}{\rm max} ~ ELBO(q) \\&lt;br&gt;
+&amp;amp;= \underset{q}{\rm max} ~ ELBO(q) \\
 &amp;amp;= \underset{q}{\rm min} ~ D_{KL}( q(z) \vert\vert p(z|x) )
 \end{align}
 $$
@@ -452,7 +452,7 @@ $$
 &lt;p&gt;$$
 \begin{align}
 u_i(\sigma)
-&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\&lt;br&gt;
+&amp;amp;= \sum_{h \in Z} u_i(h) \pi^{\sigma}(h) \\
 &amp;amp;= \sum_{h \in Z} u_i(h) \prod_{i \in N} \pi^{\sigma}_i(h)
 \end{align}
 $$
@@ -464,10 +464,10 @@ $$
 &lt;p&gt;$$
 \begin{aligned}
 u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N})
-&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\
 u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N})
-&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
-&amp;amp;~ \vdots \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\
+&amp;amp;~ \vdots \\
 u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N})
 &amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
 \end{aligned}
@@ -477,10 +477,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 u_1(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
-&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_1}{\rm max} ~ u_1(\sigma_1, \acute{\sigma_{-1}}) \\
 u_2(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
-&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\&lt;br&gt;
-&amp;amp;~ \vdots \\&lt;br&gt;
+&amp;amp;\geq \underset{\sigma_2}{\rm max} ~ u_2(\sigma_2, \acute{\sigma_{-2}}) \\
+&amp;amp;~ \vdots \\
 u_N(\acute{\sigma_1}, \dots, \acute{\sigma_N}) + \varepsilon
 &amp;amp;\geq \underset{\sigma_N}{\rm max} ~ u_N(\sigma_N, \acute{\sigma_{-N}})
 \end{aligned}
@@ -492,8 +492,8 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;$$
 R_i^T
-:= \underset{\sigma_i^*}{\rm max} ~
-\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^*, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
+:= \underset{\sigma_i^&lt;em&gt;}{\rm max} ~
+\frac{1}{T} \sum_{t=1}^{T} \left( u_i(\sigma_i^&lt;/em&gt;, \sigma_{-i}^{t}) - u_i(\sigma_i^t, \sigma_{-i}^{t}) \right)
 $$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Average strategy for player $i$ from time $1$ to $T$：&lt;/li&gt;
@@ -501,7 +501,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 \overline{\sigma}_i^t(I)(a)
-&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\&lt;br&gt;
+&amp;amp;:= \frac{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I) \cdot \sigma^t(I)(a)}{\sum_{t=1}^{T} \pi_i^{\sigma^t}(I)} \\
 &amp;amp;= \frac{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h) \cdot \sigma^t(h)(a)}{\sum_{t=1}^{T} \sum_{h \in I} \pi_i^{\sigma^t}(h)}
 \end{align}
 $$&lt;/p&gt;
@@ -548,7 +548,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 R_i^T
-\leq \sum_{I \in \mathcal{I}_i} &amp;amp;R_{i,imm}^{T,+}(I) \\&lt;br&gt;
+\leq \sum_{I \in \mathcal{I}&lt;em&gt;i} &amp;amp;R&lt;/em&gt;{i,imm}^{T,+}(I) \\
 where ~~~
 &amp;amp;R_{i,imm}^{T, +}(I)
 := max(R_{i,imm}^{T}(I), 0)
@@ -556,7 +556,7 @@ where ~~~
 $$&lt;/p&gt;
 &lt;p&gt;So that, we obtain the sufficient condition of $R_{i,imm}^{T}(I)$  for the average strategy $\overline{\sigma}_i^t(I)(a)$ to become a Nash equilibrium strategy as below.&lt;/p&gt;
 &lt;p&gt;$$
-\sum_{I \in \mathcal{I}_i} R_{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
+\sum_{I \in \mathcal{I}&lt;em&gt;i} R&lt;/em&gt;{i,imm}^{T,+}(I) \to 0 ~~~ \Rightarrow ~~~ R_i^T \to 0 ~~~ \Rightarrow ~~~ \varepsilon \to 0.
 $$&lt;/p&gt;
 &lt;p&gt;Now all we need is to minimize the immediate counterfactual regret  $R_{i,imm}^{T}(I)$.&lt;/p&gt;
 &lt;p&gt;In addition, as can be seen from the above formula, the computational complexity of the CFR algorithm depends on the number of information sets $I$. Also, to avoid the complete search of game tree (searching all information sets $I$), subsequent algorithms such as CFR + propose an abstraction of the game state.&lt;/p&gt;
@@ -858,7 +858,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 p(x_i | \theta)
-&amp;amp;= \int_{Z} p(x_i, z_i | \theta) ~ dz \&lt;br&gt;
+&amp;amp;= \int_{Z} p(x_i, z_i | \theta) ~ dz \
 \end{align}
 $$&lt;/p&gt;
 &lt;p&gt;By using this formula, the estimated value of $\hat{\theta}_{MLE}$ can be obtained by approximating $p(x,z \vert \theta)$, the likelihood function of complete data $\{x, z\}$. The procedure to derive the estimated value of $\hat{\theta}_{MLE}$ is called EM algorithm because it is an iterative method that repeats E-step and M-step alternately.&lt;/p&gt;
@@ -1000,7 +1000,7 @@ D_{KL}( Q \mid\mid P )
 &lt;p&gt;Note that given two Gaussian distribution $p_1,p_2$ as&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
-p_1(x) &amp;amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\&lt;br&gt;
+p_1(x) &amp;amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\
 p_2(x) &amp;amp;= \mathcal{N}(\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2 \pi \sigma_2^2}} \exp \left\{ - \frac{ {(x - \mu_2)}^2}{2 \sigma_2^2} \right\}
 \end{align}
 $$&lt;/p&gt;
@@ -1008,7 +1008,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 {D}_{KL}(p_1 \mid\mid p_2)
-&amp;amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\&lt;br&gt;
+&amp;amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\
 &amp;amp;= \log \frac{\sigma_2}{\sigma_1} + \frac{\sigma_1^2 + {( \mu_1 - \mu_2 )}^2}{2 \sigma_2^2} - \frac{1}{2}
 \end{align}
 $$&lt;/p&gt;
@@ -1032,34 +1032,34 @@ $$&lt;/p&gt;
 &lt;h4 id=&#34;21-kl-divergence-vs-mutual-information&#34;&gt;2.1 KL-divergence vs Mutual information&lt;/h4&gt;
 &lt;p&gt;　In information theory, entropy $H(X)$, join entropy $H(X,Y)$, conditional entropy $H(X \vert Y)$, mutual information $MI(X,Y)$ are defined as follows by using probability density $Pr()$&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;\begin{align}
-H(X)    &amp;amp;:= - \int Pr(x) \log Pr(x) ~dx \\&lt;br&gt;
-H(X,Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\&lt;br&gt;
-H(X|Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\&lt;br&gt;
+H(X)    &amp;amp;:= - \int Pr(x) \log Pr(x) ~dx \\
+H(X,Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\
+H(X|Y)  &amp;amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\
 MI(X,Y) &amp;amp;:= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy
 \end{align}&lt;/p&gt;
 &lt;p&gt;For any two random variable $X$ and $Y$, mutual information $MI(X, Y)$ specifies the mutual (symmetric) dependence between them.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_mutual_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;\begin{align}
-MI(X,Y) &amp;amp;= H(X) - H(X|Y)  \\&lt;br&gt;
-&amp;amp;= H(Y) - H(Y|X) \\&lt;br&gt;
+MI(X,Y) &amp;amp;= H(X) - H(X|Y)  \\
+&amp;amp;= H(Y) - H(Y|X) \\
 &amp;amp;= H(X) + H(Y) - H(X,Y)
 \end{align}&lt;/p&gt;
 &lt;p&gt;Here, the following relationship holds between KL-divergence and mutual information.&lt;/p&gt;
 &lt;p&gt;\begin{align}
 MI(X, Y)
-&amp;amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \bigl[ D_{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
+&amp;amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{Y} \bigl[ D&lt;/em&gt;{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \bigl[ D&lt;/em&gt;{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
 \end{align}&lt;/p&gt;
 &lt;p&gt;So that, mutual information $MI (X, Y)$ is interpreted as the degree of difference (average degree of deviation) between the joint distribution $Pr (x, y)$ when the $X$ and $Y$ are &lt;strong&gt;not independent&lt;/strong&gt; and the joint distribution $Pr (x) Pr (y)$ when $X$ and $Y$ are &lt;strong&gt;independent&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;（cf.）Formula transformation of mutual information:&lt;/p&gt;
 &lt;p&gt;\begin{align}
 MI(X,Y)
-&amp;amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
-&amp;amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\&lt;br&gt;
-&amp;amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\&lt;br&gt;
-&amp;amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
+&amp;amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\
+&amp;amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\
+&amp;amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\
+&amp;amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{Y} \bigl[ D&lt;/em&gt;{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
 \end{align}&lt;/p&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;22-kl-divergence-vs-log-likelihood-ratio&#34;&gt;2.2 KL-divergence vs Log likelihood ratio&lt;/h3&gt;
@@ -1070,16 +1070,16 @@ MI(X,Y)
 &lt;/ul&gt;
 &lt;p&gt;\begin{align}
 \left( \text{Log likelihood ratio} \right)
-&amp;amp;= \log \frac{q(x)}{p_{\theta}(x)} \\&lt;br&gt;
+&amp;amp;= \log \frac{q(x)}{p_{\theta}(x)} \\
 D_{KL}( q \mid\mid p_{\theta} )
-&amp;amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{q(x)}{p_{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
+&amp;amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \left[ \log \frac{q(x)}{p&lt;/em&gt;{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
 \end{align}&lt;/p&gt;
 &lt;p&gt;When using KL-divergence as the evaluation/loss value in model selection/comparison, it is equivalent that minimizing KL-divergence: $D_{KL}( q \mid\mid p )$ and maximizing the log likelihood: $\log p(x)$ as follows.&lt;/p&gt;
 &lt;p&gt;\begin{align}
 D_{KL}( q \mid\mid p_{\theta} )
-&amp;amp;= \mathbb{E}_{X} \bigl[ \log q(x) \bigr] - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \\&lt;br&gt;
-&amp;amp;\propto - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \bigl[ \log q(x) \bigr] - \mathbb{E}&lt;/em&gt;{X} \bigl[ \log p_{\theta}(x) \bigr] \\
+&amp;amp;\propto - \mathbb{E}&lt;em&gt;{X} \bigl[ \log p&lt;/em&gt;{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
 \end{align}&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1101,20 +1101,20 @@ q(x) &amp;amp;= f(x|\theta^*)
 &lt;p&gt;\begin{align}
 \hat{\theta}
 &amp;amp;:= \underset{\theta \in \Theta}{\rm argmin} ~ L(\theta) \tag{7}
-\\&lt;br&gt;
+\\
 D_{KL}( q \mid\mid p_{\hat{\theta}} )
-&amp;amp;= D_{KL}( p_{\theta^{*}} \mid\mid p_{\hat{\theta}} ) \\&lt;br&gt;
-&amp;amp;= D_{KL}( f_{\theta^{*}} \mid\mid f_{\hat{\theta}} ) \\&lt;br&gt;
-&amp;amp;= \int f(x|\theta^{*}) \log \frac{f(x|\theta^{*})}{ f(x|\hat{\theta})} dx \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\&lt;br&gt;
-&amp;amp;= \mathbb{E}_{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
+&amp;amp;= D_{KL}( p_{\theta^{&lt;em&gt;}} \mid\mid p_{\hat{\theta}} ) \\
+&amp;amp;= D_{KL}( f_{\theta^{&lt;/em&gt;}} \mid\mid f_{\hat{\theta}} ) \\
+&amp;amp;= \int f(x|\theta^{&lt;em&gt;}) \log \frac{f(x|\theta^{&lt;/em&gt;})}{ f(x|\hat{\theta})} dx \\
+&amp;amp;= \mathbb{E}&lt;em&gt;{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\
+&amp;amp;= \mathbb{E}&lt;/em&gt;{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
 \end{align}&lt;/p&gt;
 &lt;br&gt;
 &lt;h4 id=&#34;23-kl-divergence-vs-fisher-information&#34;&gt;2.3 KL-divergence vs Fisher information&lt;/h4&gt;
 &lt;p&gt;Given a certain stochastic model $f(\cdot \vert \theta)$, &lt;strong&gt;Fisher information&lt;/strong&gt; $I(\theta)$ for the parameter $\theta$ is defined as follows.  (Note that $ \ell( \cdot \vert x) $ means the log likelihood function.)&lt;/p&gt;
 &lt;p&gt;\begin{align}
 I(\theta)
-&amp;amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\&lt;br&gt;
+&amp;amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\
 &amp;amp;= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \log f(x|\theta) \right\} }^{2} \right]
 \end{align}&lt;/p&gt;
 &lt;p&gt;Also, between KL-divergence and Fisher information, the following holds.&lt;/p&gt;
@@ -1127,7 +1127,7 @@ I(\theta)
 \ell(\theta + h) - \ell(\theta)
 &amp;amp;= {\ell}^{&#39;}(\theta)h + \frac{1}{2} {\ell}^{&#39;&#39;}(\theta) h^{2} + O(h^{3})
 \end{align}&lt;/p&gt;
-&lt;p&gt;This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is **directly proportional to** Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures **the local information** that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.&lt;/p&gt;
+&lt;p&gt;This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is &lt;strong&gt;directly proportional to&lt;/strong&gt; Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures &lt;strong&gt;the local information&lt;/strong&gt; that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_fisher_information.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;3-references&#34;&gt;3. References&lt;/h2&gt;
@@ -1142,16 +1142,16 @@ I(\theta)
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Also, f-divergence is defined as its generalized class. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Also, f-divergence is defined as its generalized class.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;I used scipy.stats.entropy(). &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I used scipy.stats.entropy().&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. &lt;a href=&#34;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&#34;&gt;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. &lt;a href=&#34;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Article on gneralized information criterion(GIC): &lt;a href=&#34;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&#34;&gt;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Article on gneralized information criterion(GIC): &lt;a href=&#34;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

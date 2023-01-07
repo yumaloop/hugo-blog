@@ -59,7 +59,7 @@ it will be more difficult to become a full-stack engineer in the near future.&lt
 &lt;code&gt;java.awt.GraphicsEnvironment&lt;/code&gt; class.&lt;/p&gt;
 &lt;h3 id=&#34;cf&#34;&gt;Cf.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&#34;&gt;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://docs.oracle.com/javase/jp/8/docs/api/java/awt/GraphicsEnvironment.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;p&gt;Code Sample (Java):&lt;/p&gt;

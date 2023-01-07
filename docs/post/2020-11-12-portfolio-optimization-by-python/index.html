@@ -259,8 +259,8 @@
   
 
   <link rel="manifest" href="https://yumauchiumi.com/index.webmanifest">
-  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="https://yumauchiumi.com/post/2020-11-12-portfolio-optimization-by-python/">
 
@@ -329,7 +329,7 @@
     "name": "Yuma Uchiumi",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png"
+      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": "Set-up the basic environment for backtesting with Python, select some stocks from the TSE TOPIX series, and build the minimum diversified portfolio."
@@ -787,9 +787,9 @@ Date
 <p>一般に，$n$コの資産で構成されるポートフォリオの場合，ポートフォリオの分散は$n$コの資産間の共分散行列の二次形式となるので，この最適化問題は二次計画問題(Quadratic Programming, QP)のクラスとなり，次のように定式化されます．</p>
 <p>$$
 \begin{align}
-\underset{\bf x}{\rm minimize} ~~~ &amp;{\bf x}^T \Sigma {\bf x} \\<br>
-{\rm subject~to} ~~~ &amp;{\bf r}^T {\bf x} = \sum_{i=1}^{n} r_i x_i \geq r_e \\<br>
-&amp;{|| {\bf x} ||}_{1} = \sum_{i=1}^{n} x_i = 1 \\<br>
+\underset{\bf x}{\rm minimize} ~~~ &amp;{\bf x}^T \Sigma {\bf x} \\
+{\rm subject~to} ~~~ &amp;{\bf r}^T {\bf x} = \sum_{i=1}^{n} r_i x_i \geq r_e \\
+&amp;{|| {\bf x} ||}_{1} = \sum_{i=1}^{n} x_i = 1 \\
 &amp;x_i \geq 0 ~~ (i = 1, \cdots, n)
 \end{align}
 $$</p>
@@ -809,8 +809,8 @@ $$</p>
 CVXOPTで二次計画問題を扱う場合は，解きたい最適化問題を以下の一般化されたフォーマットに整理して，</p>
 <p>$$
 \begin{align}
-\underset{\bf x}{\rm minimize} ~~~ &amp;\frac{1}{2} {\bf x}^{T} P {\bf x} + {\bf q}^{T} {\bf x} \\<br>
-{\rm subject~to} ~~~ &amp; G {\bf x} \leq {\bf h} \\<br>
+\underset{\bf x}{\rm minimize} ~~~ &amp;\frac{1}{2} {\bf x}^{T} P {\bf x} + {\bf q}^{T} {\bf x} \\
+{\rm subject~to} ~~~ &amp; G {\bf x} \leq {\bf h} \\
 &amp;A {\bf x} = {\bf b}
 \end{align}
 $$</p>
@@ -820,17 +820,17 @@ P = 2 \cdot \Sigma, ~~~
 q = {\bf 0}_n, ~~~
 G = -1 \cdot
 \begin{pmatrix}
-\bar{r}_1 &amp; \cdots &amp; \bar{r}_n \\<br>
-1 &amp; \cdots &amp; 0 \\<br>
-\vdots &amp; \ddots &amp; \vdots \\<br>
+\bar{r}_1 &amp; \cdots &amp; \bar{r}_n \\
+1 &amp; \cdots &amp; 0 \\
+\vdots &amp; \ddots &amp; \vdots \\
 0 &amp; \cdots &amp; 1
 \end{pmatrix}, ~~~
 h = -1 \cdot
 \left(
 \begin{array}{c}
-r_e \\<br>
-0 \\<br>
-\vdots \\<br>
+r_e \\
+0 \\
+\vdots \\
 0
 \end{array}
 \right), ~~~
@@ -840,8 +840,8 @@ $$</p>
 <p>となります．</p>
 <p>参考:</p>
 <ul>
-<li><a href="https://cvxopt.org/userguide/coneprog.html#quadratic-programming">https://cvxopt.org/userguide/coneprog.html#quadratic-programming</a></li>
-<li><a href="https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828">https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828</a></li>
+<li><a href="https://cvxopt.org/userguide/coneprog.html#quadratic-programming" target="_blank" rel="noopener">https://cvxopt.org/userguide/coneprog.html#quadratic-programming</a></li>
+<li><a href="https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828" target="_blank" rel="noopener">https://qiita.com/ryoshi81/items/8b0c6add3e367f94c828</a></li>
 </ul>
 <h3 id="33-pythonで計算">3.3. Pythonで計算</h3>
 <p>対象資産のパネルデータ<code>df</code>から，必要な統計量を計算します．</p>
@@ -1260,7 +1260,7 @@ plt.show()
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p><code>stocks_topix30</code>はTOPIX Core30構成銘柄の証券コードのリストです．構成銘柄は毎年10/31に更新されます．サンプルコードを再現したい場合<code>stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 4503, 5401, 6301, 6501, 6502, 6752, 6758, 6954, 7201, 7203, 7267, 7751, 8031, 8058, 8306, 8316, 8411, 8604, 8766, 8802, 9021, 9432, 9433, 9437, 9984]</code>としてください． <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><code>stocks_topix30</code>はTOPIX Core30構成銘柄の証券コードのリストです．構成銘柄は毎年10/31に更新されます．サンプルコードを再現したい場合<code>stocks_topix30 = [2914, 3382, 4063, 4452, 4502, 4503, 5401, 6301, 6501, 6502, 6752, 6758, 6954, 7201, 7203, 7267, 7751, 8031, 8058, 8306, 8316, 8411, 8604, 8766, 8802, 9021, 9432, 9433, 9437, 9984]</code>としてください．&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

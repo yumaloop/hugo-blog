@@ -323,7 +323,7 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
 &lt;h2 id=&#34;nvidiaドライバとcudacudnnの導入&#34;&gt;NVIDIAドライバとCUDA/cuDNNの導入&lt;/h2&gt;
 &lt;h5 id=&#34;nvidiaドライバのインストール&#34;&gt;NVIDIAドライバのインストール&lt;/h5&gt;
 &lt;p&gt;1.下記リンクから，自分のGPUにあうドライバを検索してダウンロードする．&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.nvidia.co.jp/Download/index.aspx?lang=jp&#34;&gt;https://www.nvidia.co.jp/Download/index.aspx?lang=jp&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nvidia.co.jp/Download/index.aspx?lang=jp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.nvidia.co.jp/Download/index.aspx?lang=jp&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/m4MAKmekqihk5pqTUHLojPX6uzAZoaGoj2d9EazHOSlVxNuradgm_lF-7piupC_j1dBf-PffJ2e1SaDxf215GddSYx_XdaUAyUkucebB5SSyN9ZrGUl7qeqFe0aUxnnBqQxYYeK7&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;たとえば，GPU「&lt;a href=&#34;http://d.hatena.ne.jp/keyword/NVIDIA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NVIDIA&lt;/a&gt; &lt;a href=&#34;http://d.hatena.ne.jp/keyword/GeForce&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GeForce&lt;/a&gt; 1080」に対応したドライバは以下のようになる．&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/e951y4mwYumub525KR2Um_Cqbb6NxYIpnyThgMyIcClu7nvwHUzF5hGK5l3_4k0lPxf9T9uF33u-0t0cTJeovZFNsjXJkBBzCM1B61i4Kk8_xIBSsTWT0oUexsNDx5_QRFrIDIIj&#34; alt=&#34;img&#34;&gt;．&lt;/p&gt;
@@ -337,11 +337,11 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;CUDAの公式ドキュメントをよく読む．&lt;/p&gt;
-&lt;p&gt;CUDA Toolkit Documentation &lt;a href=&#34;https://docs.nvidia.com/cuda/index.html&#34;&gt;https://docs.nvidia.com/cuda/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CUDA Toolkit Documentation &lt;a href=&#34;https://docs.nvidia.com/cuda/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://docs.nvidia.com/cuda/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;下記リンクから，NVIDIAドライバに対応するCUDAのバージョンを確認する&lt;/p&gt;
-&lt;p&gt;CUDA Toolkit Documentation &amp;gt; Release Notes &amp;gt; 1. CUDA Toolkit Major Components &amp;gt; CUDA Driver &lt;a href=&#34;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html&#34;&gt;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CUDA Toolkit Documentation &amp;gt; Release Notes &amp;gt; 1. CUDA Toolkit Major Components &amp;gt; CUDA Driver &lt;a href=&#34;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/s8gpeKo-VZlCtUROQc6YG1L3ZQ9aJlggnswp_mAAxRFua_Sh0ILtYsa-K4uUYWrjbfgz21EIVJwSrt-StpbGhvpPrxUytW-Xjy146HAo7pmo-SyPT6cP5-YPSFWRHHASmR9xyFon&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
@@ -349,7 +349,7 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
 &lt;li&gt;
 &lt;p&gt;下記リンクから，tensorflow-&lt;a href=&#34;http://d.hatena.ne.jp/keyword/gpu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gpu&lt;/a&gt;に対応するcuDNN/CUDAのバージョンを確認する&lt;/p&gt;
 &lt;p&gt;TensorFlow (Linux) - テスト済みのビルド設定&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.tensorflow.org/install/source#linux&#34;&gt;https://www.tensorflow.org/install/source#linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tensorflow.org/install/source#linux&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.tensorflow.org/install/source#linux&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/LrKW-yUDWLZi5-iq1oz0BB_3dpt3hin3yLEyo8V1QtJzV958tWDaYr5RDwJsOniMxotiNqZsCcYa4-kqs3SdSLd7xzD9ABON4b2MT9kIHPbbnL3lP9GcgZpFRTWjVThXPuQMQNUP&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
@@ -366,7 +366,7 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;下記リンクから，自分の環境にあった「CUDA Toolkitパッケージ」を確認し，マシンへダウンロードする．&lt;/p&gt;
-&lt;p&gt;CUDA Toolkit Archive &lt;a href=&#34;https://developer.nvidia.com/cuda-toolkit-archive&#34;&gt;https://developer.nvidia.com/cuda-toolkit-archive&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CUDA Toolkit Archive &lt;a href=&#34;https://developer.nvidia.com/cuda-toolkit-archive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://developer.nvidia.com/cuda-toolkit-archive&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/6Wg51qcEzuCZ326X81F_48j0pU20MC4qKa0CU847Vw612vZQNUP302zFYWCJ9CA5uKABt6UU7UTLj8M6Kr9ndYKNzT-amTFv3hiWGDakR5gpjFlA3lppzcU-dORL0ojBI6qs-Pv5&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
@@ -436,13 +436,13 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
 &lt;p&gt;In order to login to keio.jp (Keio Single Sign-On System), it is necessary to satisfy the page transition as below.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://auth.keio.jp&#34;&gt;https://auth.keio.jp&lt;/a&gt; (SSO login page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://auth.keio.jp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://auth.keio.jp&lt;/a&gt; (SSO login page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://gslbs.adst.keio.ac.jp/student/index.html&#34;&gt;https://gslbs.adst.keio.ac.jp/student/index.html&lt;/a&gt; (Syllabus page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gslbs.adst.keio.ac.jp/student/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://gslbs.adst.keio.ac.jp/student/index.html&lt;/a&gt; (Syllabus page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.edu.keio.jp/ess2/login?&#34;&gt;https://www.edu.keio.jp/ess2/login?&lt;/a&gt; (Class support page)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.edu.keio.jp/ess2/login&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.edu.keio.jp/ess2/login&lt;/a&gt;? (Class support page)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;So, this time, a static web-scraping library like BeautifulSoup is not enough, because it doesn&amp;rsquo;t support the dynamic site with Javascript or page redirection. Then I use &lt;a href=&#34;https://selenium.dev/documentation/en/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Selenium&lt;/a&gt; and &lt;a href=&#34;http://chromedriver.chromium.org/getting-started&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChromeDriver&lt;/a&gt; in python.&lt;/p&gt;
@@ -556,7 +556,7 @@ driver.quit()
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The Selenium Browser Automation Project &amp;gt; Getting started &amp;gt; Quick tour&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://selenium.dev/documentation/en/getting_started/quick/#webdriver&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>

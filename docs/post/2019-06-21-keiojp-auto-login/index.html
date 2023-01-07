@@ -259,8 +259,8 @@
   
 
   <link rel="manifest" href="https://yumauchiumi.com/index.webmanifest">
-  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="https://yumauchiumi.com/post/2019-06-21-keiojp-auto-login/">
 
@@ -329,7 +329,7 @@
     "name": "Yuma Uchiumi",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png"
+      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": "Have you ever want to login to keio.jp automatically? Don\u0026rsquo;t you think it is cool? At least I think so and I write down the way to achieve that with Python."
@@ -675,13 +675,13 @@
 <p>In order to login to keio.jp (Keio Single Sign-On System), it is necessary to satisfy the page transition as below.</p>
 <ol>
 <li>
-<p><a href="https://auth.keio.jp">https://auth.keio.jp</a> (SSO login page)</p>
+<p><a href="https://auth.keio.jp" target="_blank" rel="noopener">https://auth.keio.jp</a> (SSO login page)</p>
 </li>
 <li>
-<p><a href="https://gslbs.adst.keio.ac.jp/student/index.html">https://gslbs.adst.keio.ac.jp/student/index.html</a> (Syllabus page)</p>
+<p><a href="https://gslbs.adst.keio.ac.jp/student/index.html" target="_blank" rel="noopener">https://gslbs.adst.keio.ac.jp/student/index.html</a> (Syllabus page)</p>
 </li>
 <li>
-<p><a href="https://www.edu.keio.jp/ess2/login?">https://www.edu.keio.jp/ess2/login?</a> (Class support page)</p>
+<p><a href="https://www.edu.keio.jp/ess2/login" target="_blank" rel="noopener">https://www.edu.keio.jp/ess2/login</a>? (Class support page)</p>
 </li>
 </ol>
 <p>So, this time, a static web-scraping library like BeautifulSoup is not enough, because it doesn&rsquo;t support the dynamic site with Javascript or page redirection. Then I use <a href="https://selenium.dev/documentation/en/" target="_blank" rel="noopener">Selenium</a> and <a href="http://chromedriver.chromium.org/getting-started" target="_blank" rel="noopener">ChromeDriver</a> in python.</p>
@@ -795,7 +795,7 @@ driver.quit()
 <ul>
 <li>
 <p>The Selenium Browser Automation Project &gt; Getting started &gt; Quick tour</p>
-<p><a href="https://selenium.dev/documentation/en/getting_started/quick/#webdriver">https://selenium.dev/documentation/en/getting_started/quick/#webdriver</a></p>
+<p><a href="https://selenium.dev/documentation/en/getting_started/quick/#webdriver" target="_blank" rel="noopener">https://selenium.dev/documentation/en/getting_started/quick/#webdriver</a></p>
 </li>
 </ul>
 

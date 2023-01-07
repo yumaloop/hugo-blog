@@ -259,8 +259,8 @@
   
 
   <link rel="manifest" href="https://yumauchiumi.com/index.webmanifest">
-  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="https://yumauchiumi.com/post/2020-11-25-monte-carlo-sim-bsoption-r/">
 
@@ -329,7 +329,7 @@
     "name": "Yuma Uchiumi",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png"
+      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": "幾何ブラウン運動のサンプルパスを生成することにより，株価が幾何ブラウン運動にしたがう場合のコールオプション価格をモンテカルロシミュレーションにより導出し，サンプルパスの生成回数を増やすことで理論値に収束することをプロットにより確認する．"
@@ -676,18 +676,18 @@ $$</p>
 <p>の解で与えられているとする($S$は幾何ブラウン運動に従う)．時刻$t \in [0, T]$において，オプションの原資産価格$S_t$とオプションの行使価格$K$が与えられたとき，ブラック・ショールズ式によってオプションの理論価格$C(t, S_t)$は</p>
 <p>$$
 \begin{align}
-C(t, S_t) &amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\<br>
+C(t, S_t) &amp;= S_t \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2) \\
 where ~~
-d_1 &amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}} \\<br>
+d_1 &amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}} \\
 d_2 &amp;= \frac{\log \left( \frac{S_t}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right) T}{\sigma \sqrt{T}}
 \end{align}
 $$</p>
 <p>となる．ただし，$r$は無リスク資産の利率，$\Phi$は標準正規分布$\mathcal{N}(0,1)の累積分布関数とする．ここで，簡単のために満期$T$を$1$とすると，現在($t=0$)のオプション価格の理論値は，</p>
 <p>$$
 \begin{align}
-C(0, S_0) &amp;= S_0 \Phi(d_1) - K e^{-r} \Phi(d_2) \\<br>
+C(0, S_0) &amp;= S_0 \Phi(d_1) - K e^{-r} \Phi(d_2) \\
 where ~~
-d_1 &amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right)}{\sigma } \\<br>
+d_1 &amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r + \frac{\sigma^2}{2}  \right)}{\sigma } \\
 d_2 &amp;= \frac{\log \left( \frac{S_0}{K} \right) + \left( r - \frac{\sigma^2}{2}  \right)}{\sigma}
 \end{align}
 $$</p>

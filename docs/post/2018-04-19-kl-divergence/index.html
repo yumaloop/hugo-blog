@@ -259,8 +259,8 @@
   
 
   <link rel="manifest" href="https://yumauchiumi.com/index.webmanifest">
-  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="https://yumauchiumi.com/post/2018-04-19-kl-divergence/">
 
@@ -329,7 +329,7 @@
     "name": "Yuma Uchiumi",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_2.png"
+      "url": "https://yumauchiumi.com/images/icon_hufea8913c94835c293d217036210ea505_3551_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": "This is a basic notebook for KL-divergence which frequently appears in many fields such as statistics and information theory."
@@ -748,7 +748,7 @@ D_{KL}( Q \mid\mid P )
 <p>Note that given two Gaussian distribution $p_1,p_2$ as</p>
 <p>$$
 \begin{align}
-p_1(x) &amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\<br>
+p_1(x) &amp;= \mathcal{N}(\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2 \pi \sigma_1^2}} \exp \left\{ - \frac{ {(x - \mu_1)}^2}{2 \sigma_1^2} \right\} \\
 p_2(x) &amp;= \mathcal{N}(\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2 \pi \sigma_2^2}} \exp \left\{ - \frac{ {(x - \mu_2)}^2}{2 \sigma_2^2} \right\}
 \end{align}
 $$</p>
@@ -756,7 +756,7 @@ $$</p>
 <p>$$
 \begin{align}
 {D}_{KL}(p_1 \mid\mid p_2)
-&amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\<br>
+&amp;= \int_{-\infty}^{\infty} p_1(x) \log \frac{p_1(x)}{p_2(x)} dx \\
 &amp;= \log \frac{\sigma_2}{\sigma_1} + \frac{\sigma_1^2 + {( \mu_1 - \mu_2 )}^2}{2 \sigma_2^2} - \frac{1}{2}
 \end{align}
 $$</p>
@@ -780,34 +780,34 @@ $$</p>
 <h4 id="21-kl-divergence-vs-mutual-information">2.1 KL-divergence vs Mutual information</h4>
 <p>　In information theory, entropy $H(X)$, join entropy $H(X,Y)$, conditional entropy $H(X \vert Y)$, mutual information $MI(X,Y)$ are defined as follows by using probability density $Pr()$<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
 <p>\begin{align}
-H(X)    &amp;:= - \int Pr(x) \log Pr(x) ~dx \\<br>
-H(X,Y)  &amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\<br>
-H(X|Y)  &amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\<br>
+H(X)    &amp;:= - \int Pr(x) \log Pr(x) ~dx \\
+H(X,Y)  &amp;:= - \int Pr(x,y) \log Pr(x,y) ~dy~dx \\
+H(X|Y)  &amp;:= - \int Pr(x,y) \log Pr(x|y) ~dx~dy \\
 MI(X,Y) &amp;:= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy
 \end{align}</p>
 <p>For any two random variable $X$ and $Y$, mutual information $MI(X, Y)$ specifies the mutual (symmetric) dependence between them.</p>
 <p><img src="%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_mutual_information.png" alt="img"></p>
 <p>\begin{align}
-MI(X,Y) &amp;= H(X) - H(X|Y)  \\<br>
-&amp;= H(Y) - H(Y|X) \\<br>
+MI(X,Y) &amp;= H(X) - H(X|Y)  \\
+&amp;= H(Y) - H(Y|X) \\
 &amp;= H(X) + H(Y) - H(X,Y)
 \end{align}</p>
 <p>Here, the following relationship holds between KL-divergence and mutual information.</p>
 <p>\begin{align}
 MI(X, Y)
-&amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\<br>
-&amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\<br>
-&amp;= \mathbb{E}_{X} \bigl[ D_{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
+&amp;= D_{KL} \bigl( Pr(x, y) \mid\mid Pr(x)Pr(y) \bigr) \\
+&amp;= \mathbb{E}<em>{Y} \bigl[ D</em>{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr] \\
+&amp;= \mathbb{E}<em>{X} \bigl[ D</em>{KL} \bigl( Pr(y|x) \mid\mid Pr(y) \bigr) \bigr]
 \end{align}</p>
 <p>So that, mutual information $MI (X, Y)$ is interpreted as the degree of difference (average degree of deviation) between the joint distribution $Pr (x, y)$ when the $X$ and $Y$ are <strong>not independent</strong> and the joint distribution $Pr (x) Pr (y)$ when $X$ and $Y$ are <strong>independent</strong>.</p>
 <p>（cf.）Formula transformation of mutual information:</p>
 <p>\begin{align}
 MI(X,Y)
-&amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\<br>
-&amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\<br>
-&amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\<br>
-&amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\<br>
-&amp;= \mathbb{E}_{Y} \bigl[ D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
+&amp;= \int \int Pr(x,y) \log \frac{Pr(x,y)}{Pr(x)Pr(y)} ~dxdy \\
+&amp;= \int \int Pr(x|y)Pr(y) \log \frac{Pr(x|y)Pr(y)}{Pr(x)Pr(y)} ~dxdy \\
+&amp;= \int Pr(y) \int Pr(x|y) \log \frac{Pr(x|y)}{Pr(x)} ~dx~dy \\
+&amp;= \int Pr(y) \cdot D_{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) ~dy \\
+&amp;= \mathbb{E}<em>{Y} \bigl[ D</em>{KL} \bigl( Pr(x|y) \mid\mid Pr(x) \bigr) \bigr]
 \end{align}</p>
 <br>
 <h3 id="22-kl-divergence-vs-log-likelihood-ratio">2.2 KL-divergence vs Log likelihood ratio</h3>
@@ -818,16 +818,16 @@ MI(X,Y)
 </ul>
 <p>\begin{align}
 \left( \text{Log likelihood ratio} \right)
-&amp;= \log \frac{q(x)}{p_{\theta}(x)} \\<br>
+&amp;= \log \frac{q(x)}{p_{\theta}(x)} \\
 D_{KL}( q \mid\mid p_{\theta} )
-&amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\<br>
-&amp;= \mathbb{E}_{X} \left[ \log \frac{q(x)}{p_{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
+&amp;:= \int q(x) \log \frac{q(x)}{p_{\theta}(x)} ~dx \\
+&amp;= \mathbb{E}<em>{X} \left[ \log \frac{q(x)}{p</em>{\theta}(x)} \right] \left(\text{Expected log likelihood ratio} \right)
 \end{align}</p>
 <p>When using KL-divergence as the evaluation/loss value in model selection/comparison, it is equivalent that minimizing KL-divergence: $D_{KL}( q \mid\mid p )$ and maximizing the log likelihood: $\log p(x)$ as follows.</p>
 <p>\begin{align}
 D_{KL}( q \mid\mid p_{\theta} )
-&amp;= \mathbb{E}_{X} \bigl[ \log q(x) \bigr] - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \\<br>
-&amp;\propto - \mathbb{E}_{X} \bigl[ \log p_{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
+&amp;= \mathbb{E}<em>{X} \bigl[ \log q(x) \bigr] - \mathbb{E}</em>{X} \bigl[ \log p_{\theta}(x) \bigr] \\
+&amp;\propto - \mathbb{E}<em>{X} \bigl[ \log p</em>{\theta}(x) \bigr] \left(-1 \cdot \text{ Expected log likelihood} \right)
 \end{align}</p>
 <ul>
 <li>
@@ -849,20 +849,20 @@ q(x) &amp;= f(x|\theta^*)
 <p>\begin{align}
 \hat{\theta}
 &amp;:= \underset{\theta \in \Theta}{\rm argmin} ~ L(\theta) \tag{7}
-\\<br>
+\\
 D_{KL}( q \mid\mid p_{\hat{\theta}} )
-&amp;= D_{KL}( p_{\theta^{*}} \mid\mid p_{\hat{\theta}} ) \\<br>
-&amp;= D_{KL}( f_{\theta^{*}} \mid\mid f_{\hat{\theta}} ) \\<br>
-&amp;= \int f(x|\theta^{*}) \log \frac{f(x|\theta^{*})}{ f(x|\hat{\theta})} dx \\<br>
-&amp;= \mathbb{E}_{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\<br>
-&amp;= \mathbb{E}_{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
+&amp;= D_{KL}( p_{\theta^{<em>}} \mid\mid p_{\hat{\theta}} ) \\
+&amp;= D_{KL}( f_{\theta^{</em>}} \mid\mid f_{\hat{\theta}} ) \\
+&amp;= \int f(x|\theta^{<em>}) \log \frac{f(x|\theta^{</em>})}{ f(x|\hat{\theta})} dx \\
+&amp;= \mathbb{E}<em>{X} \left[ \log \frac{ f(x|\theta^{*}) }{ f(x|\hat{\theta}) } \right] \\
+&amp;= \mathbb{E}</em>{X} \bigl[ \ell( \theta_{0}|x ) \bigr] - \mathbb{E}_{X} \bigl[ \ell( \hat{\theta} | x ) \bigr]
 \end{align}</p>
 <br>
 <h4 id="23-kl-divergence-vs-fisher-information">2.3 KL-divergence vs Fisher information</h4>
 <p>Given a certain stochastic model $f(\cdot \vert \theta)$, <strong>Fisher information</strong> $I(\theta)$ for the parameter $\theta$ is defined as follows.  (Note that $ \ell( \cdot \vert x) $ means the log likelihood function.)</p>
 <p>\begin{align}
 I(\theta)
-&amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\<br>
+&amp;:= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \ell(\theta \vert x) \right\} }^{3} \right] \\
 &amp;= \mathbb{E}_{X} \left[ { \left\{ \frac{d}{dx} \log f(x|\theta) \right\} }^{2} \right]
 \end{align}</p>
 <p>Also, between KL-divergence and Fisher information, the following holds.</p>
@@ -875,7 +875,7 @@ I(\theta)
 \ell(\theta + h) - \ell(\theta)
 &amp;= {\ell}^{'}(\theta)h + \frac{1}{2} {\ell}^{''}(\theta) h^{2} + O(h^{3})
 \end{align}</p>
-<p>This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is **directly proportional to** Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures **the local information** that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.</p>
+<p>This formula indicates that in parameter space $\Theta$, for all point $ \theta \in \Theta $ ant its neighborring point $ \theta + h $, their KL-divergence：$ D_{KL} ( f(x \vert \theta) \mid\mid f(x \vert \theta+h) )$ is <strong>directly proportional to</strong> Fisher information $I(\theta)$. After all, Fisher information $ I(\theta)$ measures <strong>the local information</strong> that the stochastic model $f(\cdot \vert \theta)$ has at the point $\theta$.</p>
 <p><img src="%7B%7Bsite.baseurl%7D%7D/assets/img/post/dkl_and_fisher_information.png" alt="img"></p>
 <br>
 <h2 id="3-references">3. References</h2>
@@ -890,16 +890,16 @@ I(\theta)
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Also, f-divergence is defined as its generalized class. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Also, f-divergence is defined as its generalized class.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>I used scipy.stats.entropy(). <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>I used scipy.stats.entropy().&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. <a href="http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html">http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Although thermodynamic entropy is originated in Boltzmann, the historical background of Shannon information is mentioned below link. There seems to be a reference flow: Hartley → Nyquist → Shannon. <a href="http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html" target="_blank" rel="noopener">http://www.ieice.org/jpn/books/kaishikiji/200112/200112-9.html</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Article on gneralized information criterion(GIC): <a href="https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf">https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Article on gneralized information criterion(GIC): <a href="https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf" target="_blank" rel="noopener">https://www.ism.ac.jp/editsec/toukei/pdf/47-2-375.pdf</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
