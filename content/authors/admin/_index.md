@@ -66,8 +66,8 @@ email: "yumaloop@gmail.com"
 highlight_name: false
 ---
 
-Hi, I’m [Yuma Uchiumi](https://yumaloop.github.io/about/), a data science analyst in a consulting company. I was born on December 8, 1997 in Tokyo, Japan. My current interests are the algorithmic marketing and cognitive problems with human thinking.
-
+Hi, I’m [Yuma Uchiumi](https://yumaloop.github.io/about/), currently delivering data science in a consulting company. My current interests are the algorithmic marketing and cognitive problems with human thinking.
+.
 - {{< icon name="github" pack="fab" >}} {{< staticref "https://github.com/yumaloop" "newtab" >}}GitHub{{< /staticref >}}
 - {{< icon name="linkedin" pack="fab" >}} {{< staticref "https://www.linkedin.com/in/yuma-uchiumi-699398151" "newtab" >}}Linkedin{{< /staticref >}}
 - {{< icon name="spotify" pack="fab" >}} {{< staticref "https://open.spotify.com/user/xndo1nzh6y83p775etrktk2mv?si=s3ZU58pZTHKGt4aOfpwmKg&nd=1" "newtab" >}}Spotify{{< /staticref >}}

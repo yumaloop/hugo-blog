@@ -5,7 +5,7 @@
     <link>https://yumauchiumi.com/category/random/</link>
       <atom:link href="https://yumauchiumi.com/category/random/index.xml" rel="self" type="application/rss+xml" />
     <description>Random</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2023</copyright><lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2024</copyright><lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yumauchiumi.com/media/static/media/icon.png</url>
       <title>Random</title>
@@ -402,7 +402,7 @@ model name : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
       <link>https://yumauchiumi.com/post/2019-11-25-whitesides_outline_method/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       <guid>https://yumauchiumi.com/post/2019-11-25-whitesides_outline_method/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://gmwgroup.harvard.edu/people/george-m-whitesides&#34;&gt;Prof. George M. Whitesides&lt;/a&gt; is a top-level researcher on chemistry and also known as one of the highest h-index researchers in the world. He explains his unique writing techniques called Outline Method in the article, &lt;a href=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34;&gt;&amp;ldquo;Whitesides&#39; Group: Writing a Paper&amp;rdquo;&lt;/a&gt;. I&amp;rsquo;ve translated that into Japanese and publish it here.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://gmwgroup.harvard.edu/people/george-m-whitesides&#34;&gt;Prof. George M. Whitesides&lt;/a&gt; is a top-level researcher on chemistry and also known as one of the highest h-index researchers in the world. He explains his unique writing techniques called Outline Method in the article, &lt;a href=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34;&gt;&amp;ldquo;Whitesides&amp;rsquo; Group: Writing a Paper&amp;rdquo;&lt;/a&gt;. I&amp;rsquo;ve translated that into Japanese and publish it here.&lt;/p&gt;
 &lt;h2 id=&#34;original-paper&#34;&gt;Original paper&lt;/h2&gt;
 &lt;object data=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;800px&#34;&gt;
     &lt;embed src=&#34;https://www.tulane.edu/~lamp/whiteside.pdf&#34;&gt;

@@ -5,7 +5,7 @@
     <link>https://yumauchiumi.com/tag/game-theory/</link>
       <atom:link href="https://yumauchiumi.com/tag/game-theory/index.xml" rel="self" type="application/rss+xml" />
     <description>Game Theory</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2023</copyright><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Yuma Uchiumi 2018-2024</copyright><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yumauchiumi.com/media/static/media/icon.png</url>
       <title>Game Theory</title>
@@ -116,7 +116,7 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;$$
 \begin{align}
-u_i(\sigma, I) = \frac{\sum_{h \in H, h&#39; \in Z} \pi_{-i}^{\sigma}(h)\pi^{\sigma}(h,h&#39;)u_i(h) }{\pi_{-i}^{\sigma}(I)}
+u_i(\sigma, I) = \frac{\sum_{h \in H, h&amp;rsquo; \in Z} \pi_{-i}^{\sigma}(h)\pi^{\sigma}(h,h&amp;rsquo;)u_i(h) }{\pi_{-i}^{\sigma}(I)}
 \end{align}
 $$&lt;/p&gt;
 &lt;ul&gt;
