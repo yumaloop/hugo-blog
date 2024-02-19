@@ -8,10 +8,10 @@
   url = "/"
   weight = 10
 
-[[main]]
-  name = "About"
-  url = "about/" # Widget Page folder name.
-  weight = 20
+# [[main]]
+#   name = "About"
+#   url = "about/" # Widget Page folder name.
+#   weight = 20
 
 [[main]]
   name = "Posts"

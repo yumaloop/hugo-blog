@@ -11,6 +11,7 @@ weight: 2
 
 title: Recent Posts
 subtitle: A set of random things passing through my messy memory.
+active: false
 
 content:
   # Page type to display. E.g. post, talk, publication...

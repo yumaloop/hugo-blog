@@ -6,12 +6,12 @@ title: Yuma Uchiumi
 superuser: true
 
 # Role/position/tagline
-role: <font size="-0.5">Data Scientist</font>
+role: <font size="-0.3">Management Consultant, Data Scientist</font>
 # role: <font size="-0.5">Graduate Student (Computer Science)</font>
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: Accenture PLC.
+- name: Accenture S&C Data-AI.
   url: https://www.accenture.com/jp-ja/about/consulting-index
 # organizations:
 # - name: Keio University, Japan.
@@ -30,10 +30,10 @@ interests:
 # Education to show in About widget
 education:
   courses:
-  - course: MS in Computer Science
+  - course: M.Sc. in Computer Science
     institution: Keio University, Japan.
     year: 2022
-  - course: BE in Computer Science
+  - course: B.Eng. in Computer Science
     institution: Keio University, Japan.
     year: 2020
 
@@ -51,6 +51,12 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/yuma-uchiumi-699398151/
+- icon: spotify
+  icon_pack: fab
+  link: https://open.spotify.com/user/xndo1nzh6y83p775etrktk2mv?si=s3ZU58pZTHKGt4aOfpwmKg
+- icon: instagram
+  icon_pack: fab
+  link: https://www.instagram.com/yuma.uchiumi/
 
 # Link to a PDF of your resume/CV.
 # To use: copy your resume to `static/media/resume.pdf`, enable `ai` icons in `params.toml`, 
@@ -66,8 +72,7 @@ email: "yumaloop@gmail.com"
 highlight_name: false
 ---
 
-Hi, I’m [Yuma Uchiumi](https://yumaloop.github.io/about/), currently delivering data science in a consulting company. My current interests are the algorithmic marketing and cognitive problems with human thinking.
-.
-- {{< icon name="github" pack="fab" >}} {{< staticref "https://github.com/yumaloop" "newtab" >}}GitHub{{< /staticref >}}
-- {{< icon name="linkedin" pack="fab" >}} {{< staticref "https://www.linkedin.com/in/yuma-uchiumi-699398151" "newtab" >}}Linkedin{{< /staticref >}}
-- {{< icon name="spotify" pack="fab" >}} {{< staticref "https://open.spotify.com/user/xndo1nzh6y83p775etrktk2mv?si=s3ZU58pZTHKGt4aOfpwmKg&nd=1" "newtab" >}}Spotify{{< /staticref >}}
+I’m currently delivering data science at the consulting firm. My current interests are the algorithmic marketing and cognitive problems with human thinking.
+
+👻 🍭 🦄 🌈 ⛅ ✨
+
